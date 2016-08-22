@@ -1,0 +1,27 @@
+.. Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+   This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
+   International License (the "License"). You may not use this file except in compliance with the
+   License. A copy of the License is located at http://creativecommons.org/licenses/by-nc-sa/4.0/.
+
+   This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+   either express or implied. See the License for the specific language governing permissions and
+   limitations under the License.
+
+.. this file includes your document history. It should contain dates in reverse order (newest first) that describe the
+   major changes in your documentation.
+
+################
+Document History
+################
+
+This topic lists major changes to the *AWS SDK for C++ Developer Guide* over the course of its
+history.
+
+* **Latest documentation update:** |today|
+
+.. List the changes in reverse order; put *newer* entries at the top.
+
+February 02, 2016
+    Documentation first created.
+

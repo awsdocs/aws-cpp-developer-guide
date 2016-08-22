@@ -1,0 +1,17 @@
+.. add project-specific includes here ..
+
+.. |sdk-cpp| replace:: AWS SDK for C++
+.. |sdk-cpp-dg| replace:: |sdk-cpp| |dg|
+.. |sdk-cpp-ref| replace:: |sdk-cpp| |ref|
+.. |cmake| replace:: :command:`cmake`
+.. |make| replace:: :command:`make`
+.. |nmake| replace:: :command:`nmake`
+.. |msbuild| replace:: :command:`msbuild`
+
+.. _sdk-cpp-dg: http://to/be/filled/in
+.. _sdk-cpp-ref: http://sdk.amazonaws.com/cpp/api/
+
+.. _cmake: https://cmake.org/
+.. _maven: https://maven.apache.org/
+.. _nuget: https://www.nuget.org/
+
