@@ -12,7 +12,13 @@
 Getting Started
 ###############
 
+The topics in this section will help you set up and use the |sdk-cpp|.
+
 .. toctree::
+    :titlesonly:
+    :maxdepth: 1
+
     setup
     credentials
+    build-cmake.rst
 
