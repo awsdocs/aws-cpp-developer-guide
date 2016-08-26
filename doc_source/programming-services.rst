@@ -18,3 +18,4 @@ This section provides guidance and tips for working with particular AWS services
     :maxdepth: 1
     :titlesonly:
 
+    examples/s3.rst

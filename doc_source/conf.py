@@ -371,3 +371,7 @@ highlight_language = 'cpp'
 if 'extlinks' not in vars():
     extlinks = {}
 
+extlinks['sdk-examples-cpp'] = (
+    'https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/%s',
+    '')
+
