@@ -21,7 +21,7 @@ Welcome to the |sdk-cpp-dg|!
 
 The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface for Amazon Web
 Services (AWS). It is meant to be performant and fully functioning with low- and high-level SDKs,
-while minimizing dependencies and providing platform portability (Windows, OSX, Linux, and mobile).
+while minimizing dependencies and providing platform portability (Windows, OS X, Linux, and mobile).
 
 Additional documentation and resources
 ======================================
@@ -31,7 +31,7 @@ developers:
 
 * |sdk-cpp-ref|_
 
-* *Video*: `Introducting the AWS SDK for C++ from AWS re:invent 2015
+* *Video*: `Introducing the AWS SDK for C++ from AWS re:invent 2015
   <https://www.youtube.com/watch?v=fm4Aa3Whwos&list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU&index=9>`_
 
 * `AWS C++ Developer Blog <http://aws.amazon.com/blogs/developer/category/cpp/>`_
@@ -39,9 +39,10 @@ developers:
 * GitHub:
 
   + :github:`SDK source <aws/aws-sdk-cpp>`
-  + :github:`issues <aws/aws-sdk-cpp/issues>`
+  + :github:`SDK issues <aws/aws-sdk-cpp/issues>`
 
-* `license <http://aws.amazon.com/apache2.0/>`_
+
+* `License <http://aws.amazon.com/apache2.0/>`_
 
 .. TODO * developer forums (TBD)
 
