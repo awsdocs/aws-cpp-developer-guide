@@ -19,14 +19,14 @@ Building Your Application with CMake
 Set up a CMake project
 ======================
 
-To set up a CMake project for use with the |sdk-cpp|:
+	To set up a CMake project for use with the |sdk-cpp|:
 
 1. Create a directory to hold your source-files::
 
     mkdir my_example_project
 
 2. Enter the directory and add a :file:`CMakeLists.txt` file that specifies your project name, its
-   executables, sourcefiles and linked libraries. Here is a minimal example:
+   executables, sourcefiles, and linked libraries. The following is a minimal example:
 
    .. literalinclude:: example_code/general/CMakeLists-minimal.txt
        :language: cmake
@@ -35,8 +35,8 @@ To set up a CMake project for use with the |sdk-cpp|:
 (Optional) Set CMAKE_PREFIX_PATH
 ================================
 
-CMake needs to know where the :file:`aws-sdk-cpp-config.cmake` file is located so that it can
-properly resolve the AWS SDK libraries used by your application. This file can be found in the build
+CMake needs to know the location of the :file:`aws-sdk-cpp-config.cmake` so that it can
+properly resolve the AWS SDK libraries that your application uses. This file can be found in the build
 directory that you used to :doc:`build the SDK <setup>`.
 
 By setting the path in :envvar:`CMAKE_PREFIX_PATH`, you won't need to type this path every time you

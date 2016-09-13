@@ -11,7 +11,7 @@
 .. highlight:: sh
 
 ##################
-Setting up the SDK
+Setting Up the SDK
 ##################
 
 .. contents::
@@ -21,7 +21,7 @@ Setting up the SDK
 Prerequisites
 =============
 
-To use the |sdk-cpp|, you will need:
+To use the |sdk-cpp|, you need:
 
 * Visual Studio 2013 or later
 
@@ -30,10 +30,10 @@ To use the |sdk-cpp|, you will need:
 
 * *or* GNU Compiler Collection (GCC) 4.9 or later
 * *or* Clang 3.3 or later
-* A minimum of 4GB of RAM
+* A minimum of 4 GB of RAM
 
-  .. note:: 4GB of RAM is required to build some of the larger AWS clients. The SDK may fail to
-      build on EC2 instance types *t2.micro*, *t2.small* and other small instance types due to
+  .. note:: 4 GB of RAM is required to build some of the larger AWS clients. The SDK may fail to
+      build on EC2 instance types *t2.micro*, *t2.small*, and other small instance types due to
       insufficient memory.
 
 
@@ -41,7 +41,7 @@ Additional requirements for Linux systems
 -----------------------------------------
 
 To compile on Linux, you must have the header files (``-dev`` packages) for *libcurl*, *libopenssl*,
-and *libuuid*. The packages are typically available in your system's package manager.
+and *libuuid*. Typically, you'll find the packages in your system's package manager.
 
 To install these packages on *Debian/Ubuntu-based systems*, use::
 
@@ -58,24 +58,23 @@ Getting the SDK using NuGet with Visual C++
 ===========================================
 
 You can use NuGet to manage dependencies for |sdk-cpp| projects that you develop with Microsoft
-Visual C++. To use this procedure, you must first have NuGet installed on your system. Visit the
-`NuGet website <nuget>`_ to download and install it.
+Visual C++. To use this procedure, you must have `NuGet website <nuget>`_ installed on your system.
 
-**To use the SDK with NuGet:**
+**To use the SDK with NuGet**
 
-#. Open your project in Visual Studio
+#. Open your project in Visual Studio.
 
-#. In :guilabel:`Solution Explorer`, right-click your project name and select :guilabel:`Manage
-   NuGet Packages` on the menu.
+#. In :guilabel:`Solution Explorer`, right-click your project name and choose :guilabel:`Manage
+   NuGet Packages`.
 
 #. Select the packages to use by searching for a particular service or library name. For example,
    you could use a search term such as :userinput:`aws s3 native` or, because |sdk-cpp| libraries
    are named consistently, use :samp:`AWSSDKCPP-{service name}` to add a library for a particular
    service to your project.
 
-#. Select :guilabel:`Install` to install the chosen libraries and add them to your project.
+#. Choose :guilabel:`Install` to install the libraries you chose and add them to your project.
 
-When you build your project, the correct binaries will be automatically included for each
+When you build your project, the correct binaries are automatically included for each
 runtime/architecture configuration you use |mdash| you won't need to manage these dependencies
 yourself.
 
@@ -93,20 +92,20 @@ set it up on your development system. This method also allows you to customize y
 
 #. Download or clone the SDK source from :github:`aws/aws-sdk-cpp` on GitHub:
 
-   * direct download: :github:`aws/aws-sdk-cpp/archive/master.zip`
+   * Direct download: :github:`aws/aws-sdk-cpp/archive/master.zip`
 
-   * clone with Git (HTTPS)::
+   * Clone with Git (HTTPS)::
 
       git clone https://github.com/aws/aws-sdk-cpp.git
 
-   * clone with Git (SSH)::
+   * Clone with Git (SSH)::
 
       git clone git@github.com:aws/aws-sdk-cpp.git
 
 #. Install cmake_ and the relevant build tools for your platform. Ensure these are available in your
    :envvar:`PATH`. If you are unable to install |cmake|, you can use |make| or |msbuild|.
 
-#. Create a new directory to create the buildfiles in, and generate the necessary buildfiles within
+#. Create a directory to create the buildfiles in, and generate the necessary buildfiles within
    it (referred to as an *out-of-source build*, the recommended approach)::
 
     mkdir sdk_build
@@ -119,7 +118,7 @@ set it up on your development system. This method also allows you to customize y
     cmake .
 
    If you don't have |cmake| installed, you can use these alternative commands to set up your build
-   directory instead:
+   directory:
 
    * auto make: |make|
    * Visual Studio: :code:`msbuild ALL_BUILD.vcxproj`
@@ -136,8 +135,8 @@ set it up on your development system. This method also allows you to customize y
 
       msbuild INSTALL.vcxproj
 
-.. tip:: Building the entire SDK may take some time. If you only want to build a particular client
-   such as S3, you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
+.. tip:: Building the entire SDK can take awhile. To build only a particular client
+   such as |S3|, you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
 
     cmake -DBUILD_ONLY="s3"
 
@@ -154,9 +153,9 @@ appropriate environment variables (:envvar:`ANDROID_NDK`) set.
 Android on Windows
 ~~~~~~~~~~~~~~~~~~
 
-Building for Android on Windows requires additional setup. In particular, you will need to run
-|cmake| from a Visual Studio developer command prompt (2013 or higher). Additionally, you
-will need the commands :command:`git` and :command:`patch` in your path. If you have git installed
+Building for Android on Windows requires additional setup. In particular, you have to run
+|cmake| from a Visual Studio developer command prompt (2013 or later). You'll
+also need the commands :command:`git` and :command:`patch` in your path. If you have git installed
 on a Windows system, then :command:`patch` is likely found in a sibling directory
 (:file:`.../Git/usr/bin/`).  Once you've verified these requirements, your |cmake| command
 line will change slightly to use |nmake|::
@@ -169,7 +168,7 @@ alternative to |nmake| and then changing the |cmake| invocation to::
  cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
 
 
-Release builds
+Creating release builds
 --------------
 
 To create a *release* build of the SDK, do one of the following:
@@ -189,5 +188,5 @@ Running integration tests
 -------------------------
 
 Several directories are appended with ``*integration-tests``. After building your project, you can
-run these executables to ensure everything works properly.
+run these executables to ensure everything works correctly.
 
