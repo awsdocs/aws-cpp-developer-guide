@@ -12,7 +12,7 @@
 Utility Modules
 ###############
 
-The |sdk-cpp| provides you with a number of utility modules to ease the complexity of developing AWS
+The |sdk-cpp| provides you with several utility modules to ease the complexity of developing AWS
 applications in C++.
 
 .. contents::
@@ -24,7 +24,7 @@ HTTP Stack
 
 Headers: ``/aws/core/http/``
 
-The HTTP client provides connection pooling, is thread safe, and can be reused for your purposes.
+The HTTP client provides connection pooling, is thread-safe, and can be reused as you need.
 For more information, see :doc:`client-config`.
 
 String Utils
@@ -40,7 +40,7 @@ Hashing Utils
 
 Header: ``/aws/core/utils/HashingUtils.h``
 
-This header file provides hashing functions such as SHA256, MD5, Base64, and SHA256_HMAC.
+This header file provides hashing functions such as ``SHA256``, ``MD5``, ``Base64``, and ``SHA256_HMAC``.
 
 JSON Parser
 ===========

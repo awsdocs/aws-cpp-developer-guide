@@ -12,22 +12,14 @@
 Using Service Clients
 #####################
 
-AWS service client classes provide you with an interface to the AWS service represented by the
-class. Service clients follow the namespace convention :samp:`Aws::{Service}::{Service}Client`.
+AWS service client classes provide you with an interface to the AWS service that the class represents. Service clients follow the namespace convention :samp:`Aws::{Service}::{Service}Client`.
 
-For example, a client for |IAM| is constructed using the :classname:`Aws::IAM::IAMClient` class. For
-an |S3| client, use :classname:`Aws::S3::S3Client`.
+For example, a client for |IAMlong| is constructed using the :classname:`Aws::IAM::IAMClient` class. For
+an |S3long| client, use :classname:`Aws::S3::S3Client`.
 
-.. contents::
-    :local:
-    :depth: 1
-
-Constructing client classes
-===========================
-
-You must supply AWS credentials when instantiating a service client. This can be accomplished using
-the default credential provider chain, can be passed to the client directly, or you can use a custom
-credential provider.
+When you use the client classes to instantiate a service client, you must supply AWS credentials. You can do this by using
+the default credential provider chain, by manually passing credentials to the client directly, or by using a custom
+credentials provider.
 
 For more information about setting credentials, see :doc:`credentials`.
 
@@ -36,10 +28,10 @@ For more information about setting credentials, see :doc:`credentials`.
     :depth: 1
 
 
-Use the default credential provider chain
------------------------------------------
+Using the default credential provider chain
+-------------------------------------------
 
-The following code creates an Amazon DynamoDB client using a specialized client configuration,
+The following code shows how to create an |DDBlong| client by using a specialized client configuration,
 default credential provider chain, and default HTTP client factory:
 
 .. code-block:: cpp
@@ -57,11 +49,11 @@ default credential provider chain, and default HTTP client factory:
     auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
 
 
-Manually pass credentials
--------------------------
+Passing credentials manually
+----------------------------
 
-To manually pass credentials, use the client constructor that takes three arguments, and use the
-Aws::Auth::AWSCredentials class to provide your credentials to the constructor:
+The following code shows how to use the client constructor that takes three arguments, and use the
+``Aws::Auth::AWSCredentials`` class to pass your credentials manually to the constructor:
 
 .. code-block:: cpp
 
@@ -69,13 +61,11 @@ Aws::Auth::AWSCredentials class to provide your credentials to the constructor:
         ALLOCATION_TAG, AWSCredentials("access_key_id", "secret_key"), config);
 
 
-Use a custom credentials provider
----------------------------------
+Using a custom credentials provider
+-----------------------------------
 
-To use a custom credentials provider, pass to the Aws::MakeShared function, create a client using
-one of the credential providers in the Aws::Auth namespace.
-
-For example:
+The following code shows how to pass credentials to the ``Aws::MakeShared`` function and create a client by using
+one of the credential providers in the ``Aws::Auth`` namespace:
 
 .. code-block:: cpp
 

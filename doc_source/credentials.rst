@@ -23,24 +23,24 @@ Providing AWS Credentials
 #########################
 
 To connect to any of the supported services with the |sdk-cpp|, you must provide AWS credentials.
-The AWS SDKs and CLIs use :emphasis:`provider chains` to look for AWS credentials in a number of
+The AWS SDKs and CLIs use :emphasis:`provider chains` to look for AWS credentials in several
 different places, including system/user environment variables and local AWS configuration files.
 
-Setting your credentials for use by the |sdk-cpp| can be done in a number of ways, but here are the
+You can set your credentials for use by the |sdk-cpp| can be done in various ways, but here are the
 recommended approaches:
 
 .. the following file is in the shared content...
 
 .. include:: common/sdk-shared-credentials.txt
 
-Once you have set your AWS credentials using one of these methods, they will be loaded automatically
-by the |sdk-cpp| by using the default credential provider chain.
+Once you set your AWS credentials using one of these methods, the |sdk-cpp| loads them automatically
+by using the default credential provider chain.
 
 You can also supply AWS credentials using your own methods by:
 
 * Providing credentials to an AWS client class constructor.
 
-* Use |COG|_, an AWS identity management solution. You can use the
+* Using |COG|_, an AWS identity management solution. You can use the
   ``CognitoCachingCredentialsProviders`` classes in the identity-management project. For more
   information, see the |COG-dg|_.
 

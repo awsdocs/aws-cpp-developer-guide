@@ -45,9 +45,9 @@ General :command:`cmake` variables and options that affect the your SDK build.
 ADD_CUSTOM_CLIENTS
 ------------------
 
-Allows you to build any arbitrary clients based on the API definition. Simply place your definition
-in the :file:`code-generation/api-definitions` folder. Then pass this argument to :command:`cmake`.
-The :command:`cmake` configure step will generate your client and include it as a subdirectory in
+Allows you to build any arbitrary clients based on the API definition. Place your definition
+in the :file:`code-generation/api-definitions` folder, and then pass this argument to :command:`cmake`.
+The :command:`cmake` configure step generates your client and includes it as a subdirectory in
 your build. This is particularly useful if you want to generate a C++ client for using one of your
 |ABP|_ services. For example::
 
@@ -59,14 +59,14 @@ your build. This is particularly useful if you want to generate a C++ client for
 BUILD_ONLY
 ----------
 
-Allows you to only build the clients you want to use. This will resolve any low level client
+Allows you to build only the clients you want to use. This will resolve any low-level client
 dependencies if you set this to a high-level sdk such as ``aws-cpp-sdk-transfer``. This will also
-build integration and unit tests related to the projects you select if they exist. This is a list
+build integration and unit tests related to the projects you select, if they exist. This is a list
 argument, with values separated by semicolon (``;``) characters. For example::
 
  -DBUILD_ONLY="s3;cognito-identity"
 
-.. note:: The core sdk module, 'aws-sdk-cpp-core', is *always* built regardless of the value of the
+.. note:: The core sdk module, ``aws-sdk-cpp-core``, is *always* built, regardless of the value of the
    :paramname:`BUILD_ONLY` parameter.
 
 
@@ -75,10 +75,10 @@ argument, with values separated by semicolon (``;``) characters. For example::
 BUILD_SHARED_LIBS
 -----------------
 
-A built-in CMake option, re-exposed here for visibility. If enabled, shared libraries will be built,
-otherwise only static libraries will be built.
+A built-in CMake option, re-exposed here for visibility. If enabled, shared libraries are built;
+otherwise, only static libraries are built.
 
-.. note:: To dynamically link to the SDK, you will need to define the ``USE_IMPORT_EXPORT`` symbol
+.. note:: To dynamically link to the SDK, you must define the ``USE_IMPORT_EXPORT`` symbol
    for all build targets using the SDK.
 
 :Values: *ON* | *OFF*
@@ -90,7 +90,7 @@ otherwise only static libraries will be built.
 CPP_STANDARD
 ------------
 
-Allows you to specify a custom C++ standard for use with C++ 14 and 17 code-bases.
+Allows you to specify a custom C++ standard for use with C++ 14 and 17 code bases.
 
 :Values: *11* | *14* | *17*
 :Default: *11*
@@ -109,11 +109,11 @@ If static linking is enabled, custom memory management defaults to *off* (``0``)
 is enabled, custom memory management defaults to *on* (``1``) and avoids cross-DLL allocation and
 deallocation.
 
-.. note:: To prevent linker mismatch errors, you must use the same value (0 or 1) throughout your
+.. note:: To prevent linker mismatch errors, you must use the same value (``0`` or ``1``) throughout your
    build system.
 
-   If you wish to install your own memory manager to handle allocations made by the SDK, you must
-   set ``-DCUSTOM_MEMORY_MANAGEMENT`` as well as define ``AWS_CUSTOM_MEMORY_MANAGEMENT`` for all
+   To install your own memory manager to handle allocations made by the SDK, you must
+   set ``-DCUSTOM_MEMORY_MANAGEMENT`` and define ``AWS_CUSTOM_MEMORY_MANAGEMENT`` for all
    build targets that depend on the SDK.
 
 
@@ -122,7 +122,7 @@ deallocation.
 ENABLE_RTTI
 -----------
 
-Controls whether or not the SDK is built to enable run-time type information (RTTI).
+Controls whether the SDK is built to enable run-time type information (RTTI).
 
 :Values: *ON* | *OFF*
 :Default: *ON*
@@ -133,7 +133,7 @@ Controls whether or not the SDK is built to enable run-time type information (RT
 ENABLE_TESTING
 --------------
 
-Controls whether or not unit and integration test projects are built during the SDK build.
+Controls whether unit and integration test projects are built during the SDK build.
 
 :Values: *ON* | *OFF*
 :Default: *ON*
@@ -144,8 +144,8 @@ Controls whether or not unit and integration test projects are built during the 
 ENABLE_UNITY_BUILD
 ------------------
 
-If enabled, most SDK libraries will be built as a single, generated :file:`.cpp` file. This can
-significantly reduce static library size as well as speed up compilation time.
+If enabled, most SDK libraries are built as a single, generated :file:`.cpp` file. This can
+significantly reduce static library size and speed up compilation time.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -156,8 +156,8 @@ significantly reduce static library size as well as speed up compilation time.
 FORCE_SHARED_CRT
 ----------------
 
-If enabled, the SDK will link to the C runtime *dynamically*, otherwise it will use the
-:paramname:`BUILD_SHARED_LIBS` setting (sometimes necessary for backwards compatibility with older
+If enabled, the SDK links to the C runtime *dynamically*; otherwise, it uses the
+:paramname:`BUILD_SHARED_LIBS` setting (sometimes necessary for backward compatibility with earlier
 versions of the SDK).
 
 :Values: *ON* | *OFF*
@@ -184,7 +184,7 @@ MINIMIZE_SIZE
 -------------
 
 A superset of :ref:`cmake-enable-unity-build`. If enabled, this option turns on
-:paramname:`ENABLE_UNITY_BUILD` as well as some additional binary size reduction settings.
+:paramname:`ENABLE_UNITY_BUILD` and some additional binary size reduction settings.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -196,7 +196,7 @@ NO_ENCRYPTION
 -------------
 
 If enabled, prevents the default platform-specific cryptography implementation from being built into
-the library. Turn this ON if you wish to inject your own cryptography implementation.
+the library. Turn this ON to inject your own cryptography implementation.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -207,8 +207,8 @@ the library. Turn this ON if you wish to inject your own cryptography implementa
 NO_HTTP_CLIENT
 --------------
 
-If enabled, prevents the default platform-specific http client from being built into the library.
-Turn this ON if you wish to inject your own http client implementation.
+If enabled, prevents the default platform-specific HTTP client from being built into the library.
+Turn this ON if you wish to inject your own HTTP client implementation.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -219,7 +219,7 @@ Turn this ON if you wish to inject your own http client implementation.
 REGENERATE_CLIENTS
 ------------------
 
-This argument will wipe out all generated code and generate the client directories from the
+This argument wipes out all generated code and generates the client directories from the
 :file:`code-generation/api-definitions` folder. For example::
 
  -DREGENERATE_CLIENTS=1
@@ -231,7 +231,7 @@ SIMPLE_INSTALL
 --------------
 
 If enabled, the install process will not insert platform-specific intermediate directories
-underneath :file:`bin/` and :file:`lib/`. Turn *OFF* if you need to make multi-platform releases
+underneath :file:`bin/` and :file:`lib/`. Turn *OFF* if you need to make multiplatform releases
 under a single install directory.
 
 :Values: *ON* | *OFF*
@@ -247,7 +247,7 @@ To cross compile or build for a mobile platform, you must specify the target pla
 the build detects the host operating system and builds for the detected operating system.
 
 .. note:: When :paramname:`TARGET_ARCH` is *ANDROID*, additional options are available. See
-   :ref:`cmake-android-variables` for more information.
+   :ref:`cmake-android-variables`.
 
 :Values: *WINDOWS* | *LINUX* | *APPLE* | *ANDROID*
 
@@ -258,7 +258,7 @@ the build detects the host operating system and builds for the detected operatin
 Android CMake variables and options
 ===================================
 
-These variables are used when creating an Android build of the SDK (when :ref:`cmake-target-arch` is
+The following variables are used when creating an Android build of the SDK (when :ref:`cmake-target-arch` is
 set to *ANDROID*).
 
 .. contents::
@@ -284,8 +284,8 @@ Controls which Application Binary Interface (ABI) to output code for.
 ANDROID_NATIVE_API_LEVEL
 ------------------------
 
-Controls what API level the SDK will be built against. If you set :ref:`cmake-android-stl` to
-*gnustl*, you have complete freedom with the choice of API level. If you use *libc++*, you must use
+Controls what API level the SDK is built against. If you set :ref:`cmake-android-stl` to
+*gnustl*, you can choose any API level. If you use *libc++*, you must use
 an API level of at least *21*.
 
 :Default: Varies by STL choice.
@@ -322,8 +322,7 @@ Controls which compiler is used to build the SDK.
 DISABLE_ANDROID_STANDALONE_BUILD
 --------------------------------
 
-By default, Android builds use a standalone clang-based toolchain constructed via NDK scripts. If
-you wish to use your own toolchain, turn this option *ON*.
+By default, Android builds use a standalone clang-based toolchain constructed via NDK scripts. To use your own toolchain, turn this option *ON*.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -333,6 +332,6 @@ you wish to use your own toolchain, turn this option *ON*.
 NDK_DIR
 -------
 
-An override path for where the build system should find the Android NDK. By default, the build
+An override path where the build system should find the Android NDK. By default, the build
 system will check environment variables (:envvar:`ANDROID_NDK`) if this variable is not set.
 
