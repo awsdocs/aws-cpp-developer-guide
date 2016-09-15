@@ -1,11 +1,11 @@
 ######################################
-Creating, Listing and Deleting Buckets
+Creating, Listing, and Deleting Buckets
 ######################################
 
-Every object (file) in |S3| must reside within a *bucket*, which represents a collection (container)
+Every object (file) in |S3long| must reside within a *bucket*, which represents a collection (container)
 of objects. Each bucket is known by a *key* (name), which must be unique. For detailed information
 about buckets and their configuration, see :s3-dg:`Working with Amazon S3 Buckets <UsingBucket>` in
-the the |s3-dg|.
+the |s3-dg|.
 
 .. include:: ../examples-note.txt
 
