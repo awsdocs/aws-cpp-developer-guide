@@ -12,10 +12,10 @@
 Controlling IOStreams Used by the HttpClient and the AWSClient
 ##############################################################
 
-By default, all responses use an input stream backed by a ``stringbuf``. If needed, you can override the
-default behavior. For example, if you are using an |S3long| ``GetObject`` and don't want to load the
-entire file into memory, you can use ``IOStreamFactory`` in ``AmazonWebServiceRequest`` to pass a lambda to
-create a file stream.
+By default, all responses use an input stream backed by a ``stringbuf``. If needed, you can override
+the default behavior. For example, if you are using an |S3long| ``GetObject`` and don't want to load
+the entire file into memory, you can use :classname:`IOStreamFactory` in
+:classname:`AmazonWebServiceRequest` to pass a lambda to create a file stream.
 
 Example file stream request:
 

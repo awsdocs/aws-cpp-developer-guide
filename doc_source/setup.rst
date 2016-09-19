@@ -30,6 +30,7 @@ To use the |sdk-cpp|, you need:
 
 * *or* GNU Compiler Collection (GCC) 4.9 or later
 * *or* Clang 3.3 or later
+
 * A minimum of 4 GB of RAM
 
   .. note:: 4 GB of RAM is required to build some of the larger AWS clients. The SDK may fail to
@@ -146,19 +147,18 @@ set it up on your development system. This method also allows you to customize y
 Building for Android
 --------------------
 
-To build for Android, add :code:`-DTARGET_ARCH=ANDROID` to your |cmake| command line. We've
-included a |cmake| toolchain file that should cover what's needed, assuming you have the
-appropriate environment variables (:envvar:`ANDROID_NDK`) set.
+To build for Android, add :code:`-DTARGET_ARCH=ANDROID` to your |cmake| command line. The |sdk-cpp|
+includes a |cmake| toolchain file that should cover what's needed, assuming you have the appropriate
+environment variables (:envvar:`ANDROID_NDK`) set.
 
 Android on Windows
 ~~~~~~~~~~~~~~~~~~
 
-Building for Android on Windows requires additional setup. In particular, you have to run
-|cmake| from a Visual Studio developer command prompt (2013 or later). You'll
-also need the commands :command:`git` and :command:`patch` in your path. If you have git installed
-on a Windows system, then :command:`patch` is likely found in a sibling directory
-(:file:`.../Git/usr/bin/`).  Once you've verified these requirements, your |cmake| command
-line will change slightly to use |nmake|::
+Building for Android on Windows requires additional setup. In particular, you have to run |cmake|
+from a Visual Studio developer command prompt (2013 or later). You'll also need the commands
+:command:`git` and :command:`patch` in your path. If you have git installed on a Windows system,
+then :command:`patch` is likely found in a sibling directory (:file:`.../Git/usr/bin/`).  Once
+you've verified these requirements, your |cmake| command line will change slightly to use |nmake|::
 
  cmake -G "NMake Makefiles" `-DTARGET_ARCH=ANDROID` <other options> ..
 
@@ -169,7 +169,7 @@ alternative to |nmake| and then changing the |cmake| invocation to::
 
 
 Creating release builds
---------------
+-----------------------
 
 To create a *release* build of the SDK, do one of the following:
 

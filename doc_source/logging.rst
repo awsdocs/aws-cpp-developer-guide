@@ -23,9 +23,9 @@ for archiving or deleting log files.
         Aws::MakeShared<Aws::Utils::Logging::DefaultLogSystem>(
             "RunUnitTests", Aws::Utils::Logging::LogLevel::TRACE, "aws_sdk_"));
 
-If you don't call ``InitializeAWSLogging`` in your program, the SDK will not do any logging. If you
-do use logging, don't forget to shut it down at the end of your program by calling
-``ShutdownAWSLogging``:
+If you don't call :methodname:`InitializeAWSLogging` in your program, the SDK will not do any
+logging. If you do use logging, don't forget to shut it down at the end of your program by calling
+:methodname:`ShutdownAWSLogging`:
 
 .. code-block:: cpp
 

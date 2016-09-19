@@ -1,4 +1,4 @@
-	.. Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -17,9 +17,9 @@ Building Your Application with CMake
     :depth: 1
 
 Setting up a CMake project
-======================
+==========================
 
-	To set up a CMake project for use with the |sdk-cpp|:
+To set up a CMake project for use with the |sdk-cpp|:
 
 1. Create a directory to hold your source-files::
 
@@ -31,15 +31,16 @@ Setting up a CMake project
    .. literalinclude:: example_code/general/CMakeLists-minimal.txt
        :language: cmake
 
-.. note:: There are many options that you can set in your :file:`CMakeLists.txt` build configuration file. For
-an introduction to the file's features, see the `tutorial
-<https://cmake.org/cmake-tutorial/>`_ on the CMake website.
+.. note:: There are many options that you can set in your :file:`CMakeLists.txt` build configuration
+   file. For an introduction to the file's features, see the `tutorial
+   <https://cmake.org/cmake-tutorial/>`_ on the CMake website.
+
 
 (Optional) Setting CMAKE_PREFIX_PATH
-================================
+====================================
 
-CMake needs to know the location of the :file:`aws-sdk-cpp-config.cmake` so that it can
-properly resolve the AWS SDK libraries that your application uses. This file can be found in the build
+CMake needs to know the location of the :file:`aws-sdk-cpp-config.cmake` so that it can properly
+resolve the AWS SDK libraries that your application uses. This file can be found in the build
 directory that you used to :doc:`build the SDK <setup>`.
 
 By setting the path in :envvar:`CMAKE_PREFIX_PATH`, you won't need to type this path every time you
@@ -55,7 +56,7 @@ On Windows, use :code:`set` instead::
 
 
 Building with CMake
-================
+===================
 
 To build your application with :command:`cmake`, create a directory to build into::
 
@@ -75,6 +76,4 @@ Once :command:`cmake` generates your build directory, you can use :command:`make
 :command:`nmake` on Windows) to build your application::
 
  make
-
-
 

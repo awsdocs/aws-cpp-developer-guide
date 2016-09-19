@@ -24,8 +24,8 @@ HTTP Stack
 
 Headers: ``/aws/core/http/``
 
-The HTTP client provides connection pooling, is thread-safe, and can be reused as you need.
-For more information, see :doc:`client-config`.
+The HTTP client provides connection pooling, is thread-safe, and can be reused as you need.  For
+more information, see :doc:`client-config`.
 
 String Utils
 ============
@@ -47,7 +47,8 @@ JSON Parser
 
 Header: ``/aws/core/utils/json/JsonSerializer.h``
 
-This header file provides a fully functioning yet lightweight JSON parser (thin wrapper around *JsonCpp*).
+This header file provides a fully functioning yet lightweight JSON parser (thin wrapper around
+*JsonCpp*).
 
 XML Parser
 ==========

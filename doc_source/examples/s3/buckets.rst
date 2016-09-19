@@ -1,11 +1,11 @@
-######################################
+#######################################
 Creating, Listing, and Deleting Buckets
-######################################
+#######################################
 
-Every object (file) in |S3long| must reside within a *bucket*, which represents a collection (container)
-of objects. Each bucket is known by a *key* (name), which must be unique. For detailed information
-about buckets and their configuration, see :s3-dg:`Working with Amazon S3 Buckets <UsingBucket>` in
-the |s3-dg|.
+Every object (file) in |S3long| must reside within a *bucket*, which represents a collection
+(container) of objects. Each bucket is known by a *key* (name), which must be unique. For detailed
+information about buckets and their configuration, see :s3-dg:`Working with Amazon S3 Buckets
+<UsingBucket>` in the |s3-dg|.
 
 .. include:: ../examples-note.txt
 
@@ -81,3 +81,4 @@ bucket must be empty, or an error will result*.
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/delete_bucket.cpp>`.
+

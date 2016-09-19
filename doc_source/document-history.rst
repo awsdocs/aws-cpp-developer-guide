@@ -8,9 +8,6 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-.. this file includes your document history. It should contain dates in reverse order (newest first) that describe the
-   major changes in your documentation.
-
 ################
 Document History
 ################

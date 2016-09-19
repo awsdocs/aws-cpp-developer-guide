@@ -12,8 +12,8 @@
 Error Handling
 ##############
 
-We did not use exceptions; however, you can use exceptions in your code. Every service client
-returns an outcome object that includes the result and an error code.
+The |sdk-cpp| does not use exceptions; however, you can use exceptions in your code. Every service
+client returns an outcome object that includes the result and an error code.
 
 Example of handling error conditions:
 

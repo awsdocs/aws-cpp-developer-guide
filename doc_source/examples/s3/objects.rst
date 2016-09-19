@@ -63,9 +63,9 @@ Download an object
 ==================
 
 Use the |s3client| object's :methodname:`GetObject` method, passing it a
-:classname:`GetObjectRequest` that you set with the name of a bucket and the object key to
-download.  :methodname:`GetObject` returns a :classname:`GetObjectOutcome` object that can be used
-to access the S3 object's data.
+:classname:`GetObjectRequest` that you set with the name of a bucket and the object key to download.
+:methodname:`GetObject` returns a :classname:`GetObjectOutcome` object that can be used to access
+the S3 object's data.
 
 The following example downloads an object from |S3| and saves its contents to a file (using the same
 name as the object's key):

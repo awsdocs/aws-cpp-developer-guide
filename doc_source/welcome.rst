@@ -8,11 +8,6 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-.. this page should provide some introduction to the service, SDK, or whatever you're writing about. It is also
-   frequently called "What is ...?" or "Introduction to ..."
-
-   If you change the filename of this page, you should also rename it in the toctree in the index.rst file!
-
 #######
 Welcome
 #######
@@ -41,8 +36,5 @@ developers:
   + :github:`SDK source <aws/aws-sdk-cpp>`
   + :github:`SDK issues <aws/aws-sdk-cpp/issues>`
 
-
 * `License <http://aws.amazon.com/apache2.0/>`_
-
-.. TODO * developer forums (TBD)
 

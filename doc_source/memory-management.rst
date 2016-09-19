@@ -17,8 +17,8 @@ The AWS SDK for C++ provides a way to control memory allocation and deallocation
 .. note:: Custom memory management is available only if you use a version of the library built using
    the defined compile-time constant ``AWS_CUSTOM_MEMORY_MANAGEMENT``.
 
-   If you use a version of the library that is built without the compile-time constant, global memory
-   system functions such as ``InitializeAWSMemorySystem`` won't work; the global ``new`` and
+   If you use a version of the library that is built without the compile-time constant, global
+   memory system functions such as ``InitializeAWSMemorySystem`` won't work; the global ``new`` and
    ``delete`` functions are used instead.
 
 For more information about the compile-time constant, see `STL and AWS Strings and Vectors`_.
@@ -135,8 +135,8 @@ Remaining issues
 
 You can control memory allocation in the SDK; however, STL types still dominate the public interface
 through string parameters to the model object ``initialize`` and ``set`` methods. If you don't use
-STL and use strings and containers instead, you have to create a lot of temporaries whenever you want
-to make a service call.
+STL and use strings and containers instead, you have to create a lot of temporaries whenever you
+want to make a service call.
 
 To remove most of the temporaries and allocation when you make service calls using non-STL, we have
 implemented the following:

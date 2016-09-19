@@ -12,14 +12,15 @@
 Using Service Clients
 #####################
 
-AWS service client classes provide you with an interface to the AWS service that the class represents. Service clients follow the namespace convention :samp:`Aws::{Service}::{Service}Client`.
+AWS service client classes provide you with an interface to the AWS service that the class
+represents. Service clients follow the namespace convention :samp:`Aws::{Service}::{Service}Client`.
 
-For example, a client for |IAMlong| is constructed using the :classname:`Aws::IAM::IAMClient` class. For
-an |S3long| client, use :classname:`Aws::S3::S3Client`.
+For example, a client for |IAMlong| is constructed using the :classname:`Aws::IAM::IAMClient` class.
+For an |S3long| client, use :classname:`Aws::S3::S3Client`.
 
-When you use the client classes to instantiate a service client, you must supply AWS credentials. You can do this by using
-the default credential provider chain, by manually passing credentials to the client directly, or by using a custom
-credentials provider.
+When you use the client classes to instantiate a service client, you must supply AWS credentials.
+You can do this by using the default credential provider chain, by manually passing credentials to
+the client directly, or by using a custom credentials provider.
 
 For more information about setting credentials, see :doc:`credentials`.
 
@@ -31,8 +32,8 @@ For more information about setting credentials, see :doc:`credentials`.
 Using the default credential provider chain
 -------------------------------------------
 
-The following code shows how to create an |DDBlong| client by using a specialized client configuration,
-default credential provider chain, and default HTTP client factory:
+The following code shows how to create an |DDBlong| client by using a specialized client
+configuration, default credential provider chain, and default HTTP client factory:
 
 .. code-block:: cpp
 
@@ -64,8 +65,8 @@ The following code shows how to use the client constructor that takes three argu
 Using a custom credentials provider
 -----------------------------------
 
-The following code shows how to pass credentials to the ``Aws::MakeShared`` function and create a client by using
-one of the credential providers in the ``Aws::Auth`` namespace:
+The following code shows how to pass credentials to the ``Aws::MakeShared`` function and create a
+client by using one of the credential providers in the ``Aws::Auth`` namespace:
 
 .. code-block:: cpp
 

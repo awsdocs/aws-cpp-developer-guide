@@ -15,11 +15,6 @@ AWS SDK for C++ Developer Guide
 Contents
 ========
 
-.. This is your document's toctree, or list of top-level topics.
-
-   For more information about the toctree directive, see:
-   * http://sphinx-doc.org/markup/toctree.html
-
 .. toctree::
     :maxdepth: 1
     :titlesonly:
@@ -31,11 +26,5 @@ Contents
     programming-services
     document-history
 
-.. add more top-level topics here...
-
-   For information about what topics should be at the top level in AWS
-   documentation. see:
-
-   * https://w.amazon.com/index.php/AWSDevDocs/StyleGuide
-
 .. include:: about-aws.txt
+

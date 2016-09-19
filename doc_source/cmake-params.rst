@@ -45,11 +45,11 @@ General :command:`cmake` variables and options that affect the your SDK build.
 ADD_CUSTOM_CLIENTS
 ------------------
 
-Allows you to build any arbitrary clients based on the API definition. Place your definition
-in the :file:`code-generation/api-definitions` folder, and then pass this argument to :command:`cmake`.
-The :command:`cmake` configure step generates your client and includes it as a subdirectory in
-your build. This is particularly useful if you want to generate a C++ client for using one of your
-|ABP|_ services. For example::
+Allows you to build any arbitrary clients based on the API definition. Place your definition in the
+:file:`code-generation/api-definitions` folder, and then pass this argument to :command:`cmake`.
+The :command:`cmake` configure step generates your client and includes it as a subdirectory in your
+build. This is particularly useful if you want to generate a C++ client for using one of your |ABP|_
+services. For example::
 
  -DADD_CUSTOM_CLIENTS="serviceName=myCustomService;version=2015-12-21;serviceName=someOtherService;version=2015-08-15"
 
@@ -66,8 +66,8 @@ argument, with values separated by semicolon (``;``) characters. For example::
 
  -DBUILD_ONLY="s3;cognito-identity"
 
-.. note:: The core sdk module, ``aws-sdk-cpp-core``, is *always* built, regardless of the value of the
-   :paramname:`BUILD_ONLY` parameter.
+.. note:: The core sdk module, ``aws-sdk-cpp-core``, is *always* built, regardless of the value of
+   the :paramname:`BUILD_ONLY` parameter.
 
 
 .. _cmake-build-shared-libs:
@@ -109,12 +109,12 @@ If static linking is enabled, custom memory management defaults to *off* (``0``)
 is enabled, custom memory management defaults to *on* (``1``) and avoids cross-DLL allocation and
 deallocation.
 
-.. note:: To prevent linker mismatch errors, you must use the same value (``0`` or ``1``) throughout your
-   build system.
+.. note:: To prevent linker mismatch errors, you must use the same value (``0`` or ``1``) throughout
+   your build system.
 
-   To install your own memory manager to handle allocations made by the SDK, you must
-   set ``-DCUSTOM_MEMORY_MANAGEMENT`` and define ``AWS_CUSTOM_MEMORY_MANAGEMENT`` for all
-   build targets that depend on the SDK.
+To install your own memory manager to handle allocations made by the SDK, you must set
+``-DCUSTOM_MEMORY_MANAGEMENT`` and define ``AWS_CUSTOM_MEMORY_MANAGEMENT`` for all build targets
+that depend on the SDK.
 
 
 .. _cmake-enable-rtti:
@@ -322,7 +322,8 @@ Controls which compiler is used to build the SDK.
 DISABLE_ANDROID_STANDALONE_BUILD
 --------------------------------
 
-By default, Android builds use a standalone clang-based toolchain constructed via NDK scripts. To use your own toolchain, turn this option *ON*.
+By default, Android builds use a standalone clang-based toolchain constructed via NDK scripts. To
+use your own toolchain, turn this option *ON*.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -332,6 +333,6 @@ By default, Android builds use a standalone clang-based toolchain constructed vi
 NDK_DIR
 -------
 
-An override path where the build system should find the Android NDK. By default, the build
-system will check environment variables (:envvar:`ANDROID_NDK`) if this variable is not set.
+An override path where the build system should find the Android NDK. By default, the build system
+will check environment variables (:envvar:`ANDROID_NDK`) if this variable is not set.
 

@@ -23,8 +23,8 @@ Prerequisites
 
 This tutorial assumes that you've already taken these steps:
 
-Installed the SDK
-Set up AWS Credentials
+* :doc:`Installed the SDK <setup>`
+* :doc:`Set up AWS Credentials <credentials>`
 
 If you haven't set up the SDK or your AWS credentials, you should go back and complete those steps
 before proceeding with the rest of the walkthrough.
@@ -49,5 +49,4 @@ To create your project on the command-line for use with :command:`cmake`:
        mkdir hello_s3
 
 2. Enter the directory and create a :file:`CMakeLists.txt` file. Add the following contents::
-
 
