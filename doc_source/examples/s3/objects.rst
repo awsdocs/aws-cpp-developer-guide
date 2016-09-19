@@ -37,7 +37,7 @@ List objects
 ============
 
 To get a list of objects within a bucket, use the |s3client| object's :methodname:`ListObjects`
-method, supplying it with a :classname:`ListObjectsRequest` which you set with the name of a bucket
+method, supplying it with a :classname:`ListObjectsRequest` that you set with the name of a bucket
 to list the contents of.
 
 The :methodname:`ListObjects` method returns an :classname:`ListObjectsOutcome` object that you can
@@ -63,11 +63,11 @@ Download an object
 ==================
 
 Use the |s3client| object's :methodname:`GetObject` method, passing it a
-:classname:`GetObjectRequest` which you set with the name of a bucket and the object key to
+:classname:`GetObjectRequest` that you set with the name of a bucket and the object key to
 download.  :methodname:`GetObject` returns a :classname:`GetObjectOutcome` object that can be used
 to access the S3 object's data.
 
-The following example downloads an object from S3 and saves its contents to a file (using the same
+The following example downloads an object from |S3| and saves its contents to a file (using the same
 name as the object's key):
 
 **Includes:**

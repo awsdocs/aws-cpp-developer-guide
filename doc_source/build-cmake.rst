@@ -1,4 +1,4 @@
-.. Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+	.. Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -16,7 +16,7 @@ Building Your Application with CMake
     :local:
     :depth: 1
 
-Set up a CMake project
+Setting up a CMake project
 ======================
 
 	To set up a CMake project for use with the |sdk-cpp|:
@@ -31,8 +31,11 @@ Set up a CMake project
    .. literalinclude:: example_code/general/CMakeLists-minimal.txt
        :language: cmake
 
+.. note:: There are many options that you can set in your :file:`CMakeLists.txt` build configuration file. For
+an introduction to the file's features, see the `tutorial
+<https://cmake.org/cmake-tutorial/>`_ on the CMake website.
 
-(Optional) Set CMAKE_PREFIX_PATH
+(Optional) Setting CMAKE_PREFIX_PATH
 ================================
 
 CMake needs to know the location of the :file:`aws-sdk-cpp-config.cmake` so that it can
@@ -51,7 +54,7 @@ On Windows, use :code:`set` instead::
  set CMAKE_PREFIX_PATH=C:\path\to\sdk_build_dir
 
 
-Build with CMake
+Building with CMake
 ================
 
 To build your application with :command:`cmake`, create a directory to build into::
@@ -73,10 +76,5 @@ Once :command:`cmake` generates your build directory, you can use :command:`make
 
  make
 
-For more information
-====================
 
-There are many options that you can set in your :file:`CMakeLists.txt` build configuration file. For
-an introduction to the features of this file, see the `tutorial
-<https://cmake.org/cmake-tutorial/>`_ on the CMake website.
 

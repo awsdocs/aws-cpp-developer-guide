@@ -9,7 +9,7 @@
    limitations under the License.
 
 ###########################
-Overriding your HTTP Client
+Overriding Your HTTP Client
 ###########################
 
 .. _winhttp: https://msdn.microsoft.com/en-us/library/windows/desktop/aa382925%28v=vs.85%29.aspx

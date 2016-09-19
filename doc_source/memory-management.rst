@@ -15,14 +15,13 @@ Memory Management
 The AWS SDK for C++ provides a way to control memory allocation and deallocation in a library.
 
 .. note:: Custom memory management is available only if you use a version of the library built using
-   the compile-time constant ``AWS_CUSTOM_MEMORY_MANAGEMENT`` defined.
+   the defined compile-time constant ``AWS_CUSTOM_MEMORY_MANAGEMENT``.
 
-   If you use a version of the library built without the compile-time constant, then global memory
-   system functions such as ``InitializeAWSMemorySystem`` will not work; the global ``new`` and
-   ``delete`` functions will be used instead.
+   If you use a version of the library that is built without the compile-time constant, global memory
+   system functions such as ``InitializeAWSMemorySystem`` won't work; the global ``new`` and
+   ``delete`` functions are used instead.
 
-For more information about the compile-time constant, see the STL and AWS Strings and Vectors
-section in this Readme.
+For more information about the compile-time constant, see `STL and AWS Strings and Vectors`_.
 
 .. contents::
     :local:
@@ -30,9 +29,9 @@ section in this Readme.
 Allocating and deallocating memory
 ==================================
 
-**To allocate or deallocate memory:**
+**To allocate or deallocate memory**
 
-#. Subclass ``MemorySystemInterface``: ``aws/core/utils/memory/MemorySystemInterface.h``
+#. Subclass ``MemorySystemInterface``: ``aws/core/utils/memory/MemorySystemInterface.h``.
 
    .. code-block:: cpp
 
@@ -46,7 +45,7 @@ Allocating and deallocating memory
            virtual void FreeMemory(void* memoryPtr) override;
        };
 
-   .. note:: The type signature for ``AllocateMemory`` can be changed as needed.
+   .. note:: You can change the type signature for ``AllocateMemory`` as needed.
 
 #. Install a memory manager with an instance of your subclass by calling
    ``InitializeAWSMemorySystem``. This should occur at the beginning of your application. For
@@ -64,7 +63,7 @@ Allocating and deallocating memory
        }
 
 #. Just before exit, call ``ShutdownAWSMemorySystem`` (as shown in the preceding example, but
-   repeated here)::
+   repeated here):
 
    .. code-block:: cpp
 
@@ -75,25 +74,25 @@ STL and AWS strings and vectors
 ===============================
 
 When initialized with a memory manager, the |sdk-cpp| defers all allocation and deallocation to the
-memory manager. If a memory manager does not exist, the SDK uses global new and delete.
+memory manager. If a memory manager doesn't exist, the SDK uses global new and delete.
 
 If you use custom STL allocators, you must alter the type signatures for all STL objects to match
 the allocation policy. Because STL is used prominently in the SDK implementation and interface, a
 single approach in the SDK would inhibit direct passing of default STL objects into the SDK or
 control of STL allocation. Alternately, a hybrid approach |mdash| using custom allocators internally
-and allowing standard and custom STL objects on the interface |mdash| could potentially cause more
-difficulty when investigating memory issues.
+and allowing standard and custom STL objects on the interface |mdash| could potentially make it more
+difficult to investigate memory issues.
 
 The solution is to use the memory system’s compile-time constant ``AWS_CUSTOM_MEMORY_MANAGEMENT`` to
-control which STL types the SDK will use.
+control which STL types the SDK uses.
 
 If the compile-time constant is enabled (on), the types resolve to STL types with a custom allocator
 connected to the AWS memory system.
 
-If the compile-time constant is disabled (off), all Aws::* types resolve to the corresponding
+If the compile-time constant is disabled (off), all ``Aws::*`` types resolve to the corresponding
 default ``std::*`` type.
 
-Example code from the ``AWSAllocator.h`` file in the SDK:
+**Example code from the ``AWSAllocator.h`` file in the SDK**
 
 .. code-block:: cpp
 
@@ -111,10 +110,10 @@ Example code from the ``AWSAllocator.h`` file in the SDK:
 
     #endif
 
-In the example code, the ``AwsAllocator`` can be either a custom allocator or a default allocator,
+In the example code, the ``AwsAllocator`` can be a custom allocator or a default allocator,
 depending on the compile-time constant.
 
-Example code from the ``AWSVector.h`` file in the SDK:
+**Example code from the ``AWSVector.h`` file in the SDK**
 
 .. code-block:: cpp
 
@@ -135,11 +134,11 @@ Remaining issues
 ================
 
 You can control memory allocation in the SDK; however, STL types still dominate the public interface
-through string parameters to the model object initialize and set methods. If you choose not to use
-STL and use strings and containers instead, you must create a lot of temporaries whenever you want
+through string parameters to the model object ``initialize`` and ``set`` methods. If you don't use
+STL and use strings and containers instead, you have to create a lot of temporaries whenever you want
 to make a service call.
 
-To remove most of the temporaries and allocation when service calls are made using non-STL, we have
+To remove most of the temporaries and allocation when you make service calls using non-STL, we have
 implemented the following:
 
 * Every Init/Set function that takes a string has an overload that takes a ``const char*``.
@@ -159,11 +158,11 @@ Native SDK developers and memory controls
 
 Follow these rules in the SDK code:
 
-* Do not use ``new`` and ``delete``; use ``Aws::New<>`` and ``Aws::Delete<>`` instead.
+* Don't use ``new`` and ``delete``; use ``Aws::New<>`` and ``Aws::Delete<>`` instead.
 
-* Do not use ``new[]`` and ``delete[]``; use ``Aws::NewArray<>`` and ``Aws::DeleteArray<>``.
+* Don't use ``new[]`` and ``delete[]``; use ``Aws::NewArray<>`` and ``Aws::DeleteArray<>``.
 
-* Do not use ``std::make_shared``; use ``Aws::MakeShared``.
+* Don't use ``std::make_shared``; use ``Aws::MakeShared``.
 
 * Use ``Aws::UniquePtr`` for unique pointers to a single object. Use the ``Aws::MakeUnique``
   function to create the unique pointer.
@@ -171,8 +170,8 @@ Follow these rules in the SDK code:
 * Use ``Aws::UniqueArray`` for unique pointers to an array of objects. Use the
   ``Aws::MakeUniqueArray`` function to create the unique pointer.
 
-* Do not directly use STL containers; use one of the ``Aws::`` typedefs or add a typedef for the desired
-  container. For example:
+* Don't directly use STL containers; use one of the ``Aws::`` typedefs or add a typedef for the
+  container you want. For example:
 
   .. code-block:: cpp
 
