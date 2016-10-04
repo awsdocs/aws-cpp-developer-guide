@@ -26,7 +26,7 @@ For more information about the compile-time constant, see `STL and AWS Strings a
 .. contents::
     :local:
 
-Allocating and deallocating memory
+Allocating and Deallocating Memory
 ==================================
 
 **To allocate or deallocate memory**
@@ -70,7 +70,7 @@ Allocating and deallocating memory
        Aws::Utils::Memory::ShutdownAWSMemorySystem();
 
 
-STL and AWS strings and vectors
+STL and AWS Strings and Vectors
 ===============================
 
 When initialized with a memory manager, the |sdk-cpp| defers all allocation and deallocation to the
@@ -130,7 +130,7 @@ default type parameters.
 Type aliasing is used for all ``std::`` types in the SDK that perform memory allocation, such as
 containers, string streams, and string buffers. The |sdk-cpp| uses these types.
 
-Remaining issues
+Remaining Issues
 ================
 
 You can control memory allocation in the SDK; however, STL types still dominate the public interface
@@ -153,7 +153,7 @@ implemented the following:
   terminated ``const char*`` and a ``length`` value.
 
 
-Native SDK developers and memory controls
+Native SDK Developers and Memory Controls
 =========================================
 
 Follow these rules in the SDK code:

@@ -12,9 +12,9 @@
 CMake Parameters
 ################
 
-Use the CMake_ parameters listed in this section to customize how your SDK is built.
+Use the CMake_ parameters listed in this section to customize how your SDK builds.
 
-You can set these options either with CMake GUI tools or the command line using :paramname:`-D`. For
+You can set these options either with CMake GUI tools or the command line by using :paramname:`-D`. For
 example::
 
  cmake -DENABLE_UNITY_BUILD=ON -DREGENERATE_CLIENTS=1
@@ -26,12 +26,12 @@ example::
 
 .. _cmake-general-options:
 
-General CMake variables and options
+General CMake Variables and Options
 ===================================
 
-General :command:`cmake` variables and options that affect the your SDK build.
+The following are general :command:`cmake` variables and options that affect your SDK build.
 
-.. note:: To use the :paramname:`ADD_CUSTOM_CLIENTS` or :paramname:`REGENERATE_CLIENTS` variables
+.. note:: To use the :paramname:`ADD_CUSTOM_CLIENTS` or :paramname:`REGENERATE_CLIENTS` variables,
    you must have `Python 2.7 <https://www.python.org/downloads/>`_, Java (`JDK 1.8+
    <http://openjdk.java.net/install/>`_), and Maven_ installed and in your :envvar:`PATH`.
 
@@ -45,10 +45,10 @@ General :command:`cmake` variables and options that affect the your SDK build.
 ADD_CUSTOM_CLIENTS
 ------------------
 
-Allows you to build any arbitrary clients based on the API definition. Place your definition in the
+Builds any arbitrary clients based on the API definition. Place your definition in the
 :file:`code-generation/api-definitions` folder, and then pass this argument to :command:`cmake`.
 The :command:`cmake` configure step generates your client and includes it as a subdirectory in your
-build. This is particularly useful if you want to generate a C++ client for using one of your |ABP|_
+build. This is particularly useful to generate a C++ client for using one of your |ABP|_
 services. For example::
 
  -DADD_CUSTOM_CLIENTS="serviceName=myCustomService;version=2015-12-21;serviceName=someOtherService;version=2015-08-15"
@@ -59,14 +59,15 @@ services. For example::
 BUILD_ONLY
 ----------
 
-Allows you to build only the clients you want to use. This will resolve any low-level client
-dependencies if you set this to a high-level sdk such as ``aws-cpp-sdk-transfer``. This will also
-build integration and unit tests related to the projects you select, if they exist. This is a list
-argument, with values separated by semicolon (``;``) characters. For example::
+Builds only the clients you want to use. If set to a high-level SDK such as 
+``aws-cpp-sdk-transfer``, :paramname:`BUILD_ONLY` resolves any low-level client
+dependencies. It also builds integration and unit tests related to the projects you select, 
+if they exist. This is a list argument, with values separated by semicolon (``;``) characters. 
+For example::
 
  -DBUILD_ONLY="s3;cognito-identity"
 
-.. note:: The core sdk module, ``aws-sdk-cpp-core``, is *always* built, regardless of the value of
+.. note:: The core SDK module, ``aws-sdk-cpp-core``, is *always* built, regardless of the value of
    the :paramname:`BUILD_ONLY` parameter.
 
 
@@ -75,8 +76,8 @@ argument, with values separated by semicolon (``;``) characters. For example::
 BUILD_SHARED_LIBS
 -----------------
 
-A built-in CMake option, re-exposed here for visibility. If enabled, shared libraries are built;
-otherwise, only static libraries are built.
+A built-in CMake option, re-exposed here for visibility. If enabled, it builds shared libraries;
+otherwise, it builds only static libraries.
 
 .. note:: To dynamically link to the SDK, you must define the ``USE_IMPORT_EXPORT`` symbol
    for all build targets using the SDK.
@@ -90,7 +91,7 @@ otherwise, only static libraries are built.
 CPP_STANDARD
 ------------
 
-Allows you to specify a custom C++ standard for use with C++ 14 and 17 code bases.
+Specifies a custom C++ standard for use with C++ 14 and 17 code bases.
 
 :Values: *11* | *14* | *17*
 :Default: *11*
@@ -101,8 +102,8 @@ Allows you to specify a custom C++ standard for use with C++ 14 and 17 code base
 CUSTOM_MEMORY_MANAGEMENT
 ------------------------
 
-To use a custom memory manager, set the value to ``1``. You can install a custom allocator, and all
-STL types will use the custom allocation interface. If the value is set to ``0``, you still might
+To use a custom memory manager, set the value to ``1``. You can install a custom allocator so that all
+STL types use the custom allocation interface. If you set the value ``0``, you still might
 want to use the STL template types to help with DLL safety on Windows.
 
 If static linking is enabled, custom memory management defaults to *off* (``0``). If dynamic linking
@@ -169,7 +170,7 @@ versions of the SDK).
 G
 -
 
-Use this variable to generate build artifacts, such as Visual Studio solutions and Xcode projects.
+Generates build artifacts, such as Visual Studio solutions and Xcode projects.
 
 For example, on Windows::
 
@@ -184,7 +185,7 @@ MINIMIZE_SIZE
 -------------
 
 A superset of :ref:`cmake-enable-unity-build`. If enabled, this option turns on
-:paramname:`ENABLE_UNITY_BUILD` and some additional binary size reduction settings.
+:paramname:`ENABLE_UNITY_BUILD` and additional binary size reduction settings.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -196,7 +197,7 @@ NO_ENCRYPTION
 -------------
 
 If enabled, prevents the default platform-specific cryptography implementation from being built into
-the library. Turn this ON to inject your own cryptography implementation.
+the library. Turn this *ON* to inject your own cryptography implementation.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -208,7 +209,7 @@ NO_HTTP_CLIENT
 --------------
 
 If enabled, prevents the default platform-specific HTTP client from being built into the library.
-Turn this ON if you wish to inject your own HTTP client implementation.
+Turn this *ON* to inject your own HTTP client implementation.
 
 :Values: *ON* | *OFF*
 :Default: *OFF*
@@ -230,7 +231,7 @@ This argument wipes out all generated code and generates the client directories 
 SIMPLE_INSTALL
 --------------
 
-If enabled, the install process will not insert platform-specific intermediate directories
+If enabled, the install process does not insert platform-specific intermediate directories
 underneath :file:`bin/` and :file:`lib/`. Turn *OFF* if you need to make multiplatform releases
 under a single install directory.
 
@@ -243,7 +244,7 @@ under a single install directory.
 TARGET_ARCH
 -----------
 
-To cross compile or build for a mobile platform, you must specify the target platform. By default
+To cross compile or build for a mobile platform, you must specify the target platform. By default,
 the build detects the host operating system and builds for the detected operating system.
 
 .. note:: When :paramname:`TARGET_ARCH` is *ANDROID*, additional options are available. See
@@ -255,10 +256,10 @@ the build detects the host operating system and builds for the detected operatin
 
 .. _cmake-android-variables:
 
-Android CMake variables and options
+Android CMake Variables and Options
 ===================================
 
-The following variables are used when creating an Android build of the SDK (when :ref:`cmake-target-arch` is
+Use the following variables when you are creating an Android build of the SDK (when :ref:`cmake-target-arch` is
 set to *ANDROID*).
 
 .. contents::
@@ -284,7 +285,7 @@ Controls which Application Binary Interface (ABI) to output code for.
 ANDROID_NATIVE_API_LEVEL
 ------------------------
 
-Controls what API level the SDK is built against. If you set :ref:`cmake-android-stl` to
+Controls what API level the SDK builds against. If you set :ref:`cmake-android-stl` to
 *gnustl*, you can choose any API level. If you use *libc++*, you must use
 an API level of at least *21*.
 
@@ -296,7 +297,7 @@ an API level of at least *21*.
 ANDROID_STL
 -----------
 
-Controls what flavor of the C++ standard library the SDK will use.
+Controls what flavor of the C++ standard library the SDK uses.
 
 .. important:: Performance problems can occur within the SDK if the ``gnustl`` options are used; we
    strongly recommend using *libc++_shared* or *libc++_static*.
@@ -333,6 +334,6 @@ use your own toolchain, turn this option *ON*.
 NDK_DIR
 -------
 
-An override path where the build system should find the Android NDK. By default, the build system
-will check environment variables (:envvar:`ANDROID_NDK`) if this variable is not set.
+Specifies an override path where the build system should find the Android NDK. By default, the build 
+system checks environment variables (:envvar:`ANDROID_NDK`) if this variable is not set.
 

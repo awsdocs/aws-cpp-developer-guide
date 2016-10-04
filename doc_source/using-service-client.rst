@@ -29,7 +29,7 @@ For more information about setting credentials, see :doc:`credentials`.
     :depth: 1
 
 
-Using the default credential provider chain
+Using the Default Credential Provider Chain
 -------------------------------------------
 
 The following code shows how to create an |DDBlong| client by using a specialized client
@@ -50,7 +50,7 @@ configuration, default credential provider chain, and default HTTP client factor
     auto client = Aws::MakeShared<DynamoDBClient>(ALLOCATION_TAG, config);
 
 
-Passing credentials manually
+Passing Credentials Manually
 ----------------------------
 
 The following code shows how to use the client constructor that takes three arguments, and use the
@@ -62,7 +62,7 @@ The following code shows how to use the client constructor that takes three argu
         ALLOCATION_TAG, AWSCredentials("access_key_id", "secret_key"), config);
 
 
-Using a custom credentials provider
+Using a Custom Credentials Provider
 -----------------------------------
 
 The following code shows how to pass credentials to the ``Aws::MakeShared`` function and create a
