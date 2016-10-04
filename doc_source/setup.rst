@@ -33,12 +33,12 @@ To use the |sdk-cpp|, you need:
 
 * A minimum of 4 GB of RAM
 
-  .. note:: 4 GB of RAM is required to build some of the larger AWS clients. The SDK may fail to
-      build on EC2 instance types *t2.micro*, *t2.small*, and other small instance types due to
+  .. note:: You need 4 GB of RAM to build some of the larger AWS clients. The SDK may fail to
+      build on |EC2| instance types *t2.micro*, *t2.small*, and other small instance types due to
       insufficient memory.
 
 
-Additional requirements for Linux systems
+Additional Requirements for Linux Systems
 -----------------------------------------
 
 To compile on Linux, you must have the header files (``-dev`` packages) for *libcurl*, *libopenssl*,
@@ -55,7 +55,7 @@ On *Fedora-based systems*, use::
 
 .. _setup-with-nuget:
 
-Getting the SDK using NuGet with Visual C++
+Getting the SDK Using NuGet with Visual C++
 ===========================================
 
 You can use NuGet to manage dependencies for |sdk-cpp| projects that you develop with Microsoft
@@ -82,7 +82,7 @@ yourself.
 
 .. _setup-from-source:
 
-Building the SDK from source
+Building the SDK from Source
 ============================
 
 If you don't use Visual Studio (or don't want to use NuGet), you can build the SDK from source to
@@ -168,7 +168,7 @@ alternative to |nmake| and then changing the |cmake| invocation to::
  cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
 
 
-Creating release builds
+Creating Release Builds
 -----------------------
 
 To create a *release* build of the SDK, do one of the following:
@@ -184,7 +184,7 @@ To create a *release* build of the SDK, do one of the following:
    cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
    msbuild INSTALL.vcxproj /p:Configuration=Release
 
-Running integration tests
+Running Integration Tests
 -------------------------
 
 Several directories are appended with ``*integration-tests``. After building your project, you can

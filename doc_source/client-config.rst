@@ -42,7 +42,7 @@ You can use the client configuration to control most functionality in the |sdk-c
         std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
     };
 
-Configuration variables
+Configuration Variables
 =======================
 
 userAgent

@@ -12,7 +12,7 @@ An |S3| object represents a *file*, or collection of data. Every object must res
 
 .. _upload-object:
 
-Upload an object
+Upload an Object
 ================
 
 Use the |s3client| object's :methodname:`PutObject` method, supplying it with a bucket name, key
@@ -33,7 +33,7 @@ See the :sdk-examples-cpp:`complete example <s3/put_object.cpp>`.
 
 .. _list-objects:
 
-List objects
+List Objects
 ============
 
 To get a list of objects within a bucket, use the |s3client| object's :methodname:`ListObjects`
@@ -59,7 +59,7 @@ See the :sdk-examples-cpp:`complete example <s3/list_objects.cpp>`.
 
 .. _download-object:
 
-Download an object
+Download an Object
 ==================
 
 Use the |s3client| object's :methodname:`GetObject` method, passing it a
@@ -86,7 +86,7 @@ See the :sdk-examples-cpp:`complete example <s3/get_object.cpp>`.
 
 .. _delete-object:
 
-Delete an object
+Delete an Object
 ================
 
 Use the |s3client| object's :methodname:`DeleteObject` method, passing it a

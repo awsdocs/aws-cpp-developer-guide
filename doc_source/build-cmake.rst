@@ -16,7 +16,7 @@ Building Your Application with CMake
     :local:
     :depth: 1
 
-Setting up a CMake project
+Setting Up a CMake Project
 ==========================
 
 To set up a CMake project for use with the |sdk-cpp|:

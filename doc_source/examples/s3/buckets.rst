@@ -14,7 +14,7 @@ information about buckets and their configuration, see :s3-dg:`Working with Amaz
 
 .. _create-bucket:
 
-Create a bucket
+Create a Bucket
 ===============
 
 Use the |s3client| object's :methodname:`CreateBucket` method, passing it a
@@ -36,7 +36,7 @@ See the :sdk-examples-cpp:`complete example <s3/create_bucket.cpp>`.
 
 .. _list-buckets:
 
-List buckets
+List Buckets
 ============
 
 Use the |s3client| object's :methodname:`ListBucket` method. If successful, a
@@ -62,7 +62,7 @@ See the :sdk-examples-cpp:`complete example <s3/list_buckets.cpp>`.
 
 .. _delete-bucket:
 
-Delete a bucket
+Delete a Bucket
 ===============
 
 Use the |s3client| object's :methodname:`DeleteBucket` method, passing it a
