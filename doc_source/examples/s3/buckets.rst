@@ -7,6 +7,8 @@ Every object (file) in |S3long| must reside within a *bucket*, which represents 
 information about buckets and their configuration, see :s3-dg:`Working with Amazon S3 Buckets
 <UsingBucket>` in the |s3-dg|.
 
+.. include:: ../../common/s3-note-incomplete-upload-policy.txt
+
 .. include:: ../examples-note.txt
 
 .. contents::
