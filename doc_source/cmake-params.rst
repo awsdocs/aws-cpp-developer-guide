@@ -19,10 +19,6 @@ example::
 
  cmake -DENABLE_UNITY_BUILD=ON -DREGENERATE_CLIENTS=1
 
-.. contents::
-    :local:
-    :depth: 1
-
 
 .. _cmake-general-options:
 

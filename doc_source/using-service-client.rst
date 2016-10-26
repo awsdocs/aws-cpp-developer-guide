@@ -24,10 +24,6 @@ the client directly, or by using a custom credentials provider.
 
 For more information about setting credentials, see :doc:`credentials`.
 
-.. contents::
-    :local:
-    :depth: 1
-
 
 Using the Default Credential Provider Chain
 -------------------------------------------

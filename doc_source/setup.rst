@@ -14,10 +14,6 @@
 Setting Up the SDK
 ##################
 
-.. contents::
-    :local:
-    :depth: 2
-
 Prerequisites
 =============
 

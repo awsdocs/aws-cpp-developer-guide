@@ -23,9 +23,6 @@ The AWS SDK for C++ provides a way to control memory allocation and deallocation
 
 For more information about the compile-time constant, see `STL and AWS Strings and Vectors`_.
 
-.. contents::
-    :local:
-
 Allocating and Deallocating Memory
 ==================================
 

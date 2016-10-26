@@ -15,10 +15,6 @@ Utility Modules
 The |sdk-cpp| provides you with several utility modules to ease the complexity of developing AWS
 applications in C++.
 
-.. contents::
-    :local:
-    :depth: 1
-
 HTTP Stack
 ==========
 

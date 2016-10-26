@@ -12,9 +12,9 @@
 Building Your Application with CMake
 ####################################
 
-.. contents::
-    :local:
-    :depth: 1
+CMake_ is a build tool that can manage your application's dependencies and create native makefiles
+suitable for the platform you're building on. It's an easy way to create and build projects using
+the |sdk-cpp|.
 
 Setting Up a CMake Project
 ==========================

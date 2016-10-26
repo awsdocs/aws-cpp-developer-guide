@@ -14,10 +14,6 @@ Hello World - Building a Simple Application
 
 This topic will walk through the process of creating a simple AWS application with the |sdk-cpp|.
 
-.. contents::
-    :local:
-    :depth: 1
-
 Prerequisites
 =============
 
@@ -33,10 +29,6 @@ Create a project
 ================
 
 The process for creating a project will depend on the development environment you choose.
-
-.. contents::
-    :local:
-    :depth: 1
 
 On the command-line with cmake:
 -------------------------------
