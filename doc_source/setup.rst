@@ -1,4 +1,4 @@
-.. Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -38,11 +38,11 @@ Additional Requirements for Linux Systems
 -----------------------------------------
 
 To compile on Linux, you must have the header files (``-dev`` packages) for *libcurl*, *libopenssl*,
-and *libuuid*. Typically, you'll find the packages in your system's package manager.
+*libuuid* and *zlib*. Typically, you'll find the packages in your system's package manager.
 
 To install these packages on *Debian/Ubuntu-based systems*, use::
 
- sudo apt-get install libcurl-dev libssl-dev uuid-dev
+ sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev
 
 On *Fedora-based systems*, use::
 
@@ -99,8 +99,9 @@ set it up on your development system. This method also allows you to customize y
 
       git clone git@github.com:aws/aws-sdk-cpp.git
 
-#. Install cmake_ and the relevant build tools for your platform. Ensure these are available in your
-   :envvar:`PATH`. If you are unable to install |cmake|, you can use |make| or |msbuild|.
+#. Install cmake_ (*v3.0+*) and the relevant build tools for your platform. Ensure these are
+   available in your :envvar:`PATH`. If you are unable to install |cmake|, you can use |make| or
+   |msbuild|.
 
 #. Create a directory to create the buildfiles in, and generate the necessary buildfiles within
    it (referred to as an *out-of-source build*, the recommended approach)::
