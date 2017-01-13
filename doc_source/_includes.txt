@@ -5,10 +5,6 @@
 .. |msbuild| replace:: :command:`msbuild`
 .. |nmake| replace:: :command:`nmake`
 .. |s3client| replace:: S3Client
-.. |sdk-cpp-ref| replace:: |sdk-cpp| |ref|
-
-.. _sdk-cpp-ref: http://sdk.amazonaws.com/cpp/api/
-.. _sdk-cpp: https://aws.amazon.com/about-aws/whats-new/2016/03/aws-sdk-for-c-plus-plus-developer-preview/
 
 .. _cmake: https://cmake.org/
 .. _maven: https://maven.apache.org/
