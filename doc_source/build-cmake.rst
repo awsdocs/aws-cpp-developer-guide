@@ -16,6 +16,8 @@ CMake_ is a build tool that can manage your application's dependencies and creat
 suitable for the platform you're building on. It's an easy way to create and build projects using
 the |sdk-cpp|.
 
+.. highlight:: sh
+
 Setting Up a CMake Project
 ==========================
 
@@ -23,7 +25,7 @@ To set up a CMake project for use with the |sdk-cpp|:
 
 1. Create a directory to hold your source-files::
 
-    mkdir my_example_project
+      mkdir my_example_project
 
 2. Enter the directory and add a :file:`CMakeLists.txt` file that specifies your project name, its
    executables, sourcefiles, and linked libraries. The following is a minimal example:
@@ -48,11 +50,11 @@ rebuild your application.
 
 You can set it on |unixes| like this::
 
- export CMAKE_PREFIX_PATH=/path/to/sdk_build_dir
+   export CMAKE_PREFIX_PATH=/path/to/sdk_build_dir
 
 On Windows, use :code:`set` instead::
 
- set CMAKE_PREFIX_PATH=C:\path\to\sdk_build_dir
+   set CMAKE_PREFIX_PATH=C:\path\to\sdk_build_dir
 
 
 Building with CMake
@@ -60,20 +62,20 @@ Building with CMake
 
 To build your application with :command:`cmake`, create a directory to build into::
 
- mkdir my_project_build
+   mkdir my_project_build
 
 Enter the directory and run :command:`cmake` with the path to your project's source directory::
 
- cd my_project_build
- cmake ../my_example_project
+   cd my_project_build
+   cmake ../my_example_project
 
 If you did not set :envvar:`CMAKE_PREFIX_PATH`, then you must add the path to the SDK's build
 directory using :code:`-Daws-sdk-cpp_DIR`::
 
- cmake -Daws-sdk-cpp_DIR=/path/to/sdk_build_dir ../my_example_project
+   cmake -Daws-sdk-cpp_DIR=/path/to/sdk_build_dir ../my_example_project
 
 Once :command:`cmake` generates your build directory, you can use :command:`make` (or
 :command:`nmake` on Windows) to build your application::
 
- make
+   make
 

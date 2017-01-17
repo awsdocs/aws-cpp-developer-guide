@@ -13,9 +13,9 @@ Operations on Objects
 #####################
 
 An |S3| object represents a *file*, or collection of data. Every object must reside within a
-:doc:`bucket <buckets>`.
+:doc:`bucket <examples-s3-buckets>`.
 
-.. include:: ../examples-note.txt
+.. include:: includes/examples-note.txt
 
 .. contents::
     :local:
@@ -30,12 +30,12 @@ name, and file to upload. *The bucket must exist, or an error will result*.
 
 **Includes:**
 
-.. literalinclude:: ../../example_code/s3/put_object.cpp
+.. literalinclude:: example_code/s3/put_object.cpp
    :lines: 14-18
 
 **Code:**
 
-.. literalinclude:: ../../example_code/s3/put_object.cpp
+.. literalinclude:: example_code/s3/put_object.cpp
    :lines: 36-61
    :dedent: 4
 
@@ -55,12 +55,12 @@ use to get a list of objects in the form of :classname:`Object` instances.
 
 **Includes:**
 
-.. literalinclude:: ../../example_code/s3/list_objects.cpp
+.. literalinclude:: example_code/s3/list_objects.cpp
    :lines: 14-17
 
 **Code:**
 
-.. literalinclude:: ../../example_code/s3/list_objects.cpp
+.. literalinclude:: example_code/s3/list_objects.cpp
    :lines: 35-57
    :dedent: 4
 
@@ -82,12 +82,12 @@ name as the object's key):
 
 **Includes:**
 
-.. literalinclude:: ../../example_code/s3/get_object.cpp
+.. literalinclude:: example_code/s3/get_object.cpp
    :lines: 14-17
 
 **Code:**
 
-.. literalinclude:: ../../example_code/s3/get_object.cpp
+.. literalinclude:: example_code/s3/get_object.cpp
    :lines: 35-58
    :dedent: 4
 
@@ -105,12 +105,12 @@ Use the |s3client| object's :methodname:`DeleteObject` method, passing it a
 
 **Includes:**
 
-.. literalinclude:: ../../example_code/s3/delete_object.cpp
+.. literalinclude:: example_code/s3/delete_object.cpp
    :lines: 14-17
 
 **Code:**
 
-.. literalinclude:: ../../example_code/s3/delete_object.cpp
+.. literalinclude:: example_code/s3/delete_object.cpp
    :lines: 37-57
    :dedent: 4
 

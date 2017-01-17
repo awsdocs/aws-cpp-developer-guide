@@ -17,9 +17,9 @@ Every object (file) in |S3long| must reside within a *bucket*, which represents 
 information about buckets and their configuration, see :s3-dg:`Working with Amazon S3 Buckets
 <UsingBucket>` in the |s3-dg|.
 
-.. include:: ../../common/s3-note-incomplete-upload-policy.txt
+.. include:: common/s3-note-incomplete-upload-policy.txt
 
-.. include:: ../examples-note.txt
+.. include:: includes/examples-note.txt
 
 .. contents::
     :local:
@@ -34,12 +34,12 @@ Use the |s3client| object's :methodname:`CreateBucket` method, passing it a
 
 **Includes:**
 
-.. literalinclude:: ../../example_code/s3/create_bucket.cpp
+.. literalinclude:: example_code/s3/create_bucket.cpp
    :lines: 14-16
 
 **Code:**
 
-.. literalinclude:: ../../example_code/s3/create_bucket.cpp
+.. literalinclude:: example_code/s3/create_bucket.cpp
    :lines: 37-51
    :dedent: 4
 
@@ -60,12 +60,12 @@ Use the :classname:`ListBucketResult` object's :methodname:`GetBuckets` method t
 
 **Includes:**
 
-.. literalinclude:: ../../example_code/s3/list_buckets.cpp
+.. literalinclude:: example_code/s3/list_buckets.cpp
    :lines: 14-16
 
 **Code:**
 
-.. literalinclude:: ../../example_code/s3/list_buckets.cpp
+.. literalinclude:: example_code/s3/list_buckets.cpp
    :lines: 26-43
    :dedent: 4
 
@@ -83,12 +83,12 @@ bucket must be empty, or an error will result*.
 
 **Includes:**
 
-.. literalinclude:: ../../example_code/s3/delete_bucket.cpp
+.. literalinclude:: example_code/s3/delete_bucket.cpp
    :lines: 14-16
 
 **Code:**
 
-.. literalinclude:: ../../example_code/s3/delete_bucket.cpp
+.. literalinclude:: example_code/s3/delete_bucket.cpp
    :lines: 39-53
    :dedent: 4
 
