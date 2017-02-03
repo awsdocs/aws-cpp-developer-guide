@@ -8,18 +8,8 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-.. add project-specific includes here ..
-
-.. |cmake| replace:: :command:`cmake`
-.. |make| replace:: :command:`make`
-.. |msbuild| replace:: :command:`msbuild`
-.. |nmake| replace:: :command:`nmake`
-
-.. _cmake: https://cmake.org/
-.. _maven: https://maven.apache.org/
-.. _nuget: https://www.nuget.org/
-
-.. |s3client| replace:: :aws-cpp-class:`S3Client <aws_1_1_s3_1_1_s3_client>`
-.. |sqsclient| replace:: :aws-cpp-class:`SQSClient <aws_1_1_s_q_s_1_1_s_q_s_client>`
-.. |ddbclient| replace:: :aws-cpp-class:`DynamoDBClient <aws_1_1_dynamo_d_b_1_1_dynamo_d_b_client>`
+.. note:: Only the code that is necessary to demonstrate each technique is supplied here, but
+   :sdk-doc-examples:`complete example code is available on GitHub <cpp>`, where you can download a
+   single source file or you can clone the repository locally to get all examples, build and run
+   them.
 

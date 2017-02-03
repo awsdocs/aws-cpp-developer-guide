@@ -14,10 +14,7 @@
 
 This section provides examples of programming |S3|_ using the |sdk-cpp|_.
 
-.. note:: Only the code needed to demonstrate each technique is supplied here. However,
-   :sdk-examples-cpp:`complete example code is available on GitHub <s3>`, where you can download a
-   single source file or you can clone the repository locally to view, build, and run all of the
-   examples.
+.. include:: includes/complete-examples-note.txt
 
 .. toctree::
    :titlesonly:

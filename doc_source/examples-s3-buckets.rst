@@ -21,8 +21,6 @@ information about buckets and their configuration, see :s3-dg:`Working with Amaz
 
 .. include:: includes/examples-note.txt
 
-.. contents::
-    :local:
 
 .. _create-bucket:
 
@@ -40,10 +38,10 @@ Use the |s3client| object's :methodname:`CreateBucket` method, passing it a
 **Code:**
 
 .. literalinclude:: example_code/s3/create_bucket.cpp
-   :lines: 37-51
+   :lines: 37-54
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/create_bucket.cpp>`.
+See the :sdk-examples-cpp:`complete example <s3/create_bucket>`.
 
 
 .. _list-buckets:
@@ -66,10 +64,10 @@ Use the :classname:`ListBucketResult` object's :methodname:`GetBuckets` method t
 **Code:**
 
 .. literalinclude:: example_code/s3/list_buckets.cpp
-   :lines: 26-43
+   :lines: 26-46
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/list_buckets.cpp>`.
+See the :sdk-examples-cpp:`complete example <s3/list_buckets>`.
 
 
 .. _delete-bucket:
@@ -89,7 +87,7 @@ bucket must be empty, or an error will result*.
 **Code:**
 
 .. literalinclude:: example_code/s3/delete_bucket.cpp
-   :lines: 39-53
+   :lines: 39-56
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/delete_bucket.cpp>`.

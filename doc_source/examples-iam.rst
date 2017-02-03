@@ -8,18 +8,18 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-.. add project-specific includes here ..
+##############
+|IAM| Examples
+##############
 
-.. |cmake| replace:: :command:`cmake`
-.. |make| replace:: :command:`make`
-.. |msbuild| replace:: :command:`msbuild`
-.. |nmake| replace:: :command:`nmake`
+This section provides examples of programming |IAM|_ using the |sdk-cpp|_.
 
-.. _cmake: https://cmake.org/
-.. _maven: https://maven.apache.org/
-.. _nuget: https://www.nuget.org/
+.. include:: includes/complete-examples-note.txt
 
-.. |s3client| replace:: :aws-cpp-class:`S3Client <aws_1_1_s3_1_1_s3_client>`
-.. |sqsclient| replace:: :aws-cpp-class:`SQSClient <aws_1_1_s_q_s_1_1_s_q_s_client>`
-.. |ddbclient| replace:: :aws-cpp-class:`DynamoDBClient <aws_1_1_dynamo_d_b_1_1_dynamo_d_b_client>`
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+   :glob:
+
+   examples-iam-*
 
