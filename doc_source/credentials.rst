@@ -16,14 +16,14 @@ To connect to any of the supported services with the |sdk-cpp|, you must provide
 The AWS SDKs and CLIs use :emphasis:`provider chains` to look for AWS credentials in several
 different places, including system/user environment variables and local AWS configuration files.
 
-You can set your credentials for use by the |sdk-cpp| can be done in various ways, but here are the
+You can set your credentials for use by the |sdk-cpp| in various ways, but here are the
 recommended approaches:
 
 .. the following file is in the shared content...
 
 .. include:: common/sdk-shared-credentials.txt
 
-Once you set your AWS credentials using one of these methods, the |sdk-cpp| loads them automatically
+After you set your AWS credentials using one of these methods, the |sdk-cpp| loads them automatically
 by using the default credential provider chain.
 
 You can also supply AWS credentials using your own methods by:

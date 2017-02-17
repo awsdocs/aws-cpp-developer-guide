@@ -29,7 +29,7 @@ Using the Default Credential Provider Chain
 -------------------------------------------
 
 The following code shows how to create an |DDBlong| client by using a specialized client
-configuration, default credential provider chain, and default HTTP client factory:
+configuration, default credential provider chain, and default HTTP client factory.
 
 .. code-block:: cpp
 
@@ -50,7 +50,7 @@ Passing Credentials Manually
 ----------------------------
 
 The following code shows how to use the client constructor that takes three arguments, and use the
-``Aws::Auth::AWSCredentials`` class to pass your credentials manually to the constructor:
+``Aws::Auth::AWSCredentials`` class to pass your credentials manually to the constructor.
 
 .. code-block:: cpp
 
@@ -62,7 +62,7 @@ Using a Custom Credentials Provider
 -----------------------------------
 
 The following code shows how to pass credentials to the ``Aws::MakeShared`` function and create a
-client by using one of the credential providers in the ``Aws::Auth`` namespace:
+client by using one of the credential providers in the ``Aws::Auth`` namespace.
 
 .. code-block:: cpp
 

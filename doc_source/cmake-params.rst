@@ -14,7 +14,7 @@ CMake Parameters
 
 Use the CMake_ parameters listed in this section to customize how your SDK builds.
 
-You can set these options either with CMake GUI tools or the command line by using :paramname:`-D`. For
+You can set these options with CMake GUI tools or the command line by using :paramname:`-D`. For
 example::
 
  cmake -DENABLE_UNITY_BUILD=ON -DREGENERATE_CLIENTS=1
@@ -55,10 +55,10 @@ services. For example::
 BUILD_ONLY
 ----------
 
-Builds only the clients you want to use. If set to a high-level SDK such as 
+Builds only the clients you want to use. If set to a high-level SDK such as
 ``aws-cpp-sdk-transfer``, :paramname:`BUILD_ONLY` resolves any low-level client
-dependencies. It also builds integration and unit tests related to the projects you select, 
-if they exist. This is a list argument, with values separated by semicolon (``;``) characters. 
+dependencies. It also builds integration and unit tests related to the projects you select,
+if they exist. This is a list argument, with values separated by semicolon (``;``) characters.
 For example::
 
  -DBUILD_ONLY="s3;cognito-identity"
@@ -240,7 +240,7 @@ under a single install directory.
 TARGET_ARCH
 -----------
 
-To cross compile or build for a mobile platform, you must specify the target platform. By default,
+To cross-compile or build for a mobile platform, you must specify the target platform. By default,
 the build detects the host operating system and builds for the detected operating system.
 
 .. note:: When :paramname:`TARGET_ARCH` is *ANDROID*, additional options are available. See
@@ -330,6 +330,6 @@ use your own toolchain, turn this option *ON*.
 NDK_DIR
 -------
 
-Specifies an override path where the build system should find the Android NDK. By default, the build 
+Specifies an override path where the build system should find the Android NDK. By default, the build
 system checks environment variables (:envvar:`ANDROID_NDK`) if this variable is not set.
 
