@@ -62,7 +62,7 @@ authenticationRegion
     Allows you to specify an arbitrary region to use for signing. If you don't set
     ``authenticationRegion``, we fall back to ``region``. If you do set ``authenticationRegion``,
     you are also responsible for setting endpoint override to connect to the endpoint that
-    cooresponds with your custom region.
+    corresponds with your custom region.
 
 maxConnections
     The maximum number of allowed connections to a single server for your HTTP communications. The
@@ -71,7 +71,7 @@ maxConnections
 
 requestTimeoutMs and connectTimeoutMs
     Values that determine the length of time, in milliseconds, to wait before timing out a request.
-    You can increase this value if you need to transfer large files, such as in |S3long| or
+    You can increase this value if you need to transfer large files, such as in |S3| or
     |CFlong|.
 
 retryStrategy

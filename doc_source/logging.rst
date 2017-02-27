@@ -31,7 +31,7 @@ logging. If you do use logging, don't forget to shut it down at the end of your 
 
     Aws::Utils::Logging::ShutdownAWSLogging();
 
-Here is an example integration test with logging:
+**Example integration test with logging**
 
 .. code-block:: cpp
 

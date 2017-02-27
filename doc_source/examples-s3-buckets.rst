@@ -26,21 +26,21 @@ information about buckets and their configuration, see :s3-dg:`Working with Amaz
 Create a Bucket
 ===============
 
-Use the |s3client| object's :methodname:`CreateBucket` method, passing it a
+Use the |s3client| object :methodname:`CreateBucket` method, passing it a
 :classname:`CreateBucketRequest` with the bucket's name.
 
-**Includes:**
+**Includes**
 
 .. literalinclude:: example_code/s3/create_bucket.cpp
    :lines: 14-16
 
-**Code:**
+**Code**
 
 .. literalinclude:: example_code/s3/create_bucket.cpp
    :lines: 37-54
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/create_bucket>`.
+See the :sdk-examples-cpp:`complete example <s3/create_bucket.cpp>`.
 
 
 .. _list-buckets:
@@ -48,25 +48,25 @@ See the :sdk-examples-cpp:`complete example <s3/create_bucket>`.
 List Buckets
 ============
 
-Use the |s3client| object's :methodname:`ListBucket` method. If successful, a
-:classname:`ListBucketOutcome` object is returned, which contains a :classname:`ListBucketResult`
+Use the |s3client| object :methodname:`ListBucket` method. If successful, the method returns a
+:classname:`ListBucketOutcome` object, which contains a :classname:`ListBucketResult`
 object.
 
-Use the :classname:`ListBucketResult` object's :methodname:`GetBuckets` method to get a list of
+Use the :classname:`ListBucketResult` object :methodname:`GetBuckets` method to get a list of
 :classname:`Bucket` objects that contain information about each |S3| bucket in your account.
 
-**Includes:**
+**Includes**
 
 .. literalinclude:: example_code/s3/list_buckets.cpp
    :lines: 14-16
 
-**Code:**
+**Code**
 
 .. literalinclude:: example_code/s3/list_buckets.cpp
    :lines: 26-46
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/list_buckets>`.
+See the :sdk-examples-cpp:`complete example <s3/list_buckets.cpp>`.
 
 
 .. _delete-bucket:
@@ -74,16 +74,16 @@ See the :sdk-examples-cpp:`complete example <s3/list_buckets>`.
 Delete a Bucket
 ===============
 
-Use the |s3client| object's :methodname:`DeleteBucket` method, passing it a
+Use the |s3client| object :methodname:`DeleteBucket` method, passing it a
 :classname:`DeleteBucketRequest` object that is set with the name of the bucket to delete. *The
-bucket must be empty, or an error will result*.
+bucket must be empty or an error will result*.
 
-**Includes:**
+**Includes**
 
 .. literalinclude:: example_code/s3/delete_bucket.cpp
    :lines: 14-16
 
-**Code:**
+**Code**
 
 .. literalinclude:: example_code/s3/delete_bucket.cpp
    :lines: 39-56
