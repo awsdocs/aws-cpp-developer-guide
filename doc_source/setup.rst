@@ -22,7 +22,7 @@ To use the |sdk-cpp|, you need:
 * Visual Studio 2013 or later
 
   .. note:: Visual Studio 2013 doesn't provide default move constructors and operators. Later
-      versions of Visual Studio provide a standards-compliant compiler.
+     versions of Visual Studio provide a standards-compliant compiler.
 
 * *or* GNU Compiler Collection (GCC) 4.9 or later
 * *or* Clang 3.3 or later
@@ -30,8 +30,8 @@ To use the |sdk-cpp|, you need:
 * A minimum of 4 GB of RAM
 
   .. note:: You need 4 GB of RAM to build some of the larger AWS clients. The SDK might fail to
-      build on |EC2| instance types *t2.micro*, *t2.small*, and other small instance types due to
-      insufficient memory.
+     build on |EC2| instance types *t2.micro*, *t2.small*, and other small instance types due to
+     insufficient memory.
 
 
 Additional Requirements for Linux Systems
@@ -95,26 +95,26 @@ set it up on your development system. This method also enables you to customize 
 
    * Direct download: :github:`aws/aws-sdk-cpp/archive/master.zip`
 
-   * Clone with Git:
+   * Clone with Git
 
-     *Using HTTPS*
+     .. container:: option
 
-     ::
+        HTTPS
+           .. code-block:: sh
 
-      git clone https://github.com/aws/aws-sdk-cpp.git
+              git clone https://github.com/aws/aws-sdk-cpp.git
 
-     *Using SSH*
+        SSH
+           .. code-block:: sh
 
-     ::
-
-      git clone git@github.com:aws/aws-sdk-cpp.git
+              git clone git@github.com:aws/aws-sdk-cpp.git
 
 #. Install cmake_ (*v3.0+*) and the relevant build tools for your platform. Ensure these are
    available in your :envvar:`PATH`. If you're unable to install |cmake|, you can use |make| or
    |msbuild|.
 
-#. Create a directory in which to create your buildfiles, and generate the necessary buildfiles within
-   it. This is the recommended approach, referred to as an *out-of-source build*.
+#. Create a directory in which to create your buildfiles, and generate the necessary buildfiles
+   within it. This is the recommended approach, referred to as an *out-of-source build*.
 
    ::
 
@@ -132,27 +132,36 @@ set it up on your development system. This method also enables you to customize 
    If you don't have |cmake| installed, you can use these alternative commands to set up your build
    directory:
 
-   * auto make: |make|
-   * Visual Studio: :code:`msbuild ALL_BUILD.vcxproj`
+   .. container:: option
+
+      auto make
+         .. code-block:: sh
+
+            make
+
+      Visual Studio
+         .. code-block:: doscon
+
+            msbuild ALL_BUILD.vcxproj
 
 #. Build and install the SDK by typing one of the following in the same location where you generated
    your build files:
 
-   * For auto make systems
+   .. container:: option
 
-     ::
+      auto make
+         .. code-block:: sh
 
-      make
-      sudo make install
+            make
+            sudo make install
 
-   * For Visual Studio
+      Visual Studio
+         .. code-block:: sh
 
-     ::
+            msbuild INSTALL.vcxproj
 
-      msbuild INSTALL.vcxproj
-
-.. tip:: Building the entire SDK can take awhile. To build only a particular client
-   such as |S3|, you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
+.. tip:: Building the entire SDK can take awhile. To build only a particular client such as |S3|,
+   you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
 
     cmake -DBUILD_ONLY="s3"
 
@@ -163,8 +172,8 @@ Building for Android
 --------------------
 
 To build for Android, add :code:`-DTARGET_ARCH=ANDROID` to your |cmake| command line. The |sdk-cpp|
-includes a |cmake| toolchain file that should cover what's needed, assuming you've set the appropriate
-environment variables (:envvar:`ANDROID_NDK`).
+includes a |cmake| toolchain file that should cover what's needed, assuming you've set the
+appropriate environment variables (:envvar:`ANDROID_NDK`).
 
 Android on Windows
 ~~~~~~~~~~~~~~~~~~
@@ -172,15 +181,15 @@ Android on Windows
 Building for Android on Windows requires additional setup. In particular, you have to run |cmake|
 from a Visual Studio (2013 or later) developer command prompt. You'll also need the commands
 :command:`git` and :command:`patch` in your path. If you have git installed on a Windows system,
-you'll most likely find :command:`patch` in a sibling directory (:file:`.../Git/usr/bin/`).
-Once you've verified these requirements, your |cmake| command line will change slightly to use |nmake|.
+you'll most likely find :command:`patch` in a sibling directory (:file:`.../Git/usr/bin/`).  Once
+you've verified these requirements, your |cmake| command line will change slightly to use |nmake|.
 
 ::
 
  cmake -G "NMake Makefiles" `-DTARGET_ARCH=ANDROID` <other options> ..
 
-|nmake| builds targets in a serially. To make things go more quickly, we recommend installing JOM as an
-alternative to |nmake|, and then changing the |cmake| invocation as follows.
+|nmake| builds targets in a serially. To make things go more quickly, we recommend installing JOM as
+an alternative to |nmake|, and then changing the |cmake| invocation as follows.
 
 ::
 
@@ -190,29 +199,26 @@ alternative to |nmake|, and then changing the |cmake| invocation as follows.
 Creating Release Builds
 -----------------------
 
-.. topic:: To create a *release* build of the SDK
+To create a *release* build of the SDK:
 
-Do one of the following:
+.. container:: option
 
-* For auto make systems
+   auto make
+      .. code-block:: sh
 
-  ::
+         cmake -DCMAKE_BUILD_TYPE=Release <path/to/sdk/source>
+         make
+         sudo make install
 
-   cmake -DCMAKE_BUILD_TYPE=Release <path/to/sdk/source>
-   make
-   sudo make install
+   Visual Studio
+      .. code-block:: doscon
 
-* For Visual Studio
-
-  ::
-
-   cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
-   msbuild INSTALL.vcxproj /p:Configuration=Release
+         cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
+         msbuild INSTALL.vcxproj /p:Configuration=Release
 
 Running Integration Tests
 -------------------------
 
-Several directories are appended with ``*integration-tests``. After you build your project, you
-can
+Several directories are appended with ``*integration-tests``. After you build your project, you can
 run these executables to ensure everything works correctly.
 
