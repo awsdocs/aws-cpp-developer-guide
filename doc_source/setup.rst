@@ -91,13 +91,19 @@ set it up on your development system. This method also allows you to customize y
 
    * Direct download: :github:`aws/aws-sdk-cpp/archive/master.zip`
 
-   * Clone with Git (HTTPS)::
+   * Clone with Git
 
-      git clone https://github.com/aws/aws-sdk-cpp.git
+     .. container:: option
 
-   * Clone with Git (SSH)::
+        HTTPS
+           .. code-block:: sh
 
-      git clone git@github.com:aws/aws-sdk-cpp.git
+              git clone https://github.com/aws/aws-sdk-cpp.git
+
+        SSH
+           .. code-block:: sh
+
+              git clone git@github.com:aws/aws-sdk-cpp.git
 
 #. Install cmake_ (*v3.0+*) and the relevant build tools for your platform. Ensure these are
    available in your :envvar:`PATH`. If you are unable to install |cmake|, you can use |make| or
@@ -118,20 +124,33 @@ set it up on your development system. This method also allows you to customize y
    If you don't have |cmake| installed, you can use these alternative commands to set up your build
    directory:
 
-   * auto make: |make|
-   * Visual Studio: :code:`msbuild ALL_BUILD.vcxproj`
+   .. container:: option
+
+      auto make
+         .. code-block:: sh
+
+            make
+
+      Visual Studio
+         .. code-block:: doscon
+
+            msbuild ALL_BUILD.vcxproj
 
 #. Build and install the SDK by typing one of the following in the same location where you generated
    your build files:
 
-   * For auto make systems::
+   .. container:: option
 
-      make
-      sudo make install
+      auto make
+         .. code-block:: sh
 
-   * For Visual Studio::
+            make
+            sudo make install
 
-      msbuild INSTALL.vcxproj
+      Visual Studio
+         .. code-block:: sh
+
+            msbuild INSTALL.vcxproj
 
 .. tip:: Building the entire SDK can take awhile. To build only a particular client
    such as |S3|, you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
@@ -170,16 +189,20 @@ Creating Release Builds
 
 To create a *release* build of the SDK, do one of the following:
 
-* For auto make systems::
+.. container:: option
 
-   cmake -DCMAKE_BUILD_TYPE=Release <path/to/sdk/source>
-   make
-   sudo make install
+   auto make
+      .. code-block:: sh
 
-* For Visual Studio::
+         cmake -DCMAKE_BUILD_TYPE=Release <path/to/sdk/source>
+         make
+         sudo make install
 
-   cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
-   msbuild INSTALL.vcxproj /p:Configuration=Release
+   Visual Studio
+      .. code-block:: doscon
+
+         cmake <path-to-root-of-this-source-code> -G "Visual Studio 12 Win64"
+         msbuild INSTALL.vcxproj /p:Configuration=Release
 
 Running Integration Tests
 -------------------------
