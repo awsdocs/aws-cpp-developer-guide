@@ -55,7 +55,7 @@ Getting the SDK Using NuGet with Visual C++
 ===========================================
 
 You can use NuGet to manage dependencies for |sdk-cpp| projects that you develop with Microsoft
-Visual C++. To use this procedure, you must have `NuGet website <nuget>`_ installed on your system.
+Visual C++. To use this procedure, you must have `NuGet website <nuget_>`_ installed on your system.
 
 **To use the SDK with NuGet**
 
