@@ -18,9 +18,10 @@ This section provides guidance and tips for working with particular AWS services
     :maxdepth: 1
     :titlesonly:
 
-    examples-cloudwatch
-    examples-ec2
     examples-iam
     examples-s3
     examples-sqs
 
+.. TODO
+   examples-ec2
+   examples-cloudwatch
