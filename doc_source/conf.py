@@ -374,5 +374,6 @@ if 'extlinks' not in vars():
 extlinks.update({
     'sdk-examples-cpp': ('https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/%s', ''),
     'aws-cpp-class': ('https://sdk.amazonaws.com/cpp/api/LATEST/class_%s.html', ''),
+    'aws-cpp-struct': ('https://sdk.amazonaws.com/cpp/api/LATEST/struct_%s.html', ''),
 })
 

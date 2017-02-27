@@ -17,7 +17,12 @@ history.
 
 * **Latest documentation update:** |today|
 
-.. List the changes in reverse order; put *newer* entries at the top.
+February 27, 2017
+   * A new topic in the **Getting Started** section, :doc:`basic-use`, has been added to show how to
+     properly initialize and shutdown the SDK.
+
+   * In addition to the existing :doc:`examples-s3` examples, new code examples have been added for
+     :doc:`examples-sqs` and :doc:`examples-iam`.
 
 February 02, 2016
     Documentation first created.

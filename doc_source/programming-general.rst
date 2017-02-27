@@ -12,8 +12,10 @@
 Programming with the SDK
 ########################
 
-This section provides information about general use of the |sdk-cpp|. For service-specific examples,
-see :doc:`programming-services`.
+This section provides information about general use of the |sdk-cpp|, beyond that covered in
+:doc:`getting-started`.
+
+For service-specific programming examples, see :doc:`programming-services`.
 
 .. toctree::
     :maxdepth: 2

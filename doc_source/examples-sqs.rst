@@ -23,4 +23,3 @@ This section provides examples of programming |SQS|_ using the |sdk-cpp|_.
    examples-sqs-message-queues
    examples-sqs-messages
 
-
