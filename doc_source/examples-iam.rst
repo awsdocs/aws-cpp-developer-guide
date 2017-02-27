@@ -19,7 +19,11 @@ This section provides examples of programming |IAM|_ using the |sdk-cpp|_.
 .. toctree::
    :titlesonly:
    :maxdepth: 1
-   :glob:
 
-   examples-iam-*
+   examples-iam-users
+..   examples-iam-groups
+..   examples-iam-roles
+..   examples-iam-temporary-credentials
+..   examples-iam-permissions
+..   examples-iam-policies
 

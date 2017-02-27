@@ -20,5 +20,6 @@ The topics in this section will help you set up and use the |sdk-cpp|.
 
     setup
     credentials
-    build-cmake.rst
+    basic-use
+    build-cmake
 

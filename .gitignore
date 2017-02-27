@@ -4,3 +4,4 @@ doc_output/
 shared_content/
 example_code
 output/
+*.swp

@@ -21,7 +21,6 @@ information about buckets and their configuration, see :s3-dg:`Working with Amaz
 
 .. include:: includes/examples-note.txt
 
-
 .. _create-bucket:
 
 Create a Bucket
