@@ -50,7 +50,7 @@ with :code-cpp:`Aws::IAM::IAMErrors::NO_SUCH_ENTITY` if the user doesn't already
    :lines: 24-37
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <iam/create_user>`.
+See the :sdk-examples-cpp:`complete example <iam/create_user.cpp>`.
 
 Listing Users
 =============
@@ -77,7 +77,7 @@ technique.
    :lines: 31-65
    :dedent: 8
 
-See the :sdk-examples-cpp:`complete example <iam/list_users>`.
+See the :sdk-examples-cpp:`complete example <iam/list_users.cpp>`.
 
 
 Update a User
@@ -98,7 +98,7 @@ To update an existing user, create an :aws-cpp-class:`UpdateUserRequest
    :lines: 37-51
    :dedent: 8
 
-See the :sdk-examples-cpp:`complete example <iam/update_user>`.
+See the :sdk-examples-cpp:`complete example <iam/update_user.cpp>`.
 
 
 Delete a User
@@ -119,5 +119,5 @@ containing the name of the user to delete.
    :lines: 23, 40-49
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <iam/delete_user>`.
+See the :sdk-examples-cpp:`complete example <iam/delete_user.cpp>`.
 
