@@ -20,7 +20,7 @@ A *message queue* is the logical container you use to send messages reliably in 
 are two types of queues: *standard* and *first-in, first-out* (FIFO). To learn more about queues
 and the differences between these types, see the |sqs-dg|_.
 
-These C++ examples show how to use the |sdk-cpp| to create, list, delete, and get the URL of an |SQS|
+These C++ examples show you how to use the |sdk-cpp| to create, list, delete, and get the URL of an |SQS|
 queue.
 
 
