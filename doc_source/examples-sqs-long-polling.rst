@@ -95,7 +95,7 @@ you supply to the |sqsclient| class' ReceiveMessage member function.
 
 .. literalinclude:: example_code/sqs/long_polling_on_message_receipt.cpp
    :lines: 26-36
-   :dedent: 8
+   :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_message_receipt.cpp>`.
 
