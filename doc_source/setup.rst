@@ -42,15 +42,15 @@ To compile on Linux, you must have the header files (``-dev`` packages) for *lib
 
 .. topic:: To install these packages on *Debian/Ubuntu-based systems*
 
-::
+   ::
 
- sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev
+    sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev
 
-.. topic:: To install these packages on *Fedora-based systems*
+.. topic:: To install these packages on *Redhat/Fedora-based systems*
 
-::
+   ::
 
- sudo dnf install libcurl-devel openssl-devel libuuid-devel
+    sudo dnf install libcurl-devel openssl-devel libuuid-devel
 
 
 .. _setup-with-nuget:
@@ -63,17 +63,17 @@ Visual C++. To use this procedure, you must have `NuGet <nuget_>`_ installed on 
 
 .. topic:: To use the SDK with NuGet
 
-#. Open your project in Visual Studio.
+   #. Open your project in Visual Studio.
 
-#. In :guilabel:`Solution Explorer`, right-click your project name and choose :guilabel:`Manage
-   NuGet Packages`.
+   #. In :guilabel:`Solution Explorer`, right-click your project name and choose :guilabel:`Manage
+      NuGet Packages`.
 
-#. Select the packages to use by searching for a particular service or library name. For example,
-   you could use a search term such as :userinput:`aws s3 native` or, because |sdk-cpp| libraries
-   are named consistently, use :samp:`AWSSDKCPP-{service name}` to add a library for a particular
-   service to your project.
+   #. Select the packages to use by searching for a particular service or library name. For example,
+      you could use a search term such as :userinput:`aws s3 native` or, because |sdk-cpp| libraries
+      are named consistently, use :samp:`AWSSDKCPP-{service name}` to add a library for a particular
+      service to your project.
 
-#. Choose :guilabel:`Install` to install the libraries and add them to your project.
+   #. Choose :guilabel:`Install` to install the libraries and add them to your project.
 
 When you build your project, the correct binaries are automatically included for each
 runtime/architecture configuration you use |mdash| you won't need to manage these dependencies
@@ -91,74 +91,70 @@ set it up on your development system. This method also enables you to customize 
 
 .. topic:: To build the SDK from source
 
-#. Download or clone the SDK source from :github:`aws/aws-sdk-cpp` on GitHub.
+   #. Download or clone the SDK source from :github:`aws/aws-sdk-cpp` on GitHub.
 
-   * Direct download: :github:`aws/aws-sdk-cpp/archive/master.zip`
+      * Direct download: :github:`aws/aws-sdk-cpp/archive/master.zip`
 
-   * Clone with Git
+      * Clone with Git
 
-     .. container:: option
+        .. container:: option
 
-        HTTPS
-           .. code-block:: sh
+           HTTPS
+              .. code-block:: sh
 
-              git clone https://github.com/aws/aws-sdk-cpp.git
+                 git clone https://github.com/aws/aws-sdk-cpp.git
 
-        SSH
-           .. code-block:: sh
+           SSH
+              .. code-block:: sh
 
-              git clone git@github.com:aws/aws-sdk-cpp.git
+                 git clone git@github.com:aws/aws-sdk-cpp.git
 
-#. Install cmake_ (*v3.0+*) and the relevant build tools for your platform. Ensure these are
-   available in your :envvar:`PATH`. If you're unable to install |cmake|, you can use |make| or
-   |msbuild|.
+   #. Install cmake_ (*v3.0+*) and the relevant build tools for your platform. Ensure these are
+      available in your :envvar:`PATH`. If you're unable to install |cmake|, you can use |make| or
+      |msbuild|.
 
-#. Create a directory in which to create your buildfiles, and generate the necessary buildfiles
-   within it. This is the recommended approach, referred to as an *out-of-source build*.
+   #. Create a directory in which to create your buildfiles, and generate the necessary buildfiles
+      within it. This is the recommended approach, referred to as an *out-of-source build*.::
 
-   ::
+       mkdir sdk_build
+       cd sdk_build
+       cmake <path/to/sdk/source>
 
-    mkdir sdk_build
-    cd sdk_build
-    cmake <path/to/sdk/source>
+      Alternatively, create the build files directly in the SDK source directory.::
 
-   Alternatively, create the build files directly in the SDK source directory.
+       cd <path/to/sdk/source>
+       cmake .
 
-   ::
+      If you don't have |cmake| installed, you can use these alternative commands to set up your build
+      directory:
 
-    cd <path/to/sdk/source>
-    cmake .
+      .. container:: option
 
-   If you don't have |cmake| installed, you can use these alternative commands to set up your build
-   directory:
+         auto make
+            .. code-block:: sh
 
-   .. container:: option
+               make
 
-      auto make
-         .. code-block:: sh
+         Visual Studio
+            .. code-block:: doscon
 
-            make
+               msbuild ALL_BUILD.vcxproj
 
-      Visual Studio
-         .. code-block:: doscon
+   #. Build and install the SDK by typing one of the following in the same location where you generated
+      your build files:
 
-            msbuild ALL_BUILD.vcxproj
+      .. container:: option
 
-#. Build and install the SDK by typing one of the following in the same location where you generated
-   your build files:
+         auto make
+            .. code-block:: sh
 
-   .. container:: option
+               make
+               sudo make install
 
-      auto make
-         .. code-block:: sh
+         Visual Studio
+            .. code-block:: sh
 
-            make
-            sudo make install
-
-      Visual Studio
-         .. code-block:: sh
-
-            msbuild INSTALL.vcxproj
+               msbuild INSTALL.vcxproj
 
 .. tip:: Building the entire SDK can take awhile. To build only a particular client such as |S3|,
    you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
@@ -182,16 +178,12 @@ Building for Android on Windows requires additional setup. In particular, you ha
 from a Visual Studio (2013 or later) developer command prompt. You'll also need the commands
 :command:`git` and :command:`patch` in your path. If you have git installed on a Windows system,
 you'll most likely find :command:`patch` in a sibling directory (:file:`.../Git/usr/bin/`).  Once
-you've verified these requirements, your |cmake| command line will change slightly to use |nmake|.
-
-::
+you've verified these requirements, your |cmake| command line will change slightly to use |nmake|.::
 
  cmake -G "NMake Makefiles" `-DTARGET_ARCH=ANDROID` <other options> ..
 
 |nmake| builds targets in a serially. To make things go more quickly, we recommend installing JOM as
-an alternative to |nmake|, and then changing the |cmake| invocation as follows.
-
-::
+an alternative to |nmake|, and then changing the |cmake| invocation as follows.::
 
  cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
 

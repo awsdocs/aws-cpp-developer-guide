@@ -17,6 +17,13 @@ history.
 
 * **Latest documentation update:** |today|
 
+March 10, 2017
+   * Added new topics to :doc:`examples-sqs`:
+
+     * :doc:`examples-sqs-dead-letter-queues`
+     * :doc:`examples-sqs-long-polling`
+     * :doc:`examples-sqs-visibility-timeout`
+
 February 27, 2017
    * A new topic in the **Getting Started** section, :doc:`basic-use`, has been added to show how to
      properly initialize and shutdown the SDK.

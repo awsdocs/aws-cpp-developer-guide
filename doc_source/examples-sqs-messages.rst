@@ -17,9 +17,9 @@ Sending, Receiving, and Deleting |SQS| Messages
    :description: How to send, receive, and delete Amazon SQS messages with the AWS SDK for C++.
    :keywords: AWS SDK for C++ code examples
 
-Messages are always delivered using an :doc:`SQS queue <examples-sqs-message-queues>`.
-These C++ examples show you how to use the |sdk-cpp| to send, receive,
-and delete |SQS| messages from SQS queues.
+Messages are always delivered using an :doc:`SQS queue <examples-sqs-message-queues>`. These C++
+examples show you how to use the |sdk-cpp| to send, receive, and delete |SQS| messages from SQS
+queues.
 
 
 .. _sqs-message-send:
@@ -28,9 +28,10 @@ Send a Message
 ==============
 
 You can add a single message to an |SQS| queue by calling the |sqsclient| class
-:methodname:`SendMessage` member function. You provide :methodname:`SendMessage` with a :aws-cpp-class:`SendMessageRequest
-<aws_1_1_s_q_s_1_1_model_1_1_send_message_request>` object containing the queue's :ref:`URL
-<sqs-get-queue-url>`, the message body, and an optional delay value (in seconds).
+:methodname:`SendMessage` member function. You provide :methodname:`SendMessage` with a
+:aws-cpp-class:`SendMessageRequest <aws_1_1_s_q_s_1_1_model_1_1_send_message_request>` object
+containing the queue's :ref:`URL <sqs-get-queue-url>`, the message body, and an optional delay value
+(in seconds).
 
 **Includes**
 
@@ -40,7 +41,7 @@ You can add a single message to an |SQS| queue by calling the |sqsclient| class
 **Code**
 
 .. literalinclude:: example_code/sqs/send_message.cpp
-   :lines: 38-51
+   :lines: 36-49
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/send_message.cpp>`.
