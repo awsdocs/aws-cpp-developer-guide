@@ -20,10 +20,9 @@ This section provides examples of programming |IAM|_ using the |sdk-cpp|_.
    :titlesonly:
    :maxdepth: 1
 
+   examples-iam-access-keys
    examples-iam-users
-..   examples-iam-groups
-..   examples-iam-roles
-..   examples-iam-temporary-credentials
-..   examples-iam-permissions
-..   examples-iam-policies
+   examples-iam-account-aliases
+   examples-iam-policies
+   examples-iam-server-certificates
 

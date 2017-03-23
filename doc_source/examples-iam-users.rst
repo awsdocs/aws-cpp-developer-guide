@@ -35,9 +35,17 @@ of the user to create.
    :lines: 24, 39-47
    :dedent: 4
 
-This call will fail if the user already exists. You can avoid this by first verifying if the user
-exists or not by calling the |iamclient| :functionname:`GetUser` function. The function will fail
-with :code-cpp:`Aws::IAM::IAMErrors::NO_SUCH_ENTITY` if the user doesn't already exist.
+Get Information About a User
+============================
+
+To get information about a particular user, such as the user's creation date, path, ID or ARN, call
+the |iamclient| :functionname:`GetUser` function with a :aws-cpp-class:`GetUserRequest
+<aws_1_1_i_a_m_1_1_model_1_1_get_user_request>` containing the user name. If successful, you can get
+the :aws-cpp-class:`User <aws_1_1_i_a_m_1_1_model_1_1_user>` from the returned
+:aws-cpp-class:`GetUserResult <aws_1_1_i_a_m_1_1_model_1_1_get_user_result>` outcome.
+
+If the user doesn't already exist, :functionname:`GetUser` will fail with
+:code-cpp:`Aws::IAM::IAMErrors::NO_SUCH_ENTITY`.
 
 **Includes:**
 
@@ -51,6 +59,7 @@ with :code-cpp:`Aws::IAM::IAMErrors::NO_SUCH_ENTITY` if the user doesn't already
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/create_user.cpp>`.
+
 
 Listing Users
 =============
