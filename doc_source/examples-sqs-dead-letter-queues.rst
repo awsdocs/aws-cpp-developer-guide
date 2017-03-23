@@ -58,7 +58,7 @@ Setting the Redrive Policy on your Source Queue
 ===============================================
 
 To finish setting up your dead letter queue, call the |sqsclient| class'
-:methodname:`SetQueueAttributes` member function with a :aws-cpp-class:`SetQueueAttributesRequest
+:functionname:`SetQueueAttributes` member function with a :aws-cpp-class:`SetQueueAttributesRequest
 <aws_1_1_s_q_s_1_1_model_1_1_set_queue_attributes_request>` object for which you've set the
 ``RedrivePolicy`` attribute with your JSON redrive policy.
 

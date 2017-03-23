@@ -28,7 +28,7 @@ Send a Message
 ==============
 
 You can add a single message to an |SQS| queue by calling the |sqsclient| class
-:methodname:`SendMessage` member function. You provide :methodname:`SendMessage` with a
+:functionname:`SendMessage` member function. You provide :functionname:`SendMessage` with a
 :aws-cpp-class:`SendMessageRequest <aws_1_1_s_q_s_1_1_model_1_1_send_message_request>` object
 containing the queue's :ref:`URL <sqs-get-queue-url>`, the message body, and an optional delay value
 (in seconds).
@@ -53,7 +53,7 @@ Receive Messages
 ================
 
 Retrieve any messages that are currently in the queue by calling the |sqsclient| class
-:methodname:`ReceiveMessage` member function, passing it the queue's URL. Messages are returned as a
+:functionname:`ReceiveMessage` member function, passing it the queue's URL. Messages are returned as a
 list of :aws-cpp-class:`Message <aws_1_1_s_q_s_1_1_model_1_1_message>` objects.
 
 **Includes**
@@ -76,7 +76,7 @@ Delete Messages after Receipt
 -----------------------------
 
 After receiving a message and processing its contents, delete the message from the queue by sending
-the message's receipt handle and the queue URL to the |sqsclient| class :methodname:`DeleteMessage`
+the message's receipt handle and the queue URL to the |sqsclient| class :functionname:`DeleteMessage`
 member function.
 
 **Includes**

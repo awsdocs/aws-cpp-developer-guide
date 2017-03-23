@@ -33,7 +33,7 @@ Setting the Message Visibility Timeout upon Message Receipt
 When you have received a message, you can modify its visibility timeout by passing its receipt
 handle in a :aws-cpp-class:`ChangeMessageVisibilityRequest
 <aws_1_1_s_q_s_1_1_model_1_1_change_message_visibility_request>` that you pass to the |sqsclient|
-class' :methodname:`ChangeMessageVisibility` member function.
+class' :functionname:`ChangeMessageVisibility` member function.
 
 **Includes**
 

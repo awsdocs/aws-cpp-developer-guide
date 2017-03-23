@@ -25,7 +25,7 @@ An |S3| object represents a *file*, which is a collection of data. Every object 
 Upload an Object
 ================
 
-Use the |s3client| object :methodname:`PutObject` method, supplying it with a bucket name, key
+Use the |s3client| object :functionname:`PutObject` function, supplying it with a bucket name, key
 name, and file to upload. *The bucket must exist or an error will result*.
 
 **Includes**
@@ -46,11 +46,11 @@ See the :sdk-examples-cpp:`complete example <s3/put_object.cpp>`.
 List Objects
 ============
 
-To get a list of objects within a bucket, use the |s3client| object :methodname:`ListObjects`
-method. Supply it with a :classname:`ListObjectsRequest` that you set with the name of a bucket
+To get a list of objects within a bucket, use the |s3client| object :functionname:`ListObjects`
+function. Supply it with a :classname:`ListObjectsRequest` that you set with the name of a bucket
 to list the contents of.
 
-The :methodname:`ListObjects` method returns a :classname:`ListObjectsOutcome` object that you can
+The :functionname:`ListObjects` function returns a :classname:`ListObjectsOutcome` object that you can
 use to get a list of objects in the form of :classname:`Object` instances.
 
 **Includes**
@@ -72,9 +72,9 @@ See the :sdk-examples-cpp:`complete example <s3/list_objects.cpp>`.
 Download an Object
 ==================
 
-Use the |s3client| object :methodname:`GetObject` method, passing it a
+Use the |s3client| object :functionname:`GetObject` function, passing it a
 :classname:`GetObjectRequest` that you set with the name of a bucket and the object key to download.
-:methodname:`GetObject` returns a :classname:`GetObjectOutcome` object that you can use to
+:functionname:`GetObject` returns a :classname:`GetObjectOutcome` object that you can use to
 access
 the S3 object's data.
 
@@ -100,7 +100,7 @@ See the :sdk-examples-cpp:`complete example <s3/get_object.cpp>`.
 Delete an Object
 ================
 
-Use the |s3client| object's :methodname:`DeleteObject` method, passing it a
+Use the |s3client| object's :functionname:`DeleteObject` function, passing it a
 :classname:`DeleteObjectRequest` that you set with the name of a bucket and object to download.
 *The specified bucket and object key must exist or an error will result*.
 

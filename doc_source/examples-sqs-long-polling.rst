@@ -33,7 +33,7 @@ Enabling Long Polling when Creating a Queue
 To enable long polling when creating an |SQS| queue, set the ``ReceiveMessageWaitTimeSeconds``
 attribute on the :aws-cpp-class:`CreateQueueRequest
 <aws_1_1_s_q_s_1_1_model_1_1_create_queue_request>` object before calling the |sqsclient| class'
-:methodname:`CreateQueue` member function.
+:functionname:`CreateQueue` member function.
 
 **Includes**
 
@@ -57,7 +57,7 @@ Enabling Long Polling on an Existing Queue
 In addition to enabling long polling when creating a queue, you can also enable it on an existing
 queue by setting ``ReceiveMessageWaitTimeSeconds`` on the :aws-cpp-class:`SetQueueAttributesRequest
 <aws_1_1_s_q_s_1_1_model_1_1_set_queue_attributes_request>` before calling the |sqsclient| class'
-:methodname:`SetQueueAttributes` member function.
+:functionname:`SetQueueAttributes` member function.
 
 **Includes**
 
@@ -83,7 +83,7 @@ You can enable long polling when receiving a message by setting the wait time in
 you supply to the |sqsclient| class' ReceiveMessage member function.
 
 .. note:: You should make sure that the AWS client's request timeout is larger than the maximum long
-   poll time (20s) so that your :methodname:`ReceiveMessage` requests don't time out while waiting
+   poll time (20s) so that your :functionname:`ReceiveMessage` requests don't time out while waiting
    for the next poll event!
 
 **Includes**

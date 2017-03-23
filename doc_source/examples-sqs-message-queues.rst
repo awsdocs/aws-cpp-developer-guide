@@ -30,7 +30,7 @@ queue.
 Create a Queue
 ==============
 
-Use the |sqsclient| class :methodname:`CreateQueue` member function, and provide it with a
+Use the |sqsclient| class :functionname:`CreateQueue` member function, and provide it with a
 :aws-cpp-class:`CreateQueueRequest <aws_1_1_s_q_s_1_1_model_1_1_create_queue_request>` object that
 describes the queue parameters.
 
@@ -53,7 +53,7 @@ See the :sdk-examples-cpp:`complete example <sqs/create_queue.cpp>`.
 List Queues
 ===========
 
-To list |SQS| queues for your account, call the |sqsclient| class :methodname:`ListQueues` member
+To list |SQS| queues for your account, call the |sqsclient| class :functionname:`ListQueues` member
 function, and pass it a :aws-cpp-class:`ListQueuesRequest
 <class_aws_1_1_s_q_s_1_1_model_1_1_list_queues_request>` object.
 
@@ -76,7 +76,7 @@ See the :sdk-examples-cpp:`complete example <sqs/list_queues.cpp>`.
 Get the Queue's URL
 ===================
 
-To get the URL for an existing |SQS| queue, call the |sqsclient| class :methodname:`GetQueueUrl`
+To get the URL for an existing |SQS| queue, call the |sqsclient| class :functionname:`GetQueueUrl`
 member function.
 
 **Includes**
@@ -98,7 +98,7 @@ See the :sdk-examples-cpp:`complete example <sqs/get_queue_url.cpp>`.
 Delete a Queue
 ==============
 
-Provide the :ref:`URL <sqs-get-queue-url>` to the |sqsclient| class :methodname:`DeleteQueue` member
+Provide the :ref:`URL <sqs-get-queue-url>` to the |sqsclient| class :functionname:`DeleteQueue` member
 function.
 
 **Includes**

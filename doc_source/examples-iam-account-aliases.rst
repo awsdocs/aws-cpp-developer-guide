@@ -26,7 +26,7 @@ instead of your AWS account ID, you can create an alias for your AWS account.
 Creating an Account Alias
 =========================
 
-To create an account alias, call the |iamclient|'s :methodname:`CreateAccountAlias` method with a
+To create an account alias, call the |iamclient|'s :functionname:`CreateAccountAlias` function with a
 :aws-cpp-class:`CreateAccountAliasRequest
 <aws_1_1_i_a_m_1_1_model_1_1_create_account_alias_request>` object that contains the alias name.
 
@@ -47,14 +47,14 @@ See the :sdk-examples-cpp:`complete example <iam/create_account_alias.cpp>`.
 Listing Account Aliases
 =======================
 
-To list your account's alias, if any, call the |iamclient|'s :methodname:`ListAccountAliases`
-method. It takes a :aws-cpp-class:`ListAccountAliasesRequest
+To list your account's alias, if any, call the |iamclient|'s :functionname:`ListAccountAliases`
+function. It takes a :aws-cpp-class:`ListAccountAliasesRequest
 <aws_1_1_i_a_m_1_1_model_1_1_list_account_aliases_request>` object.
 
 .. note:: The returned :aws-cpp-class:`ListAccountAliasesResult
    <aws_1_1_i_a_m_1_1_model_1_1_list_account_aliases_result>` supports the same
-   :methodname:`GetIsTruncated` and :methodname:`GetMarker` methods as other |sdk-cpp| *list*
-   methods, but an AWS account can have only *one* account alias.
+   :functionname:`GetIsTruncated` and :functionname:`GetMarker` functions as other |sdk-cpp| *list*
+   functions, but an AWS account can have only *one* account alias.
 
 **Includes:**
 
@@ -73,8 +73,8 @@ see the :sdk-examples-cpp:`complete example <iam/list_account_aliases.cpp>`.
 Deleting an account alias
 =========================
 
-To delete your account's alias, call the |iamclient|'s :methodname:`DeleteAccountAlias` method. When
-deleting an account alias, you must supply its name using a
+To delete your account's alias, call the |iamclient|'s :functionname:`DeleteAccountAlias` function.
+When deleting an account alias, you must supply its name using a
 :aws-cpp-class:`DeleteAccountAliasRequest
 <aws_1_1_i_a_m_1_1_model_1_1_delete_account_alias_request>` object.
 

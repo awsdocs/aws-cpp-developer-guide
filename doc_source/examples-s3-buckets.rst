@@ -26,7 +26,7 @@ information about buckets and their configuration, see :s3-dg:`Working with Amaz
 Create a Bucket
 ===============
 
-Use the |s3client| object :methodname:`CreateBucket` method, passing it a
+Use the |s3client| object :functionname:`CreateBucket` method, passing it a
 :classname:`CreateBucketRequest` with the bucket's name.
 
 **Includes**
@@ -48,11 +48,11 @@ See the :sdk-examples-cpp:`complete example <s3/create_bucket.cpp>`.
 List Buckets
 ============
 
-Use the |s3client| object :methodname:`ListBucket` method. If successful, the method returns a
+Use the |s3client| object :functionname:`ListBucket` method. If successful, the method returns a
 :classname:`ListBucketOutcome` object, which contains a :classname:`ListBucketResult`
 object.
 
-Use the :classname:`ListBucketResult` object :methodname:`GetBuckets` method to get a list of
+Use the :classname:`ListBucketResult` object :functionname:`GetBuckets` method to get a list of
 :classname:`Bucket` objects that contain information about each |S3| bucket in your account.
 
 **Includes**
@@ -74,7 +74,7 @@ See the :sdk-examples-cpp:`complete example <s3/list_buckets.cpp>`.
 Delete a Bucket
 ===============
 
-Use the |s3client| object :methodname:`DeleteBucket` method, passing it a
+Use the |s3client| object :functionname:`DeleteBucket` method, passing it a
 :classname:`DeleteBucketRequest` object that is set with the name of the bucket to delete. *The
 bucket must be empty or an error will result*.
 
