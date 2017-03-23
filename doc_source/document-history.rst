@@ -19,6 +19,7 @@ history.
 
 March 23, 2017
    Added new topics to the :doc:`examples-iam` section:
+
    * :doc:`examples-iam-access-keys`
    * :doc:`examples-iam-account-aliases`
    * :doc:`examples-iam-policies`
@@ -26,6 +27,7 @@ March 23, 2017
 
 March 10, 2017
    Added new topics to :doc:`examples-sqs`:
+
    * :doc:`examples-sqs-dead-letter-queues`
    * :doc:`examples-sqs-long-polling`
    * :doc:`examples-sqs-visibility-timeout`
