@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-#########################
-Working with AWS Services
-#########################
+####################
+Programming Examples
+####################
 
 This section provides guidance and tips for working with particular AWS services.
 
@@ -18,10 +18,10 @@ This section provides guidance and tips for working with particular AWS services
     :maxdepth: 1
     :titlesonly:
 
+    examples-ec2
     examples-iam
     examples-s3
     examples-sqs
 
 .. TODO
-   examples-ec2
    examples-cloudwatch

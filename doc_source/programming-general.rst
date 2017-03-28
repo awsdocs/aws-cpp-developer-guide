@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-########################
-Programming with the SDK
-########################
+###################
+Using the |sdk-cpp|
+###################
 
 This section provides information about general use of the |sdk-cpp|, beyond that covered in
 :doc:`getting-started`.

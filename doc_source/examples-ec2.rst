@@ -19,7 +19,10 @@ This section provides examples of programming |ec2|_ using the |sdk-cpp|_.
 .. toctree::
    :titlesonly:
    :maxdepth: 1
-   :glob:
 
-   examples-ec2-*
+   examples-ec2-instances
+   examples-ec2-elastic-ip
+   examples-ec2-regions-zones
+   examples-ec2-key-pairs
+   examples-ec2-security-groups
 
