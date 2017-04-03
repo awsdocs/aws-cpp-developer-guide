@@ -19,6 +19,8 @@
 .. _maven: https://maven.apache.org/
 .. _nuget: https://www.nuget.org/
 
+.. |cwclient| replace:: :aws-cpp-class:`CloudWatchClient <aws_1_1_cloud_watch_1_1_cloud_watch_client>`
+.. |cweclient| replace:: :aws-cpp-class:`CloudWatchEventsClient <aws_1_1_cloud_watch_events_1_1_cloud_watch_events_client>`
 .. |ec2client| replace:: :aws-cpp-class:`EC2Client <aws_1_1_e_c2_1_1_e_c2_client>`
 .. |iamclient| replace:: :aws-cpp-class:`IAMClient <aws_1_1_i_a_m_1_1_i_a_m_client>`
 .. |s3client| replace:: :aws-cpp-class:`S3Client <aws_1_1_s3_1_1_s3_client>`

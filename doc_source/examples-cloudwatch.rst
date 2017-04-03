@@ -8,19 +8,29 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-
 #############
 |CW| Examples
 #############
 
-This section provides examples of programming |CW|_ using the |sdk-cpp|_.
+.. meta::
+   :description: Programming Amazon Cloudwatch using the AWS SDK for C++
+   :keywords: AWS SDK for C++ code examples, Amazon Cloudwatch
+
+This section provides examples of programming |cw|_ using the |sdk-cpp|_.
+
+.. include:: common/desc-cloudwatch.txt
+
+For more information about |cw|, see the |cw-ug|_.
 
 .. include:: includes/complete-examples-note.txt
 
 .. toctree::
    :titlesonly:
    :maxdepth: 1
-   :glob:
 
-   examples-cw-*
+   examples-cloudwatch-get-metrics
+   examples-cloudwatch-publish-custom-metrics
+   examples-cloudwatch-create-alarms
+   examples-cloudwatch-use-alarm-actions
+   examples-cloudwatch-send-events
 
