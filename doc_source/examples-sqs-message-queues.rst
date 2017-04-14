@@ -24,6 +24,7 @@ differences between these types, see the |sqs-dg|_.
 These C++ examples show you how to use the |sdk-cpp| to create, list, delete, and get the URL of an |SQS|
 queue.
 
+.. include:: includes/examples-note.txt
 
 .. _sqs-create-queue:
 

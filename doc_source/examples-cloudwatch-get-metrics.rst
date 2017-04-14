@@ -47,6 +47,8 @@ function.  The results may be *paged*. To retrieve the next batch of results, ca
 :classname:`ListMetricsResult` object's :functionname:`GetNextToken` function, and pass the modified
 request object back to another call to :functionname:`ListMetrics`.
 
+See the :sdk-examples-cpp:`complete example <cloudwatch/list_metrics.cpp>`.
+
 More Information
 ================
 

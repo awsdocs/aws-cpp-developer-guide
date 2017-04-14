@@ -44,6 +44,7 @@ alarms whose actions you want to enable.
    :lines: 24-63
    :dedent: 4
 
+See the :sdk-examples-cpp:`complete example <cloudwatch/enable_alarm_actions.cpp>`.
 
 Disable Alarm Actions
 =====================
@@ -63,6 +64,8 @@ alarms whose actions you want to disable.
 .. literalinclude:: example_code/cloudwatch/disable_alarm_actions.cpp
    :lines: 35-48
    :dedent: 8
+
+See the :sdk-examples-cpp:`complete example <cloudwatch/disable_alarm_actions.cpp>`.
 
 More Information
 ================

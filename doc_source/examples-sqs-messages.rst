@@ -21,6 +21,7 @@ Messages are always delivered using an :doc:`SQS queue <examples-sqs-message-que
 examples show you how to use the |sdk-cpp| to send, receive, and delete |SQS| messages from SQS
 queues.
 
+.. include:: includes/examples-note.txt
 
 .. _sqs-message-send:
 

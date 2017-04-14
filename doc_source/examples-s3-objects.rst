@@ -17,9 +17,6 @@ An |S3| object represents a *file*, which is a collection of data. Every object 
 
 .. include:: includes/examples-note.txt
 
-.. contents::
-    :local:
-
 .. _upload-object:
 
 Upload an Object

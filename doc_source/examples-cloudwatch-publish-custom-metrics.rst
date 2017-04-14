@@ -47,6 +47,8 @@ information about the data point itself in a :aws-cpp-class:`MetricDatum
    :lines: 36-58
    :dedent: 8
 
+See the :sdk-examples-cpp:`complete example <cloudwatch/put_metric_data.cpp>`.
+
 More Information
 ================
 

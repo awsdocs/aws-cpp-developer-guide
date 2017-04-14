@@ -21,9 +21,11 @@ receipt. A message that was received, but not deleted, will be available in subs
 after a given *visibility timeout* to help prevent the message from being received more than once
 before it can be processed and deleted.
 
-.. note:: When using :sqs-dg:`standard queues <standard-queues>`, visibility timeout isn't a
-   guarantee against receiving a message twice. If you are using a standard queue, be sure that your
-   code can handle the case where the same message has been delivered more than once.
+When using :sqs-dg:`standard queues <standard-queues>`, visibility timeout isn't a guarantee against
+receiving a message twice. If you are using a standard queue, be sure that your code can handle the
+case where the same message has been delivered more than once.
+
+.. include:: includes/examples-note.txt
 
 .. _sqs-visibility-timeout-receipt:
 

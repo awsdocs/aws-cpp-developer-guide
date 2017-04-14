@@ -12,45 +12,89 @@
 Utility Modules
 ###############
 
-The |sdk-cpp| provides you with several utility modules to ease the complexity of developing AWS
-applications in C++.
+The |sdk-cpp| includes many :aws-cpp-namespace:`utility modules <aws_1_1_utils>` to reduce the
+complexity of developing AWS applications in C++.
+
 
 HTTP Stack
 ==========
 
-Headers: ``/aws/core/http/``
-
-The HTTP client provides connection pooling, is thread-safe, and can be reused as you need.  For
+An HTTP stack that provides connection pooling, is thread-safe, and can be reused as you need. For
 more information, see :doc:`client-config`.
+
+.. list-table::
+   :widths: 1 2
+   :stub-columns: 1
+
+   * - Headers
+     - :sdk-source:`/aws/core/http/ <aws-cpp-sdk-core/include/aws/core/http>`
+   * - API Documentation
+     - :aws-cpp-namespace:`Aws::Http <aws_1_1_http>`
+
 
 String Utils
 ============
 
-Header: ``/aws/core/utils/StringUtils.h``
+Core string functions, such as ``trim``, ``lowercase``, and numeric conversions.
 
-This header file provides core string functions, such as ``trim``, ``lowercase``, and numeric
-conversions.
+.. list-table::
+   :widths: 1 2
+   :stub-columns: 1
+
+   * - Header
+     - :sdk-source:`aws/core/utils/StringUtils.h
+       <aws-cpp-sdk-core/include/aws/core/utils/StringUtils.h>`
+   * - API Documentation
+     - :aws-cpp-class:`Aws::Utils::StringUtils <aws_1_1_utils_1_1_string_utils>`
+
 
 Hashing Utils
 =============
 
-Header: ``/aws/core/utils/HashingUtils.h``
+Hashing functions such as ``SHA256``, ``MD5``, ``Base64``, and ``SHA256_HMAC``.
 
-This header file provides hashing functions such as ``SHA256``, ``MD5``, ``Base64``, and ``SHA256_HMAC``.
+.. list-table::
+   :widths: 1 2
+   :stub-columns: 1
+
+   * - Header
+     - :sdk-source:`/aws/core/utils/HashingUtils.h
+       <aws-cpp-sdk-core/include/aws/core/utils/HashingUtils.h>`
+   * - API Documentation
+     - :aws-cpp-class:`Aws::Utils::HashingUtils <aws_1_1_utils_1_1_hashing_utils>`
+
 
 JSON Parser
 ===========
 
-Header: ``/aws/core/utils/json/JsonSerializer.h``
+A fully functioning yet lightweight JSON parser (a thin wrapper around *JsonCpp*).
 
-This header file provides a fully functioning yet lightweight JSON parser (thin wrapper around
-*JsonCpp*).
+.. list-table::
+   :widths: 1 2
+   :stub-columns: 1
+
+   * - Header
+     - :sdk-source:`/aws/core/utils/json/JsonSerializer.h
+       <aws-cpp-sdk-core/include/aws/core/utils/json/JsonSerializer.h>`
+   * - API Documentation
+     - :aws-cpp-class:`Aws::Utils::Json::JsonValue <aws_1_1_utils_1_1_json_1_1_json_value>`
+
 
 XML Parser
 ==========
 
-Header: ``/aws/core/utils/xml/XmlSerializer.h``
+A lightweight XML parser (a thin wrapper around *tinyxml2*). The `RAII pattern`__ has been
+added to the interface.
 
-This header file provides a lightweight XML parser (thin wrapper around *tinyxml2*). RAII pattern
-has been added to the interface.
+.. __: http://en.cppreference.com/w/cpp/language/raii
+
+.. list-table::
+   :widths: 1 2
+   :stub-columns: 1
+
+   * - Header
+     - :sdk-source:`/aws/core/utils/xml/XmlSerializer.h
+       <aws-cpp-sdk-core/include/aws/core/utils/xml/XmlSerializer.h>`
+   * - API Documentation
+     - :aws-cpp-namespace:`Aws::Utils::Xml <aws_1_1_utils_1_1_xml>`
 

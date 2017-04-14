@@ -38,19 +38,20 @@ Additional Requirements for Linux Systems
 -----------------------------------------
 
 To compile on Linux, you must have the header files (``-dev`` packages) for *libcurl*, *libopenssl*,
-*libuuid*, and *zlib*. Typically, you'll find the packages in your system's package manager.
+*libuuid*, *zlib*, and optionally, *libpulse* for Amazon Polly support. Typically, you'll find the
+packages in your system's package manager.
 
 .. topic:: To install these packages on *Debian/Ubuntu-based systems*
 
    ::
 
-    sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev
+      sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev libpulse-dev
 
 .. topic:: To install these packages on *Redhat/Fedora-based systems*
 
    ::
 
-    sudo dnf install libcurl-devel openssl-devel libuuid-devel
+      sudo dnf install libcurl-devel openssl-devel libuuid-devel pulseaudio-devel
 
 
 .. _setup-with-nuget:

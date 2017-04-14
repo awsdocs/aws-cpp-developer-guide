@@ -17,7 +17,14 @@ history.
 
 * **Latest documentation update:** |today|
 
-Apr 03, 2017
+April 13, 2017
+   Added new examples: :doc:`examples-s3-bucket-policies` and
+   :doc:`examples-s3-website-configuration`, as well as refreshing the content in
+   :doc:`examples-s3-buckets` and :doc:`examples-s3-objects`.
+
+   Made the :doc:`utility-modules` topic more useful!
+
+April 03, 2017
    Added new topics to the :doc:`examples-cloudwatch` section:
    :doc:`examples-cloudwatch-get-metrics`, :doc:`examples-cloudwatch-publish-custom-metrics`
    :doc:`examples-cloudwatch-create-alarms`, :doc:`examples-cloudwatch-use-alarm-actions` and
@@ -38,11 +45,11 @@ March 10, 2017
    doc:`examples-sqs-long-polling`, and :doc:`examples-sqs-visibility-timeout`
 
 February 27, 2017
-   * A new topic in the **Getting Started** section, :doc:`basic-use`, has been added to show how to
-     properly initialize and shutdown the SDK.
+   A new topic in the **Getting Started** section, :doc:`basic-use`, has been added to show how to
+   properly initialize and shutdown the SDK.
 
-   * In addition to the existing :doc:`examples-s3` examples, new code examples have been added for
-     :doc:`examples-sqs` and :doc:`examples-iam`.
+   In addition to the existing :doc:`examples-s3` examples, new code examples have been added for
+   :doc:`examples-sqs` and :doc:`examples-iam`.
 
 February 02, 2016
     Documentation first created.

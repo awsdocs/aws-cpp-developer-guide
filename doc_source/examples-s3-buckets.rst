@@ -37,8 +37,8 @@ Use the |s3client| object :functionname:`CreateBucket` method, passing it a
 **Code**
 
 .. literalinclude:: example_code/s3/create_bucket.cpp
-   :lines: 37-54
-   :dedent: 4
+   :lines: 41-54
+   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/create_bucket.cpp>`.
 
@@ -63,8 +63,8 @@ Use the :classname:`ListBucketResult` object :functionname:`GetBuckets` method t
 **Code**
 
 .. literalinclude:: example_code/s3/list_buckets.cpp
-   :lines: 26-46
-   :dedent: 4
+   :lines: 26-42
+   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/list_buckets.cpp>`.
 
@@ -86,8 +86,8 @@ bucket must be empty or an error will result*.
 **Code**
 
 .. literalinclude:: example_code/s3/delete_bucket.cpp
-   :lines: 39-56
-   :dedent: 4
+   :lines: 48-63
+   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_bucket.cpp>`.
 

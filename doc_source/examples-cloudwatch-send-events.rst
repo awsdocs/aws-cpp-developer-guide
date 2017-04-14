@@ -87,6 +87,7 @@ containing the rule to update and a list of targets to add to the rule.
    :lines: 40-59
    :dedent: 8
 
+See the :sdk-examples-cpp:`complete example <cloudwatch/put_targets.cpp>`.
 
 More Information
 ================

@@ -26,6 +26,7 @@ the queue's attributes.
 .. important:: A dead letter queue must be the same type of queue (FIFO or standard) that the source
    queue is. It must also be created using the same AWS account and region as the source queue.
 
+.. include:: includes/examples-note.txt
 
 .. _sqs-dead-letter-queue-create-redrive-policy:
 
@@ -72,6 +73,8 @@ To finish setting up your dead letter queue, call the |sqsclient| class'
 .. literalinclude:: example_code/sqs/dead_letter_queue.cpp
    :lines: 57-75
    :dedent: 8
+
+See the :sdk-examples-cpp:`complete example <sqs/dead_letter_queue.cpp>`.
 
 More Info
 =========

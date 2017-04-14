@@ -37,6 +37,8 @@ function with a :aws-cpp-class:`PutMetricAlarmRequest
    :lines: 35-63
    :dedent: 8
 
+See the :sdk-examples-cpp:`complete example <cloudwatch/put_metric_alarm.cpp>`.
+
 
 List Alarms
 ===========
@@ -70,6 +72,8 @@ call to :functionname:`DescribeAlarms`.
    :functionname:`DescribeAlarmsForMetric` function. Its use is similar to
    :functionname:`DescribeAlarms`.
 
+See the :sdk-examples-cpp:`complete example <cloudwatch/describe_alarms.cpp>`.
+
 
 Delete Alarms
 =============
@@ -88,6 +92,8 @@ containing one or more names of alarms that you want to delete.
 .. literalinclude:: example_code/cloudwatch/delete_alarm.cpp
    :lines: 34-45
    :dedent: 8
+
+See the :sdk-examples-cpp:`complete example <cloudwatch/delete_alarm.cpp>`.
 
 
 More Information

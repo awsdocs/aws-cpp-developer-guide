@@ -21,9 +21,10 @@ random distribution—to determine whether any messages are available for inclus
 
 Long polling helps reduce your cost of using |SQS| by reducing the number of empty responses when
 there are no messages available to return in reply to a ReceiveMessage request sent to an |SQS|
-queue and eliminating false empty responses.
+queue and eliminating false empty responses. You can set a long polling frequency from *1–20
+seconds*.
 
-.. note:: You can set a long polling frequency from *1–20 seconds*.
+.. include:: includes/examples-note.txt
 
 .. _sqs-long-polling-create-queue:
 
