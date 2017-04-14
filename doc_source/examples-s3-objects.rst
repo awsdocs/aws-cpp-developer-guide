@@ -33,8 +33,8 @@ name, and file to upload. *The bucket must exist or an error will result*.
 **Code**
 
 .. literalinclude:: example_code/s3/put_object.cpp
-   :lines: 43-65
-   :dedent: 4
+   :lines: 44-63
+   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/put_object.cpp>`.
 
@@ -58,8 +58,8 @@ use to get a list of objects in the form of :classname:`Object` instances.
 **Code**
 
 .. literalinclude:: example_code/s3/list_objects.cpp
-   :lines: 38-60
-   :dedent: 4
+   :lines: 39-57
+   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/list_objects.cpp>`.
 
@@ -86,8 +86,8 @@ name as the object's key).
 **Code**
 
 .. literalinclude:: example_code/s3/get_object.cpp
-   :lines: 41-61
-   :dedent: 4
+   :lines: 42-58
+   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/get_object.cpp>`.
 
@@ -109,8 +109,8 @@ Use the |s3client| object's :functionname:`DeleteObject` function, passing it a
 **Code**
 
 .. literalinclude:: example_code/s3/delete_object.cpp
-   :lines: 43-60
-   :dedent: 4
+   :lines: 44-57
+   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_object.cpp>`.
 
