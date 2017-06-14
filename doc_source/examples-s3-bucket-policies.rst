@@ -69,7 +69,7 @@ function, passing it the name of the bucket in a :aws-cpp-class:`GetBucketPolicy
 
 .. literalinclude:: example_code/s3/get_bucket_policy.cpp
    :dedent: 8
-   :lines: 44-60
+   :lines: 44-65
 
 See the :sdk-examples-cpp:`complete example <s3/get_bucket_policy.cpp>`.
 
@@ -108,4 +108,3 @@ More Info
 * :s3-api:`DeleteBucketPolicy` in the |S3-api|
 * :s3-dg:`Access Policy Language Overview <access-policy-language-overview>` in the |S3-dg|
 * :s3-dg:`Bucket Policy Examples <example-bucket-policies>` in the |S3-dg|
-
