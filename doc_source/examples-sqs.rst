@@ -8,11 +8,18 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-##############
-|SQS| Examples
-##############
+#######################################
+|SQS| Code Examples Using the |sdk-cpp|
+#######################################
 
-This section provides examples of programming |SQS|_ using the |sdk-cpp|_.
+.. meta::
+    :description:
+        AWS SDK for C++ code examples for Amazon SQS.
+    :keywords:
+
+|SQSlong| (|SQS|) is a fully managed message queuing service that makes it easy to decouple and scale microservices,
+distributed systems, and serverless applications. You can use the following examples to program
+|SQS|_ using the |sdk-cpp|_.
 
 .. include:: includes/complete-examples-note.txt
 

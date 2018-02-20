@@ -43,7 +43,7 @@ You can retrieve a server certificate by calling the |iamclient|'s
 **Code:**
 
 .. literalinclude:: example_code/iam/get_server_cert.cpp
-   :lines: 35-50
+   :lines: 36-54
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/get_server_cert.cpp>`.
@@ -71,12 +71,12 @@ call :functionname:`listServerCertificates` again to get the next batch of resul
 **Includes:**
 
 .. literalinclude:: example_code/iam/list_server_certs.cpp
-   :lines: 14-18
+   :lines: 14-19
 
 **Code:**
 
 .. literalinclude:: example_code/iam/list_server_certs.cpp
-   :lines: 31-71
+   :lines: 31-78
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/list_server_certs.cpp>`.
@@ -99,7 +99,7 @@ certificate's current name and either a new name or new path to use.
 **Code:**
 
 .. literalinclude:: example_code/iam/update_server_cert.cpp
-   :lines: 37-50
+   :lines: 38-55
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/update_server_cert.cpp>`.
@@ -121,7 +121,7 @@ name.
 **Code:**
 
 .. literalinclude:: example_code/iam/delete_server_cert.cpp
-   :lines: 34-45
+   :lines: 35-49
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/delete_server_cert.cpp>`.

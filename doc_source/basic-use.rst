@@ -8,11 +8,16 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-#############
-Using the SDK
-#############
+###################
+Using the |sdk-cpp|
+###################
 
-To use the SDK, you should properly initialize it with :code:`Aws::InitAPI` before creating
+.. meta::
+    :description:
+        Initialize and set options to use the AWS SDK for C++.
+    :keywords:
+
+To use the |sdk-cpp|, you should properly initialize it with :code:`Aws::InitAPI` before creating
 service clients and using them. You should then shut down the SDK with
 :code:`Aws::ShutdownAPI`.
 
@@ -62,7 +67,7 @@ A few examples:
 
   .. code-block:: cpp
 
-     Aws::SDKOptions options
+     Aws::SDKOptions options;
      options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Info;
      Aws::InitAPI(options);
      {
@@ -75,7 +80,7 @@ A few examples:
   .. code-block:: cpp
 
      MyMemoryManager memoryManager;
-     Aws::SDKOptions options
+     Aws::SDKOptions options;
      options.memoryManagementOptions.memoryManager = &memoryManager;
      Aws::InitAPI(options);
      {
@@ -87,7 +92,7 @@ A few examples:
 
   .. code-block:: cpp
 
-     Aws::SDKOptions options
+     Aws::SDKOptions options;
      options.httpOptions.httpClientFactory_create_fn = [](){
              return Aws::MakeShared<MyCustomHttpClientFactory>(
                  "ALLOC_TAG", arg1);

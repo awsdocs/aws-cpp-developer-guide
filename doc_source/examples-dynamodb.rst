@@ -8,16 +8,17 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-#######################################
-|IAM| Code Examples Using the |sdk-cpp|
-#######################################
+######################################
+|DDBlong| Examples Using the |sdk-cpp|
+######################################
 
 .. meta::
-   :description: How to add access keys, users, account aliases, policies and server certificates for Amazon 
-                 Identity & Access Management‎ using the AWS SDK for C++.
+    :description:
+        AWS SDK for C++ code examples for Amazon DynamoDB.
+    :keywords:
 
-|IAMlong| (|IAM|) is a web service for securely controlling access to AWS services. You can use the following
-examples to program |IAM|_ using the |sdk-cpp|_.
+|DDBlong| is a fully managed NoSQL database service that provides fast and predictable performance with
+seamless scalability. The following examples show how you can program |DDB|_ using the |sdk-cpp|_.
 
 .. include:: includes/complete-examples-note.txt
 
@@ -25,9 +26,5 @@ examples to program |IAM|_ using the |sdk-cpp|_.
    :titlesonly:
    :maxdepth: 1
 
-   examples-iam-access-keys
-   examples-iam-users
-   examples-iam-account-aliases
-   examples-iam-policies
-   examples-iam-server-certificates
-
+   examples-dynamodb-tables
+   examples-dynamodb-items

@@ -36,7 +36,7 @@ providing it with a :aws-cpp-class:`RunInstancesRequest
 **Code**
 
 .. literalinclude:: example_code/ec2/create_instance.cpp
-   :lines: 23-37
+   :lines: 23-47
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/create_instance.cpp>`.
@@ -57,7 +57,7 @@ it with a :aws-cpp-class:`StartInstancesRequest
 **Code**
 
 .. literalinclude:: example_code/ec2/start_stop_instance.cpp
-   :lines: 24-48
+   :lines: 24-52
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/start_stop_instance.cpp>`.
@@ -78,7 +78,7 @@ containing the ID of the instance to stop.
 **Code**
 
 .. literalinclude:: example_code/ec2/start_stop_instance.cpp
-   :lines: 53-76
+   :lines: 57-84
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/start_stop_instance.cpp>`.
@@ -99,7 +99,7 @@ providing it with a :aws-cpp-class:`RebootInstancesRequest
 **Code**
 
 .. literalinclude:: example_code/ec2/reboot_instance.cpp
-   :lines: 21-45
+   :lines: 21-49
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/reboot_instance.cpp>`.
@@ -122,12 +122,12 @@ then call :functionname:`getInstances` on each returned Reservation object.
 **Includes**
 
 .. literalinclude:: example_code/ec2/describe_instances.cpp
-   :lines: 14-18
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/ec2/describe_instances.cpp
-   :lines: 29-93
+   :lines: 29-106
    :dedent: 8
 
 Results are paged; you can get further results by passing the value returned from the result
@@ -157,7 +157,7 @@ pass it to the |ec2client|'s :functionname:`MonitorInstances` function.
 **Code**
 
 .. literalinclude:: example_code/ec2/monitor_instance.cpp
-   :lines: 24-48
+   :lines: 24-52
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/monitor_instance.cpp>`.
@@ -178,7 +178,7 @@ monitoring, and pass it to the |ec2client|'s :functionname:`UnmonitorInstances` 
 **Code**
 
 .. literalinclude:: example_code/ec2/monitor_instance.cpp
-   :lines: 53-77
+   :lines: 57-85
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/monitor_instance.cpp>`.

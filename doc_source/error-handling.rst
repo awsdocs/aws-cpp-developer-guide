@@ -12,6 +12,11 @@
 Error Handling
 ##############
 
+.. meta::
+    :description:
+        Using the outcome object to manage AWS SDK for C++ errors.
+    :keywords:
+
 The |sdk-cpp| does not use exceptions; however, you can use exceptions in your code. Every service
 client returns an outcome object that includes the result and an error code.
 

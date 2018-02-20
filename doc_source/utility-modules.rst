@@ -12,9 +12,14 @@
 Utility Modules
 ###############
 
+.. meta::
+    :description:
+        There are many C++ utility modules in the AWS SDK for C++ including string utils, hashing utils, 
+        a JSON parser, and an XML parser.
+    :keywords:
+
 The |sdk-cpp| includes many :aws-cpp-namespace:`utility modules <aws_1_1_utils>` to reduce the
 complexity of developing AWS applications in C++.
-
 
 HTTP Stack
 ==========

@@ -8,9 +8,9 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-####################################
-Using Regions and Availability Zones
-####################################
+##############################################
+Using Regions and Availability Zones for |EC2|
+##############################################
 
 .. meta::
    :description: How to list EC2 regions and availability zones using the AWS SDK for C++.
@@ -34,15 +34,15 @@ You will receieve a :aws-cpp-class:`DescribeRegionsResponse
 **Includes**
 
 .. literalinclude:: example_code/ec2/describe_regions_and_zones.cpp
-   :lines: 14-17, 20
+   :lines: 14-17, 20-21
 
 **Code**
 
 .. literalinclude:: example_code/ec2/describe_regions_and_zones.cpp
-   :lines: 31-48
+   :lines: 31-52
    :dedent: 8
 
-See the :sdk-examples-cpp:`complete example <describe_regions_and_zones.cpp>`.
+See the :sdk-examples-cpp:`complete example <ec2/describe_regions_and_zones.cpp>`.
 
 
 Describing Availability Zones
@@ -61,15 +61,15 @@ You will receive a :aws-cpp-class:`DescribeAvailabilityZonesResponse
 **Includes**
 
 .. literalinclude:: example_code/ec2/describe_regions_and_zones.cpp
-   :lines: 14-15, 18-20
+   :lines: 14-15, 18-21
 
 **Code**
 
 .. literalinclude:: example_code/ec2/describe_regions_and_zones.cpp
-   :lines: 31, 51-75
+   :lines: 31, 55-83
    :dedent: 8
 
-See the :sdk-examples-cpp:`complete example <describe_regions_and_zones.cpp>`.
+See the :sdk-examples-cpp:`complete example <ec2/describe_regions_and_zones.cpp>`.
 
 
 More Information

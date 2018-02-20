@@ -41,7 +41,7 @@ Setting an index document is *required*; all other parameters are optional.
 
 .. literalinclude:: example_code/s3/put_website_config.cpp
    :dedent: 8
-   :lines: 59-85
+   :lines: 60-89
 
 .. note:: Setting a website configuration does not modify the access permissions for your bucket.
    To make your files visible on the web, you will also need to set a *bucket policy* that allows
@@ -72,7 +72,7 @@ no website configuration for the bucket, then :code-cpp:`null` will be returned.
 
 .. literalinclude:: example_code/s3/get_website_config.cpp
    :dedent: 8
-   :lines: 46-66
+   :lines: 47-70
 
 See the :sdk-examples-cpp:`complete example <s3/get_website_config.cpp>`.
 
@@ -94,7 +94,7 @@ delete the configuration from.
 
 .. literalinclude:: example_code/s3/delete_website_config.cpp
    :dedent: 8
-   :lines: 46-61
+   :lines: 47-65
 
 See the :sdk-examples-cpp:`complete example <s3/delete_website_config.cpp>`.
 

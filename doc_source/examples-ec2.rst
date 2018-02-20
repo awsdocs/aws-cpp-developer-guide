@@ -8,11 +8,18 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-##############
-|EC2| Examples
-##############
+##################################
+|EC2| Examples Using the |sdk-cpp|
+##################################
 
-This section provides examples of programming |ec2|_ using the |sdk-cpp|_.
+.. meta::
+    :description:
+        AWS SDK for C++ code examples for Amazon EC2.
+    :keywords:
+
+|EC2long| (|EC2|) is a web service that provides resizeable computing capacity |mdash| literally servers
+in Amazon's data centers |mdash| that you use to build and host your software systems. You can use the
+following examples to program |ec2|_ using the |sdk-cpp|_.
 
 .. include:: includes/complete-examples-note.txt
 

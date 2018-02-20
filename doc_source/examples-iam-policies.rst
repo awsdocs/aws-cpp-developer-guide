@@ -33,7 +33,7 @@ To create a new policy, provide the policy's name and a JSON-formatted policy do
 **Code:**
 
 .. literalinclude:: example_code/iam/create_policy.cpp
-   :lines: 71-84
+   :lines: 72-88
    :dedent: 8
 
 |iam| policy documents are JSON strings with a :iam-ug:`well-documented syntax
@@ -61,7 +61,7 @@ policy's ARN within a :aws-cpp-class:`GetPolicyRequest
 **Code:**
 
 .. literalinclude:: example_code/iam/get_policy.cpp
-   :lines: 35-51
+   :lines: 36-55
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/get_policy.cpp>`.
@@ -81,7 +81,7 @@ function.
 **Code:**
 
 .. literalinclude:: example_code/iam/delete_policy.cpp
-   :lines: 37-48
+   :lines: 38-52
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/delete_policy.cpp>`.
@@ -97,12 +97,12 @@ You can attach a policy to an |IAM| :iam-ug:`role <id_roles>` by calling the |ia
 **Includes:**
 
 .. literalinclude:: example_code/iam/attach_role_policy.cpp
-   :lines: 14-19
+   :lines: 14-20
 
 **Code:**
 
 .. literalinclude:: example_code/iam/attach_role_policy.cpp
-   :lines: 24-65
+   :lines: 25-71
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/attach_role_policy.cpp>`.
@@ -127,12 +127,12 @@ to call :functionname:`ListAttachedRolePolicies` again to get the next batch of 
 **Includes:**
 
 .. literalinclude:: example_code/iam/list_policies.cpp
-   :lines: 14-18
+   :lines: 14-19
 
 **Code:**
 
 .. literalinclude:: example_code/iam/list_policies.cpp
-   :lines: 31-66
+   :lines: 31-74
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/list_policies.cpp>`.
@@ -153,7 +153,7 @@ providing it with the role name and policy ARN in a :aws-cpp-class:`DetachRolePo
 **Code:**
 
 .. literalinclude:: example_code/iam/detach_role_policy.cpp
-   :lines: 23, 58-71
+   :lines: 23, 64-75
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/detach_role_policy.cpp>`.

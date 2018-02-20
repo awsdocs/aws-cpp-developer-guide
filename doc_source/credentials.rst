@@ -12,6 +12,11 @@
 Providing AWS Credentials
 #########################
 
+.. meta::
+    :description:
+        Different ways to supply AWS credentials when using the AWS SDK for C++.
+    :keywords:
+
 To connect to any of the supported services with the |sdk-cpp|, you must provide AWS credentials.
 The AWS SDKs and CLIs use :emphasis:`provider chains` to look for AWS credentials in several
 different places, including system/user environment variables and local AWS configuration files.

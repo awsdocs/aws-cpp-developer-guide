@@ -37,12 +37,12 @@ containing the queue's :ref:`URL <sqs-get-queue-url>`, the message body, and an 
 **Includes**
 
 .. literalinclude:: example_code/sqs/send_message.cpp
-   :lines: 14-17
+   :lines: 14-18
 
 **Code**
 
 .. literalinclude:: example_code/sqs/send_message.cpp
-   :lines: 36-49
+   :lines: 38-54
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/send_message.cpp>`.
@@ -60,12 +60,12 @@ list of :aws-cpp-class:`Message <aws_1_1_s_q_s_1_1_model_1_1_message>` objects.
 **Includes**
 
 .. literalinclude:: example_code/sqs/receive_message.cpp
-   :lines: 14-17
+   :lines: 14-17, 19
 
 **Code**
 
 .. literalinclude:: example_code/sqs/receive_message.cpp
-   :lines: 26-53
+   :lines: 26-55
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/receive_message.cpp>`.
@@ -83,12 +83,12 @@ member function.
 **Includes**
 
 .. literalinclude:: example_code/sqs/receive_message.cpp
-   :lines: 18
+   :lines: 14-15, 18-19
 
 **Code**
 
 .. literalinclude:: example_code/sqs/receive_message.cpp
-   :lines: 55-67
+   :lines: 57-72
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/receive_message.cpp>`.

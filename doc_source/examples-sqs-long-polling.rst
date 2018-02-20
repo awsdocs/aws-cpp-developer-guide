@@ -39,12 +39,12 @@ attribute on the :aws-cpp-class:`CreateQueueRequest
 **Includes**
 
 .. literalinclude:: example_code/sqs/long_polling_on_create_queue.cpp
-   :lines: 14-17
+   :lines: 14-18
 
 **Code**
 
 .. literalinclude:: example_code/sqs/long_polling_on_create_queue.cpp
-   :lines: 37-52
+   :lines: 38-56
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_create_queue.cpp>`.
@@ -63,12 +63,12 @@ queue by setting ``ReceiveMessageWaitTimeSeconds`` on the :aws-cpp-class:`SetQue
 **Includes**
 
 .. literalinclude:: example_code/sqs/long_polling_on_existing_queue.cpp
-   :lines: 14-16
+   :lines: 14-17
 
 **Code**
 
 .. literalinclude:: example_code/sqs/long_polling_on_existing_queue.cpp
-   :lines: 36-52
+   :lines: 37-56
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_existing_queue.cpp>`.
@@ -90,12 +90,12 @@ you supply to the |sqsclient| class' ReceiveMessage member function.
 **Includes**
 
 .. literalinclude:: example_code/sqs/long_polling_on_message_receipt.cpp
-   :lines: 14-17
+   :lines: 14-17, 19
 
 **Code**
 
 .. literalinclude:: example_code/sqs/long_polling_on_message_receipt.cpp
-   :lines: 26-36
+   :lines: 26-42
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_message_receipt.cpp>`.

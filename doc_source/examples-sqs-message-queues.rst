@@ -38,12 +38,12 @@ describes the queue parameters.
 **Includes**
 
 .. literalinclude:: example_code/sqs/create_queue.cpp
-   :lines: 14-17
+   :lines: 14-18
 
 **Code**
 
 .. literalinclude:: example_code/sqs/create_queue.cpp
-   :lines: 34-45
+   :lines: 36-50
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/create_queue.cpp>`.
@@ -61,12 +61,12 @@ function, and pass it a :aws-cpp-class:`ListQueuesRequest
 **Includes**
 
 .. literalinclude:: example_code/sqs/list_queues.cpp
-   :lines: 14-17
+   :lines: 14-18
 
 **Code**
 
 .. literalinclude:: example_code/sqs/list_queues.cpp
-   :lines: 28-42
+   :lines: 28-46
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/list_queues.cpp>`.
@@ -83,12 +83,12 @@ member function.
 **Includes**
 
 .. literalinclude:: example_code/sqs/get_queue_url.cpp
-   :lines: 14-17
+   :lines: 14-18
 
 **Code**
 
 .. literalinclude:: example_code/sqs/get_queue_url.cpp
-   :lines: 34-46
+   :lines: 35-47
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/get_queue_url.cpp>`.
@@ -105,12 +105,12 @@ function.
 **Includes**
 
 .. literalinclude:: example_code/sqs/delete_queue.cpp
-   :lines: 14-17
+   :lines: 14-18
 
 **Code**
 
 .. literalinclude:: example_code/sqs/delete_queue.cpp
-   :lines: 35-51
+   :lines: 37-56
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/delete_queue.cpp>`.

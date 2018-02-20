@@ -12,6 +12,11 @@
 AWS Client Configuration
 ########################
 
+.. meta::
+    :description:
+        Configuring the AWS SDK for C++ with the ClientConfiguration structure.
+    :keywords:
+
 You can use the client configuration to control most functionality in the |sdk-cpp|.
 
 ``ClientConfiguration`` declaration:
@@ -26,11 +31,13 @@ You can use the client configuration to control most functionality in the |sdk-c
         Aws::Http::Scheme scheme;
         Aws::Region region;
         Aws::String authenticationRegion;
+        bool useDualStack;    
         unsigned maxConnections;
         long requestTimeoutMs;
         long connectTimeoutMs;
         std::shared_ptr<RetryStrategy> retryStrategy;
         Aws::String endpointOverride;
+        Aws::Http::Scheme proxyScheme;
         Aws::String proxyHost;
         unsigned proxyPort;
         Aws::String proxyUserName;
@@ -38,8 +45,11 @@ You can use the client configuration to control most functionality in the |sdk-c
         std::shared_ptr<Aws::Utils::Threading::Executor> executor;
         bool verifySSL;
         Aws::String caPath;
+        Aws::String caFile;
         std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter;
         std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
+        Aws::Http::TransferLibType httpLibOverride;
+        bool followRedirects;
     };
 
 Configuration Variables
@@ -59,10 +69,11 @@ region
     You must ensure that the service you want to use has an endpoint in the region you configure.
 
 authenticationRegion
-    Allows you to specify an arbitrary region to use for signing. If you don't set
-    ``authenticationRegion``, we fall back to ``region``. If you do set ``authenticationRegion``,
-    you are also responsible for setting endpoint override to connect to the endpoint that
-    corresponds with your custom region.
+   If you specify an authentication region, you must also specify an endpoint override.
+  
+useDualStack
+    Use dual stack endpoint in the endpoint calculation. You must ensure that the service you
+    want to use supports ipv6 in the region you select.
 
 maxConnections
     The maximum number of allowed connections to a single server for your HTTP communications. The
@@ -79,9 +90,10 @@ retryStrategy
     ``RetryStrategy`` and passing an instance.
 
 endpointOverride
-    Do not alter the endpoint.
+    Use this to override the http endpoint used to talk to a service. If you set this, you
+    must also set authenticationRegion.
 
-proxyHost, proxyPort, proxyUserName, and proxyPassword
+proxyScheme, proxyHost, proxyPort, proxyUserName, and proxyPassword
     These settings allow you to configure a proxy for all communication with AWS. Examples of when
     this functionality might be useful include debugging in conjunction with the Burp suite, or
     using a proxy to connect to the Internet.
@@ -94,7 +106,7 @@ verifySSL
     Specifies whether to enable SSL certificate verification. If necessary, you can disable SSL
     certificate verification by setting ``verifySSL`` to ``false``.
 
-caPath
+caPath, caFile
     Enables you to tell the HTTP client where to find your SSL certificate trust store (for example,
     a directory prepared with OpenSSL's ``c_rehash`` utility). You shouldn't need to do this unless
     you are using symlinks in your environment. This has no effect on Windows or OS X.
@@ -104,3 +116,9 @@ writeRateLimiter and readRateLimiter
     open. You can use the default implementation with the rates you want, or you can create your own
     instance by implementing a subclass of ``RateLimiterInterface``.
 
+httpLibOverride
+    Override the http implementation the default factory returns.
+    The default HTTP client for Windows is WinHTTP. The default HTTP client for all other platforms is curl.
+
+followRedirects
+    If set to true the http stack will follow 300 redirect codes

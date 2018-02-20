@@ -12,9 +12,9 @@
     :description: Developer Guide for the AWS SDK for C++
     :keywords: C++, cpp, SDK, AWS
 
-############
-|sdk-cpp-dg|
-############
+###############################
+AWS SDK for C++ Developer Guide
+###############################
 
 Welcome to the |sdk-cpp-dg|.
 

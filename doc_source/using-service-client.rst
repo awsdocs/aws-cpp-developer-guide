@@ -12,6 +12,11 @@
 Using Service Clients
 #####################
 
+.. meta::
+    :description:
+        Using service clients like S3Client or IAMClient to connect to AWS with the AWS SDK for C++.
+    :keywords:
+
 AWS service client classes provide you with an interface to the AWS service that the class
 represents. Service clients follow the namespace convention :samp:`Aws::{Service}::{Service}Client`.
 

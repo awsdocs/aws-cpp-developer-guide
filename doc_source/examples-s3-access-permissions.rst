@@ -42,7 +42,7 @@ function.
 **Code**
 
 .. literalinclude:: example_code/s3/get_acl.cpp
-   :lines: 44-66
+   :lines: 46-72
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/get_acl.cpp>`.
@@ -64,7 +64,7 @@ the bucket name and list of grantees and permissions within an :aws-cpp-class:`A
 **Code**
 
 .. literalinclude:: example_code/s3/set_acl.cpp
-   :lines: 44-63
+   :lines: 44-66
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/set_acl.cpp>`.
@@ -90,7 +90,7 @@ function.
 **Code**
 
 .. literalinclude:: example_code/s3/get_acl.cpp
-   :lines: 75-98
+   :lines: 81-108
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/get_acl.cpp>`.
@@ -112,7 +112,7 @@ the object name and list of grantees and permissions within an :aws-cpp-class:`A
 **Code**
 
 .. literalinclude:: example_code/s3/set_acl.cpp
-   :lines: 44-63
+   :lines: 44-66
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/set_acl.cpp>`.

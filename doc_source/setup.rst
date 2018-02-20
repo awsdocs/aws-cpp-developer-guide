@@ -10,10 +10,17 @@
 
 .. highlight:: sh
 
-##################
-Setting Up the SDK
-##################
+##############################
+Setting Up the AWS SDK for C++
+##############################
 
+.. meta::
+    :description:
+        AWS SDK for C++ prequisites and requirements to get and set up the SDK.
+    :keywords:
+
+This section presents information about how to setup the AWS SDK for C++ on your development platform.
+    
 Prerequisites
 =============
 
@@ -37,8 +44,9 @@ To use the |sdk-cpp|, you need:
 Additional Requirements for Linux Systems
 -----------------------------------------
 
-To compile on Linux, you must have the header files (``-dev`` packages) for *libcurl*, *libopenssl*,
-*libuuid*, *zlib*, and optionally, *libpulse* for Amazon Polly support. Typically, you'll find the
+To compile on Linux, you must have the header files (``-dev`` packages) for :file:`libcurl`, :file:`libopenssl`,
+:file:`libuuid`, :file:`zlib`, and optionally, :file:`libpulse` for |POLlong| support. Typically, you'll
+find the
 packages in your system's package manager.
 
 .. topic:: To install these packages on *Debian/Ubuntu-based systems*
@@ -66,11 +74,11 @@ Visual C++. To use this procedure, you must have `NuGet <nuget_>`_ installed on 
 
    #. Open your project in Visual Studio.
 
-   #. In :guilabel:`Solution Explorer`, right-click your project name and choose :guilabel:`Manage
+   #. In :guilabel:`Solution Explorer`, right-click your project name, and then choose :guilabel:`Manage
       NuGet Packages`.
 
    #. Select the packages to use by searching for a particular service or library name. For example,
-      you could use a search term such as :userinput:`aws s3 native` or, because |sdk-cpp| libraries
+      you could use a search term such as :userinput:`aws s3 native`. Or, because |sdk-cpp| libraries
       are named consistently, use :samp:`AWSSDKCPP-{service name}` to add a library for a particular
       service to your project.
 
@@ -80,6 +88,33 @@ When you build your project, the correct binaries are automatically included for
 runtime/architecture configuration you use |mdash| you won't need to manage these dependencies
 yourself.
 
+.. _setup-with-vcpkg:
+
+Getting the SDK Using Vcpkg with Visual C++
+===========================================
+You can use vcpkg to manage dependencies for |sdk-cpp| projects that you develop with Microsoft
+Visual C++. To use this procedure, you must have `vcpkg <https://github.com/Microsoft/vcpkg>`_
+installed on your system.
+
+.. topic:: To use the SDK with vcpkg
+
+   #. Open a Windows command prompt and navigate to the vcpkg directory.
+
+   #. Integrate vcpkg into Visual Studio. You can `integrate <https://docs.microsoft.com/en-us/cpp/vcpkg#installation>`_
+      per project or per user (shown below) to avoid manually editing Visual C++ directory paths.::
+
+	   vcpkg integrate install
+
+   #. Install the |sdk-cpp| package. This package compiles the SDK and its dependencies. It can take awhile.::
+
+	   vcpkg install aws-sdk-cpp:x86-windows
+
+   #. Open your project in Visual Studio.
+
+   #. #include |sdk-cpp| header files you want in your source code.
+
+Like NuGet, when you build your project, the correct binaries are automatically included for each
+runtime/architecture configuration you use.
 
 .. _setup-from-source:
 
@@ -87,7 +122,7 @@ Building the SDK from Source
 ============================
 
 If you don't use Visual Studio (or don't want to use NuGet), you can build the SDK from source to
-set it up on your development system. This method also enables you to customize your SDK build
+set it up for your development system. This method also enables you to customize your SDK build
 |mdash| see :doc:`cmake-params` for the available options.
 
 .. topic:: To build the SDK from source
@@ -96,7 +131,7 @@ set it up on your development system. This method also enables you to customize 
 
       * Direct download: :github:`aws/aws-sdk-cpp/archive/master.zip`
 
-      * Clone with Git
+      * Clone with Git:
 
         .. container:: option
 
@@ -157,7 +192,7 @@ set it up on your development system. This method also enables you to customize 
 
                msbuild INSTALL.vcxproj
 
-.. tip:: Building the entire SDK can take awhile. To build only a particular client such as |S3|,
+.. tip:: Building the entire SDK can take awhile. To build only a particular client, such as |S3|,
    you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
 
     cmake -DBUILD_ONLY="s3"
@@ -183,7 +218,7 @@ you've verified these requirements, your |cmake| command line will change slight
 
  cmake -G "NMake Makefiles" `-DTARGET_ARCH=ANDROID` <other options> ..
 
-|nmake| builds targets in a serially. To make things go more quickly, we recommend installing JOM as
+|nmake| builds targets in serially. To make things go more quickly, we recommend installing JOM as
 an alternative to |nmake|, and then changing the |cmake| invocation as follows.::
 
  cmake -G "NMake Makefiles JOM" `-DTARGET_ARCH=ANDROID` <other options> ..
@@ -192,7 +227,7 @@ an alternative to |nmake|, and then changing the |cmake| invocation as follows.:
 Creating Release Builds
 -----------------------
 
-To create a *release* build of the SDK:
+.. topic:: To create a *release* build of the SDK
 
 .. container:: option
 

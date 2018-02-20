@@ -39,7 +39,7 @@ You must set the user name using the :classname:`CreateAccessKeyRequest`'s
 **Code:**
 
 .. literalinclude:: example_code/iam/create_access_key.cpp
-   :lines: 35-51
+   :lines: 36-55
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/create_access_key.cpp>`.
@@ -58,12 +58,12 @@ keys for, and pass it to the |iamclient|'s :functionname:`ListAccessKeys` functi
 **Includes:**
 
 .. literalinclude:: example_code/iam/list_access_keys.cpp
-   :lines: 14-18
+   :lines: 14-19
 
 **Code:**
 
 .. literalinclude:: example_code/iam/list_access_keys.cpp
-   :lines: 37-73
+   :lines: 39-83
    :dedent: 8
 
 The results of :functionname:`ListAccessKeys` are paged (with a default maximum of 100 records per
@@ -97,7 +97,7 @@ used time.
 **Code:**
 
 .. literalinclude:: example_code/iam/access_key_last_used.cpp
-   :lines: 36-54
+   :lines: 37-58
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/access_key_last_used.cpp>`.
@@ -121,7 +121,7 @@ to the |iamclient|'s :functionname:`UpdateAccessKey` function.
 **Code:**
 
 .. literalinclude:: example_code/iam/update_access_key.cpp
-   :lines: 52-66
+   :lines: 53-70
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/update_access_key.cpp>`.
@@ -147,7 +147,7 @@ username.
 **Code:**
 
 .. literalinclude:: example_code/iam/delete_access_key.cpp
-   :lines: 37-52
+   :lines: 37-55
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/delete_access_key.cpp>`.
