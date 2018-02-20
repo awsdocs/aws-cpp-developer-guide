@@ -36,7 +36,7 @@ representation in a :aws-cpp-class:`PutBucketPolicyRequest
 **Includes**
 
 .. literalinclude:: example_code/s3/put_bucket_policy.cpp
-   :lines: 14-16
+   :lines: 14-17
 
 **Code**
 
@@ -69,7 +69,7 @@ function, passing it the name of the bucket in a :aws-cpp-class:`GetBucketPolicy
 
 .. literalinclude:: example_code/s3/get_bucket_policy.cpp
    :dedent: 8
-   :lines: 44-65
+   :lines: 45-70
 
 See the :sdk-examples-cpp:`complete example <s3/get_bucket_policy.cpp>`.
 
@@ -92,7 +92,7 @@ providing it with the bucket name in a :aws-cpp-class:`DeleteBucketPolicyRequest
 
 .. literalinclude:: example_code/s3/delete_bucket_policy.cpp
    :dedent: 8
-   :lines: 45-60
+   :lines: 48-64
 
 This function succeeds even if the bucket doesn't already have a policy. If you specify a bucket
 name that doesn't exist or if you don't have access to the bucket, an

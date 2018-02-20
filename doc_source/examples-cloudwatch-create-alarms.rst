@@ -29,12 +29,12 @@ function with a :aws-cpp-class:`PutMetricAlarmRequest
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_metric_alarm.cpp
-   :lines: 15-17
+   :lines: 14-17
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_metric_alarm.cpp
-   :lines: 35-63
+   :lines: 37-68
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/put_metric_alarm.cpp>`.
@@ -51,12 +51,12 @@ result.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/describe_alarms.cpp
-   :lines: 15-18
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/describe_alarms.cpp
-   :lines: 31-70
+   :lines: 31-73
    :dedent: 8
 
 The list of alarms can be obtained by calling :functionname:`getMetricAlarms` on the
@@ -85,12 +85,12 @@ containing one or more names of alarms that you want to delete.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/delete_alarm.cpp
-   :lines: 15-17
+   :lines: 14-17
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/delete_alarm.cpp
-   :lines: 34-45
+   :lines: 35-49
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/delete_alarm.cpp>`.

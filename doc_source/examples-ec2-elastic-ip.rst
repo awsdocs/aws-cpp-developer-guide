@@ -45,7 +45,7 @@ the |ec2client|'s :functionname:`AssociateAddress` function.
 **Code**
 
 .. literalinclude:: example_code/ec2/allocate_address.cpp
-   :lines: 24-50
+   :lines: 24-53
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/allocate_address.cpp>`.
@@ -63,12 +63,12 @@ objects that represent the Elastic IP addresses on your account.
 **Includes**
 
 .. literalinclude:: example_code/ec2/describe_addresses.cpp
-   :lines: 14-18
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/ec2/describe_addresses.cpp
-   :lines: 29-56
+   :lines: 29-57
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/describe_addresses.cpp>`.
@@ -90,7 +90,7 @@ address you want to release.
 **Code**
 
 .. literalinclude:: example_code/ec2/release_address.cpp
-   :lines: 33-49
+   :lines: 35-54
    :dedent: 8
 
 After you release an Elastic IP address, it is released to the AWS IP address pool and might be

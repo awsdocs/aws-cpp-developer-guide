@@ -8,9 +8,14 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-###############
-Getting Started
-###############
+###################################
+Getting Started Using the |sdk-cpp|
+###################################
+
+.. meta::
+    :description:
+        Get started quickly with AWS using the AWS SDK for C++.
+    :keywords:
 
 The topics in this section will help you set up and use the |sdk-cpp|.
 

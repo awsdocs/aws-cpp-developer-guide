@@ -36,14 +36,13 @@ the event, resources associated with the event, and so on.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_events.cpp
-   :lines: 15-19
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_events.cpp
-   :lines: 50-67
-   :dedent: 8
-
+   :lines: 21-30, 52-72
+   :dedent: 4
 
 Add Rules
 =========
@@ -57,12 +56,12 @@ expression <ScheduledEvents>` that describes how often the rule is run.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_rule.cpp
-   :lines: 15-19
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_rule.cpp
-   :lines: 37-53
+   :lines: 37-56
    :dedent: 8
 
 
@@ -79,12 +78,12 @@ containing the rule to update and a list of targets to add to the rule.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_targets.cpp
-   :lines: 15-19
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_targets.cpp
-   :lines: 40-59
+   :lines: 40-62
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/put_targets.cpp>`.

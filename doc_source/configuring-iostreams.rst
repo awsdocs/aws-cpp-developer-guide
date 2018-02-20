@@ -12,6 +12,11 @@
 Controlling IOStreams Used by the HttpClient and the AWSClient
 ##############################################################
 
+.. meta::
+    :description:
+        Overriding default HttpClient IOStreams with the AWS SDK for C++.
+    :keywords:
+
 By default, all responses use an input stream backed by a ``stringbuf``. If needed, you can override
 the default behavior. For example, if you are using an |S3| ``GetObject`` and don't want to load
 the entire file into memory, you can use :classname:`IOStreamFactory` in

@@ -12,6 +12,11 @@
 Operations on Objects
 #####################
 
+.. meta::
+    :description:
+        Uploading, downloading, deleting and listing Amazon S3 object using the AWS SDK for C++.
+    :keywords:
+
 An |S3| object represents a *file*, which is a collection of data. Every object must reside within a
 :doc:`bucket <examples-s3-buckets>`.
 
@@ -33,7 +38,7 @@ name, and file to upload. *The bucket must exist or an error will result*.
 **Code**
 
 .. literalinclude:: example_code/s3/put_object.cpp
-   :lines: 44-63
+   :lines: 45-70
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/put_object.cpp>`.
@@ -58,7 +63,7 @@ use to get a list of objects in the form of :classname:`Object` instances.
 **Code**
 
 .. literalinclude:: example_code/s3/list_objects.cpp
-   :lines: 39-57
+   :lines: 39-61
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/list_objects.cpp>`.
@@ -86,7 +91,7 @@ name as the object's key).
 **Code**
 
 .. literalinclude:: example_code/s3/get_object.cpp
-   :lines: 42-58
+   :lines: 42-61
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/get_object.cpp>`.
@@ -109,7 +114,7 @@ Use the |s3client| object's :functionname:`DeleteObject` function, passing it a
 **Code**
 
 .. literalinclude:: example_code/s3/delete_object.cpp
-   :lines: 44-57
+   :lines: 44-60
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_object.cpp>`.

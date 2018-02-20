@@ -12,7 +12,12 @@
 CMake Parameters
 ################
 
-Use the CMake_ parameters listed in this section to customize how your SDK builds.
+.. meta::
+    :description:
+        Customizing AWS SDK for C++ builds with CMake parameters.
+    :keywords:
+
+    Use the CMake_ parameters listed in this section to customize how your SDK builds.
 
 You can set these options with CMake GUI tools or the command line by using :paramname:`-D`. For
 example::

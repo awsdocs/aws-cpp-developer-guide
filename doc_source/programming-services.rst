@@ -8,19 +8,26 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-####################
-Programming Examples
-####################
+#######################
+|sdk-cpp| Code Examples
+#######################
 
-This section provides guidance and tips for working with particular AWS services.
+.. meta::
+    :description:
+        Get examples of how to access AWS services using the AWS SDK for C++.
+    :keywords:
+
+This section provides examples, guidance, and tips you can use to work with specific AWS
+services using the |sdk-cpp|.
 
 .. toctree::
     :maxdepth: 1
     :titlesonly:
 
-    examples-cloudwatch
-    examples-ec2
-    examples-iam
-    examples-s3
-    examples-sqs
+    Amazon CloudWatch Examples <examples-cloudwatch>
+    Amazon DynamoDB Examples <examples-dynamodb>
+    Amazon EC2 Examples <examples-ec2>
+    AWS Identity and Access Management (IAM) Examples <examples-iam>
+    Amazon S3 Examples <examples-s3>
+    Amazon SQS Examples <examples-sqs>
 

@@ -38,7 +38,7 @@ To create an account alias, call the |iamclient|'s :functionname:`CreateAccountA
 **Code:**
 
 .. literalinclude:: example_code/iam/create_account_alias.cpp
-   :lines: 35-46
+   :lines: 36-50
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/create_account_alias.cpp>`.
@@ -59,12 +59,12 @@ function. It takes a :aws-cpp-class:`ListAccountAliasesRequest
 **Includes:**
 
 .. literalinclude:: example_code/iam/list_account_aliases.cpp
-   :lines: 14-18
+   :lines: 14-19
 
 **Code:**
 
 .. literalinclude:: example_code/iam/list_account_aliases.cpp
-   :lines: 29-61
+   :lines: 29-69
    :dedent: 8
 
 see the :sdk-examples-cpp:`complete example <iam/list_account_aliases.cpp>`.
@@ -86,7 +86,7 @@ When deleting an account alias, you must supply its name using a
 **Code:**
 
 .. literalinclude:: example_code/iam/delete_account_alias.cpp
-   :lines: 35-47
+   :lines: 36-51
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/delete_account_alias.cpp>`.

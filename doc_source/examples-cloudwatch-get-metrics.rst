@@ -32,12 +32,12 @@ returned metrics by namespace, metric name, or dimensions.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/list_metrics.cpp
-   :lines: 15-18
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/list_metrics.cpp
-   :lines: 36-84
+   :lines: 38-93
    :dedent: 8
 
 The metrics are returned in a :aws-cpp-class:`ListMetricsResult

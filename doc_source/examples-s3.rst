@@ -8,11 +8,18 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-####
-|S3|
-####
+######################################
+|S3| Code Examples Using the |sdk-cpp|
+######################################
 
-This section provides examples of programming |S3|_ using the |sdk-cpp|_.
+.. meta::
+    :description:
+        Examples for working with Amazon S3 buckets, objects, access permissions, policies and website configuration
+        using the AWS SDK for C++.
+    :keywords:
+
+|S3long| (|S3|) is storage for the internet. You can use the following examples to program |S3|_ using
+the |sdk-cpp|_.
 
 .. include:: includes/complete-examples-note.txt
 

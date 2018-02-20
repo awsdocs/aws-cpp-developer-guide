@@ -8,15 +8,16 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-#############
-|CW| Examples
-#############
+#####################################
+|CWlong| Examples Using the |sdk-cpp|
+#####################################
 
 .. meta::
    :description: Programming Amazon Cloudwatch using the AWS SDK for C++
    :keywords: AWS SDK for C++ code examples, Amazon Cloudwatch
 
-This section provides examples of programming |cw|_ using the |sdk-cpp|_.
+|CWlong| (|CW|) is a monitoring service for AWS cloud resources and the applications you run on AWS. You
+can use the following examples to program |cw|_ using the |sdk-cpp|_.
 
 .. include:: common/desc-cloudwatch.txt
 

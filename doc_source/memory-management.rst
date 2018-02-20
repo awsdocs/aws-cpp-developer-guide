@@ -12,6 +12,11 @@
 Memory Management
 #################
 
+.. meta::
+    :description:
+        Providing a custom memory allocator and deallocator for the AWS SDK for C++.
+    :keywords:
+
 The AWS SDK for C++ provides a way to control memory allocation and deallocation in a library.
 
 .. note:: Custom memory management is available only if you use a version of the library built using

@@ -40,12 +40,12 @@ class' :functionname:`ChangeMessageVisibility` member function.
 **Includes**
 
 .. literalinclude:: example_code/sqs/change_message_visibility.cpp
-   :lines: 14-17
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/sqs/change_message_visibility.cpp
-   :lines: 27-68
+   :lines: 27-73
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/change_message_visibility.cpp>`.

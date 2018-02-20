@@ -379,4 +379,3 @@ extlinks.update({
     'sdk-examples-cpp': ('https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/%s', ''),
     'sdk-source': ('https://github.com/aws/aws-sdk-cpp/tree/master/%s', ''),
 })
-

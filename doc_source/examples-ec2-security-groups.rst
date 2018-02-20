@@ -34,7 +34,7 @@ a :aws-cpp-class:`CreateSecurityGroupRequest
 **Code**
 
 .. literalinclude:: example_code/ec2/create_security_group.cpp
-   :lines: 48-64
+   :lines: 48-65
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/create_security_group.cpp>`.
@@ -61,7 +61,7 @@ shows how to add IP permissions to a security group.
 **Code**
 
 .. literalinclude:: example_code/ec2/create_security_group.cpp
-   :lines: 48, 66-69, 24-41, 71-83
+   :lines: 48, 69-71, 24-41, 73-85
    :dedent: 4
 
 To add an egress rule to the security group, provide similar data in an
@@ -89,12 +89,12 @@ objects.
 **Includes**
 
 .. literalinclude:: example_code/ec2/describe_security_groups.cpp
-   :lines: 14-18
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/ec2/describe_security_groups.cpp
-   :lines: 34-64
+   :lines: 36-71
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/describe_security_groups.cpp>`.
@@ -116,7 +116,7 @@ group to delete.
 **Code**
 
 .. literalinclude:: example_code/ec2/delete_security_group.cpp
-   :lines: 33-45
+   :lines: 35-50
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/delete_security_group.cpp>`.

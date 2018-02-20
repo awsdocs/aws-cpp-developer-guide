@@ -12,6 +12,11 @@
 Using the |sdk-cpp|
 ###################
 
+.. meta::
+    :description:
+        Get general information for how to use the AWS SDK for C++.
+    :keywords:
+
 This section provides information about general use of the |sdk-cpp|, beyond that covered in
 :doc:`getting-started`.
 

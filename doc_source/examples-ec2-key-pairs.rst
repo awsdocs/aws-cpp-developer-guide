@@ -34,7 +34,7 @@ contains the key's name.
 **Code**
 
 .. literalinclude:: example_code/ec2/create_key_pair.cpp
-   :lines: 34-45
+   :lines: 36-50
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/create_key_pair.cpp>`.
@@ -55,12 +55,12 @@ pairs by calling its :functionname:`GetKeyPairs` function, which returns a list 
 **Includes**
 
 .. literalinclude:: example_code/ec2/describe_key_pairs.cpp
-   :lines: 14-18
+   :lines: 14-19
 
 **Code**
 
 .. literalinclude:: example_code/ec2/describe_key_pairs.cpp
-   :lines: 28-46
+   :lines: 39-51
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/describe_key_pairs.cpp>`.
@@ -76,12 +76,12 @@ contains the name of the key pair to delete.
 **Includes**
 
 .. literalinclude:: example_code/ec2/delete_key_pair.cpp
-   :lines: 14-17
+   :lines: 14-18
 
 **Code**
 
 .. literalinclude:: example_code/ec2/delete_key_pair.cpp
-   :lines: 33-45
+   :lines: 36-50
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/delete_key_pair.cpp>`.

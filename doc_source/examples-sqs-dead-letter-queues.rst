@@ -71,7 +71,7 @@ To finish setting up your dead letter queue, call the |sqsclient| class'
 **Code**
 
 .. literalinclude:: example_code/sqs/dead_letter_queue.cpp
-   :lines: 57-75
+   :lines: 58-79
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/dead_letter_queue.cpp>`.

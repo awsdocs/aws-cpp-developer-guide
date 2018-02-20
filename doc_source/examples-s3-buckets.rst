@@ -12,6 +12,11 @@
 Creating, Listing, and Deleting Buckets
 #######################################
 
+.. meta::
+    :description:
+        Creating, listing, and deleting Amazon S3 buckets using the AWS SDK for C++.
+    :keywords:
+
 Every object (file) in |S3long| must reside within a *bucket*, which represents a collection
 (container) of objects. Each bucket is known by a *key* (name), which must be unique. For detailed
 information about buckets and their configuration, see :s3-dg:`Working with Amazon S3 Buckets
@@ -37,7 +42,7 @@ Use the |s3client| object :functionname:`CreateBucket` method, passing it a
 **Code**
 
 .. literalinclude:: example_code/s3/create_bucket.cpp
-   :lines: 41-54
+   :lines: 42-58
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/create_bucket.cpp>`.
@@ -63,7 +68,7 @@ Use the :classname:`ListBucketResult` object :functionname:`GetBuckets` method t
 **Code**
 
 .. literalinclude:: example_code/s3/list_buckets.cpp
-   :lines: 26-42
+   :lines: 26-46
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/list_buckets.cpp>`.
@@ -86,7 +91,7 @@ bucket must be empty or an error will result*.
 **Code**
 
 .. literalinclude:: example_code/s3/delete_bucket.cpp
-   :lines: 48-63
+   :lines: 49-67
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_bucket.cpp>`.

@@ -27,12 +27,12 @@ of the user to create.
 **Includes:**
 
 .. literalinclude:: example_code/iam/create_user.cpp
-   :lines: 14-17
+   :lines: 14-17, 20
 
 **Code:**
 
 .. literalinclude:: example_code/iam/create_user.cpp
-   :lines: 24, 39-47
+   :lines: 24, 42-52
    :dedent: 4
 
 Get Information About a User
@@ -50,12 +50,12 @@ If the user doesn't already exist, :functionname:`GetUser` will fail with
 **Includes:**
 
 .. literalinclude:: example_code/iam/create_user.cpp
-   :lines: 14-15, 18-19
+   :lines: 14-15, 18-20
 
 **Code:**
 
 .. literalinclude:: example_code/iam/create_user.cpp
-   :lines: 24-37
+   :lines: 24-40
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/create_user.cpp>`.
@@ -78,12 +78,12 @@ technique.
 **Includes:**
 
 .. literalinclude:: example_code/iam/list_users.cpp
-   :lines: 14-17
+   :lines: 14-19
 
 **Code:**
 
 .. literalinclude:: example_code/iam/list_users.cpp
-   :lines: 31-65
+   :lines: 31-71
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/list_users.cpp>`.
@@ -99,12 +99,12 @@ To update an existing user, create an :aws-cpp-class:`UpdateUserRequest
 **Includes:**
 
 .. literalinclude:: example_code/iam/update_user.cpp
-   :lines: 14-16
+   :lines: 14-17
 
 **Code:**
 
 .. literalinclude:: example_code/iam/update_user.cpp
-   :lines: 37-51
+   :lines: 37-54
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/update_user.cpp>`.
@@ -120,12 +120,12 @@ containing the name of the user to delete.
 **Includes:**
 
 .. literalinclude:: example_code/iam/delete_user.cpp
-   :lines: 14-16
+   :lines: 14-16, 19
 
 **Code:**
 
 .. literalinclude:: example_code/iam/delete_user.cpp
-   :lines: 23, 40-49
+   :lines: 23, 44-53
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/delete_user.cpp>`.

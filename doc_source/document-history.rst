@@ -8,9 +8,14 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-################
-Document History
-################
+#####################################
+Document History for the |sdk-cpp-dg|
+#####################################
+
+.. meta::
+    :description:
+        AWS SDK for C++ Developer Guide documentation update history.
+    :keywords:
 
 This topic lists major changes to the *AWS SDK for C++ Developer Guide* over the course of its
 history.

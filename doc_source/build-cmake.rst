@@ -12,6 +12,11 @@
 Building Your Application with CMake
 ####################################
 
+.. meta::
+    :description:
+        Using CMake to build an application that uses the AWS SDK for C++.
+    :keywords:
+
 CMake_ is a build tool that can manage your application's dependencies and create native makefiles
 suitable for the platform you're building on. It's an easy way to create and build projects using
 the |sdk-cpp|.

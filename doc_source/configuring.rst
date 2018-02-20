@@ -8,9 +8,14 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-###################
-Configuring the SDK
-###################
+#########################
+Configuring the |sdk-cpp|
+#########################
+
+.. meta::
+    :description:
+        Configuration topics in the AWS SDK for C++ developer guide.
+    :keywords:
 
 This section presents information about how to configure the |sdk-cpp|.
 
