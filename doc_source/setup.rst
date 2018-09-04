@@ -176,6 +176,12 @@ set it up for your development system. This method also enables you to customize
 
                msbuild ALL_BUILD.vcxproj
 
+.. tip:: Building the entire SDK can take awhile. To build only a particular client, such as |S3|,
+   you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
+
+    cmake -DBUILD_ONLY="s3"
+
+   See :doc:`cmake-params` for more ways to modify the build output.
    #. Build and install the SDK by typing one of the following in the same location where you generated
       your build files:
 
@@ -191,13 +197,6 @@ set it up for your development system. This method also enables you to customize
             .. code-block:: sh
 
                msbuild INSTALL.vcxproj
-
-.. tip:: Building the entire SDK can take awhile. To build only a particular client, such as |S3|,
-   you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
-
-    cmake -DBUILD_ONLY="s3"
-
-   See :doc:`cmake-params` for more ways to modify the build output.
 
 
 Building for Android
