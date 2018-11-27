@@ -150,19 +150,28 @@ set it up for your development system. This method also enables you to customize
       |msbuild|.
 
    #. Create a directory in which to create your buildfiles, and generate the necessary buildfiles
-      within it. This is the recommended approach, referred to as an *out-of-source build*.::
+      within it. This is the recommended approach, referred to as an *out-of-source build*.
+      ::
 
-       mkdir sdk_build
-       cd sdk_build
-       cmake <path/to/sdk/source>
+         mkdir sdk_build
+         cd sdk_build
+         cmake <path/to/sdk/source>
 
-      Alternatively, create the build files directly in the SDK source directory.::
+      Alternatively, create the build files directly in the SDK source directory.
+      ::
 
-       cd <path/to/sdk/source>
-       cmake .
+         cd <path/to/sdk/source>
+         cmake .
+
+      Building the entire SDK can take a while. To build only a particular client, such as |S3|, you 
+      can use the |cmake| :paramname:`BUILD_ONLY` parameter demonstrated below. For more ways to 
+      modify the build output, see :doc:`cmake-params`.
+      ::
+
+         cmake -DBUILD_ONLY="s3"
 
       If you don't have |cmake| installed, you can use these alternative commands to set up your build
-      directory:
+      directory.
 
       .. container:: option
 
@@ -191,13 +200,6 @@ set it up for your development system. This method also enables you to customize
             .. code-block:: sh
 
                msbuild INSTALL.vcxproj
-
-.. tip:: Building the entire SDK can take awhile. To build only a particular client, such as |S3|,
-   you can use the |cmake| :paramname:`BUILD_ONLY` parameter. For example::
-
-    cmake -DBUILD_ONLY="s3"
-
-   See :doc:`cmake-params` for more ways to modify the build output.
 
 
 Building for Android
