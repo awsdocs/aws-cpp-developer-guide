@@ -229,8 +229,6 @@ an alternative to |nmake|, and then changing the |cmake| invocation as follows.:
 Creating Release Builds
 -----------------------
 
-.. topic:: To create a *release* build of the SDK
-
 .. container:: option
 
    auto make
