@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -17,19 +17,27 @@ Using the |sdk-cpp|
         Initialize and set options to use the AWS SDK for C++.
     :keywords:
 
-To use the |sdk-cpp|, you should properly initialize it with :code:`Aws::InitAPI` before creating
-service clients and using them. You should then shut down the SDK with
-:code:`Aws::ShutdownAPI`.
-
-Both of these functions take an instance of :aws-cpp-struct:`Aws::SDKOptions
-<aws_1_1_s_d_k_options>`, which you can use to set additional run-time options for SDK calls.
+Applications that use the |sdk-cpp| must initialize it. Similarly, before the application 
+terminates, the SDK must be shut down. Both operations accept configuration options that 
+affect the initialization and shutdown processes and subsequent calls to the SDK.
 
 .. _sdk-initializing:
 
 Initializing and Shutting Down the SDK
 ======================================
 
-A basic skeleton application looks like this:
+All applications that use the |sdk-cpp| must include the file :file:`aws/core/Aws.h`.
+
+The |sdk-cpp| must be initialized by calling :code:`Aws::InitAPI`. Before the application 
+terminates, the SDK must be shut down by calling :code:`Aws::ShutdownAPI`. Each method accepts 
+an argument of :aws-cpp-struct:`Aws::SDKOptions<aws_1_1_s_d_k_options>`. All other calls to the 
+SDK can be performed between these two method calls.
+
+Best practice requires all |sdk-cpp| calls performed between :code:`Aws::InitAPI` and
+:code:`Aws::ShutdownAPI` either to be contained within a pair of curly braces or be invoked by 
+functions called between the two methods.
+
+A basic skeleton application is shown below.
 
 .. code-block:: cpp
 
@@ -45,25 +53,21 @@ A basic skeleton application looks like this:
       return 0;
    }
 
-.. admonition:: best practice
-
-   To properly shut down / clean up any service clients that you may initialize before
-   :code:`Aws::ShutdownAPI` is called, it's a *best practice* to make sure that all SDK calls
-   are made within a pair of curly-braces as shown above, or within another function called between
-   :code:`Aws::InitAPI` and :code:`Aws::ShutdownAPI`.
-
 .. _sdk-setting-options:
 
-Setting SDK options
+Setting SDK Options
 ===================
 
-The :aws-cpp-struct:`Aws::SDKOptions <aws_1_1_s_d_k_options>` struct shown in
-:ref:`sdk-initializing` provides a number of options you can set. You should send the same options
-object to both :code:`Aws::InitAPI` and :code:`Aws::ShutdownAPI`.
+The :aws-cpp-struct:`Aws::SDKOptions <aws_1_1_s_d_k_options>` struct contains
+SDK configuration options.
 
-A few examples:
+An instance of :aws-cpp-struct:`Aws::SDKOptions` is passed to the 
+:code:`Aws::InitAPI` and :code:`Aws::ShutdownAPI` methods. The same instance
+should be sent to both methods.
 
-* Turn logging on using the default logger:
+The following samples demonstrate some of the available options.
+
+* Turn logging on using the default logger
 
   .. code-block:: cpp
 
@@ -75,7 +79,7 @@ A few examples:
      }
      Aws::ShutdownAPI(options);
 
-* Install a custom memory manager:
+* Install a custom memory manager
 
   .. code-block:: cpp
 
@@ -88,7 +92,7 @@ A few examples:
      }
      Aws::ShutdownAPI(options);
 
-* Override the default HTTP client factory:
+* Override the default HTTP client factory
 
   .. code-block:: cpp
 
@@ -103,15 +107,15 @@ A few examples:
      }
      Aws::ShutdownAPI(options);
 
-.. note:: ``httpOptions`` takes a closure instead of a ``std::shared_ptr``. The SDK does this for
-   all of its factory functions because the memory manager will not yet be installed at the time you
-   will need to allocate this memory. Pass a closure to the SDK, and it will be called when it is
-   safe to do so. This simplest way to do this is with a Lambda expression.
+.. note:: ``httpOptions`` takes a closure rather than a ``std::shared_ptr``. Each of the SDK 
+    factory functions operates in this manner because at the time at which the factory memory 
+    allocation occurs, the memory manager has not yet been installed. By passing a closure to the 
+    method, the memory manager will be called to perform the memory allocation when it is safe to 
+    do so. A simple technique to accomplish this procedure is by using a Lambda expression.
 
 More Information
 ================
 
-For further examples of |sdk-cpp| application code, view the topics in the
-:doc:`programming-services` section. Each example contains a link to the full source code on GitHub,
-which you can use as a starting point for your own applications.
-
+Examples of |sdk-cpp| application code are described in the section 
+:doc:`programming-services`. Each example includes a link to the full source code on GitHub
+which can be used as a starting point for your own applications.

@@ -8,6 +8,8 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
+.. highlight:: sh
+
 ####################################
 Building Your Application with CMake
 ####################################
@@ -20,8 +22,6 @@ Building Your Application with CMake
 CMake_ is a build tool that can manage your application's dependencies and create native makefiles
 suitable for the platform you're building on. It's an easy way to create and build projects using
 the |sdk-cpp|.
-
-.. highlight:: sh
 
 Setting Up a CMake Project
 ==========================

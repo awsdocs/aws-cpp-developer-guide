@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -17,7 +17,7 @@ CMake Parameters
         Customizing AWS SDK for C++ builds with CMake parameters.
     :keywords:
 
-    Use the CMake_ parameters listed in this section to customize how your SDK builds.
+Use the CMake_ parameters listed in this section to customize how your SDK builds.
 
 You can set these options with CMake GUI tools or the command line by using :paramname:`-D`. For
 example::

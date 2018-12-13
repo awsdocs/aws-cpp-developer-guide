@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -10,16 +10,16 @@
 
 .. highlight:: sh
 
-##############################
-Setting Up the AWS SDK for C++
-##############################
+########################
+Setting Up the |sdk-cpp|
+########################
 
 .. meta::
     :description:
-        AWS SDK for C++ prequisites and requirements to get and set up the SDK.
+        |sdk-cpp| prerequisites and requirements to set up the SDK.
     :keywords:
 
-This section presents information about how to setup the AWS SDK for C++ on your development platform.
+This section presents information about how to set up the |sdk-cpp| on your development platform.
     
 Prerequisites
 =============
@@ -44,19 +44,16 @@ To use the |sdk-cpp|, you need:
 Additional Requirements for Linux Systems
 -----------------------------------------
 
-To compile on Linux, you must have the header files (``-dev`` packages) for :file:`libcurl`, :file:`libopenssl`,
-:file:`libuuid`, :file:`zlib`, and optionally, :file:`libpulse` for |POLlong| support. Typically, you'll
-find the
-packages in your system's package manager.
+To compile on Linux, you must have the header files (``-dev`` packages) for :file:`libcurl`, 
+:file:`libopenssl`, :file:`libuuid`, :file:`zlib`, and, optionally, :file:`libpulse` for 
+|POLlong| support. The packages are typically found by using the system's package manager.
 
-.. topic:: To install these packages on *Debian/Ubuntu-based systems*
-
+.. topic:: To install the packages on *Debian/Ubuntu-based systems*
    ::
 
       sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev libpulse-dev
 
-.. topic:: To install these packages on *Redhat/Fedora-based systems*
-
+.. topic:: To install the packages on *Redhat/Fedora-based systems*
    ::
 
       sudo dnf install libcurl-devel openssl-devel libuuid-devel pulseaudio-devel
@@ -100,14 +97,17 @@ installed on your system.
 
    #. Open a Windows command prompt and navigate to the vcpkg directory.
 
-   #. Integrate vcpkg into Visual Studio. You can `integrate <https://docs.microsoft.com/en-us/cpp/vcpkg#installation>`_
-      per project or per user (shown below) to avoid manually editing Visual C++ directory paths.::
+   #. Integrate vcpkg into Visual Studio. You can `integrate 
+      <https://docs.microsoft.com/en-us/cpp/vcpkg#installation>`_ per project or per user 
+      (shown below) to avoid manually editing Visual C++ directory paths.
+      ::
 
-	   vcpkg integrate install
+	      vcpkg integrate install
 
-   #. Install the |sdk-cpp| package. This package compiles the SDK and its dependencies. It can take awhile.::
+   #. Install the |sdk-cpp| package. This package compiles the SDK and its dependencies. It can take a while.
+      ::
 
-	   vcpkg install aws-sdk-cpp:x86-windows
+	      vcpkg install aws-sdk-cpp:x86-windows
 
    #. Open your project in Visual Studio.
 
@@ -247,6 +247,6 @@ Creating Release Builds
 Running Integration Tests
 -------------------------
 
-Several directories are appended with ``*integration-tests``. After you build your project, you can
-run these executables to ensure everything works correctly.
-
+Several directory names include the suffix ``*integration-tests``. After the project is
+built, the tests stored in these directories can be run to verify the project's correct 
+execution.
