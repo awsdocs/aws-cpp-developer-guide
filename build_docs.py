@@ -190,8 +190,8 @@ def run():
     #
     if '--noclean' not in cmd_switches:
         print("Cleaning up.")
-        check_and_remove_dir(BUILD_DIR)
-        check_and_remove_dir(DEPENDENCIES_DIR)
+        #check_and_remove_dir(BUILD_DIR)
+        #check_and_remove_dir(DEPENDENCIES_DIR)
 
     print("Finished! You'll find the built docs in the '%s' directory." %
             OUTPUT_DIR)
