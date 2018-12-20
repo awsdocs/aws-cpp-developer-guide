@@ -31,8 +31,8 @@ function with a :aws-cpp-class:`PutMetricAlarmRequest
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_metric_alarm.cpp
-   :start-after: start:[cw.cpp.put_metric_alarm.inc]
-   :end-before: end:[cw.cpp.put_metric_alarm.inc]
+   :start-after: snippet-start:[cw.cpp.put_metric_alarm.inc]
+   :end-before: snippet-end:[cw.cpp.put_metric_alarm.inc]
 
 **Code**
 
