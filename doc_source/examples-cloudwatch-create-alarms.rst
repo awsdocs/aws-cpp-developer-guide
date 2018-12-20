@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -7,6 +7,8 @@
    This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
+
+.. highlight:: cpp
 
 ########################
 Working with |CW| Alarms
@@ -29,12 +31,14 @@ function with a :aws-cpp-class:`PutMetricAlarmRequest
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_metric_alarm.cpp
-   :lines: 14-17
+   :start-after: start:[cw.cpp.put_metric_alarm.inc]
+   :end-before: end:[cw.cpp.put_metric_alarm.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_metric_alarm.cpp
-   :lines: 37-68
+   :start-after: start:[cw.cpp.put_metric_alarm.code]
+   :end-before: end:[cw.cpp.put_metric_alarm.code]
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/put_metric_alarm.cpp>`.
@@ -51,12 +55,14 @@ result.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/describe_alarms.cpp
-   :lines: 14-19
+   :start-after: start:[cw.cpp.describe_alarms.inc]
+   :end-before: end:[cw.cpp.describe_alarms.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/describe_alarms.cpp
-   :lines: 31-73
+   :start-after: start:[cw.cpp.describe_alarms.code]
+   :end-before: end:[cw.cpp.describe_alarms.code]
    :dedent: 8
 
 The list of alarms can be obtained by calling :functionname:`getMetricAlarms` on the
@@ -85,12 +91,14 @@ containing one or more names of alarms that you want to delete.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/delete_alarm.cpp
-   :lines: 14-17
+   :start-after: start:[cw.cpp.delete_alarm.inc]
+   :end-before: end:[cw.cpp.delete_alarm.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/delete_alarm.cpp
-   :lines: 35-49
+   :start-after: start:[cw.cpp.delete_alarm.code]
+   :end-before: end:[cw.cpp.delete_alarm.code]
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/delete_alarm.cpp>`.
