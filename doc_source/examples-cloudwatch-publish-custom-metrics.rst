@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -8,14 +8,15 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
+.. highlight:: cpp
+
 #############################
 Publishing Custom Metric Data
 #############################
 
 .. meta::
-   :description: How to publish your own custom metric data to Amazon Cloudwatch using the AWS SDK
-                 for C++.
-   :keywords: Amazon Cloudwatch, AWS SDK for C++, custom metrics, code examples
+   :description: How to publish custom metric data to Amazon Cloudwatch using the AWS SDK for C++.
+   :keywords: cloudwatch
 
 
 A number of AWS services publish :cw-ug:`their own metrics <aws-namespaces>` in namespaces beginning
@@ -34,17 +35,19 @@ information about the data point itself in a :aws-cpp-class:`MetricDatum
 <aws_1_1_cloud_watch_1_1_model_1_1_metric_datum>` object.
 
 .. note:: You cannot specify a namespace that begins with "AWS/". Namespaces that begin with
-   "AWS/" are reserved for use by Amazon Web Services products. .
+   "AWS/" are reserved for use by Amazon Web Services products.
 
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_metric_data.cpp
-   :lines: 14-17
+   :start-after: start:[cw.cpp.put_metric_data.inc]
+   :end-before: end:[cw.cpp.put_metric_data.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_metric_data.cpp
-   :lines: 38-63
+   :start-after: start:[cw.cpp.put_metric_data.code]
+   :end-before: end:[cw.cpp.put_metric_data.code]
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/put_metric_data.cpp>`.

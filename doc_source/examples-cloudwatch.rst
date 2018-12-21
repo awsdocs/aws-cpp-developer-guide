@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -14,7 +14,7 @@
 
 .. meta::
    :description: Programming Amazon Cloudwatch using the AWS SDK for C++
-   :keywords: AWS SDK for C++ code examples, Amazon Cloudwatch
+   :keywords: cloudwatch
 
 |CWlong| (|CW|) is a monitoring service for AWS cloud resources and the applications you run on AWS. You
 can use the following examples to program |cw|_ using the |sdk-cpp|_.

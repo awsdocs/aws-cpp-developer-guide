@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -8,14 +8,16 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
+.. highlight:: cpp
+
 ######################
 Sending Events to |CW|
 ######################
 
 .. meta::
-   :description: How to add custom events, add rules and add targets to rules for Amazon Cloudwatch
+   :description: How to add custom events, add rules, and add targets to rules for Amazon CloudWatch
                  using the AWS SDK for C++.
-   :keywords: cloudwatch events, add events, add rules, add targets, code examples
+   :keywords: cloudwatch events
 
 .. include:: common/desc-cloudwatch-events.txt
 
@@ -36,13 +38,15 @@ the event, resources associated with the event, and so on.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_events.cpp
-   :lines: 14-19
+   :start-after: start:[cw.cpp.put_events.inc]
+   :end-before: end:[cw.cpp.put_events.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_events.cpp
-   :lines: 21-30, 52-72
-   :dedent: 4
+   :start-after: start:[cw.cpp.put_events.code]
+   :end-before: end:[cw.cpp.put_events.code]
+   :dedent: 8
 
 Add Rules
 =========
@@ -56,12 +60,14 @@ expression <ScheduledEvents>` that describes how often the rule is run.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_rule.cpp
-   :lines: 14-19
+   :start-after: start:[cw.cpp.put_rule.inc]
+   :end-after: end:[cw.cpp.put_rule.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_rule.cpp
-   :lines: 37-56
+   :start-after: start:[cw.cpp.put_rule.code]
+   :end-before: end:[cw.cpp.put_rule.code]
    :dedent: 8
 
 
@@ -78,12 +84,14 @@ containing the rule to update and a list of targets to add to the rule.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/put_targets.cpp
-   :lines: 14-19
+   :start-after: start:[cw.cpp.put_targets.inc]
+   :end-before: end:[cw.cpp.put_targets.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/put_targets.cpp
-   :lines: 40-62
+   :start-after: start:[cw.cpp.put_targets.code]
+   :end-before: end:[cw.cpp.put_targets.code]
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/put_targets.cpp>`.

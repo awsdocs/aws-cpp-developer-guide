@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -8,13 +8,15 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
+.. highlight:: cpp
+
 #########################
 Getting Metrics from |CW|
 #########################
 
 .. meta::
    :description: How to list metrics from Amazon CloudWatch using the AWS SDK for C++.
-   :keywords: Amazon Cloudwatch, AWS SDK for C++, metrics, listing, code examples
+   :keywords: cloudwatch metrics
 
 .. include:: includes/examples-note.txt
 
@@ -32,17 +34,19 @@ returned metrics by namespace, metric name, or dimensions.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/list_metrics.cpp
-   :lines: 14-19
+   :start-after: start:[cw.cpp.list_metrics.inc]
+   :end-before: end:[cw.cpp.list_metrics.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/list_metrics.cpp
-   :lines: 38-93
+   :start-after: start[cw.cpp.list_metrics.code]
+   :end-before: end[cw.cpp.list_metrics.code]
    :dedent: 8
 
 The metrics are returned in a :aws-cpp-class:`ListMetricsResult
 <aws_1_1_cloud_watch_1_1_model_1_1_list_metrics_result>` by calling its :functionname:`GetMetrics`
-function.  The results may be *paged*. To retrieve the next batch of results, call
+function. The results may be *paged*. To retrieve the next batch of results, call
 :functionname:`SetNextToken` on the original request object with the return value of the
 :classname:`ListMetricsResult` object's :functionname:`GetNextToken` function, and pass the modified
 request object back to another call to :functionname:`ListMetrics`.

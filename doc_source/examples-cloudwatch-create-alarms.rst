@@ -15,9 +15,8 @@ Working with |CW| Alarms
 ########################
 
 .. meta::
-   :description: How to create, list, and delete alarms in Amazon CloudWatch using the AWS SDK for
-                 C++
-   :keywords: create alarm, delete alarm, list alarms, metric alarms, example code
+   :description: How to manage alarms in Amazon CloudWatch using the AWS SDK for C++
+   :keywords: cloudwatch alarms
 
 .. include:: includes/examples-note.txt
 

@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -8,13 +8,15 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
+.. highlight:: cpp
+
 ###########################
 Using Alarm Actions in |CW|
 ###########################
 
 .. meta::
    :description: How to enable or disable Amazon Cloudwatch Alarm actions using the AWS SDK for C++.
-   :keywords: enable alarm actions, disable alarm actions, code examples, cloudwatch alarms
+   :keywords: cloudwatch alarms
 
 Using |cw| alarm actions, you can create alarms that perform actions such as automatically stopping,
 terminating, rebooting, or recovering |ec2| instances.
@@ -36,12 +38,14 @@ alarms whose actions you want to enable.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/enable_alarm_actions.cpp
-   :lines: 14-18
+   :start-after: start:[cw.cpp.enable_alarm_actions.inc]
+   :end-before: end:[cw.cpp.enable_alarm_actions.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/enable_alarm_actions.cpp
-   :lines: 24-65
+   :start-after: start:[cw.cpp.enable_alarm_actions.code]
+   :end-before: end:[cw.cpp.enable_alarm_actions.code]
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/enable_alarm_actions.cpp>`.
@@ -57,12 +61,14 @@ alarms whose actions you want to disable.
 **Includes**
 
 .. literalinclude:: example_code/cloudwatch/disable_alarm_actions.cpp
-   :lines: 14-17
+   :start-after: start:[cw.cpp.disable_alarm_actions.inc]
+   :end-before: end:[cw.cpp.disable_alarm_actions.inc]
 
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/disable_alarm_actions.cpp
-   :lines: 37-53
+   :start-after: start:[cw.cpp.disable_alarm_actions.code]
+   :end-before: end:[cw.cpp.disable_alarm_actions.code]
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/disable_alarm_actions.cpp>`.
