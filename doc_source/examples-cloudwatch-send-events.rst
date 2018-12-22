@@ -61,7 +61,7 @@ expression <ScheduledEvents>` that describes how often the rule is run.
 
 .. literalinclude:: example_code/cloudwatch/put_rule.cpp
    :start-after: start:[cw.cpp.put_rule.inc]
-   :end-after: end:[cw.cpp.put_rule.inc]
+   :end-before: end:[cw.cpp.put_rule.inc]
 
 **Code**
 
