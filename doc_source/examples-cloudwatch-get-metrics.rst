@@ -40,8 +40,8 @@ returned metrics by namespace, metric name, or dimensions.
 **Code**
 
 .. literalinclude:: example_code/cloudwatch/list_metrics.cpp
-   :start-after: start[cw.cpp.list_metrics.code]
-   :end-before: end[cw.cpp.list_metrics.code]
+   :start-after: start:[cw.cpp.list_metrics.code]
+   :end-before: end:[cw.cpp.list_metrics.code]
    :dedent: 8
 
 The metrics are returned in a :aws-cpp-class:`ListMetricsResult
