@@ -16,7 +16,7 @@ Getting Metrics from |CW|
 
 .. meta::
    :description: How to list metrics from Amazon CloudWatch using the AWS SDK for C++.
-   :keywords: cloudwatch metrics
+   :keywords: cloudwatch
 
 .. include:: includes/examples-note.txt
 
@@ -33,15 +33,11 @@ returned metrics by namespace, metric name, or dimensions.
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/list_metrics.cpp
-   :start-after: start:[cw.cpp.list_metrics.inc]
-   :end-before: end:[cw.cpp.list_metrics.inc]
+.. literalinclude:: cw.cpp.list_metrics.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/list_metrics.cpp
-   :start-after: start:[cw.cpp.list_metrics.code]
-   :end-before: end:[cw.cpp.list_metrics.code]
+.. literalinclude:: cw.cpp.list_metrics.code.txt
    :dedent: 8
 
 The metrics are returned in a :aws-cpp-class:`ListMetricsResult

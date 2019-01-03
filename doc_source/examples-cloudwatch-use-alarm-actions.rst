@@ -15,8 +15,8 @@ Using Alarm Actions in |CW|
 ###########################
 
 .. meta::
-   :description: How to enable or disable Amazon Cloudwatch Alarm actions using the AWS SDK for C++.
-   :keywords: cloudwatch alarms
+   :description: How to enable or disable Amazon CloudWatch alarm actions using the AWS SDK for C++.
+   :keywords: cloudwatch
 
 Using |cw| alarm actions, you can create alarms that perform actions such as automatically stopping,
 terminating, rebooting, or recovering |ec2| instances.
@@ -37,15 +37,11 @@ alarms whose actions you want to enable.
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/enable_alarm_actions.cpp
-   :start-after: start:[cw.cpp.enable_alarm_actions.inc]
-   :end-before: end:[cw.cpp.enable_alarm_actions.inc]
+.. literalinclude:: cw.cpp.enable_alarm_actions.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/enable_alarm_actions.cpp
-   :start-after: start:[cw.cpp.enable_alarm_actions.code]
-   :end-before: end:[cw.cpp.enable_alarm_actions.code]
+.. literalinclude:: cw.cpp.enable_alarm_actions.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/enable_alarm_actions.cpp>`.
@@ -60,15 +56,11 @@ alarms whose actions you want to disable.
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/disable_alarm_actions.cpp
-   :start-after: start:[cw.cpp.disable_alarm_actions.inc]
-   :end-before: end:[cw.cpp.disable_alarm_actions.inc]
+.. literalinclude:: cw.cpp.disable_alarm_actions.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/disable_alarm_actions.cpp
-   :start-after: start:[cw.cpp.disable_alarm_actions.code]
-   :end-before: end:[cw.cpp.disable_alarm_actions.code]
+.. literalinclude:: cw.cpp.disable_alarm_actions.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/disable_alarm_actions.cpp>`.

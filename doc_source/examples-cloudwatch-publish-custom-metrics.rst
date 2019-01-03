@@ -39,15 +39,11 @@ information about the data point itself in a :aws-cpp-class:`MetricDatum
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/put_metric_data.cpp
-   :start-after: start:[cw.cpp.put_metric_data.inc]
-   :end-before: end:[cw.cpp.put_metric_data.inc]
+.. literalinclude:: cw.cpp.put_metric_data.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/put_metric_data.cpp
-   :start-after: start:[cw.cpp.put_metric_data.code]
-   :end-before: end:[cw.cpp.put_metric_data.code]
+.. literalinclude:: cw.cpp.put_metric_data.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/put_metric_data.cpp>`.

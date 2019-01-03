@@ -17,7 +17,7 @@ Sending Events to |CW|
 .. meta::
    :description: How to add custom events, add rules, and add targets to rules for Amazon CloudWatch
                  using the AWS SDK for C++.
-   :keywords: cloudwatch events
+   :keywords: cloudwatch
 
 .. include:: common/desc-cloudwatch-events.txt
 
@@ -37,15 +37,11 @@ the event, resources associated with the event, and so on.
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/put_events.cpp
-   :start-after: start:[cw.cpp.put_events.inc]
-   :end-before: end:[cw.cpp.put_events.inc]
+.. literalinclude:: cw.cpp.put_events.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/put_events.cpp
-   :start-after: start:[cw.cpp.put_events.code]
-   :end-before: end:[cw.cpp.put_events.code]
+.. literalinclude:: cw.cpp.put_events.code.txt
    :dedent: 8
 
 Add Rules
@@ -59,15 +55,11 @@ expression <ScheduledEvents>` that describes how often the rule is run.
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/put_rule.cpp
-   :start-after: start:[cw.cpp.put_rule.inc]
-   :end-before: end:[cw.cpp.put_rule.inc]
+.. literalinclude:: cw.cpp.put_rule.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/put_rule.cpp
-   :start-after: start:[cw.cpp.put_rule.code]
-   :end-before: end:[cw.cpp.put_rule.code]
+.. literalinclude:: cw.cpp.put_rule.code.txt
    :dedent: 8
 
 
@@ -83,15 +75,11 @@ containing the rule to update and a list of targets to add to the rule.
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/put_targets.cpp
-   :start-after: start:[cw.cpp.put_targets.inc]
-   :end-before: end:[cw.cpp.put_targets.inc]
+.. literalinclude:: cw.cpp.put_targets.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/put_targets.cpp
-   :start-after: start:[cw.cpp.put_targets.code]
-   :end-before: end:[cw.cpp.put_targets.code]
+.. literalinclude:: cw.cpp.put_targets.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/put_targets.cpp>`.

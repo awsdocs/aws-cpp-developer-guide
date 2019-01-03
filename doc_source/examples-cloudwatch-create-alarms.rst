@@ -15,8 +15,8 @@ Working with |CW| Alarms
 ########################
 
 .. meta::
-   :description: How to manage alarms in Amazon CloudWatch using the AWS SDK for C++
-   :keywords: cloudwatch alarms
+   :description: How to manage alarms in Amazon CloudWatch using the AWS SDK for C++.
+   :keywords: cloudwatch
 
 .. include:: includes/examples-note.txt
 
@@ -29,15 +29,11 @@ function with a :aws-cpp-class:`PutMetricAlarmRequest
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/put_metric_alarm.cpp
-   :start-after: start:[cw.cpp.put_metric_alarm.inc]
-   :end-before: end:[cw.cpp.put_metric_alarm.inc]
+.. literalinclude:: cw.cpp.put_metric_alarm.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/put_metric_alarm.cpp
-   :start-after: start:[cw.cpp.put_metric_alarm.code]
-   :end-before: end:[cw.cpp.put_metric_alarm.code]
+.. literalinclude:: cw.cpp.put_metric_alarm.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/put_metric_alarm.cpp>`.
@@ -53,15 +49,11 @@ result.
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/describe_alarms.cpp
-   :start-after: start:[cw.cpp.describe_alarms.inc]
-   :end-before: end:[cw.cpp.describe_alarms.inc]
+.. literalinclude:: cw.cpp.describe_alarms.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/describe_alarms.cpp
-   :start-after: start:[cw.cpp.describe_alarms.code]
-   :end-before: end:[cw.cpp.describe_alarms.code]
+.. literalinclude:: cw.cpp.describe_alarms.code.txt
    :dedent: 8
 
 The list of alarms can be obtained by calling :functionname:`getMetricAlarms` on the
@@ -89,15 +81,11 @@ containing one or more names of alarms that you want to delete.
 
 **Includes**
 
-.. literalinclude:: example_code/cloudwatch/delete_alarm.cpp
-   :start-after: start:[cw.cpp.delete_alarm.inc]
-   :end-before: end:[cw.cpp.delete_alarm.inc]
+.. literalinclude:: cw.cpp.delete_alarm.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/cloudwatch/delete_alarm.cpp
-   :start-after: start:[cw.cpp.delete_alarm.code]
-   :end-before: end:[cw.cpp.delete_alarm.code]
+.. literalinclude:: cw.cpp.delete_alarm.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <cloudwatch/delete_alarm.cpp>`.
