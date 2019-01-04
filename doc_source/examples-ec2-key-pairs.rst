@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -14,12 +14,11 @@ Working with |EC2| Key Pairs
 
 .. meta::
    :description: How to create, list and delete EC2 key pairs using the AWS SDK for C++.
-   :keywords: AWS SDK for C++, code examples, EC2 key pairs, create key pair, list key pairs, delete
-              key pair
+   :keywords: ec2
 
 .. include:: includes/examples-note.txt
 
-Creating a Key Pair
+Create a Key Pair
 ===================
 
 To create a key pair, call the |ec2client|'s :functionname:`CreateKeyPair` function with a
@@ -28,19 +27,17 @@ contains the key's name.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/create_key_pair.cpp
-   :lines: 14-18
+.. literalinclude:: ec2.cpp.create_key_pair.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/create_key_pair.cpp
-   :lines: 36-50
+.. literalinclude:: ec2.cpp.create_key_pair.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/create_key_pair.cpp>`.
 
 
-Describing Key Pairs
+Describe Key Pairs
 ====================
 
 To list your key pairs or to get information about them, call the |ec2client|'s
@@ -54,19 +51,17 @@ pairs by calling its :functionname:`GetKeyPairs` function, which returns a list 
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/describe_key_pairs.cpp
-   :lines: 14-19
+.. literalinclude:: ec2.cpp.describe_key_pairs.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/describe_key_pairs.cpp
-   :lines: 39-51
+.. literalinclude:: ec2.cpp.describe_key_pairs.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/describe_key_pairs.cpp>`.
 
 
-Deleting a Key Pair
+Delete a Key Pair
 ===================
 
 To delete a key pair, call the |ec2client|'s :functionname:`DeleteKeyPair` function, passing it a
@@ -75,13 +70,11 @@ contains the name of the key pair to delete.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/delete_key_pair.cpp
-   :lines: 14-18
+.. literalinclude:: ec2.cpp.delete_key_pair.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/delete_key_pair.cpp
-   :lines: 36-50
+.. literalinclude:: ec2.cpp.delete_key_pair.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/delete_key_pair.cpp>`.

@@ -13,9 +13,8 @@ Working with |SQS| Message Queues
 #################################
 
 .. meta::
-   :description: How to create, list, delete, and get an Amazon SQS queue's URL with the AWS SDK for
-                 C++.
-   :keywords: AWS SDK for C++ code examples
+   :description: How to manage an Amazon SQS queue's URL with the AWS SDK for C++.
+   :keywords: sqs
 
 A *message queue* is the logical container you use to send messages reliably in |sqs|. There are two
 types of queues: *standard* and *first-in, first-out* (FIFO). To learn more about queues and the
@@ -37,13 +36,11 @@ describes the queue parameters.
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/create_queue.cpp
-   :lines: 14-18
+.. literalinclude:: sqs.cpp.create_queue.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/create_queue.cpp
-   :lines: 36-50
+.. literalinclude:: sqs.cpp.create_queue.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/create_queue.cpp>`.
@@ -60,13 +57,11 @@ function, and pass it a :aws-cpp-class:`ListQueuesRequest
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/list_queues.cpp
-   :lines: 14-18
+.. literalinclude:: sqs.cpp.list_queues.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/list_queues.cpp
-   :lines: 28-46
+.. literalinclude:: sqs.cpp.list_queues.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/list_queues.cpp>`.
@@ -82,13 +77,11 @@ member function.
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/get_queue_url.cpp
-   :lines: 14-18
+.. literalinclude:: sqs.cpp.get_queue_url.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/get_queue_url.cpp
-   :lines: 35-47
+.. literalinclude:: sqs.cpp.get_queue_url.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/get_queue_url.cpp>`.
@@ -104,13 +97,11 @@ function.
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/delete_queue.cpp
-   :lines: 14-18
+.. literalinclude:: sqs.cpp.delete_queue.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/delete_queue.cpp
-   :lines: 37-56
+.. literalinclude:: sqs.cpp.delete_queue.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/delete_queue.cpp>`.

@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,8 +13,8 @@ Using |IAM| Account Aliases
 ###########################
 
 .. meta::
-   :description: How to set, get, and delete a policy for an Amazon S3 bucket.
-   :keywords: AWS for C++ SDK code examples, bucket policies
+   :description: How to manage IAM account aliases.
+   :keywords: iam
 
 If you want the URL for your sign-in page to contain your company name or other friendly identifier
 instead of your AWS account ID, you can create an alias for your AWS account.
@@ -23,8 +23,8 @@ instead of your AWS account ID, you can create an alias for your AWS account.
 
 .. include:: includes/examples-note.txt
 
-Creating an Account Alias
-=========================
+Create an Account Alias
+=======================
 
 To create an account alias, call the |iamclient|'s :functionname:`CreateAccountAlias` function with a
 :aws-cpp-class:`CreateAccountAliasRequest
@@ -32,20 +32,18 @@ To create an account alias, call the |iamclient|'s :functionname:`CreateAccountA
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/create_account_alias.cpp
-   :lines: 14-17
+.. literalinclude:: iam.cpp.create_account_alias.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/create_account_alias.cpp
-   :lines: 36-50
+.. literalinclude:: iam.cpp.create_account_alias.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/create_account_alias.cpp>`.
 
 
-Listing Account Aliases
-=======================
+List Account Aliases
+====================
 
 To list your account's alias, if any, call the |iamclient|'s :functionname:`ListAccountAliases`
 function. It takes a :aws-cpp-class:`ListAccountAliasesRequest
@@ -58,20 +56,18 @@ function. It takes a :aws-cpp-class:`ListAccountAliasesRequest
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/list_account_aliases.cpp
-   :lines: 14-19
+.. literalinclude:: iam.cpp.list_account_aliases.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/list_account_aliases.cpp
-   :lines: 29-69
+.. literalinclude:: iam.cpp.list_account_aliases.code.txt
    :dedent: 8
 
 see the :sdk-examples-cpp:`complete example <iam/list_account_aliases.cpp>`.
 
 
-Deleting an account alias
-=========================
+Delete an Account Alias
+=======================
 
 To delete your account's alias, call the |iamclient|'s :functionname:`DeleteAccountAlias` function.
 When deleting an account alias, you must supply its name using a
@@ -80,13 +76,11 @@ When deleting an account alias, you must supply its name using a
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/delete_account_alias.cpp
-   :lines: 14-17
+.. literalinclude:: iam.cpp.delete_account_alias.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/delete_account_alias.cpp
-   :lines: 36-51
+.. literalinclude:: iam.cpp.delete_account_alias.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/delete_account_alias.cpp>`.

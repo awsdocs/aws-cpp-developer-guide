@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,9 +13,8 @@ Managing Access to |S3| Buckets Using Bucket Policies
 #####################################################
 
 .. meta::
-   :description: How to set, get, and delete a policy for an Amazon S3 bucket using the AWS SDK for
-                 C++.
-   :keywords: AWS for C++ SDK code examples, bucket policies, delete policy, get policy, set policy
+   :description: How to manage policies for an Amazon S3 bucket using the AWS SDK for C++.
+   :keywords: s3
 
 
 You can set, get, or delete a *bucket policy* to manage access to your |S3| buckets.
@@ -35,14 +34,14 @@ representation in a :aws-cpp-class:`PutBucketPolicyRequest
 
 **Includes**
 
-.. literalinclude:: example_code/s3/put_bucket_policy.cpp
-   :lines: 14-17
+.. literalinclude:: s3.cpp.put_bucket_policy.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/put_bucket_policy.cpp
+.. literalinclude:: s3.cpp.put_bucket_policy01.code.txt
    :dedent: 8
-   :lines: 65-84
+.. literalinclude:: s3.cpp.put_bucket_policy02.code.txt
+   :dedent: 8
 
 .. tip:: The :aws-cpp-class:`Aws::Utils::Json::JsonValue <aws_1_1_utils_1_1_json_1_1_json_value>`
    utility class can be used to help you construct valid JSON objects to pass to
@@ -62,14 +61,12 @@ function, passing it the name of the bucket in a :aws-cpp-class:`GetBucketPolicy
 
 **Includes**
 
-.. literalinclude:: example_code/s3/get_bucket_policy.cpp
-   :lines: 14-16
+.. literalinclude:: s3.cpp.get_bucket_policy.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/get_bucket_policy.cpp
+.. literalinclude:: s3.cpp.get_bucket_policy.code.txt
    :dedent: 8
-   :lines: 45-70
 
 See the :sdk-examples-cpp:`complete example <s3/get_bucket_policy.cpp>`.
 
@@ -85,14 +82,12 @@ providing it with the bucket name in a :aws-cpp-class:`DeleteBucketPolicyRequest
 
 **Includes**
 
-.. literalinclude:: example_code/s3/delete_bucket_policy.cpp
-   :lines: 14-16
+.. literalinclude:: s3.cpp.delete_bucket_policy.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/delete_bucket_policy.cpp
+.. literalinclude:: s3.cpp.delete_bucket_policy.code.txt
    :dedent: 8
-   :lines: 48-64
 
 This function succeeds even if the bucket doesn't already have a policy. If you specify a bucket
 name that doesn't exist or if you don't have access to the bucket, an

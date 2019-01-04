@@ -14,14 +14,13 @@ Managing |IAM| Access Keys
 
 .. meta::
    :description: How to manage IAM access keys with the AWS SDK for C++.
-   :keywords: AWS SDK for C++, code examples, IAM access keys, creating, listing, updating,
-              deleting, getting last access time
+   :keywords: iam
 
 .. include:: includes/examples-note.txt
 
 
-Creating an Access Key
-======================
+Create an Access Key
+====================
 
 To create an |IAM| access key, call the |iamclient|'s :functionname:`CreateAccessKey` function with
 an :aws-cpp-class:`CreateAccessKeyRequest <aws_1_1_i_a_m_1_1_model_1_1_create_access_key_request>`
@@ -33,20 +32,18 @@ You must set the user name using the :classname:`CreateAccessKeyRequest`'s
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/create_access_key.cpp
-   :lines: 14-18
+.. literalinclude:: iam.cpp.create_access_key.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/create_access_key.cpp
-   :lines: 36-55
+.. literalinclude:: iam.cpp.create_access_key.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/create_access_key.cpp>`.
 
 
-Listing Access Keys
-===================
+List Access Keys
+================
 
 To list the access keys for a given user, create a :aws-cpp-class:`ListAccessKeysRequest
 <aws_1_1_i_a_m_1_1_model_1_1_list_access_keys_request>` object that contains the user name to list
@@ -57,13 +54,11 @@ keys for, and pass it to the |iamclient|'s :functionname:`ListAccessKeys` functi
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/list_access_keys.cpp
-   :lines: 14-19
+.. literalinclude:: iam.cpp.list_access_keys.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/list_access_keys.cpp
-   :lines: 39-83
+.. literalinclude:: iam.cpp.list_access_keys.code.txt
    :dedent: 8
 
 The results of :functionname:`ListAccessKeys` are paged (with a default maximum of 100 records per
@@ -76,8 +71,8 @@ invocation of :functionname:`ListAccessKeys`.
 See the :sdk-examples-cpp:`complete example <iam/list_access_keys.cpp>`.
 
 
-Retrieving an Access Key's Last Used Time
-=========================================
+Retrieve an Access Key's Last Used Time
+=======================================
 
 To get the time an access key was last used, call the |iamclient|'s
 :functionname:`GetAccessKeyLastUsed` function with the access key's ID (which can be passed in using
@@ -91,13 +86,11 @@ used time.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/access_key_last_used.cpp
-   :lines: 14-18
+.. literalinclude:: iam.cpp.access_key_last_used.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/access_key_last_used.cpp
-   :lines: 37-58
+.. literalinclude:: iam.cpp.access_key_last_used.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/access_key_last_used.cpp>`.
@@ -105,8 +98,8 @@ See the :sdk-examples-cpp:`complete example <iam/access_key_last_used.cpp>`.
 
 .. _iam-access-keys-update:
 
-Activating or Deactivating Access Keys
-======================================
+Activate or Deactivate Access Keys
+==================================
 
 You can activate or deactivate an access key by creating an :aws-cpp-class:`UpdateAccessKeyRequest
 <aws_1_1_i_a_m_1_1_model_1_1_update_access_key_request>` object, providing the access key ID,
@@ -115,20 +108,18 @@ to the |iamclient|'s :functionname:`UpdateAccessKey` function.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/update_access_key.cpp
-   :lines: 14-17
+.. literalinclude:: iam.cpp.update_access_key.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/update_access_key.cpp
-   :lines: 53-70
+.. literalinclude:: iam.cpp.update_access_key.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/update_access_key.cpp>`.
 
 
-Deleting an Access Key
-======================
+Delete an Access Key
+====================
 
 To permanently delete an access key, call the |iamclient|'s :functionname:`DeleteKey` function,
 providing it with a :aws-cpp-class:`DeleteAccessKeyRequest
@@ -141,13 +132,11 @@ username.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/delete_access_key.cpp
-   :lines: 14-17
+.. literalinclude:: iam.cpp.delete_access_key.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/delete_access_key.cpp
-   :lines: 37-55
+.. literalinclude:: iam.cpp.delete_access_key.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/delete_access_key.cpp>`.

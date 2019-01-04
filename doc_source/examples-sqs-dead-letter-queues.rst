@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,11 +13,11 @@ Using Dead Letter Queues in |SQS|
 #################################
 
 .. meta::
-   :description: How to enable long polling for Amazon SQS message queues.
-   :keywords: AWS SDK for C++ code examples, SQS, long polling, queue management
+   :description: How to manage Amazon SQS dead letter queues.
+   :keywords: sqs
 
-|SQS| provides support for *dead letter queues*. A dead letter queue is a queue that other (source)
-queues can target for messages that can't be processed successfully. You can set aside and isolate
+|SQS| provides support for *dead letter queues*. A dead letter queue is a queue that other queues 
+can target for messages that can't be processed successfully. You can set aside and isolate
 these messages in the dead letter queue to determine why their processing did not succeed.
 
 To create a dead letter queue, you must first create a *redrive policy*, and then set the policy in
@@ -30,8 +30,8 @@ the queue's attributes.
 
 .. _sqs-dead-letter-queue-create-redrive-policy:
 
-Creating a Redrive Policy
-=========================
+Create a Redrive Policy
+=======================
 
 A redrive policy is specified in JSON. To create it, you can use the JSON utility class provided
 with the |sdk-cpp|.
@@ -42,21 +42,19 @@ it's sent to the dead letter queue.
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/dead_letter_queue.cpp
-   :lines: 14-15
+.. literalinclude:: sqs.cpp.make_redrive_policy.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/dead_letter_queue.cpp
-   :lines: 20-33
+.. literalinclude:: sqs.cpp.make_redrive_policy.code.txt
 
 See the :sdk-examples-cpp:`complete example <sqs/dead_letter_queue.cpp>`.
 
 
 .. _sqs-dead-letter-queue-set-redrive-policy:
 
-Setting the Redrive Policy on your Source Queue
-===============================================
+Set the Redrive Policy on your Source Queue
+===========================================
 
 To finish setting up your dead letter queue, call the |sqsclient| class'
 :functionname:`SetQueueAttributes` member function with a :aws-cpp-class:`SetQueueAttributesRequest
@@ -65,13 +63,11 @@ To finish setting up your dead letter queue, call the |sqsclient| class'
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/dead_letter_queue.cpp
-   :lines: 14, 16-17
+.. literalinclude:: sqs.cpp.set_redrive_policy.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/dead_letter_queue.cpp
-   :lines: 58-79
+.. literalinclude:: sqs.cpp.set_redrive_policy.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/dead_letter_queue.cpp>`.

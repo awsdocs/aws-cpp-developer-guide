@@ -23,8 +23,8 @@ Rules and Data Types <HowItWorks.NamingRulesDataTypes>` in the |ddb-dg|.
 
 .. _dynamodb-get-item:
 
-Retrieve (Get) an Item from a Table
-===================================
+Retrieve an Item from a Table
+=============================
 
 Call the :aws-cpp-class:`DynamoDB client <aws_1_1_dynamo_d_b_1_1_dynamo_d_b_client>` :methodname:`GetItem`
 method. Pass it a :aws-cpp-class:`GetItemRequest <aws_1_1_dynamo_d_b_1_1_model_1_1_get_item_request>`
@@ -38,21 +38,19 @@ pairs associated with the item.
 
 **Includes**
 
-.. literalinclude:: example_code/dynamodb/get_item.cpp
-   :lines: 14-19
+.. literalinclude:: dynamodb.cpp.get_item.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/get_item.cpp
-   :lines: 62-94
+.. literalinclude:: dynamodb.cpp.get_item.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <dynamodb/get_item.cpp>` on GitHub.
 
 .. _dynamodb-add-item:
 
-Add a New Item to a Table
-=========================
+Add an Item to a Table
+======================
 
 Create key :classname:`Aws::String` and
 value :aws-cpp-class:`AttributeValue <aws_1_1_dynamo_d_b_1_1_model_1_1_attribute_value>` pairs that
@@ -63,13 +61,11 @@ the :methodname:`AddItem` method.
 
 **Includes**
 
-.. literalinclude:: example_code/dynamodb/put_item.cpp
-   :lines: 14-20
+.. literalinclude:: dynamodb.cpp.put_item.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/put_item.cpp
-   :lines: 59-92
+.. literalinclude:: dynamodb.cpp.put_item.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <dynamodb/put_item.cpp>` on GitHub.
@@ -86,13 +82,11 @@ update and their corresponding value.
 
 **Imports**
 
-.. literalinclude:: example_code/dynamodb/update_item.cpp
-   :lines: 14-19
+.. literalinclude:: dynamodb.cpp.update_item.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/update_item.cpp
-   :lines: 61-96
+.. literalinclude:: dynamodb.cpp.update_item.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <dynamodb/update_item.cpp>`.

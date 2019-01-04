@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,8 +13,8 @@ Managing |S3| Access Permissions for Buckets and Objects
 ########################################################
 
 .. meta::
-   :description: How to retrieve or set the access control list for an Amazon S3 bucket or object.
-   :keywords: AWS for C++ SDK code examples, bucket access permissions, object access permissions
+   :description: How to manage access control lists for an Amazon S3 bucket or object.
+   :keywords: s3
 
 You can use access control lists (ACLs) for |s3| buckets and objects for fine-grained control over
 your |s3| resources.
@@ -36,13 +36,11 @@ function.
 
 **Includes**
 
-.. literalinclude:: example_code/s3/get_acl.cpp
-   :lines: 14-16, 18-19
+.. literalinclude:: s3.cpp.get_acl.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/get_acl.cpp
-   :lines: 46-72
+.. literalinclude:: s3.cpp.get_acl_bucket.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/get_acl.cpp>`.
@@ -58,13 +56,11 @@ the bucket name and list of grantees and permissions within an :aws-cpp-class:`A
 
 **Includes**
 
-.. literalinclude:: example_code/s3/set_acl.cpp
-   :lines: 14-18, 21-22
+.. literalinclude:: s3.cpp.set_acl.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/set_acl.cpp
-   :lines: 44-66
+.. literalinclude:: s3.cpp.set_acl_bucket.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/set_acl.cpp>`.
@@ -84,13 +80,11 @@ function.
 
 **Includes**
 
-.. literalinclude:: example_code/s3/get_acl.cpp
-   :lines: 14-15, 17-19
+.. literalinclude:: s3.cpp.get_acl.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/get_acl.cpp
-   :lines: 81-108
+.. literalinclude:: s3.cpp.get_acl_object.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/get_acl.cpp>`.
@@ -106,13 +100,11 @@ the object name and list of grantees and permissions within an :aws-cpp-class:`A
 
 **Includes**
 
-.. literalinclude:: example_code/s3/set_acl.cpp
-   :lines: 14-16, 19-22
+.. literalinclude:: s3.cpp.set_acl.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/set_acl.cpp
-   :lines: 44-66
+.. literalinclude:: s3.cpp.set_acl_object.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/set_acl.cpp>`.

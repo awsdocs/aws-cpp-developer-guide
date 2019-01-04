@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,8 +13,7 @@ Document History for the |sdk-cpp-dg|
 #####################################
 
 .. meta::
-    :description:
-        AWS SDK for C++ Developer Guide documentation update history.
+    :description: AWS SDK for C++ Developer Guide documentation update history.
     :keywords:
 
 This topic lists major changes to the *AWS SDK for C++ Developer Guide* over the course of its

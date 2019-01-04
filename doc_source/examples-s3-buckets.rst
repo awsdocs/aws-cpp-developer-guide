@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,9 +13,8 @@ Creating, Listing, and Deleting Buckets
 #######################################
 
 .. meta::
-    :description:
-        Creating, listing, and deleting Amazon S3 buckets using the AWS SDK for C++.
-    :keywords:
+    :description: Managing Amazon S3 buckets using the AWS SDK for C++.
+    :keywords: s3
 
 Every object (file) in |S3long| must reside within a *bucket*, which represents a collection
 (container) of objects. Each bucket is known by a *key* (name), which must be unique. For detailed
@@ -36,13 +35,11 @@ Use the |s3client| object :functionname:`CreateBucket` method, passing it a
 
 **Includes**
 
-.. literalinclude:: example_code/s3/create_bucket.cpp
-   :lines: 14-16
+.. literalinclude:: s3.cpp.create_bucket.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/create_bucket.cpp
-   :lines: 42-58
+.. literalinclude:: s3.cpp.create_bucket.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/create_bucket.cpp>`.
@@ -62,13 +59,11 @@ Use the :classname:`ListBucketResult` object :functionname:`GetBuckets` method t
 
 **Includes**
 
-.. literalinclude:: example_code/s3/list_buckets.cpp
-   :lines: 14-16
+.. literalinclude:: s3.cpp.list_buckets.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/list_buckets.cpp
-   :lines: 26-46
+.. literalinclude:: s3.cpp.list_buckets.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/list_buckets.cpp>`.
@@ -85,13 +80,11 @@ bucket must be empty or an error will result*.
 
 **Includes**
 
-.. literalinclude:: example_code/s3/delete_bucket.cpp
-   :lines: 14-16
+.. literalinclude:: s3.cpp.delete_bucket.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/delete_bucket.cpp
-   :lines: 49-67
+.. literalinclude:: s3.cpp.delete_bucket.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_bucket.cpp>`.

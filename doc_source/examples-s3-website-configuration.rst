@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,8 +13,8 @@ Configuring an |s3| Bucket as a Website
 #######################################
 
 .. meta::
-   :description: How to set, retrieve, or delete an S3 bucket's website configuration.
-   :keywords: AWS for C++ SDK code examples, s3, website, website configuration
+   :description: How to manage an S3 bucket's website configuration using the AWS SDK for C++.
+   :keywords: s3
 
 You can configure an |s3| bucket to behave as a website. To do this, you need to set its website
 configuration.
@@ -34,14 +34,12 @@ Setting an index document is *required*; all other parameters are optional.
 
 **Includes**
 
-.. literalinclude:: example_code/s3/put_website_config.cpp
-   :lines: 14-19
+.. literalinclude:: s3.cpp.put_website_config.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/put_website_config.cpp
+.. literalinclude:: s3.cpp.put_website_config.code.txt
    :dedent: 8
-   :lines: 60-89
 
 .. note:: Setting a website configuration does not modify the access permissions for your bucket.
    To make your files visible on the web, you will also need to set a *bucket policy* that allows
@@ -65,14 +63,12 @@ no website configuration for the bucket, then :code-cpp:`null` will be returned.
 
 **Includes**
 
-.. literalinclude:: example_code/s3/get_website_config.cpp
-   :lines: 14-16
+.. literalinclude:: s3.cpp.get_website_config.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/get_website_config.cpp
+.. literalinclude:: s3.cpp.get_website_config.code.txt
    :dedent: 8
-   :lines: 47-70
 
 See the :sdk-examples-cpp:`complete example <s3/get_website_config.cpp>`.
 
@@ -87,14 +83,12 @@ delete the configuration from.
 
 **Includes**
 
-.. literalinclude:: example_code/s3/delete_website_config.cpp
-   :lines: 14-16
+.. literalinclude:: s3.cpp.delete_website_config.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/delete_website_config.cpp
+.. literalinclude:: s3.cpp.delete_website_config.code.txt
    :dedent: 8
-   :lines: 47-65
 
 See the :sdk-examples-cpp:`complete example <s3/delete_website_config.cpp>`.
 

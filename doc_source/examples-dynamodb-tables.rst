@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -65,13 +65,11 @@ This code creates a table with a simple primary key ("Name").
 
 **Includes**
 
-.. literalinclude:: example_code/dynamodb/create_table.cpp
-   :lines: 14-22
+.. literalinclude:: dynamodb.cpp.create_table.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/create_table.cpp
-   :lines: 52, 55, 60-86
+.. literalinclude:: dynamodb.cpp.create_table.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <dynamodb/create_table.cpp>`.
@@ -88,13 +86,11 @@ Add another
 
 **Includes**
 
-.. literalinclude:: example_code/dynamodb/create_table_composite_key.cpp
-   :lines: 14-22
+.. literalinclude:: dynamodb.cpp.create_table_composite_key.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/create_table_composite_key.cpp
-   :lines: 59,62, 69-98
+.. literalinclude:: dynamodb.cpp.create_table_composite_key.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <dynamodb/create_table_composite_key.cpp>` on GitHub.
@@ -109,13 +105,11 @@ You can list the tables in a particular region by calling the :aws-cpp-class:`Dy
 
 **Includes**
 
-.. literalinclude:: example_code/dynamodb/list_tables.cpp
-   :lines: 14-19
+.. literalinclude:: dynamodb.cpp.list_tables.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/list_tables.cpp
-   :lines: 36-52
+.. literalinclude:: dynamodb.cpp.list_tables.code.txt
    :dedent: 8
 
 By default, up to 100 tables are returned per call. Use
@@ -127,29 +121,27 @@ See the :sdk-examples-cpp:`complete example <dynamodb/list_tables.cpp>`.
 
 .. _dynamodb-describe-table:
 
-Describe (Get Information about) a Table
-========================================
+Retrieve Information about a Table
+==================================
 
 You can find out more about a table by calling the :aws-cpp-class:`DynamoDB client
 <aws_1_1_dynamo_d_b_1_1_dynamo_d_b_client>` :methodname:`DescribeTable` method.
 
 **Includes**
 
-.. literalinclude:: example_code/dynamodb/describe_table.cpp
-   :lines: 14-18
+.. literalinclude:: dynamodb.cpp.describe_table.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/describe_table.cpp
-   :lines: 53, 56-87
+.. literalinclude:: dynamodb.cpp.describe_table.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <dynamodb/describe_table.cpp>` on GitHub.
 
 .. _dynamodb-update-table:
 
-Modify (Update) a Table
-=======================
+Modify a Table
+==============
 
 You can modify your table's provisioned throughput values at any time by calling the
 :aws-cpp-class:`DynamoDB client <aws_1_1_dynamo_d_b_1_1_dynamo_d_b_client>`
@@ -157,13 +149,11 @@ You can modify your table's provisioned throughput values at any time by calling
 
 **Includes**
 
-.. literalinclude:: example_code/dynamodb/update_table.cpp
-   :lines:  14-19
+.. literalinclude:: dynamodb.cpp.update_table.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/update_table.cpp
-   :lines:  56-74
+.. literalinclude:: dynamodb.cpp.update_table.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <dynamodb/update_table.cpp>`.
@@ -178,13 +168,11 @@ Call the :aws-cpp-class:`DynamoDB client <aws_1_1_dynamo_d_b_1_1_dynamo_d_b_clie
 
 **Includes**
 
-.. literalinclude:: example_code/dynamodb/delete_table.cpp
-   :lines: 14-18
+.. literalinclude:: dynamodb.cpp.delete_table.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/dynamodb/delete_table.cpp
-   :lines: 55-72
+.. literalinclude:: dynamodb.cpp.delete_table.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <dynamodb/delete_table.cpp>` on GitHub.

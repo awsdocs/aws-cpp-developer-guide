@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,9 +13,8 @@
 #######################################
 
 .. meta::
-    :description:
-        AWS SDK for C++ code examples for Amazon SQS.
-    :keywords:
+    :description: AWS SDK for C++ code examples for Amazon SQS.
+    :keywords: sqs
 
 |SQSlong| (|SQS|) is a fully managed message queuing service that makes it easy to decouple and scale microservices,
 distributed systems, and serverless applications. You can use the following examples to program

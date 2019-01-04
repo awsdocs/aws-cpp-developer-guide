@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,15 +13,13 @@ Using Elastic IP Addresses in |EC2|
 ###################################
 
 .. meta::
-   :description: How to allocate, use, list, and release Elastic IP addresses for EC2 instances with
-                 the AWS SDK for C++.
-   :keywords: AWS SDK for C++, code examples, EC2, Elastic IP, allocate address, release address,
-              assign address, associate address, list addresses
+   :description: How to manage Elastic IP addresses for EC2 instances with the AWS SDK for C++.
+   :keywords: ec2
 
 .. include:: includes/examples-note.txt
 
-Allocating an Elastic IP Address
-================================
+Allocate an Elastic IP Address
+==============================
 
 To use an Elastic IP address, you first allocate one to your account, and then associate it with
 your instance or a network interface.
@@ -39,20 +37,18 @@ the |ec2client|'s :functionname:`AssociateAddress` function.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/allocate_address.cpp
-   :lines: 14-20
+.. literalinclude:: ec2.cpp.allocate_address.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/allocate_address.cpp
-   :lines: 24-53
+.. literalinclude:: ec2.cpp.allocate_address.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/allocate_address.cpp>`.
 
 
-Describing Elastic IP Addresses
-===============================
+Describe Elastic IP Addresses
+=============================
 
 To list the Elastic IP addresses assigned to your account, call the |ec2client|'s
 :functionname:`DescribeAddresses` function. It returns an outcome object that contains a
@@ -62,20 +58,18 @@ objects that represent the Elastic IP addresses on your account.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/describe_addresses.cpp
-   :lines: 14-19
+.. literalinclude:: ec2.cpp.describe_addresses.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/describe_addresses.cpp
-   :lines: 29-57
+.. literalinclude:: ec2.cpp.describe_addresses.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/describe_addresses.cpp>`.
 
 
-Releasing an Elastic IP Address
-===============================
+Release an Elastic IP Address
+=============================
 
 To release an Elastic IP address, call the |ec2client|'s :functionname:`ReleaseAddress` function,
 passing it a :aws-cpp-class:`ReleaseAddressRequest
@@ -84,13 +78,11 @@ address you want to release.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/release_address.cpp
-   :lines: 14-17
+.. literalinclude:: ec2.cpp.release_address.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/release_address.cpp
-   :lines: 35-54
+.. literalinclude:: ec2.cpp.release_address.code.txt
    :dedent: 8
 
 After you release an Elastic IP address, it is released to the AWS IP address pool and might be

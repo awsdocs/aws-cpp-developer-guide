@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,10 +13,8 @@
 ######################################
 
 .. meta::
-    :description:
-        Examples for working with Amazon S3 buckets, objects, access permissions, policies and website configuration
-        using the AWS SDK for C++.
-    :keywords:
+    :description: How to manage Amazon S3 buckets.
+    :keywords: s3
 
 |S3long| (|S3|) is storage for the internet. You can use the following examples to program |S3|_ using
 the |sdk-cpp|_.

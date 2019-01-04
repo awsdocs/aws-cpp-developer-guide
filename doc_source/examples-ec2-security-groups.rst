@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -14,13 +14,12 @@ Working with Security Groups in |EC2|
 
 .. meta::
    :description: How to create, configure and delete EC2 security groups with the AWS SDK for C++.
-   :keywords: AWS SDK for C++, code examples, EC2 security groups, create a security group, ingress
-              rules, egress rules, IP permissions, EC2 access
+   :keywords: ec2
 
 .. include:: includes/examples-note.txt
 
-Creating a Security Group
-=========================
+Create a Security Group
+=======================
 
 To create a security group, call the |ec2client|'s :functionname:`CreateSecurityGroup` function with
 a :aws-cpp-class:`CreateSecurityGroupRequest
@@ -28,20 +27,18 @@ a :aws-cpp-class:`CreateSecurityGroupRequest
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/create_security_group.cpp
-   :lines: 14-17, 19
+.. literalinclude:: ec2.cpp.create_security_group.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/create_security_group.cpp
-   :lines: 48-65
+.. literalinclude:: ec2.cpp.create_security_group.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/create_security_group.cpp>`.
 
 
-Configuring a Security Group
-============================
+Configure a Security Group
+==========================
 
 A security group can control both inbound (ingress) and outbound (egress) traffic to your |EC2|
 instances.
@@ -55,13 +52,15 @@ shows how to add IP permissions to a security group.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/create_security_group.cpp
-   :lines: 14-19
+.. literalinclude:: ec2.cpp.configure_security_group.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/create_security_group.cpp
-   :lines: 48, 69-71, 24-41, 73-85
+.. literalinclude:: ec2.cpp.configure_security_group01.code.txt
+   :dedent: 4
+.. literalinclude:: ec2.cpp.configure_security_group02.code.txt
+   :dedent: 4
+.. literalinclude:: ec2.cpp.configure_security_group03.code.txt
    :dedent: 4
 
 To add an egress rule to the security group, provide similar data in an
@@ -72,8 +71,8 @@ To add an egress rule to the security group, provide similar data in an
 See the :sdk-examples-cpp:`complete example <ec2/create_security_group.cpp>`.
 
 
-Describing Security Groups
-==========================
+Describe Security Groups
+========================
 
 To describe your security groups or get information about them, call the |ec2client|'s
 :functionname:`DescribeSecurityGroups` function with a :aws-cpp-class:`DescribeSecurityGroupsRequest
@@ -88,20 +87,18 @@ objects.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/describe_security_groups.cpp
-   :lines: 14-19
+.. literalinclude:: ec2.cpp.describe_security_groups.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/describe_security_groups.cpp
-   :lines: 36-71
+.. literalinclude:: ec2.cpp.describe_security_groups.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/describe_security_groups.cpp>`.
 
 
-Deleting a Security Group
-=========================
+Delete a Security Group
+=======================
 
 To delete a security group, call the |ec2client|'s :functionname:`DeleteSecurityGroup` function,
 passing it a :aws-cpp-class:`DeleteSecurityGroupRequest
@@ -110,13 +107,11 @@ group to delete.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/delete_security_group.cpp
-   :lines: 14-17
+.. literalinclude:: ec2.cpp.delete_security_group.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/delete_security_group.cpp
-   :lines: 35-50
+.. literalinclude:: ec2.cpp.delete_security_group.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/delete_security_group.cpp>`.

@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,8 +13,8 @@ Enabling Long Polling for |SQS| Message Queues
 ##############################################
 
 .. meta::
-   :description: How to enable long polling for Amazon SQS message queues.
-   :keywords: AWS SDK for C++ code examples, SQS, long polling, queue management
+   :description: How to enable long polling for Amazon SQS message queues using the AWS SDK for C++.
+   :keywords: sqs
 
 |SQS| uses *short polling* by default, querying only a subset of the servers—based on a weighted
 random distribution—to determine whether any messages are available for inclusion in the response.
@@ -28,8 +28,8 @@ seconds*.
 
 .. _sqs-long-polling-create-queue:
 
-Enabling Long Polling when Creating a Queue
-===========================================
+Enable Long Polling when Creating a Queue
+=========================================
 
 To enable long polling when creating an |SQS| queue, set the ``ReceiveMessageWaitTimeSeconds``
 attribute on the :aws-cpp-class:`CreateQueueRequest
@@ -38,13 +38,11 @@ attribute on the :aws-cpp-class:`CreateQueueRequest
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/long_polling_on_create_queue.cpp
-   :lines: 14-18
+.. literalinclude:: sqs.cpp.long_polling_on_create_queue.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/long_polling_on_create_queue.cpp
-   :lines: 38-56
+.. literalinclude:: sqs.cpp.long_polling_on_create_queue.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_create_queue.cpp>`.
@@ -52,8 +50,8 @@ See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_create_queue.cp
 
 .. _sqs-long-polling-existing-queue:
 
-Enabling Long Polling on an Existing Queue
-==========================================
+Enable Long Polling on an Existing Queue
+========================================
 
 In addition to enabling long polling when creating a queue, you can also enable it on an existing
 queue by setting ``ReceiveMessageWaitTimeSeconds`` on the :aws-cpp-class:`SetQueueAttributesRequest
@@ -62,13 +60,11 @@ queue by setting ``ReceiveMessageWaitTimeSeconds`` on the :aws-cpp-class:`SetQue
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/long_polling_on_existing_queue.cpp
-   :lines: 14-17
+.. literalinclude:: sqs.cpp.long_polling_on_existing-queue.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/long_polling_on_existing_queue.cpp
-   :lines: 37-56
+.. literalinclude:: sqs.cpp.long_polling_on_existing-queue.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_existing_queue.cpp>`.
@@ -76,8 +72,8 @@ See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_existing_queue.
 
 .. _sqs-long-polling-receive-message:
 
-Enabling Long Polling on Message Receipt
-========================================
+Enable Long Polling on Message Receipt
+======================================
 
 You can enable long polling when receiving a message by setting the wait time in seconds on the
 :aws-cpp-class:`ReceiveMessageRequest <aws_1_1_s_q_s_1_1_model_1_1_receive_message_request>` that
@@ -89,13 +85,11 @@ you supply to the |sqsclient| class' ReceiveMessage member function.
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/long_polling_on_message_receipt.cpp
-   :lines: 14-17, 19
+.. literalinclude:: sqs.cpp.long_polling_on_message_receipt.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/long_polling_on_message_receipt.cpp
-   :lines: 26-42
+.. literalinclude:: sqs.cpp.long_polling_on_message_receipt.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/long_polling_on_message_receipt.cpp>`.

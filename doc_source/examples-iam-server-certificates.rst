@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,8 +13,8 @@ Working with |IAM| Server Certificates
 ######################################
 
 .. meta::
-   :description: How to set, get, and delete a policy for an Amazon S3 bucket.
-   :keywords: AWS for C++ SDK code examples, bucket policies
+   :description: How to manage AWS IAM server certificates.
+   :keywords: iam
 
 To enable HTTPS connections to your website or application on AWS, you need an SSL/TLS *server
 certificate*. You can use a server certificate provided by |acmlong| or one that you obtained from
@@ -27,8 +27,8 @@ certificate renewals for you. Certificates provided by |acm| are free. For more 
 
 .. include:: includes/examples-note.txt
 
-Getting a Server Certificate
-============================
+Retrieve a Server Certificate
+=============================
 
 You can retrieve a server certificate by calling the |iamclient|'s
 :functionname:`GetServerCertificate` function, passing it a
@@ -37,20 +37,18 @@ You can retrieve a server certificate by calling the |iamclient|'s
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/get_server_cert.cpp
-   :lines: 14-18
+.. literalinclude:: iam.cpp.get_server_cert.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/get_server_cert.cpp
-   :lines: 36-54
+.. literalinclude:: iam.cpp.get_server_cert.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/get_server_cert.cpp>`.
 
 
-Listing Server Certificates
-===========================
+List Server Certificates
+========================
 
 To list your server certificates, call the |iamclient|'s :functionname:`ListServerCertificates`
 function with a :aws-cpp-class:`ListServerCertificatesRequest
@@ -70,20 +68,18 @@ call :functionname:`listServerCertificates` again to get the next batch of resul
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/list_server_certs.cpp
-   :lines: 14-19
+.. literalinclude:: iam.cpp.list_server_certs.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/list_server_certs.cpp
-   :lines: 31-78
+.. literalinclude:: iam.cpp.list_server_certs.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/list_server_certs.cpp>`.
 
 
-Updating a Server Certificate
-=============================
+Update a Server Certificate
+===========================
 
 You can update a server certificate's name or path by calling the |iamclient|'s
 :functionname:`UpdateServerCertificate` function. It takes a
@@ -93,20 +89,18 @@ certificate's current name and either a new name or new path to use.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/update_server_cert.cpp
-   :lines: 14-17
+.. literalinclude:: iam.cpp.update_server_cert.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/update_server_cert.cpp
-   :lines: 38-55
+.. literalinclude:: iam.cpp.update_server_cert.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/update_server_cert.cpp>`.
 
 
-Deleting a Server Certificate
-=============================
+Delete a Server Certificate
+===========================
 
 To delete a server certificate, call the |iamclient|'s :functionname:`DeleteServerCertificate`
 function with a :aws-cpp-class:`DeleteServerCertificateRequest
@@ -115,13 +109,11 @@ name.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/delete_server_cert.cpp
-   :lines: 14-17
+.. literalinclude:: iam.cpp.delete_server_cert.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/delete_server_cert.cpp
-   :lines: 35-49
+.. literalinclude:: iam.cpp.delete_server_cert.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/delete_server_cert.cpp>`.

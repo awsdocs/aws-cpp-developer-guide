@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,7 +13,7 @@ Managing |IAM| Users
 ####################
 
 .. meta::
-   :description: Get information about, create, list, and delete users.
+   :description: Manage IAM users.
 
 .. include:: includes/examples-note.txt
 
@@ -26,13 +26,13 @@ of the user to create.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/create_user.cpp
-   :lines: 14-17, 20
+.. literalinclude:: iam.cpp.create_user.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/create_user.cpp
-   :lines: 24, 42-52
+.. literalinclude:: iam.cpp.create_user.code01.txt
+   :dedent: 4
+.. literalinclude:: iam.cpp.create_user.code02.txt
    :dedent: 4
 
 Get Information About a User
@@ -49,20 +49,20 @@ If the user doesn't already exist, :functionname:`GetUser` will fail with
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/create_user.cpp
-   :lines: 14-15, 18-20
+.. literalinclude:: iam.cpp.get_user.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/create_user.cpp
-   :lines: 24-40
+.. literalinclude:: iam.cpp.create_user.code01.txt
+   :dedent: 4
+.. literalinclude:: iam.cpp.get_user.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/create_user.cpp>`.
 
 
-Listing Users
-=============
+List Users
+==========
 
 List the existing |IAM| users for your account by calling the |iamclient| :functionname:`ListUsers`
 function, passing it a :aws-cpp-class:`ListUsersRequest
@@ -77,13 +77,11 @@ technique.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/list_users.cpp
-   :lines: 14-19
+.. literalinclude:: iam.cpp.list_users.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/list_users.cpp
-   :lines: 31-71
+.. literalinclude:: iam.cpp.list_users.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/list_users.cpp>`.
@@ -98,13 +96,11 @@ To update an existing user, create an :aws-cpp-class:`UpdateUserRequest
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/update_user.cpp
-   :lines: 14-17
+.. literalinclude:: iam.cpp.update_user.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/update_user.cpp
-   :lines: 37-54
+.. literalinclude:: iam.cpp.update_user.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/update_user.cpp>`.
@@ -119,13 +115,13 @@ containing the name of the user to delete.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/delete_user.cpp
-   :lines: 14-16, 19
+.. literalinclude:: iam.cpp.delete_user.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/delete_user.cpp
-   :lines: 23, 44-53
+.. literalinclude:: iam.cpp.delete_user.code01.txt
+   :dedent: 4
+.. literalinclude:: iam.cpp.delete_user.code02.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/delete_user.cpp>`.

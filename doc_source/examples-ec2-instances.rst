@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,15 +13,13 @@ Managing |EC2| Instances
 ########################
 
 .. meta::
-   :description: How to create, start, stop, reboot, list and monitor EC2 instances using the AWS
-                 SDK for C++.
-   :keywords: AWS SDK for C++, code examples, EC2 instances, create instance, start instance, stop
-              instance, reboot instance, monitor instance, list instances, describe instances
+   :description: How to manage EC2 instances using the AWS SDK for C++.
+   :keywords: ec2
 
 .. include:: includes/examples-note.txt
 
-Creating an Instance
-====================
+Create an Instance
+==================
 
 Create a new |EC2| instance by calling the |ec2client|'s :functionname:`RunInstances` function,
 providing it with a :aws-cpp-class:`RunInstancesRequest
@@ -30,20 +28,18 @@ providing it with a :aws-cpp-class:`RunInstancesRequest
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/create_instance.cpp
-   :lines: 14-19
+.. literalinclude:: ec2.cpp.create_instance.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/create_instance.cpp
-   :lines: 23-47
+.. literalinclude:: ec2.cpp.create_instance.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/create_instance.cpp>`.
 
 
-Starting an Instance
-====================
+Start an Instance
+=================
 
 To start an |EC2| instance, call the |ec2client|'s :functionname:`StartInstances` function, providing
 it with a :aws-cpp-class:`StartInstancesRequest
@@ -51,20 +47,18 @@ it with a :aws-cpp-class:`StartInstancesRequest
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/start_stop_instance.cpp
-   :lines: 14-17, 20
+.. literalinclude:: ec2.cpp.start_instance.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/start_stop_instance.cpp
-   :lines: 24-52
+.. literalinclude:: ec2.cpp.start_instance.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/start_stop_instance.cpp>`.
 
 
-Stopping an Instance
-====================
+Stop an Instance
+================
 
 To stop an |EC2| instance, call the |ec2client|'s :functionname:`StopInstances` function, providing it
 with a :aws-cpp-class:`StopInstancesRequest <aws_1_1_e_c2_1_1_model_1_1_stop_instances_request>`
@@ -72,20 +66,18 @@ containing the ID of the instance to stop.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/start_stop_instance.cpp
-   :lines: 14-15, 18-20
+.. literalinclude:: ec2.cpp.stop_instance.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/start_stop_instance.cpp
-   :lines: 57-84
+.. literalinclude:: ec2.cpp.stop_instance.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/start_stop_instance.cpp>`.
 
 
-Rebooting an Instance
-=====================
+Reboot an Instance
+==================
 
 To reboot an |EC2| instance, call the |ec2client|'s :functionname:`RebootInstances` function,
 providing it with a :aws-cpp-class:`RebootInstancesRequest
@@ -93,19 +85,17 @@ providing it with a :aws-cpp-class:`RebootInstancesRequest
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/reboot_instance.cpp
-   :lines: 14-17
+.. literalinclude:: ec2.cpp.reboot_instance.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/reboot_instance.cpp
-   :lines: 21-49
+.. literalinclude:: ec2.cpp.reboot_instance.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/reboot_instance.cpp>`.
 
 
-Describing Instances
+Describe Instances
 ====================
 
 To list your instances, create a :aws-cpp-class:`DescribeInstancesRequest
@@ -121,13 +111,11 @@ then call :functionname:`getInstances` on each returned Reservation object.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/describe_instances.cpp
-   :lines: 14-19
+.. literalinclude:: ec2.cpp.describe_instances.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/describe_instances.cpp
-   :lines: 29-106
+.. literalinclude:: ec2.cpp.describe_instances.code.txt
    :dedent: 8
 
 Results are paged; you can get further results by passing the value returned from the result
@@ -151,13 +139,11 @@ pass it to the |ec2client|'s :functionname:`MonitorInstances` function.
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/monitor_instance.cpp
-   :lines: 14-17, 20
+.. literalinclude:: ec2.cpp.monitor_instance.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/monitor_instance.cpp
-   :lines: 24-52
+.. literalinclude:: ec2.cpp.enable_monitor_instance.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/monitor_instance.cpp>`.
@@ -172,13 +158,11 @@ monitoring, and pass it to the |ec2client|'s :functionname:`UnmonitorInstances` 
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/monitor_instance.cpp
-   :lines: 14-15, 18-20
+.. literalinclude:: ec2.cpp.monitor_instance.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/monitor_instance.cpp
-   :lines: 57-85
+.. literalinclude:: ec2.cpp.disable_monitor_instance.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <ec2/monitor_instance.cpp>`.

@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -14,7 +14,7 @@ Setting Visibility Timeout in |SQS|
 
 .. meta::
    :description: How to set visibility timeout for Amazon SQS queues with the AWS SDK for C++.
-   :keywords: AWS SDK for C++ code examples, Amazon SQS, visibility timeout
+   :keywords: sqs
 
 When a message is received in |SQS|, it remains on the queue until it's deleted in order to ensure
 receipt. A message that was received, but not deleted, will be available in subsequent requests
@@ -29,8 +29,8 @@ case where the same message has been delivered more than once.
 
 .. _sqs-visibility-timeout-receipt:
 
-Setting the Message Visibility Timeout upon Message Receipt
-===========================================================
+Set the Message Visibility Timeout upon Message Receipt
+=======================================================
 
 When you have received a message, you can modify its visibility timeout by passing its receipt
 handle in a :aws-cpp-class:`ChangeMessageVisibilityRequest
@@ -39,13 +39,11 @@ class' :functionname:`ChangeMessageVisibility` member function.
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/change_message_visibility.cpp
-   :lines: 14-19
+.. literalinclude:: sqs.cpp.change_message_visibility.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/change_message_visibility.cpp
-   :lines: 27-73
+.. literalinclude:: sqs.cpp.change_message_visibility.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/change_message_visibility.cpp>`.

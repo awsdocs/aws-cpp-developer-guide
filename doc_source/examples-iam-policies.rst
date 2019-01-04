@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,13 +13,13 @@ Working with |IAM| Policies
 ###########################
 
 .. meta::
-   :description: How to set, get, and delete a policy for an Amazon S3 bucket.
-   :keywords: AWS for C++ SDK code examples, bucket policies
+   :description: How to manage AWS IAM policies.
+   :keywords: iam
 
 .. include:: includes/examples-note.txt
 
-Creating a Policy
-=================
+Create a Policy
+===============
 
 To create a new policy, provide the policy's name and a JSON-formatted policy document in a
 :aws-cpp-class:`CreatePolicyRequest <aws_1_1_i_a_m_1_1_model_1_1_create_policy_request>` to the
@@ -27,13 +27,11 @@ To create a new policy, provide the policy's name and a JSON-formatted policy do
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/create_policy.cpp
-   :lines: 14-18
+.. literalinclude:: iam.cpp.create_policy.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/create_policy.cpp
-   :lines: 72-88
+.. literalinclude:: iam.cpp.create_policy.code.txt
    :dedent: 8
 
 |iam| policy documents are JSON strings with a :iam-ug:`well-documented syntax
@@ -46,8 +44,8 @@ to |ddb|. It takes the policy ARN as a passed-in variable.
 See the :sdk-examples-cpp:`complete example <iam/create_policy.cpp>`.
 
 
-Getting a Policy
-================
+Retrieve a Policy
+=================
 
 To retrieve an existing policy, call the |iamclient|'s :functionname:`GetPolicy` function, providing the
 policy's ARN within a :aws-cpp-class:`GetPolicyRequest
@@ -55,19 +53,17 @@ policy's ARN within a :aws-cpp-class:`GetPolicyRequest
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/get_policy.cpp
-   :lines: 14-18
+.. literalinclude:: iam.cpp.get_policy.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/get_policy.cpp
-   :lines: 36-55
+.. literalinclude:: iam.cpp.get_policy.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/get_policy.cpp>`.
 
-Deleting a Policy
-=================
+Delete a Policy
+===============
 
 To delete a policy, provide the policy's ARN in a :aws-cpp-class:`DeletePolicyRequest
 <aws_1_1_i_a_m_1_1_model_1_1_delete_policy_request>` to the |iamclient|'s :functionname:`DeletePolicy`
@@ -75,20 +71,18 @@ function.
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/delete_policy.cpp
-   :lines: 14-17
+.. literalinclude:: iam.cpp.delete_policy.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/delete_policy.cpp
-   :lines: 38-52
+.. literalinclude:: iam.cpp.delete_policy.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/delete_policy.cpp>`.
 
 
-Attaching a Policy
-==================
+Attach a Policy
+===============
 
 You can attach a policy to an |IAM| :iam-ug:`role <id_roles>` by calling the |iamclient|'s
 :functionname:`AttachRolePolicy` function, providing it with the role name and policy ARN in an
@@ -96,20 +90,18 @@ You can attach a policy to an |IAM| :iam-ug:`role <id_roles>` by calling the |ia
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/attach_role_policy.cpp
-   :lines: 14-20
+.. literalinclude:: iam.cpp.attach_role_policy.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/attach_role_policy.cpp
-   :lines: 25-71
+.. literalinclude:: iam.cpp.attach_role_policy.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/attach_role_policy.cpp>`.
 
 
-Listing Attached Policies
-=========================
+List Attached Policies
+======================
 
 List attached policies on a role by calling the |iamclient|'s :functionname:`ListAttachedRolePolicies`
 function. It takes a :aws-cpp-class:`ListAttachedRolePoliciesRequest
@@ -126,20 +118,18 @@ to call :functionname:`ListAttachedRolePolicies` again to get the next batch of 
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/list_policies.cpp
-   :lines: 14-19
+.. literalinclude:: iam.cpp.list_policies.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/list_policies.cpp
-   :lines: 31-74
+.. literalinclude:: iam.cpp.list_policies.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <iam/list_policies.cpp>`.
 
 
-Detaching a Policy
-==================
+Detach a Policy
+===============
 
 To detach a policy from a role, call the |iamclient|'s :functionname:`DetachRolePolicy` function,
 providing it with the role name and policy ARN in a :aws-cpp-class:`DetachRolePolicyRequest
@@ -147,13 +137,13 @@ providing it with the role name and policy ARN in a :aws-cpp-class:`DetachRolePo
 
 **Includes:**
 
-.. literalinclude:: example_code/iam/detach_role_policy.cpp
-   :lines: 14-19
+.. literalinclude:: iam.cpp.detach_role_policy.inc.txt
 
 **Code:**
 
-.. literalinclude:: example_code/iam/detach_role_policy.cpp
-   :lines: 23, 64-75
+.. literalinclude:: iam.cpp.detach_role_policy01.code.txt
+   :dedent: 4
+.. literalinclude:: iam.cpp.detach_role_policy02.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/detach_role_policy.cpp>`.

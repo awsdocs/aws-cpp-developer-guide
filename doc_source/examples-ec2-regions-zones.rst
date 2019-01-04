@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -14,13 +14,12 @@ Using Regions and Availability Zones for |EC2|
 
 .. meta::
    :description: How to list EC2 regions and availability zones using the AWS SDK for C++.
-   :keywords: AWS SDK for C++, code examples, EC2, list regions, describe regions, list availability
-              zones, describe availability zones
+   :keywords: ec2
 
 .. include:: includes/examples-note.txt
 
-Describing Regions
-==================
+Describe Regions
+================
 
 To list the regions available to your account, call the |ec2client|'s
 :functionname:`DescribeRegions` function with a :aws-cpp-class:`DescribeRegionsRequest
@@ -33,20 +32,18 @@ You will receieve a :aws-cpp-class:`DescribeRegionsResponse
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/describe_regions_and_zones.cpp
-   :lines: 14-17, 20-21
+.. literalinclude:: ec2.cpp.describe_regions.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/describe_regions_and_zones.cpp
-   :lines: 31-52
+.. literalinclude:: ec2.cpp.describe_regions.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/describe_regions_and_zones.cpp>`.
 
 
-Describing Availability Zones
-=============================
+Describe Availability Zones
+===========================
 
 To list each availability zone available to your account, call the |ec2client|'s
 :functionname:`DescribeAvailabilityZones` function with a
@@ -60,13 +57,11 @@ You will receive a :aws-cpp-class:`DescribeAvailabilityZonesResponse
 
 **Includes**
 
-.. literalinclude:: example_code/ec2/describe_regions_and_zones.cpp
-   :lines: 14-15, 18-21
+.. literalinclude:: ec2.cpp.describe_zones.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/ec2/describe_regions_and_zones.cpp
-   :lines: 31, 55-83
+.. literalinclude:: ec2.cpp.describe_zones.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <ec2/describe_regions_and_zones.cpp>`.

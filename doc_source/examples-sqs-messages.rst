@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -14,8 +14,8 @@ Sending, Receiving, and Deleting |SQS| Messages
 ###############################################
 
 .. meta::
-   :description: How to send, receive, and delete Amazon SQS messages with the AWS SDK for C++.
-   :keywords: AWS SDK for C++ code examples
+   :description: How to manage Amazon SQS messages with the AWS SDK for C++.
+   :keywords: sqs
 
 Messages are always delivered using an :doc:`SQS queue <examples-sqs-message-queues>`. These C++
 examples show you how to use the |sdk-cpp| to send, receive, and delete |SQS| messages from SQS
@@ -36,13 +36,11 @@ containing the queue's :ref:`URL <sqs-get-queue-url>`, the message body, and an 
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/send_message.cpp
-   :lines: 14-18
+.. literalinclude:: sqs.cpp.send_message.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/send_message.cpp
-   :lines: 38-54
+.. literalinclude:: sqs.cpp.send_message.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <sqs/send_message.cpp>`.
@@ -59,13 +57,11 @@ list of :aws-cpp-class:`Message <aws_1_1_s_q_s_1_1_model_1_1_message>` objects.
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/receive_message.cpp
-   :lines: 14-17, 19
+.. literalinclude:: sqs.cpp.receive_message.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/receive_message.cpp
-   :lines: 26-55
+.. literalinclude:: sqs.cpp.receive_message.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/receive_message.cpp>`.
@@ -82,13 +78,11 @@ member function.
 
 **Includes**
 
-.. literalinclude:: example_code/sqs/receive_message.cpp
-   :lines: 14-15, 18-19
+.. literalinclude:: sqs.cpp.delete_message.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/sqs/receive_message.cpp
-   :lines: 57-72
+.. literalinclude:: sqs.cpp.delete_message.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <sqs/receive_message.cpp>`.

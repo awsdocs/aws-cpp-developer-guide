@@ -1,4 +1,4 @@
-.. Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -13,9 +13,8 @@ Operations on Objects
 #####################
 
 .. meta::
-    :description:
-        Uploading, downloading, deleting and listing Amazon S3 object using the AWS SDK for C++.
-    :keywords:
+    :description: Managing Amazon S3 object using the AWS SDK for C++.
+    :keywords: s3
 
 An |S3| object represents a *file*, which is a collection of data. Every object must reside within a
 :doc:`bucket <examples-s3-buckets>`.
@@ -32,13 +31,11 @@ name, and file to upload. *The bucket must exist or an error will result*.
 
 **Includes**
 
-.. literalinclude:: example_code/s3/put_object.cpp
-   :lines: 14-18
+.. literalinclude:: s3.cpp.put_object.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/put_object.cpp
-   :lines: 45-70
+.. literalinclude:: s3.cpp.put_object.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/put_object.cpp>`.
@@ -57,13 +54,11 @@ use to get a list of objects in the form of :classname:`Object` instances.
 
 **Includes**
 
-.. literalinclude:: example_code/s3/list_objects.cpp
-   :lines: 14-17
+.. literalinclude:: s3.cpp.list_objects.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/list_objects.cpp
-   :lines: 39-61
+.. literalinclude:: s3.cpp.list_objects.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/list_objects.cpp>`.
@@ -85,13 +80,11 @@ name as the object's key).
 
 **Includes**
 
-.. literalinclude:: example_code/s3/get_object.cpp
-   :lines: 14-17
+.. literalinclude:: s3.cpp.get_object.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/get_object.cpp
-   :lines: 42-61
+.. literalinclude:: s3.cpp.get_object.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/get_object.cpp>`.
@@ -108,13 +101,11 @@ Use the |s3client| object's :functionname:`DeleteObject` function, passing it a
 
 **Includes**
 
-.. literalinclude:: example_code/s3/delete_object.cpp
-   :lines: 14-17
+.. literalinclude:: s3.cpp.delete_object.inc.txt
 
 **Code**
 
-.. literalinclude:: example_code/s3/delete_object.cpp
-   :lines: 44-60
+.. literalinclude:: s3.cpp.delete_object.code.txt
    :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_object.cpp>`.
