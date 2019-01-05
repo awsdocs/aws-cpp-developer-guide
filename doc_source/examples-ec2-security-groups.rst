@@ -58,8 +58,10 @@ shows how to add IP permissions to a security group.
 
 .. literalinclude:: ec2.cpp.configure_security_group01.code.txt
    :dedent: 4
+
 .. literalinclude:: ec2.cpp.configure_security_group02.code.txt
    :dedent: 4
+   
 .. literalinclude:: ec2.cpp.configure_security_group03.code.txt
    :dedent: 4
 

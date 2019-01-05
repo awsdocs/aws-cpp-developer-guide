@@ -143,6 +143,7 @@ providing it with the role name and policy ARN in a :aws-cpp-class:`DetachRolePo
 
 .. literalinclude:: iam.cpp.detach_role_policy01.code.txt
    :dedent: 4
+   
 .. literalinclude:: iam.cpp.detach_role_policy02.code.txt
    :dedent: 4
 

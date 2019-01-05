@@ -40,6 +40,7 @@ representation in a :aws-cpp-class:`PutBucketPolicyRequest
 
 .. literalinclude:: s3.cpp.put_bucket_policy01.code.txt
    :dedent: 8
+   
 .. literalinclude:: s3.cpp.put_bucket_policy02.code.txt
    :dedent: 8
 

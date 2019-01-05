@@ -32,6 +32,7 @@ of the user to create.
 
 .. literalinclude:: iam.cpp.create_user.code01.txt
    :dedent: 4
+
 .. literalinclude:: iam.cpp.create_user.code02.txt
    :dedent: 4
 
@@ -55,6 +56,7 @@ If the user doesn't already exist, :functionname:`GetUser` will fail with
 
 .. literalinclude:: iam.cpp.create_user.code01.txt
    :dedent: 4
+
 .. literalinclude:: iam.cpp.get_user.code.txt
    :dedent: 4
 
@@ -121,6 +123,7 @@ containing the name of the user to delete.
 
 .. literalinclude:: iam.cpp.delete_user.code01.txt
    :dedent: 4
+   
 .. literalinclude:: iam.cpp.delete_user.code02.txt
    :dedent: 4
 
