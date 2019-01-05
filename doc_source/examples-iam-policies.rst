@@ -83,7 +83,7 @@ See the :sdk-examples-cpp:`complete example <iam/delete_policy.cpp>`.
 Attach a Policy
 ===============
 
-You can attach a policy to an |IAM| :iam-ug:` role <id_roles>` by calling the |iamclient|'s
+You can attach a policy to an |IAM| :iam-ug:`role <id_roles>` by calling the |iamclient|'s
 :functionname:`AttachRolePolicy` function, providing it with the role name and policy ARN in an
 :aws-cpp-class:`AttachRolePolicyRequest <aws_1_1_i_a_m_1_1_model_1_1_attach_role_policy_request>`.
 
