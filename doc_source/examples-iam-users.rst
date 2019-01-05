@@ -30,10 +30,10 @@ of the user to create.
 
 **Code:**
 
-.. literalinclude:: iam.cpp.create_user.code01.txt
+.. literalinclude:: iam.cpp.create_user01.code.txt
    :dedent: 4
 
-.. literalinclude:: iam.cpp.create_user.code02.txt
+.. literalinclude:: iam.cpp.create_user02.code.txt
    :dedent: 4
 
 Get Information About a User
@@ -54,7 +54,7 @@ If the user doesn't already exist, :functionname:`GetUser` will fail with
 
 **Code:**
 
-.. literalinclude:: iam.cpp.create_user.code01.txt
+.. literalinclude:: iam.cpp.create_user01.code.txt
    :dedent: 4
 
 .. literalinclude:: iam.cpp.get_user.code.txt
@@ -121,10 +121,10 @@ containing the name of the user to delete.
 
 **Code:**
 
-.. literalinclude:: iam.cpp.delete_user.code01.txt
+.. literalinclude:: iam.cpp.delete_user01.code.txt
    :dedent: 4
-   
-.. literalinclude:: iam.cpp.delete_user.code02.txt
+
+.. literalinclude:: iam.cpp.delete_user02.code.txt
    :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <iam/delete_user.cpp>`.
