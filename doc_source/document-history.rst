@@ -16,45 +16,10 @@ Document History for the |sdk-cpp-dg|
     :description: AWS SDK for C++ Developer Guide documentation update history.
     :keywords:
 
-This topic lists major changes to the *AWS SDK for C++ Developer Guide* over the course of its
-history.
+This topic lists recent changes to the *AWS SDK for C++ Developer Guide*.
 
 * **Latest documentation update:** |today|
 
-April 13, 2017
-   Added new examples: :doc:`examples-s3-bucket-policies` and
-   :doc:`examples-s3-website-configuration`, as well as refreshing the content in
-   :doc:`examples-s3-buckets` and :doc:`examples-s3-objects`.
-
-   Made the :doc:`utility-modules` topic more useful!
-
-April 03, 2017
-   Added new topics to the :doc:`examples-cloudwatch` section:
-   :doc:`examples-cloudwatch-get-metrics`, :doc:`examples-cloudwatch-publish-custom-metrics`
-   :doc:`examples-cloudwatch-create-alarms`, :doc:`examples-cloudwatch-use-alarm-actions` and
-   :doc:`examples-cloudwatch-send-events`
-
-March 28, 2017
-   Added new topics to the :doc:`examples-ec2` section: :doc:`examples-ec2-instances`,
-   :doc:`examples-ec2-elastic-ip`, :doc:`examples-ec2-regions-zones`, :doc:`examples-ec2-key-pairs`,
-   and :doc:`examples-ec2-security-groups`
-
-March 23, 2017
-   Added new topics to the :doc:`examples-iam` section: :doc:`examples-iam-access-keys`,
-   :doc:`examples-iam-account-aliases`, :doc:`examples-iam-policies`, and
-   :doc:`examples-iam-server-certificates`
-
-March 10, 2017
-   Added new topics to :doc:`examples-sqs`: :doc:`examples-sqs-dead-letter-queues`,
-   doc:`examples-sqs-long-polling`, and :doc:`examples-sqs-visibility-timeout`
-
-February 27, 2017
-   A new topic in the **Getting Started** section, :doc:`basic-use`, has been added to show how to
-   properly initialize and shutdown the SDK.
-
-   In addition to the existing :doc:`examples-s3` examples, new code examples have been added for
-   :doc:`examples-sqs` and :doc:`examples-iam`.
-
-February 02, 2016
-    Documentation first created.
+January 07, 2019
+   Fixed the inclusion of code samples.
 
