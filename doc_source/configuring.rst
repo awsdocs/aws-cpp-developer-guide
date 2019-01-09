@@ -27,4 +27,5 @@ This section presents information about how to configure the |sdk-cpp|.
     client-config
     overriding-http-client
     configuring-iostreams
+    sdk-metrics
 
