@@ -18,12 +18,11 @@ Document History for the |sdk-cpp-dg|
 
 This topic lists recent changes to the *AWS SDK for C++ Developer Guide*.
 
-* **Latest documentation update:** |date|
-.. * **Latest documentation update:** |today|
+* **Latest documentation update:** |today|
 
 January 11, 2019
    Added new section :doc:`sdk-metrics`.
-   
+
 January 07, 2019
    Fixed the inclusion of code samples.
 

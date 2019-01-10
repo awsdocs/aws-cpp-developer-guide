@@ -30,7 +30,7 @@ To set up |SDKM| with the |sdk-cpp|, follow these instructions:
 #. Create an application with an |sdk-cpp| client to use an AWS service.
 #. Host your project on an |EC2| instance or in your local environment.
 #. Install and use the latest version of the |sdk-cpp|.
-#. Install and configure an |CW| agent on an EC2 instance or in your local environment.
+#. Install and configure a |CW| agent on an EC2 instance or in your local environment.
 #.  Authorize |SDKM| to Collect and Send Metrics 
 #. :ref:`csm-enable-agent`
 
@@ -45,7 +45,7 @@ For more information, see the following:
 Enable |SDKM| for the |sdk-cpp|
 ====================================
 
-By default, |SDKM| is turned off, and the port is set to 31000. The following are the default parameters.
+By default, |SDKM| uses port 31000 and is disabled.
 
 .. code-block:: ini
 
