@@ -16,7 +16,7 @@
 AWS Enterprise Support. SDK Metrics provides information that helps speed up detection and diagnosis of issues occurring in connections 
 to AWS services for AWS Enterprise Support customers. 
 
-As telemetry is collected on each host, it is relayed via UDP to 127.0.0.1 (aka localhost), where the |CW| Agent aggregates the data and sends it 
+As telemetry is collected on each host, it is relayed via UDP to 127.0.0.1 (AKA localhost), where the |CW| Agent aggregates the data and sends it 
 to the |SDKM| service. Therefore, to receive metrics, the |CW| Agent is required to be added to your instance.
 
 The following steps to set up |SDKM| pertain to an |EC2| instance running Amazon Linux for a client application that is using the |sdk-cpp|.
@@ -27,11 +27,11 @@ To utilize |SDKM|, run the latest version of the |CW| agent. Learn how to
 
 To set up |SDKM| with the |sdk-cpp|, follow these instructions:
 
-#. Create an application with an |sdk-cpp| client to use an AWS service.
+#. Install the latest version of the |sdk-cpp|.
 #. Host your project on an |EC2| instance or in your local environment.
-#. Install and use the latest version of the |sdk-cpp|.
+#. Create an application with an |sdk-cpp| client to use an AWS service.
 #. Install and configure a |CW| agent on an EC2 instance or in your local environment.
-#.  Authorize |SDKM| to Collect and Send Metrics 
+#. Authorize |SDKM| to Collect and Send Metrics 
 #. :ref:`csm-enable-agent`
 
 For more information, see the following:
