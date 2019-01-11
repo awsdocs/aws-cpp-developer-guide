@@ -23,7 +23,7 @@ The following steps to set up |SDKM| pertain to an |EC2| instance running Amazon
 |SDKM| is also available for your production environments if you enable it while configuring the |sdk-cpp|. 
 
 To utilize |SDKM|, run the latest version of the |CW| agent. Learn how to 
-:CW-dg:`Configure the CloudWatch Agent for SDK Metrics<Configure-CloudWatch-Agent-SDK-Metrics.>` in the |CW-dg|.
+:CW-dg:`Configure the CloudWatch Agent for SDK Metrics<Configure-CloudWatch-Agent-SDK-Metrics>` in the |CW-dg|.
 
 To set up |SDKM| with the |sdk-cpp|, follow these instructions:
 
