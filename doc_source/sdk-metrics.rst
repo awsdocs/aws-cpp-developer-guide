@@ -223,17 +223,6 @@ business reviews.
      - Use this metric to determine whether issues are specific to your application
        or are caused by your infrastructure and/or network.
        High ConnectionErrorCount could also indicate short timeout values for API calls.
-   * - ThrottleCount
-     - Number of API calls that fail due to throttling by AWS services.
-     - Use this metric to assess if your application has reached throttle limits,
-       as well as to determine the cause of retries and application latency.
-       Consider distributing calls over a window instead of batching your calls.
-   * - ServerErrorCount
-     - Number of API calls that fail due to server errors (5xx HTTP response codes) from AWS Services.
-       These are typically caused by AWS services.
-     - Determine cause of SDK retries or latency.
-       This metric will not always indicate that AWS services are at fault,
-       as some AWS teams classify latency as an HTTP 503 response.
    * - EndToEndLatency
      - Total time for your application to make a call using the AWS SDK,
        inclusive of retries.
@@ -242,3 +231,14 @@ business reviews.
      - Determine how AWS API calls contribute to your application's overall latency.
        Higher than expected latency may be caused by issues with network, firewall,
        or other configuration settings, or by latency that occurs as a result of SDK retries.
+   * - ServerErrorCount
+     - Number of API calls that fail due to server errors (5xx HTTP response codes) from AWS Services.
+       These are typically caused by AWS services.
+     - Determine cause of SDK retries or latency.
+       This metric will not always indicate that AWS services are at fault,
+       as some AWS teams classify latency as an HTTP 503 response.
+   * - ThrottleCount
+     - Number of API calls that fail due to throttling by AWS services.
+     - Use this metric to assess if your application has reached throttle limits,
+       as well as to determine the cause of retries and application latency.
+       Consider distributing calls over a window instead of batching your calls.
