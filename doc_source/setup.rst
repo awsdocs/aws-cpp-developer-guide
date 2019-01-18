@@ -49,15 +49,22 @@ To compile on Linux, you must have the header files (``-dev`` packages) for :fil
 |POLlong| support. The packages are typically found by using the system's package manager.
 
 .. topic:: To install the packages on *Debian/Ubuntu-based systems*
+
    ::
 
       sudo apt-get install libcurl4-openssl-dev libssl-dev uuid-dev zlib1g-dev libpulse-dev
 
 .. topic:: To install the packages on *Redhat/Fedora-based systems*
+
    ::
 
       sudo dnf install libcurl-devel openssl-devel libuuid-devel pulseaudio-devel
 
+.. topic:: To install the packages on *CentOS-based systems*
+
+   ::
+
+      sudo yum install libcurl-devel openssl-devel libuuid-devel pulseaudio-libs-devel
 
 .. _setup-with-nuget:
 
@@ -98,20 +105,33 @@ installed on your system.
    #. Open a Windows command prompt and navigate to the vcpkg directory.
 
    #. Integrate vcpkg into Visual Studio. You can `integrate 
-      <https://docs.microsoft.com/en-us/cpp/vcpkg#installation>`_ per project or per user 
-      (shown below) to avoid manually editing Visual C++ directory paths.
+      <https://docs.microsoft.com/en-us/cpp/vcpkg#installation>`_ per project or per user. 
+      The command line shown below integrates vcpkg for the current user.
       ::
 
 	      vcpkg integrate install
 
-   #. Install the |sdk-cpp| package. This package compiles the SDK and its dependencies. It can take a while.
+   #. Install the |sdk-cpp| package. The package compiles the entire SDK and its dependencies. It 
+      can take a while.
       ::
 
-	      vcpkg install aws-sdk-cpp:x86-windows
+	      vcpkg install aws-sdk-cpp[*]:x86-windows --recurse
+
+      To reduce build time, build only the SDK packages needed. Specify the package names in 
+      square brackets. Also include the SDK `core` package.
+      ::
+
+         vcpkg install aws-sdk-cpp[core,s3,ec2]:x86-windows
+      
+      A package name can be derived from the |sdk-cpp| repo directory name for the service.
+      ::
+
+         aws-sdk-cpp\aws-cpp-sdk-<packageName>   # Repo directory name and packageName
+         aws-sdk-cpp\aws-cpp-sdk-s3              # Example: Package name is s3
 
    #. Open your project in Visual Studio.
 
-   #. #include |sdk-cpp| header files you want in your source code.
+   #. #include the |sdk-cpp| header files you want in your source code.
 
 Like NuGet, when you build your project, the correct binaries are automatically included for each
 runtime/architecture configuration you use.
