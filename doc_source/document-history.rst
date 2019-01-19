@@ -20,6 +20,9 @@ This topic lists recent changes to the *AWS SDK for C++ Developer Guide*.
 
 * **Latest documentation update:** |today|
 
+January 19, 2019
+   Updated the instructions for setting up the `vcpkg` C++ package manager.
+
 January 11, 2019
    Added new section :doc:`sdk-metrics`.
 
