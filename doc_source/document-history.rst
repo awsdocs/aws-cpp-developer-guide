@@ -20,6 +20,10 @@ This topic lists recent changes to the *AWS SDK for C++ Developer Guide*.
 
 * **Latest documentation update:** |today|
 
+March 01, 2019
+   Updated the instructions for building the SDK.
+   Updated the available AWS Client Configuration variables.
+
 January 19, 2019
    Updated the instructions for setting up the `vcpkg` C++ package manager.
 
