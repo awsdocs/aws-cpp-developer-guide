@@ -52,86 +52,109 @@ Use the client configuration to control various behaviors of the |sdk-cpp|.
         std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
         Aws::Http::TransferLibType httpLibOverride;
         bool followRedirects;
+        bool disableExpectHeader;
+        bool enableClockSkewAdjustment;
+        bool enableHostPrefixInjection;
+        bool enableEndpointDiscovery;
     };
 
 Configuration Variables
 =======================
 
 userAgent
-    Built in the constructor and pulls information from your operating system. Do not alter the user
-    agent.
+    For internal use only. Do not change the setting of this variable.
 
 scheme
-    The default value is HTTPS. You can set this value to HTTP if the information you are passing is
-    not sensitive and the service to which you want to connect supports an HTTP endpoint.  AWS Auth
-    protects you from tampering.
+    Specifies the URI addressing scheme, either HTTP or HTTPS. The default scheme is HTTPS.
 
 region
-    Specifies where you want the client to communicate. Examples include *us-east-1* or *us-west-1*.
-    You must ensure that the service you want to use has an endpoint in the region you configure.
+    Specifies the AWS region to use, such as *us-east-1*. By default, the region used is 
+    the default region configured in the applicable AWS credentials.
 
 useDualStack
-    Use dual stack endpoint in the endpoint calculation. You must ensure that the service you
-    want to use supports ipv6 in the region you select.
+    Controls whether to use dual stack IPv4 and IPv6 endpoints. Note that not all AWS 
+    services support IPv6 in all regions.
 
 maxConnections
-    The maximum number of allowed connections to a single server for your HTTP communications. The
-    default value is 25. You can set this value as high as you can support the bandwidth. We
-    recommend a value around 25.
+    Specifies the maximum number of HTTP connections to a single server. The default value 
+    is 25. No maximum allowed value exists other than what your bandwidth can reasonably
+    support.
 
 requestTimeoutMs and connectTimeoutMs
-    Values that determine the length of time, in milliseconds, to wait before timing out a request.
-    You can increase this value if you need to transfer large files, such as in |S3| or
-    |CFlong|.
+    Specifies the amount of time in milliseconds to wait before timing out an HTTP request.
+    For example, consider increasing these times when transferring large files.
 
 enableTcpKeepAlive
-    Enable TCP keep-alive. Use in conjunction with ``tcpKeepAliveIntervalMs``. Default is true. Not 
+    Controls whether to send TCP keep-alive packets. The default setting is true. Use in 
+    conjunction with the ``tcpKeepAliveIntervalMs`` variable. This variable is not
     applicable for WinINet and the IXMLHTTPRequest2 client.
 
 tcpKeepAliveIntervalMs
-    Interval in milliseconds to send a keep-alive packet over the TCP connection. Default is 
-    30 seconds. Minimum setting is 15 seconds. Not applicable for WinINet and the 
-    IXMLHTTPRequest2 client.
+    Specifies the time interval in milliseconds at which to send a keep-alive packet over 
+    a TCP connection. The default interval is 30 seconds. The minimum setting is 15 seconds.
+    This variable is not applicable for WinINet and the IXMLHTTPRequest2 client.
 
 lowSpeedLimit
-    Average minimum transfer speed in bytes per second. If a transfer speed is below this speed,
-    it is considered to be too slow and is aborted. Default setting is 1 byte/second. Applicable
-    only for CURL clients.
+    Specifies the minimum allowed transfer speed in bytes per second. If the transfer speed 
+    falls below the specified speed, the transfer operation is aborted. The default setting 
+    is 1 byte/second. This variable is applicable only for CURL clients.
 
 retryStrategy
-    Defaults to exponential backoff. You can override this default by implementing a subclass of
-    ``RetryStrategy`` and passing an instance.
+    References the implementation of the retry strategy. The default strategy implements an
+    exponential backoff policy.  To perform a different strategy, implement a subclass of
+    the ``RetryStrategy`` class and assign an instance to this variable.
 
 endpointOverride
-    Overrides the HTTP endpoint used to talk to a service.
+    Specifies an overriding HTTP endpoint with which to communicate with a service.
 
 proxyScheme, proxyHost, proxyPort, proxyUserName, and proxyPassword
-    These settings allow you to configure a proxy for all communication with AWS. Examples of when
+    Used to set up and configure a proxy for all communications with AWS. Examples of when
     this functionality might be useful include debugging in conjunction with the Burp suite, or
     using a proxy to connect to the Internet.
 
 executor
-    The default behavior is to create and detach a thread for each async call. You can change this
-    behavior by implementing a subclass of ``Executor`` and passing an instance.
+    References the implementation of the asynchronous Executor handler. The default behavior
+    is to create and detach a thread for each async call. To change this behavior, implement 
+    a subclass of the ``Executor`` class and assign an instance to this variable.
 
 verifySSL
-    Specifies whether to enable SSL certificate verification. If necessary, you can disable SSL
-    certificate verification by setting ``verifySSL`` to ``false``.
+    Controls whether to verify SSL certificates. By default SSL certificates are verified. To
+    disable verification, set the variable to false.
 
 caPath, caFile
-    Enables you to tell the HTTP client where to find your SSL certificate trust store (for example,
-    a directory prepared with OpenSSL's ``c_rehash`` utility). You shouldn't need to do this unless
-    you are using symlinks in your environment. This has no effect on Windows or macOS.
+    Instructs the HTTP client where to find your SSL certificate trust store. An example trust
+    store might be a directory prepared with the OpenSSL ``c_rehash`` utility. These variables 
+    should not need to be set unless your environment uses symlinks. These variables have no
+    effect on Windows and macOS systems.
 
 writeRateLimiter and readRateLimiter
-    Used to throttle the bandwidth used by the transport layer. The default for these limiters is
-    open. You can use the default implementation with the rates you want, or you can create your own
-    instance by implementing a subclass of ``RateLimiterInterface``.
+    References to the implementations of read and write rate limiters which are used to throttle
+    the bandwidth used by the transport layer. By default, the read and write rates are not
+    throttled. To introduce throttling, implement a subclass of the ``RateLimiterInterface`` and
+    assign an instance to these variables.
 
 httpLibOverride
-    Override the http implementation the default factory returns.
-    The default HTTP client for Windows is WinHTTP. The default HTTP client for all other platforms 
-    is curl.
+    Specifies the HTTP implementation returned by the default HTTP factory. The default HTTP 
+    client for Windows is WinHTTP. The default HTTP client for all other platforms is CURL.
 
 followRedirects
-    If set to true the HTTP stack will follow 300 redirect codes.
+    Controls whether the HTTP stack follows 300 redirect codes.
+
+disableExpectHeader
+    Applicable only for CURL HTTP clients. By default, CURL adds an "Expect: 100-Continue" header in
+    an HTTP request to avoid sending the HTTP payload in situations where the server responds with 
+    an error immediately after receiving the header. This behavior can save a round-trip and is 
+    useful in situations where the payload is small and network latency is relevant. The variable's
+    default setting is false. If set to true, CURL is instructed to send both the HTTP request header 
+    and body payload together.
+
+enableClockSkewAdjustment
+    Controls whether clock skew is adjusted after each HTTP attempt. The default setting is false.
+
+enableHostPrefixInjection
+    Controls whether the HTTP host adds a "data-" prefix to DiscoverInstances requests. By default,
+    this behavior is enabled. To disable it, set the variable to false.
+
+enableEndpointDiscovery
+    Controls whether endpoint discovery is used. By default, regional or overridden endpoints are
+    used. To enable endpoint discovery, set the variable to true.
