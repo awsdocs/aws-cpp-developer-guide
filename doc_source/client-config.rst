@@ -17,7 +17,7 @@ AWS Client Configuration
         Configuring the AWS SDK for C++ with the ClientConfiguration structure.
     :keywords:
 
-You can use the client configuration to control most functionality in the |sdk-cpp|.
+Use the client configuration to control various behaviors of the |sdk-cpp|.
 
 ``ClientConfiguration`` declaration:
 
@@ -30,11 +30,13 @@ You can use the client configuration to control most functionality in the |sdk-c
         Aws::String userAgent;
         Aws::Http::Scheme scheme;
         Aws::Region region;
-        Aws::String authenticationRegion;
         bool useDualStack;    
         unsigned maxConnections;
         long requestTimeoutMs;
         long connectTimeoutMs;
+        bool enableTcpKeepAlive;
+        unsigned long tcpKeepAliveIntervalMs;
+        unsigned long lowSpeedLimit;
         std::shared_ptr<RetryStrategy> retryStrategy;
         Aws::String endpointOverride;
         Aws::Http::Scheme proxyScheme;
@@ -68,9 +70,6 @@ region
     Specifies where you want the client to communicate. Examples include *us-east-1* or *us-west-1*.
     You must ensure that the service you want to use has an endpoint in the region you configure.
 
-authenticationRegion
-   If you specify an authentication region, you must also specify an endpoint override.
-  
 useDualStack
     Use dual stack endpoint in the endpoint calculation. You must ensure that the service you
     want to use supports ipv6 in the region you select.
@@ -85,13 +84,26 @@ requestTimeoutMs and connectTimeoutMs
     You can increase this value if you need to transfer large files, such as in |S3| or
     |CFlong|.
 
+enableTcpKeepAlive
+    Enable TCP keep-alive. Use in conjunction with ``tcpKeepAliveIntervalMs``. Default is true. Not 
+    applicable for WinINet and the IXMLHTTPRequest2 client.
+
+tcpKeepAliveIntervalMs
+    Interval in milliseconds to send a keep-alive packet over the TCP connection. Default is 
+    30 seconds. Minimum setting is 15 seconds. Not applicable for WinINet and the 
+    IXMLHTTPRequest2 client.
+
+lowSpeedLimit
+    Average minimum transfer speed in bytes per second. If a transfer speed is below this speed,
+    it is considered to be too slow and is aborted. Default setting is 1 byte/second. Applicable
+    only for CURL clients.
+
 retryStrategy
     Defaults to exponential backoff. You can override this default by implementing a subclass of
     ``RetryStrategy`` and passing an instance.
 
 endpointOverride
-    Use this to override the http endpoint used to talk to a service. If you set this, you
-    must also set authenticationRegion.
+    Overrides the HTTP endpoint used to talk to a service.
 
 proxyScheme, proxyHost, proxyPort, proxyUserName, and proxyPassword
     These settings allow you to configure a proxy for all communication with AWS. Examples of when
@@ -109,7 +121,7 @@ verifySSL
 caPath, caFile
     Enables you to tell the HTTP client where to find your SSL certificate trust store (for example,
     a directory prepared with OpenSSL's ``c_rehash`` utility). You shouldn't need to do this unless
-    you are using symlinks in your environment. This has no effect on Windows or OS X.
+    you are using symlinks in your environment. This has no effect on Windows or macOS.
 
 writeRateLimiter and readRateLimiter
     Used to throttle the bandwidth used by the transport layer. The default for these limiters is
@@ -118,7 +130,8 @@ writeRateLimiter and readRateLimiter
 
 httpLibOverride
     Override the http implementation the default factory returns.
-    The default HTTP client for Windows is WinHTTP. The default HTTP client for all other platforms is curl.
+    The default HTTP client for Windows is WinHTTP. The default HTTP client for all other platforms 
+    is curl.
 
 followRedirects
-    If set to true the http stack will follow 300 redirect codes
+    If set to true the HTTP stack will follow 300 redirect codes.

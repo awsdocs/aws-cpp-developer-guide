@@ -165,60 +165,62 @@ set it up for your development system. This method also enables you to customize
 
                  git clone git@github.com:aws/aws-sdk-cpp.git
 
-   #. Install cmake_ (*v3.0+*) and the relevant build tools for your platform. Ensure these are
-      available in your :envvar:`PATH`. If you're unable to install |cmake|, you can use |make| or
-      |msbuild|.
+   #. Install cmake_ (*v3.2 or later*) and the relevant build tools for your 
+      platform. Ensure they are available in your :envvar:`PATH`.
 
-   #. Create a directory in which to create your buildfiles, and generate the necessary buildfiles
-      within it. This is the recommended approach, referred to as an *out-of-source build*.
+   #. Create a directory in which to store your buildfiles. Then generate the 
+      buildfiles by running |cmake|. This is the recommended approach, referred 
+      to as an *out-of-source build*.
       ::
 
-         mkdir sdk_build
+         sudo mkdir sdk_build
          cd sdk_build
-         cmake <path/to/sdk/source>
+         sudo cmake <path/to/sdk/source>
 
       Alternatively, create the build files directly in the SDK source directory.
       ::
 
          cd <path/to/sdk/source>
-         cmake .
+         sudo cmake .
 
-      Building the entire SDK can take a while. To build only a particular client, such as |S3|, you 
-      can use the |cmake| :paramname:`BUILD_ONLY` parameter demonstrated below. For more ways to 
-      modify the build output, see :doc:`cmake-params`.
+      Building the entire SDK can take a while. To build only a particular 
+      client, such as |S3|, you can use the |cmake| :paramname:`BUILD_ONLY` 
+      parameter demonstrated below. For more ways to modify the build output, 
+      see :doc:`cmake-params`.
       ::
 
-         cmake -DBUILD_ONLY="s3"
+         sudo cmake -DBUILD_ONLY="s3"
 
-      If you don't have |cmake| installed, you can use these alternative commands to set up your build
-      directory.
+   #. Build the SDK by running one of the following operating system-dependent 
+      commands. If you're building the entire SDK, the operation can take three
+      hours or longer.
 
       .. container:: option
 
-         auto make
+         auto make (Linux/macOS)
             .. code-block:: sh
 
-               make
+               sudo make
 
-         Visual Studio
+         Visual Studio (Windows)
             .. code-block:: doscon
 
                msbuild ALL_BUILD.vcxproj
 
-   #. Build and install the SDK by typing one of the following in the same location where you generated
-      your build files:
+   #. Install the SDK by running one of the following operating system-dependent commands.
 
       .. container:: option
 
-         auto make
+         auto make (Linux/macOS)
             .. code-block:: sh
 
-               make
                sudo make install
 
-         Visual Studio
-            .. code-block:: sh
+         Visual Studio (Windows)
+            .. code-block:: doscon
 
+               // Run this command in a command shell running in ADMIN mode
+               // The SDK is installed in `\Program Files (x86)\aws-cpp-sdk-all\`
                msbuild INSTALL.vcxproj
 
 
