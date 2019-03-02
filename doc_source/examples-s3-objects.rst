@@ -27,7 +27,7 @@ Upload an Object
 ================
 
 Use the |s3client| object :functionname:`PutObject` function, supplying it with a bucket name, key
-name, and file to upload. *The bucket must exist or an error will result*.
+name, and file to upload. The bucket must exist or an error will result.
 
 **Includes**
 
@@ -36,7 +36,7 @@ name, and file to upload. *The bucket must exist or an error will result*.
 **Code**
 
 .. literalinclude:: s3.cpp.put_object.code.txt
-   :dedent: 8
+   :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/put_object.cpp>`.
 
