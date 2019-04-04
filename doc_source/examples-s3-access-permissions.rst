@@ -8,113 +8,70 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-########################################################
-Managing |S3| Access Permissions for Buckets and Objects
-########################################################
+
+################################
+Managing |S3| Access Permissions
+################################
 
 .. meta::
    :description: How to manage access control lists for an Amazon S3 bucket or object.
    :keywords: s3
 
-You can use access control lists (ACLs) for |s3| buckets and objects for fine-grained control over
-your |s3| resources.
-
-.. include:: includes/examples-note.txt
+Fine-grained access permissions for an |s3| bucket or object are defined in 
+an access control list (ACL).
 
 
-Get the Access Control List for a Bucket
-========================================
+Get and Set an Object's Access Control List
+===========================================
 
-To get the ACL for an |s3| bucket, call the |s3client|'s :functionname:`GetBucketAcl` function with
-a :aws-cpp-class:`GetBucketAclRequest <aws_1_1_s3_1_1_model_1_1_get_bucket_acl_request>`, providing
-it with the *bucket name*.
+The access control list for an object can be retrieved by calling the AWS SDK 
+for C++ ``S3Client`` method :functionname:`GetObjectAcl`. The method accepts 
+the names of a bucket and object.
 
-Results are returned in an :aws-cpp-class:`GetBucketAclResult
-<aws_1_1_s3_1_1_model_1_1_get_bucket_acl_result>` that you can use to get the list of
-:aws-cpp-class:`Grants <aws_1_1_s3_1_1_model_1_1_grant>` by calling its :functionname:`GetGrants`
-function.
+.. literalinclude:: s3.cpp.get_put_object_acl.inc.txt
 
-**Includes**
-
-.. literalinclude:: s3.cpp.get_acl.inc.txt
-
-**Code**
-
-.. literalinclude:: s3.cpp.get_acl_bucket.code.txt
+.. literalinclude:: s3.cpp.get_object_acl.code.txt
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/get_acl.cpp>`.
+The returned result includes the ``Owner`` and ``Grants`` fields of the ACL. 
+The ACL can be modified by creating a new ACL or changing the grants or 
+permissions of the current ACL. The updated ACL is passed to the 
+:functionname:`PutObjectAcl` method.
 
+The following code adds a new grant to the current ACL. The grantee is 
+assigned READ permission for the object.
 
-Set the Access Control List for a Bucket
-========================================
-
-To set the ACL for a bucket, call the |s3client|'s :functionname:`PutBucketAcl` function, passing it
-a :aws-cpp-class:`PutBucketAclRequest <aws_1_1_s3_1_1_model_1_1_put_bucket_acl_request>` object with
-the bucket name and list of grantees and permissions within an :aws-cpp-class:`AccessControlPolicy
-<aws_1_1_s3_1_1_model_1_1_access_control_policy>` object.
-
-**Includes**
-
-.. literalinclude:: s3.cpp.set_acl.inc.txt
-
-**Code**
-
-.. literalinclude:: s3.cpp.set_acl_bucket.code.txt
+.. literalinclude:: s3.cpp.put_object_acl.code.txt
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/set_acl.cpp>`.
+See the :sdk-examples-cpp:`complete example <s3/get_put_object_acl.cpp>`.
 
 
-Get the Access Control List for an Object
-=========================================
+Get and Set a Bucket's Access Control List
+==========================================
 
-To get the ACL for an |s3| object, call the |s3client|'s :functionname:`GetObjectAcl` function with
-a :aws-cpp-class:`GetObjectAclRequest <aws_1_1_s3_1_1_model_1_1_get_object_acl_request>`, providing
-it with the *bucket name* and *object key*.
+In most cases, defining a bucket policy is the preferred method for setting 
+a bucket's access permissions. However, buckets also support access control 
+lists for users who wish to use them.
 
-Results are returned in an :aws-cpp-class:`GetObjectAclResult
-<aws_1_1_s3_1_1_model_1_1_get_object_acl_result>` that you can use to get the list of
-:aws-cpp-class:`Grants <aws_1_1_s3_1_1_model_1_1_grant>` by calling its :functionname:`GetGrants`
-function.
+The access control list for a bucket can be retrieved by calling the AWS SDK 
+for C++ ``S3Client`` method :functionname:`GetBucketAcl`. The method accepts 
+a bucket name.
 
-**Includes**
+.. literalinclude:: s3.cpp.get_put_bucket_acl.inc.txt
 
-.. literalinclude:: s3.cpp.get_acl.inc.txt
-
-**Code**
-
-.. literalinclude:: s3.cpp.get_acl_object.code.txt
+.. literalinclude:: s3.cpp.get_bucket_acl.code.txt
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/get_acl.cpp>`.
+The returned result includes the ``Owner`` and ``Grants`` fields of the ACL. 
+The ACL can be modified by creating a new ACL or changing the grants or 
+permissions of the current ACL. The updated ACL is passed to the 
+:functionname:`PutBucketAcl` method.
 
+The following code adds a new grant to the current ACL. The grantee is 
+assigned READ permission for the bucket.
 
-Set the Access Control List for an Object
-=========================================
-
-To set the ACL for an object, call the |s3client|'s :functionname:`PutObjectAcl` function, passing it
-a :aws-cpp-class:`PutObjectAclRequest <aws_1_1_s3_1_1_model_1_1_put_object_acl_request>` object with
-the object name and list of grantees and permissions within an :aws-cpp-class:`AccessControlPolicy
-<aws_1_1_s3_1_1_model_1_1_access_control_policy>` object.
-
-**Includes**
-
-.. literalinclude:: s3.cpp.set_acl.inc.txt
-
-**Code**
-
-.. literalinclude:: s3.cpp.set_acl_object.code.txt
+.. literalinclude:: s3.cpp.put_bucket_acl.code.txt
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/set_acl.cpp>`.
-
-
-More Information
-================
-
-* :s3-api:`GET Bucket acl <RESTBucketGETacl>` in the |s3-api|
-* :s3-api:`PUT Bucket acl <RESTBucketPUTacl>` in the |s3-api|
-* :s3-api:`GET Object acl <RESTObjectGETacl>` in the |s3-api|
-* :s3-api:`PUT Object acl <RESTObjectPUTacl>` in the |s3-api|
-
+See the :sdk-examples-cpp:`complete example <s3/get_put_bucket_acl.cpp>`.
