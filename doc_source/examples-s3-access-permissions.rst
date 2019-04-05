@@ -21,41 +21,42 @@ Fine-grained access permissions for an |s3| bucket or object are defined in
 an access control list (ACL).
 
 
-Get and Set an Object's Access Control List
-===========================================
+Manage an Object's Access Control List
+======================================
 
-The access control list for an object can be retrieved by calling the AWS SDK 
-for C++ ``S3Client`` method :functionname:`GetObjectAcl`. The method accepts 
-the names of a bucket and object.
+The access control list for an object can be retrieved by calling the 
+``S3Client`` method :functionname:`GetObjectAcl`. The method accepts 
+the bucket and object names.
 
 .. literalinclude:: s3.cpp.get_put_object_acl.inc.txt
 
 .. literalinclude:: s3.cpp.get_object_acl.code.txt
    :dedent: 4
 
-The returned result includes the ``Owner`` and ``Grants`` fields of the ACL. 
-The ACL can be modified by creating a new ACL or changing the grants or 
-permissions of the current ACL. The updated ACL is passed to the 
-:functionname:`PutObjectAcl` method.
+The returned result includes the ACL's ``Owner`` and ``Grants`` fields. 
+The ACL can be modified by creating a new ACL or changing the fields of the 
+current ACL. The updated ACL is passed to the :functionname:`PutObjectAcl` 
+method.
 
-The following code adds a new grant to the current ACL. The grantee is 
-assigned READ permission for the object.
+The following code uses the current ACL retrieved by 
+:functionname:`GetObjectAcl` and adds a new grant to it. The grantee is 
+granted READ permission for the object. The modified ACL is then passed to 
+:functionname:`PutObjectAcl`. For further details, see 
+:sdk-examples-cpp:`the example source file <s3/get_put_object_acl.cpp>`.
 
 .. literalinclude:: s3.cpp.put_object_acl.code.txt
    :dedent: 4
 
-See the :sdk-examples-cpp:`complete example <s3/get_put_object_acl.cpp>`.
 
+Manage a Bucket's Access Control List
+=====================================
 
-Get and Set a Bucket's Access Control List
-==========================================
+In most cases, the preferred method for setting the access permissions for a 
+bucket is to define a bucket policy. However, buckets also support access 
+control lists for users who wish to use them.
 
-In most cases, defining a bucket policy is the preferred method for setting 
-a bucket's access permissions. However, buckets also support access control 
-lists for users who wish to use them.
-
-The access control list for a bucket can be retrieved by calling the AWS SDK 
-for C++ ``S3Client`` method :functionname:`GetBucketAcl`. The method accepts 
+The access control list for a bucket can be retrieved by calling the 
+``S3Client`` method :functionname:`GetBucketAcl`. The method accepts 
 a bucket name.
 
 .. literalinclude:: s3.cpp.get_put_bucket_acl.inc.txt
@@ -63,15 +64,16 @@ a bucket name.
 .. literalinclude:: s3.cpp.get_bucket_acl.code.txt
    :dedent: 4
 
-The returned result includes the ``Owner`` and ``Grants`` fields of the ACL. 
-The ACL can be modified by creating a new ACL or changing the grants or 
-permissions of the current ACL. The updated ACL is passed to the 
-:functionname:`PutBucketAcl` method.
+The returned result includes the ACL's ``Owner`` and ``Grants`` fields. 
+The ACL can be modified by creating a new ACL or changing the fields of the 
+current ACL. The updated ACL is passed to the :functionname:`PutBucketAcl` 
+method.
 
-The following code adds a new grant to the current ACL. The grantee is 
-assigned READ permission for the bucket.
+The following code uses the current ACL retrieved by 
+:functionname:`GetBucketAcl` and adds a new grant to it. The grantee is 
+granted READ permission for the bucket. The modified ACL is then passed to 
+:functionname:`PutBucketAcl`. For further details, see 
+:sdk-examples-cpp:`the example source file <s3/get_put_bucket_acl.cpp>`.
 
 .. literalinclude:: s3.cpp.put_bucket_acl.code.txt
    :dedent: 4
-
-See the :sdk-examples-cpp:`complete example <s3/get_put_bucket_acl.cpp>`.

@@ -20,8 +20,11 @@ This topic lists recent changes to the *AWS SDK for C++ Developer Guide*.
 
 * **Latest documentation update:** |today|
 
+April 05, 2019
+   Updated the :doc:`using-service-client` section.
+
 April 03, 2019
-   Updated text and code examples for using Amazon S3 access control lists.
+   Updated the :doc:`examples-s3-access-permissions` section.
 
 March 01, 2019
    Updated the instructions for building the SDK.
