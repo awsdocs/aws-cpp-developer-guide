@@ -67,5 +67,5 @@ see :sdk-examples-cpp:`the example source file <s3/get_put_bucket_acl.cpp>`.
 
 .. literalinclude:: s3.cpp.get_put_object_acl.inc.txt
 
-.. literalinclude:: s3.cpp.put_object_acl.code.txt
+.. literalinclude:: s3.cpp.get_put_bucket_acl.code.txt
    :dedent: 4
