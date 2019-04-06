@@ -27,5 +27,6 @@ the |sdk-cpp|_.
 
    examples-s3-buckets
    examples-s3-objects
+   examples-s3-access-permissions
    examples-s3-bucket-policies
    examples-s3-website-configuration
