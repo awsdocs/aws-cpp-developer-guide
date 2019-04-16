@@ -27,37 +27,39 @@ When submitting an issue, please indicate:
 
 * The URL or source filename where the issue occurs.
 
-* A description of the issue. Use as much detail as necessary.
+* A detailed description of the issue.
 
 
 Contributing fixes and updates
 ==============================
 
-To contribute documentation fixes or updates, use the Github-standard procedures for
+To contribute a fix or update to the guide, follow the standard Github procedures for
 `forking the repository`_ and submitting a `pull request`_.
 
-Many common substitutions_ and extlinks_ found in this guide are sourced from the `shared
-content`_ repository. If you see a text substitution that is not declared at the top of the source
-file or in the ``_includes.txt`` file, then it is probably defined in the shared content.
+Be aware that many common substitutions_ and extlinks_ in the guide are defined 
+in the `shared content`_ repository. If you see a text substitution that is not 
+defined at either the top of the source file or in the ``_includes.txt`` file, then 
+it is probably located in the shared content.
 
 
-Building the documentation
---------------------------
+Building the guide
+------------------
 
-When contributing to the guide, build your changes and review them before submitting a pull request.
+When contributing to the guide, rebuild the guide and review the changes before submitting 
+a pull request.
 
-**To build the docs:**
+**To build the guide:**
 
 1. Install the Python Sphinx_ package.
 2. In the repository's root directory, run the Python ``build_docs.py`` script.
 
 ``build_docs.py`` accepts arguments of any of the `available Sphinx builders`_. For example, to
-build the guide in a single HTML page, use the ``singlehtml`` target::
+build the guide in a single HTML page, use the ``singlehtml`` argument::
 
  python build_docs.py singlehtml
 
-The build process automatically downloads a snapshot of the `shared content`_ repository, 
-combines it in the ``build`` directory, and generates output in the ``output`` directory.
+The build process automatically downloads the contents of the `shared content`_ repository. The 
+generated guide files are written to the ``output`` directory.
 
 
 Code examples in the documentation
