@@ -13,7 +13,7 @@ aws-cpp-developer-guide
 ########################
 
 This repository contains source content for the *AWS SDK for C++ Developer Guide*. The source code
-for the **AWS SDK for C++** is also on GitHub, at https://github.com/aws/aws-sdk-cpp/.
+for the **AWS SDK for C++** is also on GitHub at https://github.com/aws/aws-sdk-cpp/.
 
 The guide content is written in reStructuredText_ and built using Sphinx_. It relies upon content
 which is provided in the AWS documentation team's `shared content`_ repository.
@@ -22,8 +22,9 @@ which is provided in the AWS documentation team's `shared content`_ repository.
 Reporting issues
 ================
 
-You can use the Issues_ section of this repository to report problems in the documentation. *When
-submitting an issue, please indicate*:
+You can use the Issues_ section of this repository to report problems in the documentation.
+
+*When submitting an issue, please indicate*:
 
 * The URL or source filename the issue occurs on.
 
@@ -47,19 +48,19 @@ file or in the ``_includes.txt`` file, then it is probably defined in the shared
 Building the documentation
 --------------------------
 
-If you are planning to contribute to the docs, you should build your changes and review them before
-submitting your pull request.
+If you are planning to contribute to the docs, build your changes and review them before
+submitting a pull request.
 
 **To build the docs:**
 
-1. Make sure that you have downloaded and installed Sphinx_.
-2. Run the ``build_docs.py`` script in the repository's root directory.
+1. Install the Python Sphinx_ package.
+2. In the repository's root directory, run the ``build_docs.py`` script.
 
 The build process will automatically download a snapshot of the `shared content`_, combine it in the
-``build`` directory and will generate output into the ``output`` directory.
+``build`` directory, and generate output to the ``output`` directory.
 
 ``build_docs.py`` can take any of the `available Sphinx builders`_ as its argument. For example, to
-build the docs into a single HTML page, you can use the ``singlehtml`` target, like so::
+build the docs into a single HTML page, use the ``singlehtml`` target::
 
  python build_docs.py singlehtml
 
@@ -67,13 +68,13 @@ build the docs into a single HTML page, you can use the ``singlehtml`` target, l
 Code examples in the documentation
 ----------------------------------
 
-The code examples featured in this documentation can be found in a separate repository:
+The code examples featured in the documentation can be found in a separate repository:
 `aws-doc-sdk-examples <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp>`_. Full
 code and build files are included, so you can build and run any of the provided examples yourself.
 
-In addition to examples in C++, you'll also find examples for each of the other AWS SDKs. If you
+In addition to examples in C++, you'll also find examples for the other AWS SDKs. If you
 find issues with any of the examples, you can submit issues or fork the repository and submit a pull
-request!
+request.
 
 The code examples are provided under the *Apache 2.0* open source license. See the example
 repository's `README <https://github.com/awsdocs/aws-doc-sdk-examples/blob/master/README.rst>`_ for
@@ -83,7 +84,7 @@ more details.
 Copyright and license
 =====================
 
-All content in this repository, unless otherwise stated, is Copyright © 2010-2019, Amazon Web
+Unless otherwise stated, all content in this repository is Copyright © 2010-2019, Amazon Web
 Services, Inc. or its affiliates. All rights reserved.
 
 Except where otherwise noted, this work is licensed under a `Creative Commons
