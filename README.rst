@@ -12,35 +12,31 @@
 aws-cpp-developer-guide
 ########################
 
-This repository contains source content for the *AWS SDK for C++ Developer Guide*. The source code
-for the **AWS SDK for C++** is also on GitHub at https://github.com/aws/aws-sdk-cpp/.
+This repository contains the source text files for the *AWS SDK for C++ Developer Guide*.
 
 The guide content is written in reStructuredText_ and built using Sphinx_. It relies upon content
-which is provided in the AWS documentation team's `shared content`_ repository.
+provided in the AWS documentation team's `shared content`_ repository.
 
 
 Reporting issues
 ================
 
-You can use the Issues_ section of this repository to report problems in the documentation.
+Use the Issues_ section of the repository to report problems in the documentation.
 
-*When submitting an issue, please indicate*:
+When submitting an issue, please indicate:
 
-* The URL or source filename the issue occurs on.
+* The URL or source filename where the issue occurs.
 
-* A description of the issue. Use as much detail as possible. For many issues, this might be as
-  simple as "The page has a typo; the word 'complie' in the third paragraph should be 'compile'." If
-  the issue is more complex, please describe it with enough detail that it's clear to the AWS
-  documentation team what the problem is.
+* A description of the issue. Use as much detail as necessary.
 
 
 Contributing fixes and updates
 ==============================
 
-To contribute your own documentation fixes or updates, please use the Github-standard procedures for
+To contribute documentation fixes or updates, use the Github-standard procedures for
 `forking the repository`_ and submitting a `pull request`_.
 
-Note that many common substitutions_ and extlinks_ found in these docs are sourced from the `shared
+Note that many common substitutions_ and extlinks_ found in this guide are sourced from the `shared
 content`_ repository--if you see a substitution used that is not declared at the top of the source
 file or in the ``_includes.txt`` file, then it is probably defined in the shared content.
 
@@ -48,19 +44,18 @@ file or in the ``_includes.txt`` file, then it is probably defined in the shared
 Building the documentation
 --------------------------
 
-If you are planning to contribute to the docs, build your changes and review them before
-submitting a pull request.
+When contributing to the guide, build your changes and review them before submitting a pull request.
 
 **To build the docs:**
 
 1. Install the Python Sphinx_ package.
 2. In the repository's root directory, run the ``build_docs.py`` script.
 
-The build process will automatically download a snapshot of the `shared content`_, combine it in the
-``build`` directory, and generate output to the ``output`` directory.
+The build process automatically downloads a snapshot of the `shared content`_, combines it in the
+``build`` directory, and generates output in the ``output`` directory.
 
-``build_docs.py`` can take any of the `available Sphinx builders`_ as its argument. For example, to
-build the docs into a single HTML page, use the ``singlehtml`` target::
+``build_docs.py`` accepts arguments of any of the `available Sphinx builders`_. For example, to
+build the docs in a single HTML page, use the ``singlehtml`` target::
 
  python build_docs.py singlehtml
 
@@ -70,15 +65,15 @@ Code examples in the documentation
 
 The code examples featured in the documentation can be found in a separate repository:
 `aws-doc-sdk-examples <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp>`_. Full
-code and build files are included, so you can build and run any of the provided examples yourself.
+code and build files are included, so you can build and run any example yourself.
 
-In addition to examples in C++, you'll also find examples for the other AWS SDKs. If you
-find issues with any of the examples, you can submit issues or fork the repository and submit a pull
-request.
+In addition to examples in C++, the repository includes examples in the other programming 
+languages supported by the AWS SDKs. If you discover an issue with any example, submit an 
+issue or fork the repository and submit a pull request.
 
 The code examples are provided under the *Apache 2.0* open source license. See the example
 repository's `README <https://github.com/awsdocs/aws-doc-sdk-examples/blob/master/README.rst>`_ for
-more details.
+details.
 
 
 Copyright and license
