@@ -20,6 +20,9 @@ This topic lists recent changes to the *AWS SDK for C++ Developer Guide*.
 
 * **Latest documentation update:** |today|
 
+April 16, 2019
+   Updated the SDK build instructions.
+
 April 05, 2019
    Updated the :doc:`using-service-client` section.
 
