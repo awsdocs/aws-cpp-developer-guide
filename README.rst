@@ -21,7 +21,7 @@ provided in the AWS documentation team's `shared content`_ repository.
 Reporting issues
 ================
 
-Use the Issues_ section of the repository to report problems in the documentation.
+To report a problem in the guide, use the Issues_ section of the repository.
 
 When submitting an issue, please indicate:
 
@@ -55,7 +55,7 @@ The build process automatically downloads a snapshot of the `shared content`_, c
 ``build`` directory, and generates output in the ``output`` directory.
 
 ``build_docs.py`` accepts arguments of any of the `available Sphinx builders`_. For example, to
-build the docs in a single HTML page, use the ``singlehtml`` target::
+build the guide in a single HTML page, use the ``singlehtml`` target::
 
  python build_docs.py singlehtml
 
@@ -63,7 +63,7 @@ build the docs in a single HTML page, use the ``singlehtml`` target::
 Code examples in the documentation
 ----------------------------------
 
-The code examples featured in the documentation can be found in a separate repository:
+The code examples featured in the guide are located in a separate repository:
 `aws-doc-sdk-examples <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp>`_. Full
 code and build files are included, so you can build and run any example yourself.
 
