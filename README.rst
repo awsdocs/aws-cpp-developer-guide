@@ -36,8 +36,8 @@ Contributing fixes and updates
 To contribute documentation fixes or updates, use the Github-standard procedures for
 `forking the repository`_ and submitting a `pull request`_.
 
-Note that many common substitutions_ and extlinks_ found in this guide are sourced from the `shared
-content`_ repository--if you see a substitution used that is not declared at the top of the source
+Many common substitutions_ and extlinks_ found in this guide are sourced from the `shared
+content`_ repository. If you see a text substitution that is not declared at the top of the source
 file or in the ``_includes.txt`` file, then it is probably defined in the shared content.
 
 
@@ -49,15 +49,15 @@ When contributing to the guide, build your changes and review them before submit
 **To build the docs:**
 
 1. Install the Python Sphinx_ package.
-2. In the repository's root directory, run the ``build_docs.py`` script.
-
-The build process automatically downloads a snapshot of the `shared content`_, combines it in the
-``build`` directory, and generates output in the ``output`` directory.
+2. In the repository's root directory, run the Python ``build_docs.py`` script.
 
 ``build_docs.py`` accepts arguments of any of the `available Sphinx builders`_. For example, to
 build the guide in a single HTML page, use the ``singlehtml`` target::
 
  python build_docs.py singlehtml
+
+The build process automatically downloads a snapshot of the `shared content`_ repository, 
+combines it in the ``build`` directory, and generates output in the ``output`` directory.
 
 
 Code examples in the documentation
