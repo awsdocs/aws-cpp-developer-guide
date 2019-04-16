@@ -25,10 +25,10 @@ Reporting issues
 You can use the Issues_ section of this repository to report problems in the documentation. *When
 submitting an issue, please indicate*:
 
-* what page (a URL or filename is best) the issue occurs on.
+* The URL or source filename the issue occurs on.
 
-* what the issue is, using as much detail as you can provide. For many issues, this might be as
-  simple as "The page has a typo; the word 'complie' in the third paragraph shoud be 'compile'." If
+* A description of the issue. Use as much detail as possible. For many issues, this might be as
+  simple as "The page has a typo; the word 'complie' in the third paragraph should be 'compile'." If
   the issue is more complex, please describe it with enough detail that it's clear to the AWS
   documentation team what the problem is.
 
@@ -71,7 +71,7 @@ The code examples featured in this documentation can be found in a separate repo
 `aws-doc-sdk-examples <https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp>`_. Full
 code and build files are included, so you can build and run any of the provided examples yourself.
 
-In addition to examples in Java, you'll also find examples for each of the other AWS SDKs. If you
+In addition to examples in C++, you'll also find examples for each of the other AWS SDKs. If you
 find issues with any of the examples, you can submit issues or fork the repository and submit a pull
 request!
 
@@ -83,7 +83,7 @@ more details.
 Copyright and license
 =====================
 
-All content in this repository, unless otherwise stated, is Copyright © 2010-2016, Amazon Web
+All content in this repository, unless otherwise stated, is Copyright © 2010-2019, Amazon Web
 Services, Inc. or its affiliates. All rights reserved.
 
 Except where otherwise noted, this work is licensed under a `Creative Commons
