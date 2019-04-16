@@ -6,3 +6,4 @@ shared_content/
 example_code
 output/
 *.swp
+venv/

@@ -26,11 +26,7 @@ Prerequisites
 
 To use the |sdk-cpp|, you need:
 
-* Visual Studio 2013 or later
-
-  .. note:: Visual Studio 2013 doesn't provide default move constructors and operators. Later
-     versions of Visual Studio provide a standards-compliant compiler.
-
+* Visual Studio 2015 or later
 * *or* GNU Compiler Collection (GCC) 4.9 or later
 * *or* Clang 3.3 or later
 
@@ -141,9 +137,10 @@ runtime/architecture configuration you use.
 Building the SDK from Source
 ============================
 
-If you don't use Visual Studio (or don't want to use NuGet), you can build the SDK from source to
-set it up for your development system. This method also enables you to customize your SDK build
-|mdash| see :doc:`cmake-params` for the available options.
+If you don't use Visual Studio (or don't want to use NuGet), you can build 
+the SDK from source using command-line tools. This method also enables you 
+to customize your SDK build |mdash| see :doc:`cmake-params` for the available 
+options.
 
 .. topic:: To build the SDK from source
 
@@ -168,32 +165,34 @@ set it up for your development system. This method also enables you to customize
    #. Install cmake_ (*v3.2 or later*) and the relevant build tools for your 
       platform. Ensure they are available in your :envvar:`PATH`.
 
-   #. Create a directory in which to store your buildfiles. Then generate the 
-      buildfiles by running |cmake|. This is the recommended approach, referred 
-      to as an *out-of-source build*.
+   #. Recommended approach: Store the generated build files outside of the 
+      SDK source directory. Create a new directory to store them in. Then 
+      generate the build files by running |cmake|. Specify on the |cmake| 
+      command line whether to build a `Debug` or `Release` version.
       ::
 
          sudo mkdir sdk_build
          cd sdk_build
-         sudo cmake <path/to/sdk/source>
+         sudo cmake <path/to/sdk/source> -D CMAKE_BUILD_TYPE=[Debug | Release]
 
-      Alternatively, create the build files directly in the SDK source directory.
+      Alternatively, create the build files directly in the SDK source 
+      directory.
       ::
 
          cd <path/to/sdk/source>
-         sudo cmake .
+         sudo cmake . -D CMAKE_BUILD_TYPE=[Debug | Release]
 
       Building the entire SDK can take a while. To build only a particular 
-      client, such as |S3|, you can use the |cmake| :paramname:`BUILD_ONLY` 
-      parameter demonstrated below. For more ways to modify the build output, 
+      client, such as |S3|, use the |cmake| :paramname:`BUILD_ONLY` parameter 
+      demonstrated below. For more ways to modify the build output, 
       see :doc:`cmake-params`.
       ::
 
-         sudo cmake -DBUILD_ONLY="s3"
+         sudo cmake -D CMAKE_BUILD_TYPE=[Debug | Release] -D BUILD_ONLY="s3"
 
-   #. Build the SDK by running one of the following operating system-dependent 
-      commands. If you're building the entire SDK, the operation can take three
-      hours or longer.
+   #. Build the SDK binaries by running one of the following operating 
+      system-dependent commands. If you're building the entire SDK, the 
+      operation can take one hour or longer.
 
       .. container:: option
 
@@ -207,7 +206,8 @@ set it up for your development system. This method also enables you to customize
 
                msbuild ALL_BUILD.vcxproj
 
-   #. Install the SDK by running one of the following operating system-dependent commands.
+   #. Install the SDK by running one of the following operating 
+      system-dependent commands.
 
       .. container:: option
 
@@ -221,7 +221,7 @@ set it up for your development system. This method also enables you to customize
 
                // Run this command in a command shell running in ADMIN mode
                // The SDK is installed in `\Program Files (x86)\aws-cpp-sdk-all\`
-               msbuild INSTALL.vcxproj
+               msbuild INSTALL.vcxproj /p:Configuration=[Debug | Release | "Debug;Release"]
 
 
 Building for Android
