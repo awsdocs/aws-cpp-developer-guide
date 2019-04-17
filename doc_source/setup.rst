@@ -183,9 +183,9 @@ options.
          sudo cmake . -D CMAKE_BUILD_TYPE=[Debug | Release]
 
       Building the entire SDK can take a while. To build only a particular 
-      client, such as |S3|, use the |cmake| :paramname:`BUILD_ONLY` parameter 
-      demonstrated below. For more ways to modify the build output, 
-      see :doc:`cmake-params`.
+      service, use the |cmake| :paramname:`BUILD_ONLY` parameter. The example 
+      shown below builds only the |S3| service. For more ways to modify the 
+      build output, see :doc:`cmake-params`.
       ::
 
          sudo cmake -D CMAKE_BUILD_TYPE=[Debug | Release] -D BUILD_ONLY="s3"
@@ -219,8 +219,8 @@ options.
          Visual Studio (Windows)
             .. code-block:: doscon
 
-               // Run this command in a command shell running in ADMIN mode
-               // The SDK is installed in `\Program Files (x86)\aws-cpp-sdk-all\`
+               rem Run this command in a command shell running in ADMIN mode
+               rem The SDK is installed in `\Program Files (x86)\aws-cpp-sdk-all\`
                msbuild INSTALL.vcxproj /p:Configuration=[Debug | Release | "Debug;Release"]
 
 
