@@ -38,8 +38,8 @@ To contribute a fix or update to the guide, follow the standard Github procedure
 
 Be aware that many common substitutions_ and extlinks_ in the guide are defined 
 in the `shared content`_ repository. If you see a text substitution that is not 
-defined at either the top of the source file or in the ``_includes.txt`` file, then 
-it is probably located in the shared content.
+defined at either the top of the source file or in the ``doc_source/_includes.txt`` 
+file, then it is probably located in the shared content.
 
 
 Building the guide
@@ -54,12 +54,12 @@ a pull request.
 2. In the repository's root directory, run the Python ``build_docs.py`` script.
 
 ``build_docs.py`` accepts arguments of any of the `available Sphinx builders`_. For example, to
-build the guide in a single HTML page, use the ``singlehtml`` argument::
+build the guide in HTML format, use the ``html`` argument::
 
- python build_docs.py singlehtml
+ python build_docs.py html
 
 The build process automatically downloads the contents of the `shared content`_ repository. The 
-generated guide files are written to the ``output`` directory.
+final generated files are written to the ``doc_output`` directory.
 
 
 Code examples in the documentation
