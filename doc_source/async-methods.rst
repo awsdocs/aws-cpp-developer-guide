@@ -48,7 +48,8 @@ arguments.
 
 * A reference to the same Request-type object as its synchronous counterpart.
 * A reference to a response handler callback function. This callback function 
-  is invoked when the asynchronous operation finishes.
+  is invoked when the asynchronous operation finishes. One of the arguments 
+  contains the operation's outcome.
 * An optional ``shared_ptr`` to an ``AsyncCallerContext`` object. The object 
   is passed to the response handler callback. It includes a UUID property 
   that can be used to pass text information to the callback.
@@ -90,8 +91,9 @@ Notification of the Completion of an Asynchronous Operation
 
 When an asynchronous operation finishes, an application response handler 
 callback function is invoked. This notification includes the outcome of the 
-operation in a ``PutObjectOutcome`` object, which is the same class returned 
-by the synchronous version.
+operation. The outcome is contained in the same Outcome-type class returned 
+by the method's synchronous counterpart. In the code example, the outcome 
+is in a ``PutObjectOutcome`` object.
 
 The example's response handler callback function ``put_object_async_finished`` 
 is shown below. It checks whether the asynchronous operation succeeded or 
