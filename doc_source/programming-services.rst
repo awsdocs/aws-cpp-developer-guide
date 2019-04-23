@@ -14,7 +14,7 @@
 
 .. meta::
     :description:
-        Get examples of how to access AWS services using the AWS SDK for C++.
+        Examples of how to access AWS services using the |sdk-cpp|.
     :keywords:
 
 This section provides examples, guidance, and tips you can use to work with specific AWS
@@ -30,4 +30,4 @@ services using the |sdk-cpp|.
     AWS Identity and Access Management (IAM) Examples <examples-iam>
     Amazon S3 Examples <examples-s3>
     Amazon SQS Examples <examples-sqs>
-
+    Asynchronous Methods <async-methods>
