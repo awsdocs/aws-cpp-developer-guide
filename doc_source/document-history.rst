@@ -8,6 +8,7 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
+
 #####################################
 Document History for the |sdk-cpp-dg|
 #####################################
@@ -16,9 +17,12 @@ Document History for the |sdk-cpp-dg|
     :description: AWS SDK for C++ Developer Guide documentation update history.
     :keywords:
 
-This topic lists recent changes to the *AWS SDK for C++ Developer Guide*.
+This topic lists recent changes to the |sdk-cpp-dg|.
 
 * **Latest documentation update:** |today|
+
+April 22, 2019
+   Added new section :doc:`async-methods`.
 
 April 16, 2019
    Updated the SDK build instructions.
@@ -41,4 +45,3 @@ January 11, 2019
 
 January 07, 2019
    Fixed the inclusion of code samples.
-
