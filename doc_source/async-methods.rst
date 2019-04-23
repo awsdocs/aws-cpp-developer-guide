@@ -60,8 +60,8 @@ asynchronously.
 The method initializes a ``PutObjectRequest`` object in the same manner as 
 its synchronous counterpart. In addition, a ``shared_ptr`` to an 
 ``AsyncCallerContext`` object is allocated. Its ``UUID`` property is set to 
-the Amazon S3 object name. The response handler callback accesses the property 
-and outputs its value.
+the Amazon S3 object name. For demonstration purposes, the response handler 
+callback will access the property and output its value.
 
 The call to ``PutObjectAsync`` includes a reference argument to the response 
 handler callback function ``put_object_async_finished``. This callback 
@@ -90,7 +90,8 @@ Notification of the Completion of an Asynchronous Operation
 
 When an asynchronous operation finishes, an application response handler 
 callback function is invoked. This notification includes the outcome of the 
-operation.
+operation in a ``PutObjectOutcome`` object, which is the same class returned 
+by the synchronous version.
 
 The example's response handler callback function ``put_object_async_finished`` 
 is shown below. It checks whether the asynchronous operation succeeded or 
@@ -107,12 +108,12 @@ with it can be released. The application can also terminate if it wishes.
 The following code demonstrates how the ``put_object_async`` and 
 ``put_object_async_finished`` methods are used by an application.
 
-.. literalinclude:: s3.cpp.put_object_async.invoke.code.txt
-   :dedent: 8
-
 The ``S3Client`` object is allocated so it continues to exist until the 
 asynchronous operation finishes. After calling ``put_object_async``, the 
 application can perform whatever operations it wishes. For simplicity, 
 the example uses a ``std::mutex`` and ``std::condition_variable`` to wait 
 until the response handler callback notifies it that the upload operation 
 has finished.
+
+.. literalinclude:: s3.cpp.put_object_async.invoke.code.txt
+   :dedent: 8
