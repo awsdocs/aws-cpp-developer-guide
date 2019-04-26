@@ -21,7 +21,7 @@ This topic lists recent changes to the |sdk-cpp-dg|.
 
 * **Latest documentation update:** |today|
 
-April 22, 2019
+April 26, 2019
    Added new section :doc:`async-methods`.
 
 April 16, 2019

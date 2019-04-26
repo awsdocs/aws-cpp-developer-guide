@@ -22,10 +22,9 @@ Asynchronous SDK Methods
 ========================
 
 For many methods, the |sdk-cpp| provides both synchronous and asynchronous 
-versions. By default, a method is synchronous. An asynchronous version is 
-designated with an ``Async`` suffix. For example, the Amazon S3 method 
-``PutObject`` is synchronous and its asynchronous version is 
-``PutObjectAsync``.
+versions. A method is asynchronous if it includes the ``Async`` suffix in 
+its name. For example, the Amazon S3 method ``PutObject`` is synchronous, 
+while ``PutObjectAsync`` is asynchronous.
 
 Like all asynchronous operations, an asynchronous SDK method returns before 
 its main task is finished. For example, the ``PutObjectAsync`` method returns 
@@ -55,8 +54,8 @@ arguments.
   that can be used to pass text information to the callback.
 
 The ``put_s3_object_async`` method shown below sets up and calls the SDK's 
-Amazon S3 ``PutObjectAsync`` method to upload a file to an S3 bucket 
-asynchronously.
+Amazon S3 ``PutObjectAsync`` method to asynchronously upload a file to an S3 
+bucket.
 
 The method initializes a ``PutObjectRequest`` object in the same manner as 
 its synchronous counterpart. In addition, a ``shared_ptr`` to an 
