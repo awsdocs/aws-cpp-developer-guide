@@ -75,8 +75,8 @@ Use the |s3client| object :functionname:`GetObject` function, passing it a
 access
 the S3 object's data.
 
-The following example downloads an object from |S3| and saves its contents to a file (using the same
-name as the object's key).
+The following example downloads an object from |S3|. The object contents are stored in a
+local variable and the first line of the contents is output to the console.
 
 **Includes**
 
