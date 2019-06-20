@@ -17,9 +17,9 @@ Creating, Listing, and Deleting Buckets
     :keywords: s3
 
 Every object (file) in |S3long| must reside within a *bucket*, which represents a collection
-(container) of objects. Each bucket is known by a *key* (name), which must be unique. For detailed
-information about buckets and their configuration, see :s3-dg:`Working with Amazon S3 Buckets
-<UsingBucket>` in the |s3-dg|.
+of objects. Each bucket is known by a name, which must be globally unique within the AWS
+ecosystem. For detailed information about buckets and their configuration, 
+see :s3-dg:`Working with Amazon S3 Buckets<UsingBucket>` in the |s3-dg|.
 
 .. include:: common/s3-note-incomplete-upload-policy.txt
 
@@ -31,7 +31,9 @@ Create a Bucket
 ===============
 
 Use the |s3client| object :functionname:`CreateBucket` method, passing it a
-:classname:`CreateBucketRequest` with the bucket's name.
+:classname:`CreateBucketRequest` with the bucket's name. By default, buckets are
+created in the *us-east-1* (N. Virginia) region. The code example demonstrates
+how to create a bucket in any specified region.
 
 **Includes**
 
