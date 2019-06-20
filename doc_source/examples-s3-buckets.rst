@@ -16,8 +16,8 @@ Creating, Listing, and Deleting Buckets
     :description: Managing Amazon S3 buckets using the AWS SDK for C++.
     :keywords: s3
 
-Every object (file) in |S3long| must reside within a *bucket*, which represents a collection
-of objects. Each bucket is known by a name, which must be globally unique within the AWS
+Every *object* or file in |S3long| must reside within a *bucket* which represents a folder
+of objects. Each bucket is known by a name that must be globally unique within the AWS
 ecosystem. For detailed information about buckets and their configuration, 
 see :s3-dg:`Working with Amazon S3 Buckets<UsingBucket>` in the |s3-dg|.
 
@@ -42,7 +42,6 @@ how to create a bucket in any specified region.
 **Code**
 
 .. literalinclude:: s3.cpp.create_bucket.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/create_bucket.cpp>`.
 
