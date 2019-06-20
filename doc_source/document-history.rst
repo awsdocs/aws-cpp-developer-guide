@@ -21,6 +21,9 @@ This topic lists recent changes to the |sdk-cpp-dg|.
 
 * **Latest documentation update:** |today|
 
+June 20, 2019
+   Updated the Amazon S3 :functionname:`CreateBucket` example to support regions.
+
 April 26, 2019
    Added new section :doc:`async-methods`.
 
@@ -38,7 +41,7 @@ March 01, 2019
    Updated the available AWS Client Configuration variables.
 
 January 19, 2019
-   Updated the instructions for setting up the `vcpkg` C++ package manager.
+   Updated the instructions for setting up the *vcpkg* C++ package manager.
 
 January 11, 2019
    Added new section :doc:`sdk-metrics`.
