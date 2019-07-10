@@ -61,9 +61,9 @@ Setting SDK Options
 The :aws-cpp-struct:`Aws::SDKOptions <aws_1_1_s_d_k_options>` struct contains
 SDK configuration options.
 
-An instance of :aws-cpp-struct:`Aws::SDKOptions` is passed to the 
-:code:`Aws::InitAPI` and :code:`Aws::ShutdownAPI` methods. The same instance
-should be sent to both methods.
+An instance of :aws-cpp-struct:`Aws::SDKOptions <aws_1_1_s_d_k_options>` is 
+passed to the :code:`Aws::InitAPI` and :code:`Aws::ShutdownAPI` methods. The 
+same instance should be sent to both methods.
 
 The following samples demonstrate some of the available options.
 
