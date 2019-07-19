@@ -17,7 +17,7 @@
         AWS SDK for C++ code examples for Amazon EC2.
     :keywords:
 
-|EC2long| (|EC2|) is a web service that provides resizeable computing capacity |mdash| literally servers
+|EC2long| (|EC2|) is a web service that provides resizable computing capacity |mdash| literally servers
 in Amazon's data centers |mdash| that you use to build and host your software systems. You can use the
 following examples to program |ec2|_ using the |sdk-cpp|_.
 
