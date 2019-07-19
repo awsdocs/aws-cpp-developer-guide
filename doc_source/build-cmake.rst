@@ -28,12 +28,13 @@ Setting Up a CMake Project
 
 .. topic:: To set up a CMake project for use with the |sdk-cpp|
 
-   #. Create a directory to hold your source files.::
+   #. Create a directory to hold your source files.
+      ::
 
         mkdir my_example_project
 
    #. Open the directory and add a :file:`CMakeLists.txt` file that specifies your project's name,
-      executables, source files, and linked libraries. The following is a minimal example:
+      executables, source files, and linked libraries. The following is a minimal example.
 
       .. literalinclude:: example_code/general/CMakeLists-minimal.txt
           :language: cmake
@@ -53,11 +54,13 @@ directory that you used to :doc:`build the SDK <setup>`.
 By setting the path in :envvar:`CMAKE_PREFIX_PATH`, you won't need to type this path every time you
 rebuild your application.
 
-You can set it on |unixes| like this.::
+You can set it on |unixes| like this.
+::
 
    export CMAKE_PREFIX_PATH=/path/to/sdk_build_dir
 
-On Windows, use :code:`set` instead.::
+On Windows, use :code:`set` instead.
+::
 
    set CMAKE_PREFIX_PATH=C:\path\to\sdk_build_dir
 
@@ -65,22 +68,25 @@ On Windows, use :code:`set` instead.::
 Building with CMake
 ===================
 
-Create a directory into which :command:`cmake` will build your application.::
+Create a directory into which :command:`cmake` will build your application.
+::
 
    mkdir my_project_build
 
-Open the directory and run :command:`cmake` using the path to your project's source directory.::
+Open the directory and run :command:`cmake` using the path to your project's source directory.
+::
 
    cd my_project_build
    cmake ../my_example_project
 
 If you didn't set :envvar:`CMAKE_PREFIX_PATH`, you must add the path to the SDK's build directory
-using :code:`-Daws-sdk-cpp_DIR`.::
+using :code:`-Daws-sdk-cpp_DIR`.
+::
 
    cmake -Daws-sdk-cpp_DIR=/path/to/sdk_build_dir ../my_example_project
 
 After :command:`cmake` generates your build directory, you can use :command:`make` (or
-:command:`nmake` on Windows) to build your application.::
+:command:`nmake` on Windows) to build your application.
+::
 
    make
-

@@ -25,7 +25,7 @@ To list the regions available to your account, call the |ec2client|'s
 :functionname:`DescribeRegions` function with a :aws-cpp-class:`DescribeRegionsRequest
 <aws_1_1_e_c2_1_1_model_1_1_describe_regions_request>`.
 
-You will receieve a :aws-cpp-class:`DescribeRegionsResponse
+You will receive a :aws-cpp-class:`DescribeRegionsResponse
 <aws_1_1_e_c2_1_1_model_1_1_describe_regions_response>` in the outcome object. Call its
 :functionname:`GetRegions` function to get a list of :aws-cpp-class:`Region
 <aws_1_1_e_c2_1_1_model_1_1_region>` objects that represent each region.

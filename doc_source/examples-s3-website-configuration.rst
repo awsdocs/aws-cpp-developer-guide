@@ -25,7 +25,7 @@ Set a Bucket's Website Configuration
 ====================================
 
 To set an |s3| bucket's website configuration, call the |s3client|'s
-:functionname:`PutBucketWebsite` function with a a :aws-cpp-class:`PutBucketWebsiteRequest
+:functionname:`PutBucketWebsite` function with a :aws-cpp-class:`PutBucketWebsiteRequest
 <aws_1_1_s3_1_1_model_1_1_put_bucket_website_request>` object containing the bucket name and its
 website configuration, provided in a :aws-cpp-class:`WebsiteConfiguration
 <aws_1_1_s3_1_1_model_1_1_website_configuration>` object.
