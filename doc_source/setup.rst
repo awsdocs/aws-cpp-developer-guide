@@ -173,14 +173,14 @@ options.
 
          sudo mkdir sdk_build
          cd sdk_build
-         sudo cmake <path/to/sdk/source> -D CMAKE_BUILD_TYPE=[Debug | Release]
+         sudo cmake <path/to/sdk/source> -DCMAKE_BUILD_TYPE=[Debug | Release]
 
       Alternatively, create the build files directly in the SDK source 
       directory.
       ::
 
          cd <path/to/sdk/source>
-         sudo cmake . -D CMAKE_BUILD_TYPE=[Debug | Release]
+         sudo cmake . -DCMAKE_BUILD_TYPE=[Debug | Release]
 
       Building the entire SDK can take a while. To build only a particular 
       service, use the |cmake| :paramname:`BUILD_ONLY` parameter. The example 
@@ -188,7 +188,7 @@ options.
       build output, see :doc:`cmake-params`.
       ::
 
-         sudo cmake -D CMAKE_BUILD_TYPE=[Debug | Release] -D BUILD_ONLY="s3"
+         sudo cmake -DCMAKE_BUILD_TYPE=[Debug | Release] -DBUILD_ONLY="s3"
 
    #. Build the SDK binaries by running one of the following operating 
       system-dependent commands. If you're building the entire SDK, the 
