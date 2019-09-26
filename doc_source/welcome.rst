@@ -39,5 +39,7 @@ In addition to this guide, the following are valuable online resources for |sdk-
   + :github:`SDK source <aws/aws-sdk-cpp>`
   + :github:`SDK issues <aws/aws-sdk-cpp/issues>`
 
+* The `AWS Code Sample Catalog <https://docs.aws.amazon.com/code-samples/latest/catalog>`_
+
 * `SDK License <http://aws.amazon.com/apache2.0/>`_
 
