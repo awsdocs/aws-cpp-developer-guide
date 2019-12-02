@@ -8,25 +8,24 @@
    either express or implied. See the License for the specific language governing permissions and
    limitations under the License.
 
-############
-|sdk-cpp-dg|
-############
+###############################
+Security for |SERVICENAMETITLE|
+###############################
 
 .. meta::
-    :description: Developer Guide for the AWS SDK for C++
-	:keywords: AWS SDK for C++ code examples
+   :description: Provides security-related information for this AWS product or service.
+   :keywords:
+
+.. include:: common/_security-includes.txt
+
+.. include:: common/_security.txt
 
 .. toctree::
-    :maxdepth: 1
-    :titlesonly:
+   :maxdepth: 1
+   :titlesonly:
 
-    welcome
-    Getting Started <getting-started>
-    Configuring the SDK <configuring>
-    Using the SDK <programming-general>
-    Code Examples <programming-services>
-    Security <security>
-    Document History <document-history>
-
-.. include:: about-aws.txt
-
+   Data Protection <data-protection>
+   Identity and Access Management <common/security-iam>
+   Compliance Validation <common/compliance-validation>
+   Resilience <common/disaster-recovery-resiliency>
+   Infrastructure Security <common/infrastructure-security>
