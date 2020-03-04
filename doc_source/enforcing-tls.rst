@@ -132,25 +132,25 @@ Be advised, however, that the result is a global change that impacts all applica
 
    #. Under each of the subkeys mentioned previously, create a ``Client`` and a ``Server`` subkey.
 
-   #. Create the following keys and values.\
+   #. Create the following keys and values.
 
       .. table::
 
-         +----------------------------------+----------+-------+
-         | Key name                         | Key type | Value |
-         +==================================+==========+=======+
-         | TLS 1.0\Client\DisabledByDefault | DWORD    | 0     |
-         +----------------------------------+----------+-------+
-         | TLS 1.1\Client\DisabledByDefault | DWORD    | 0     |
-         +----------------------------------+----------+-------+
-         | TLS 1.2\Client\DisabledByDefault | DWORD    | 0     |
-         +----------------------------------+----------+-------+
-         | TLS 1.0\Client\Enabled           | DWORD    | 0     |
-         +----------------------------------+----------+-------+
-         | TLS 1.1\Client\Enabled           | DWORD    | 0     |
-         +----------------------------------+----------+-------+
-         | TLS 1.2\Client\Enabled           | DWORD    | 1     |
-         +----------------------------------+----------+-------+
+         +------------------------------------+----------+-------+
+         | Key name                           | Key type | Value |
+         +====================================+==========+=======+
+         | TLS 1.0\\Client\\DisabledByDefault | DWORD    | 0     |
+         +------------------------------------+----------+-------+
+         | TLS 1.1\\Client\\DisabledByDefault | DWORD    | 0     |
+         +------------------------------------+----------+-------+
+         | TLS 1.2\\Client\\DisabledByDefault | DWORD    | 0     |
+         +------------------------------------+----------+-------+
+         | TLS 1.0\\Client\\Enabled           | DWORD    | 0     |
+         +------------------------------------+----------+-------+
+         | TLS 1.1\\Client\\Enabled           | DWORD    | 0     |
+         +------------------------------------+----------+-------+
+         | TLS 1.2\\Client\\Enabled           | DWORD    | 1     |
+         +------------------------------------+----------+-------+
 
       Notice that ``TLS 1.2\Client\Enabled`` is the only key that's set to 1.
       Setting this key to 1 enforces TLS 1.2 as the only acceptable secure protocol.
