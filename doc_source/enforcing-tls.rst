@@ -20,32 +20,33 @@ Enforcing TLS 1.2 in |SERVICENAMETITLE|
 
 To increase security when communicating with AWS services, you should configure |SERVICENAME| to use TLS 1.2 or later.
 
-The |sdk-cpp| is a cross-platform library; you can build and run your application on the platforms you want.
+The |sdk-cpp| is a cross-platform library. You can build and run your application on the platforms you want.
 Different platforms might depend on different underlying HTTP clients.
 
 By default, macOS, Linux, Android and other non-Windows platforms use `libcurl <https://curl.haxx.se/libcurl/>`_.
-If the libcurl version is greater than 7.34.0, TLS 1.0 is the minimal version used by the underlying HTTP clients.
+If the libcurl version is later than 7.34.0, TLS 1.0 is the minimum version used by the underlying HTTP clients.
 
 For Windows, the default library is `WinHttp <https://docs.microsoft.com/en-us/windows/win32/winhttp>`_.
-In this case, TLS 1.0, TLS 1.1, and TLS 1.2 are acceptable secure protocols and the actual protocol to use is decided by Windows.
+In this case, TLS 1.0, TLS 1.1, and TLS 1.2 are acceptable secure protocols. Windows decides the actual protocol to use.
 `WinINet <https://docs.microsoft.com/en-us/windows/win32/wininet>`_ and `IXMLHttpRequest2 <https://docs.microsoft.com/en-us/windows/win32/api/_ixhr2>`_ are the other two options that are available on Windows.
-You can configure your application to replace the default library during CMake and at run-time.
-For these two HTTP clients, the secure protocol is also decided by Windows.
+You can configure your application to replace the default library during CMake and at runtime.
+For these two HTTP clients, Windows also decides the secure protocol.
 
 The |sdk-cpp| also provides the flexibility to override the default HTTP clients.
-For example you can enforce libcurl or use whatever HTTP clients you want by using a custom HTTP client factory.
-So in order to use TLS 1.2 as the minimal version, you must be aware of the HTTP client library you are using.
+For example, you can enforce libcurl or use whatever HTTP clients you want by using a custom HTTP client factory.
+So to use TLS 1.2 as the minimum version, you must be aware of the HTTP client library you're using.
 
 Enforce TLS 1.2 with libcurl on all platforms
 =============================================
 
 This section assumes that the |sdk-cpp| is using libcurl as a dependency for HTTP protocol support.
-In order to explicitly specify the TLS version, you will need a minimum libcurl version of 7.34.0.
+To explicitly specify the TLS version, you will need a minimum libcurl version of 7.34.0.
 In addition, you might need to modify the source code of the |sdk-cpp| and then rebuild it.
 
 The following procedure shows you how to perform these tasks.
 
-.. topic:: To enforce TLS 1.2 with libcurl
+To enforce TLS 1.2 with libcurl
+-------------------------------
 
    #. Verify that your installation of libcurl is at least version 7.34.0.
 
@@ -71,7 +72,7 @@ The following procedure shows you how to perform these tasks.
 
    #. If you performed the preceding code changes, build and install the |sdk-cpp| according to the instructions at `<https://github.com/aws/aws-sdk-cpp#building-the-sdk>`_.
 
-   #. For the service client in your application, enable ``verifySSL`` in its client configuration if this option isn't already enabled.
+   #. For the service client in your application, enable ``verifySSL`` in its client configuration, if this option isn't already enabled.
 
 Enforce TLS 1.2 on Windows
 ==========================
@@ -83,7 +84,7 @@ Prerequisite: Enable TLS 1.1 and 1.2 on Windows
 
    #. Determine whether your Windows version supports TLS 1.1 and TLS 1.2 natively, as described at `<https://docs.microsoft.com/en-us/windows/win32/secauthn/protocols-in-tls-ssl--schannel-ssp->`_.
 
-   #. Determine whether your Windows version needs to be patched to enable TLS 1.1 and TLS 1.2 as the default, as described at `<https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi>`_.
+   #. Determine whether you need to patch your Windows version to enable TLS 1.1 and TLS 1.2 as the default, as described at `<https://support.microsoft.com/en-us/help/3140245/update-to-enable-tls-1-1-and-tls-1-2-as-default-secure-protocols-in-wi>`_.
 
    #. Proceed to one of the next procedures, as appropriate.
 
@@ -91,24 +92,24 @@ To enforce TLS 1.2 with WinHttp
 -------------------------------
 
 WinHttp provides an API to explicitly set the acceptable secure protocols.
-However, to make this configurable at run-time, you need to modify the source code of the |sdk-cpp| and then rebuild it.
+However, to make this configurable at runtime, you need to modify the source code of the |sdk-cpp| and then rebuild it.
 
    #. Download the source code for the |sdk-cpp| from `GitHub <http://github.com/aws/aws-sdk-cpp>`_.
 
    #. Open ``aws-cpp-sdk-core/source/http/windows/WinHttpSyncHttpClient.cpp`` and find the following lines of code.
       ::
 
-         //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
+         // Disable insecure TLS protocols, otherwise, you might as well turn SSL verification off
          DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
          if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURE_PROTOCOLS, &flags, sizeof(flags)))
          {
              AWS_LOGSTREAM_FATAL(GetLogTag(), "Failed setting secure crypto protocols with error code: " << GetLastError());
          }
 
-   #. If necessary, change the value of the ``flags`` variable as follows.
+   #. If necessary, change the value of the ``flags`` variable, as follows.
       ::
 
-         //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
+         // Disable insecure TLS protocols, otherwise, you might as well turn SSL verification off
          DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
          if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURE_PROTOCOLS, &flags, sizeof(flags)))
          {
@@ -117,12 +118,12 @@ However, to make this configurable at run-time, you need to modify the source co
 
    #. If you performed the preceding code changes, build and install the |sdk-cpp| according to the instructions at `<https://github.com/aws/aws-sdk-cpp#building-the-sdk>`_.
 
-   #. For the service client in your application, enable ``verifySSL`` in its client configuration if this option isn't already enabled.
+   #. For the service client in your application, enable ``verifySSL`` in its client configuration, if this option isn't already enabled.
 
 To enforce TLS 1.2 with WinINet and IXMLHTTPRequest2
 ----------------------------------------------------
 
-For these two libraries there's no API to specify the secure protocol, so the |sdk-cpp| uses the default for the operating system.
+There is no API to specify the secure protocol for the WinINet and IXMLHTTPRequest2 libraries. So the |sdk-cpp| uses the default for the operating system.
 You can update the Windows registry to enforce the use of TLS 1.2, as shown in the following procedure.
 Be advised, however, that the result is a global change that impacts all applications that depend on Schannel.
 
@@ -130,7 +131,7 @@ Be advised, however, that the result is a global change that impacts all applica
 
    #. If they don't already exist, create the following subkeys: ``TLS 1.0,``, ``TLS 1.1``, and ``TLS 1.2``.
 
-   #. Under each of the subkeys mentioned previously, create a ``Client`` and a ``Server`` subkey.
+   #. Under each of the subkeys, create a ``Client`` subkey and a ``Server`` subkey.
 
    #. Create the following keys and values.
 
