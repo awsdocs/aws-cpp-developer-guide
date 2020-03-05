@@ -99,7 +99,7 @@ However, to make this configurable at runtime, you need to modify the source cod
    #. Open ``aws-cpp-sdk-core/source/http/windows/WinHttpSyncHttpClient.cpp`` and find the following lines of code.
       ::
 
-         // Disable insecure TLS protocols, otherwise, you might as well turn SSL verification off
+         //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
          DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_1 | WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
          if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURE_PROTOCOLS, &flags, sizeof(flags)))
          {
@@ -109,7 +109,7 @@ However, to make this configurable at runtime, you need to modify the source cod
    #. If necessary, change the value of the ``flags`` variable, as follows.
       ::
 
-         // Disable insecure TLS protocols, otherwise, you might as well turn SSL verification off
+         //disable insecure tls protocols, otherwise you might as well turn ssl verification off.
          DWORD flags = WINHTTP_FLAG_SECURE_PROTOCOL_TLS1_2;
          if (!WinHttpSetOption(GetOpenHandle(), WINHTTP_OPTION_SECURE_PROTOCOLS, &flags, sizeof(flags)))
          {
