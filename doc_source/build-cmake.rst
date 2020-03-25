@@ -47,22 +47,26 @@ Setting Up a CMake Project
 Setting CMAKE_PREFIX_PATH (Optional)
 ====================================
 
-CMake needs to know the location of the :file:`aws-sdk-cpp-config.cmake` so that it can properly
-resolve the AWS SDK libraries that your application uses. You can find this file in the build
-directory that you used to :doc:`build the SDK <setup>`.
+By default, the AWS SDK for C++ on macOS, Linux, Android and other non-Windows platforms is installed
+into :file:`/usr/local` and :file:`\Program Files (x86)\aws-cpp-sdk-all\` on Windows.
 
-By setting the path in :envvar:`CMAKE_PREFIX_PATH`, you won't need to type this path every time you
-rebuild your application.
+When you install the SDK into a non-default location, CMake needs to know where to find the file 
+:file:`AWSSDKConfig.cmake` so that it can properly resolve the AWS SDK libraries that your 
+application uses. You can find this file in the build directory that you used to 
+:doc:`build the SDK <setup>`.
+
+By adding the path to a list in :envvar:`CMAKE_PREFIX_PATH`, you won't need to type this path every 
+time you rebuild your application.
 
 You can set it on |unixes| like this.
 ::
 
-   export CMAKE_PREFIX_PATH=/path/to/sdk_build_dir
+   export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH;/path/to/sdk_install_dir
 
 On Windows, use :code:`set` instead.
 ::
 
-   set CMAKE_PREFIX_PATH=C:\path\to\sdk_build_dir
+   set CMAKE_PREFIX_PATH=%CMAKE_PREFIX_PATH%;C:\path\to\sdk_install_dir
 
 
 Building with CMake
@@ -80,10 +84,10 @@ Open the directory and run :command:`cmake` using the path to your project's sou
    cmake ../my_example_project
 
 If you didn't set :envvar:`CMAKE_PREFIX_PATH`, you must add the path to the SDK's build directory
-using :code:`-Daws-sdk-cpp_DIR`.
+using :code:`-DAWSSDK_DIR`.
 ::
 
-   cmake -Daws-sdk-cpp_DIR=/path/to/sdk_build_dir ../my_example_project
+   cmake -DAWSSDK_DIR=/path/to/sdk_install_dir ../my_example_project
 
 After :command:`cmake` generates your build directory, you can use :command:`make` (or
 :command:`nmake` on Windows) to build your application.
