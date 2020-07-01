@@ -86,7 +86,6 @@ bucket must be empty or an error will result*.
 **Code**
 
 .. literalinclude:: s3.cpp.delete_bucket.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_bucket.cpp>`.
 

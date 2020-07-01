@@ -88,7 +88,6 @@ delete the configuration from.
 **Code**
 
 .. literalinclude:: s3.cpp.delete_website_config.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_website_config.cpp>`.
 
