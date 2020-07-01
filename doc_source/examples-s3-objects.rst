@@ -85,7 +85,6 @@ local variable and the first line of the contents is output to the console.
 **Code**
 
 .. literalinclude:: s3.cpp.get_object.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/get_object.cpp>`.
 
@@ -106,7 +105,6 @@ Use the |s3client| object's :functionname:`DeleteObject` function, passing it a
 **Code**
 
 .. literalinclude:: s3.cpp.delete_object.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_object.cpp>`.
 

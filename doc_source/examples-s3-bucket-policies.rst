@@ -67,7 +67,6 @@ function, passing it the name of the bucket in a :aws-cpp-class:`GetBucketPolicy
 **Code**
 
 .. literalinclude:: s3.cpp.get_bucket_policy.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/get_bucket_policy.cpp>`.
 
@@ -88,7 +87,6 @@ providing it with the bucket name in a :aws-cpp-class:`DeleteBucketPolicyRequest
 **Code**
 
 .. literalinclude:: s3.cpp.delete_bucket_policy.code.txt
-   :dedent: 8
 
 This function succeeds even if the bucket doesn't already have a policy. If you specify a bucket
 name that doesn't exist or if you don't have access to the bucket, an

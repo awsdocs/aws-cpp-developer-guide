@@ -34,7 +34,6 @@ names of the object and its bucket. The return value includes the ACL's
 .. literalinclude:: s3.cpp.get_put_object_acl.inc.txt
 
 .. literalinclude:: s3.cpp.get_object_acl.code.txt
-   :dedent: 4
 
 The ACL can be modified by either creating a new ACL or changing the grants 
 specified in the current ACL. The updated ACL becomes the new current ACL by 
@@ -47,7 +46,6 @@ it the new current ACL. For further details, see
 :sdk-examples-cpp:`the example source file <s3/get_put_object_acl.cpp>`.
 
 .. literalinclude:: s3.cpp.put_object_acl.code.txt
-   :dedent: 4
 
 
 Manage a Bucket's Access Control List
@@ -68,4 +66,3 @@ see :sdk-examples-cpp:`the example source file <s3/get_put_bucket_acl.cpp>`.
 .. literalinclude:: s3.cpp.get_put_bucket_acl.inc.txt
 
 .. literalinclude:: s3.cpp.get_put_bucket_acl.code.txt
-   :dedent: 4
