@@ -36,7 +36,6 @@ name, and file to upload. The bucket must exist or an error will result.
 **Code**
 
 .. literalinclude:: s3.cpp.put_object.code.txt
-   :dedent: 4
 
 See the :sdk-examples-cpp:`complete example <s3/put_object.cpp>`.
 
@@ -59,7 +58,6 @@ use to get a list of objects in the form of :classname:`Object` instances.
 **Code**
 
 .. literalinclude:: s3.cpp.list_objects.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/list_objects.cpp>`.
 
