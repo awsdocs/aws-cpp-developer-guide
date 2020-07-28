@@ -42,7 +42,6 @@ representation in a :aws-cpp-class:`PutBucketPolicyRequest
    :dedent: 8
    
 .. literalinclude:: s3.cpp.put_bucket_policy02.code.txt
-   :dedent: 8
 
 .. tip:: The :aws-cpp-class:`Aws::Utils::Json::JsonValue <aws_1_1_utils_1_1_json_1_1_json_value>`
    utility class can be used to help you construct valid JSON objects to pass to
