@@ -117,4 +117,3 @@ until the response handler callback notifies it that the upload operation
 has finished.
 
 .. literalinclude:: s3.cpp.put_object_async.invoke.code.txt
-   :dedent: 8
