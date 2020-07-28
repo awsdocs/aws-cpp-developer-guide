@@ -39,7 +39,6 @@ Setting an index document is *required*; all other parameters are optional.
 **Code**
 
 .. literalinclude:: s3.cpp.put_website_config.code.txt
-   :dedent: 8
 
 .. note:: Setting a website configuration does not modify the access permissions for your bucket.
    To make your files visible on the web, you will also need to set a *bucket policy* that allows
@@ -68,7 +67,6 @@ no website configuration for the bucket, then :code-cpp:`null` will be returned.
 **Code**
 
 .. literalinclude:: s3.cpp.get_website_config.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/get_website_config.cpp>`.
 
