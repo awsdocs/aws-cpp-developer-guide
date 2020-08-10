@@ -65,7 +65,6 @@ Use the :classname:`ListBucketResult` object :functionname:`GetBuckets` method t
 **Code**
 
 .. literalinclude:: s3.cpp.list_buckets.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/list_buckets.cpp>`.
 
@@ -86,7 +85,6 @@ bucket must be empty or an error will result*.
 **Code**
 
 .. literalinclude:: s3.cpp.delete_bucket.code.txt
-   :dedent: 8
 
 See the :sdk-examples-cpp:`complete example <s3/delete_bucket.cpp>`.
 

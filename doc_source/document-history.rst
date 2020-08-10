@@ -21,6 +21,9 @@ This topic lists recent changes to the |sdk-cpp-dg|.
 
 * **Latest documentation update:** |today|
 
+August 07, 2020
+   Added a topic on Amazon S3 encryption client migration.
+
 June 20, 2019
    Updated the Amazon S3 :functionname:`CreateBucket` example to support regions.
 
