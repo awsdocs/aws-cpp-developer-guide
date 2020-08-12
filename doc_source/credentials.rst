@@ -19,23 +19,24 @@ Providing AWS Credentials
 
 To connect to any of the supported services with the |sdk-cpp|, you must provide AWS credentials.
 The AWS SDKs and CLIs use :emphasis:`provider chains` to look for AWS credentials in several
-different places, including system/user environment variables and local AWS configuration files.
+different places, including system/user environment variables and local AWS configuration files. 
+For details, see `Credentials Providers <https://github.com/aws/aws-sdk-cpp/blob/master/Docs/Credentials_Providers.md>`_ 
+in the aws-sdk-cpp repository in GitHub.
 
-You can set your credentials for use by the |sdk-cpp| in various ways, but here are the
-recommended approaches:
+For related information, see the following: 
 
-.. the following file is in the shared content...
+* To create a new AWS account, see `How do I create and activate a new AWS account <https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/>`_ 
+  on the AWS Premium Support website.
+* To create long-term AWS credentials, see `Programmtic access <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>`_ 
+  in the AWS General Reference.
+* To create short-term AWS credentials, see `Temporary Security Credentials <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html>`_ in the AWS Identity and Access Management User Guide.
+* To learn more about supported provider chains, see the `AWS Tools and SDKs Shared Configuration and Credentials Reference Guide <https://docs.aws.amazon.com/credref/latest/refdocs>`_, specifically:
 
-.. include:: common/sdk-shared-credentials.txt
+  * `The .aws/credentials and .aws/config files <https://docs.aws.amazon.com/credref/latest/refdocs/creds-config-files.html>`_
+  * `Using environment variables <https://docs.aws.amazon.com/credref/latest/refdocs/environment-variables.html>`_
+  * `role_arn <https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-role_arn.html>`_ (corresponds to the :code:`AWS_ROLE_ARN` environment variable)
+  * `web_identity_token_file <https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-web_identity_token_file.html>`_ (corresponds to the :code:`AWS_WEB_IDENTITY_TOKEN_FILE` environment variable)
+  * `role_session_name <https://docs.aws.amazon.com/credref/latest/refdocs/setting-global-role_session_name.html>`_ (corresponds to the :code:`AWS_ROLE_SESSION_NAME` environment variable)
 
-After you set your AWS credentials using one of these methods, the |sdk-cpp| loads them automatically
-by using the default credential provider chain.
-
-You can also supply AWS credentials using your own methods by:
-
-* Providing credentials to an AWS client class constructor.
-
-* Using |COG|_, an AWS identity management solution. You can use the
-  ``CognitoCachingCredentialsProviders`` classes in the identity-management project. For more
-  information, see the |COG-dg|_.
+* To learn more about the :code:`AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` environment variable, see `IAM Roles for Tasks <https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html>`_ in the Amazon ECS Developer Guide. 
 
