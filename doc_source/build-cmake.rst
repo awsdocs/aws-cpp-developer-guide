@@ -48,7 +48,7 @@ Setting CMAKE_PREFIX_PATH (Optional)
 ====================================
 
 By default, the AWS SDK for C++ on macOS, Linux, Android and other non-Windows platforms is installed
-into :file:`/usr/local` and :file:`\Program Files (x86)\aws-cpp-sdk-all\` on Windows.
+into :file:`/usr/local` and :file:`\Program Files (x86)\aws-cpp-sdk-all` on Windows.
 
 When you install the SDK into a non-default location, CMake needs to know where to find the file 
 :file:`AWSSDKConfig.cmake` so that it can properly resolve the AWS SDK libraries that your 
