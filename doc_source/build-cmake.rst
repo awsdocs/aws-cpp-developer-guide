@@ -61,7 +61,7 @@ time you rebuild your application.
 You can set it on |unixes| like this.
 ::
 
-   export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH;/path/to/sdk_install_dir
+   export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:/path/to/sdk_install_dir
 
 On Windows, use :code:`set` instead.
 ::
