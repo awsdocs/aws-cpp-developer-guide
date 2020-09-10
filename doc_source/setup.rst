@@ -1,4 +1,4 @@
-.. Copyright 2010-2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+.. Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
    This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0
    International License (the "License"). You may not use this file except in compliance with the
@@ -26,7 +26,7 @@ Prerequisites
 
 To use the |sdk-cpp|, you need:
 
-* Visual Studio 2015 or later
+* Microsoft Visual Studio 2015 or later
 * *or* GNU Compiler Collection (GCC) 4.9 or later
 * *or* Clang 3.3 or later
 
@@ -62,82 +62,13 @@ To compile on Linux, you must have the header files (``-dev`` packages) for :fil
 
       sudo yum install libcurl-devel openssl-devel libuuid-devel pulseaudio-libs-devel
 
-.. _setup-with-nuget:
-
-Getting the SDK Using NuGet with Visual C++
-===========================================
-
-You can use NuGet to manage dependencies for |sdk-cpp| projects that you develop with Microsoft
-Visual C++. To use this procedure, you must have `NuGet <nuget_>`_ installed on your system.
-
-.. topic:: To use the SDK with NuGet
-
-   #. Open your project in Visual Studio.
-
-   #. In :guilabel:`Solution Explorer`, right-click your project name, and then choose :guilabel:`Manage
-      NuGet Packages`.
-
-   #. Select the packages to use by searching for a particular service or library name. For example,
-      you could use a search term such as :userinput:`aws s3 native`. Or, because |sdk-cpp| libraries
-      are named consistently, use :samp:`AWSSDKCPP-{service name}` to add a library for a particular
-      service to your project.
-
-   #. Choose :guilabel:`Install` to install the libraries and add them to your project.
-
-When you build your project, the correct binaries are automatically included for each
-runtime/architecture configuration you use |mdash| you won't need to manage these dependencies
-yourself.
-
-.. _setup-with-vcpkg:
-
-Getting the SDK Using Vcpkg with Visual C++
-===========================================
-You can use vcpkg to manage dependencies for |sdk-cpp| projects that you develop with Microsoft
-Visual C++. To use this procedure, you must have `vcpkg <https://github.com/Microsoft/vcpkg>`_
-installed on your system.
-
-.. topic:: To use the SDK with vcpkg
-
-   #. Open a Windows command prompt and navigate to the vcpkg directory.
-
-   #. Integrate vcpkg into Visual Studio. You can `integrate 
-      <https://docs.microsoft.com/en-us/cpp/vcpkg#installation>`_ per project or per user. 
-      The command line shown below integrates vcpkg for the current user.
-      ::
-
-	      vcpkg integrate install
-
-   #. Install the |sdk-cpp| package. The package compiles the entire SDK and its dependencies. It 
-      can take a while.
-      ::
-
-	      vcpkg install aws-sdk-cpp[*]:x86-windows --recurse
-
-      To reduce build time, build only the SDK packages needed. Specify the package names in 
-      square brackets. Also include the SDK `core` package.
-      ::
-
-         vcpkg install aws-sdk-cpp[core,s3,ec2]:x86-windows
-      
-      A package name can be derived from the |sdk-cpp| repo directory name for the service.
-      ::
-
-         aws-sdk-cpp\aws-cpp-sdk-<packageName>   # Repo directory name and packageName
-         aws-sdk-cpp\aws-cpp-sdk-s3              # Example: Package name is s3
-
-   #. Open your project in Visual Studio.
-
-   #. #include the |sdk-cpp| header files you want in your source code.
-
-Like NuGet, when you build your project, the correct binaries are automatically included for each
-runtime/architecture configuration you use.
-
 .. _setup-from-source:
 
 Building the SDK from Source
 ============================
 
-If you don't use Visual Studio (or don't want to use NuGet), you can build 
+If you don't use Visual Studio (or don't want to or can't use vcpkg or NuGet as described 
+later in this topic), you can build 
 the SDK from source using command-line tools. This method also enables you 
 to customize your SDK build |mdash| see :doc:`cmake-params` for the available 
 options.
@@ -272,3 +203,78 @@ Running Integration Tests
 Several directory names include the suffix ``*integration-tests``. After the project is
 built, the tests stored in these directories can be run to verify the project's correct 
 execution.
+
+.. _setup-with-vcpkg:
+
+Getting the SDK Using Vcpkg with Visual C++
+===========================================
+You can use vcpkg to manage dependencies for |sdk-cpp| projects that you develop with Microsoft
+Visual C++. To use this procedure, you must have `vcpkg <https://github.com/Microsoft/vcpkg>`_
+installed on your system.
+
+.. topic:: To use the SDK with vcpkg
+
+   #. Open a Windows command prompt and navigate to the vcpkg directory.
+
+   #. Integrate vcpkg into Visual Studio. You can `integrate 
+      <https://docs.microsoft.com/en-us/cpp/vcpkg#installation>`_ per project or per user. 
+      The command line shown below integrates vcpkg for the current user.
+      ::
+
+	      vcpkg integrate install
+
+   #. Install the |sdk-cpp| package. The package compiles the entire SDK and its dependencies. It 
+      can take a while.
+      ::
+
+	      vcpkg install aws-sdk-cpp[*]:x86-windows --recurse
+
+      To reduce build time, build only the SDK packages needed. Specify the package names in 
+      square brackets. Also include the SDK `core` package.
+      ::
+
+         vcpkg install aws-sdk-cpp[core,s3,ec2]:x86-windows
+      
+      A package name can be derived from the |sdk-cpp| repo directory name for the service.
+      ::
+
+         aws-sdk-cpp\aws-cpp-sdk-<packageName>   # Repo directory name and packageName
+         aws-sdk-cpp\aws-cpp-sdk-s3              # Example: Package name is s3
+
+   #. Open your project in Visual Studio.
+
+   #. #include the |sdk-cpp| header files you want in your source code.
+
+When you build your project, the correct binaries are automatically included for each
+runtime/architecture configuration you use.
+
+.. _setup-with-nuget:
+
+Getting the SDK Using NuGet with Visual C++
+===========================================
+
+You can use NuGet to manage dependencies for |sdk-cpp| projects that you develop with Microsoft
+Visual C++. To use this procedure, you must have `NuGet <nuget_>`_ installed on your system.
+
+.. note:: The following information applies only to |sdk-cpp| versions 1.6 and earlier and to 
+   Microsoft Visual Studio 2015 and 2017. For later versions of the |sdk-cpp| and Visual Studio, 
+   choose from the other setup options earlier in this topic.
+
+.. topic:: To use the SDK with NuGet
+
+   #. Open your project in Visual Studio.
+
+   #. In :guilabel:`Solution Explorer`, right-click your project name, and then choose :guilabel:`Manage
+      NuGet Packages`.
+
+   #. Select the packages to use by searching for a particular service or library name. For example,
+      you could use a search term such as :userinput:`aws s3 native`. Or, because |sdk-cpp| libraries
+      are named consistently, use :samp:`AWSSDKCPP-{service name}` to add a library for a particular
+      service to your project.
+
+   #. Choose :guilabel:`Install` to install the libraries and add them to your project.
+
+When you build your project, the correct binaries are automatically included for each
+runtime/architecture configuration you use |mdash| you won't need to manage these dependencies
+yourself.
+
