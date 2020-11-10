@@ -27,7 +27,7 @@ For related information, see the following:
 
 * To create a new AWS account, see `How do I create and activate a new AWS account <https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/>`_ 
   on the AWS Premium Support website.
-* To create long-term AWS credentials, see `Programmtic access <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>`_ 
+* To create long-term AWS credentials, see `Programmatic access <https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys>`_ 
   in the AWS General Reference.
 * To create short-term AWS credentials, see `Temporary Security Credentials <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html>`_ in the AWS Identity and Access Management User Guide.
 * To learn more about supported provider chains, see the `AWS Tools and SDKs Shared Configuration and Credentials Reference Guide <https://docs.aws.amazon.com/credref/latest/refdocs>`_, specifically:
