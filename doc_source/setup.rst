@@ -138,7 +138,7 @@ options.
                msbuild ALL_BUILD.vcxproj
 
    #. Install the SDK by running one of the following operating 
-      system-dependent commands.  Administrator privileges requred.
+      system-dependent commands.  Administrator privileges required.
 
 
       .. container:: option
