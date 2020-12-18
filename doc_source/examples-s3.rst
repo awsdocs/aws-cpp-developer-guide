@@ -18,6 +18,7 @@
 
 |S3long| (|S3|) is storage for the internet. You can use the following examples to program |S3|_ using
 the |sdk-cpp|_.
+The S3 example is catered specifically to only work with CURL on Linux/Mac.
 
 .. include:: includes/complete-examples-note.txt
 
