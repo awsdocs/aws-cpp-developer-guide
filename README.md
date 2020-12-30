@@ -1,4 +1,4 @@
-## User Guide for the AWS Toolkit for Visual Studio Code
+## User Guide for the AWS SDK for C++ Developer Guide
 
 The open source version of the AWS SDK for C++ Developer Guide. For easy navigation, start in the [index](doc_source/index.md).
 
