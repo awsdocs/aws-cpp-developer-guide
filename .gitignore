@@ -1,9 +1,0 @@
-README.html
-doc_build/
-doc_output/
-doc_source/.vs/
-shared_content/
-example_code
-output/
-*.swp
-venv/
