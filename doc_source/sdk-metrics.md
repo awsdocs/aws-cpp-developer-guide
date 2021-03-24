@@ -1,5 +1,11 @@
 # SDK Metrics<a name="sdk-metrics"></a>
 
+**Topics**
++ [Enable SDK Metrics for the AWS SDK for C\+\+](#csm-enable-agent)
++ [Update a CloudWatch Agent](#csm-update-agent)
++ [Disable SDK Metrics](#csm-disable-agent)
++ [Definitions for SDK Metrics](#definitions-for-sdkm)
+
 AWS SDK Metrics for Enterprise Support \(SDK Metrics\) enables Enterprise customers to collect metrics from AWS SDKs on their hosts and clients shared with AWS Enterprise Support\. SDK Metrics provides information that helps speed up detection and diagnosis of issues occurring in connections to AWS services for AWS Enterprise Support customers\.
 
 As telemetry is collected on each host, it is relayed via UDP to 127\.0\.0\.1 \(AKA localhost\), where the CloudWatch Agent aggregates the data and sends it to the SDK Metrics service\. Therefore, to receive metrics, the CloudWatch Agent is required to be added to your instance\.
@@ -8,35 +14,14 @@ The following steps to set up SDK Metrics pertain to an Amazon EC2 instance runn
 
 To utilize SDK Metrics, run the latest version of the CloudWatch agent\. Learn how to [Configure the CloudWatch Agent for SDK Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Configure-CloudWatch-Agent-SDK-Metrics.html) in the Amazon CloudWatch User Guide\.
 
-To set up SDK Metrics with the AWS SDK for C\+\+, follow these instructions:
+**To set up SDK Metrics with the AWS SDK for C\+\+**
++ Follow the instructions [To set up SDK Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Set-Up-SDK-Metrics.html) in the Amazon CloudWatch\.
 
-1. Install the latest version of the AWS SDK for C\+\+\.
-
-1. Host your project on an Amazon EC2 instance or in your local environment\.
-
-1. Create an application with an AWS SDK for C\+\+ client to use an AWS service\.
-
-1. Install and configure a CloudWatch agent on an EC2 instance or in your local environment\.
-
-1. Authorize SDK Metrics to Collect and Send Metrics
-
-1.  [Enable SDK Metrics for the AWS SDK for C\+\+](#csm-enable-agent) 
-
-For more information, see the following:
-+  [Update a CloudWatch Agent](#csm-update-agent) 
-+  [Disable SDK Metrics](#csm-disable-agent) 
+  1. The last step of this procedure is to enable SDK Metrics with the SDK for C\+\+ itself, covered in the following section\. 
 
 ## Enable SDK Metrics for the AWS SDK for C\+\+<a name="csm-enable-agent"></a>
 
-By default, SDK Metrics uses port 31000 and is disabled\.
-
-```
-//default values
- [
-     'enabled' => false,
-     'port' => 31000,
- ]
-```
+By default, SDK Metrics uses *port 31000* and is *disabled*\.
 
 Enabling SDK Metrics is independent of configuring your credentials to use an AWS service\.
 
@@ -58,7 +43,9 @@ Note: Enabling SDK Metrics does not configure your credentials to use an AWS ser
 
 ### Option 2: AWS Shared Config File<a name="option-2-aws-shared-config-file"></a>
 
-If no CSM configuration is found in the environment variables, the SDK looks for your default AWS profile field\. If `AWS_DEFAULT_PROFILE` is set to something other than default, update that profile\. To enable SDK Metrics, add `csm_enabled` to the shared config file located at `~/.aws/config`\.
+If no CSM configuration is found in the environment variables, the SDK looks for your default AWS profile field\. If `AWS_DEFAULT_PROFILE` is set to something other than default, update that profile\. 
+
+To enable SDK Metrics, add `csm_enabled` to the Shared config file located at `~/.aws/config`\.
 
 ```
 [default]
@@ -78,7 +65,9 @@ To make changes to the port, you need to set the values and then restart any AWS
 
 ### Option 1: Set Environment Variables<a name="id1"></a>
 
-Most services use the default port\. But if your service requires a unique port ID, add *AWS\_CSM\_PORT=\[port\_number\]*, to the host’s environment variables\.
+Most services use the default port\. 
+
+If your service requires a unique port ID, add *AWS\_CSM\_PORT=\[port\_number\]*, to the host’s environment variables\.
 
 ```
 export AWS_CSM_ENABLED=true
@@ -87,7 +76,9 @@ export AWS_CSM_PORT=1234
 
 ### Option 2: AWS Shared Config File<a name="id2"></a>
 
-Most services use the default port\. But if your service requires a unique port ID, add *csm\_port = \[port\_number\]* to *\~/\.aws/config*\.
+Most services use the default port\. 
+
+If your service requires a unique port ID, add *csm\_port = \[port\_number\]* to the Shared config file located at *\~/\.aws/config*\.
 
 ```
 [default]

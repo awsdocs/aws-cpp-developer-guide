@@ -1,8 +1,21 @@
 # AWS Client Configuration<a name="client-config"></a>
 
-Use the client configuration to control various behaviors of the AWS SDK for C\+\+\.
+The AWS SDK for C\+\+ enables you to change the default client configuration, which is helpful when you want to do things like:
++ Connect to the Internet through proxy
++ Change HTTP transport settings, such as connection timeout and request retries
++ Specify TCP socket buffer size hints
 
- `ClientConfiguration` declaration:
+`ClientConfiguration` is a structure in the SDK for C\+\+ that you can instantiate and utilize in your code\. The following snippet illustrates using this class to access Amazon S3 through a proxy\.
+
+```
+Aws::Client::ClientConfiguration clientConfig;
+clientConfig.proxyHost = "localhost";
+clientConfig.proxyPort = 1234;
+clientConfig.proxyScheme = Aws::Http::Scheme::HTTPS;
+Aws::S3::S3Client(clientConfig);
+```
+
+ `ClientConfiguration` declaration \(See latest at [Aws::Client::ClientConfiguration](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_client_1_1_client_configuration.html) in the *AWS SDK for C\+\+ API Reference*\):
 
 ```
 struct AWS_CORE_API ClientConfiguration

@@ -1,4 +1,4 @@
-# Using the AWS SDK for C\+\+<a name="basic-use"></a>
+# Basic Use<a name="basic-use"></a>
 
 Applications that use the AWS SDK for C\+\+ must initialize it\. Similarly, before the application terminates, the SDK must be shut down\. Both operations accept configuration options that affect the initialization and shutdown processes and subsequent calls to the SDK\.
 
@@ -44,18 +44,6 @@ The following samples demonstrate some of the available options\.
   }
   Aws::ShutdownAPI(options);
   ```
-+ Install a custom memory manager
-
-  ```
-  MyMemoryManager memoryManager;
-  Aws::SDKOptions options;
-  options.memoryManagementOptions.memoryManager = &memoryManager;
-  Aws::InitAPI(options);
-  {
-      // make your SDK calls here.
-  }
-  Aws::ShutdownAPI(options);
-  ```
 + Override the default HTTP client factory
 
   ```
@@ -72,8 +60,4 @@ The following samples demonstrate some of the available options\.
   ```
 
 **Note**  
- `httpOptions` takes a closure rather than a `std::shared_ptr`\. Each of the SDK factory functions operates in this manner because at the time at which the factory memory allocation occurs, the memory manager has not yet been installed\. By passing a closure to the method, the memory manager will be called to perform the memory allocation when it is safe to do so\. A simple technique to accomplish this procedure is by using a Lambda expression\.
-
-## More Information<a name="more-information"></a>
-
-Examples of AWS SDK for C\+\+ application code are described in the section [AWS SDK for C\+\+ Code Examples](programming-services.md)\. Each example includes a link to the full source code on GitHub which can be used as a starting point for your own applications\.
+ `httpOptions` takes a closure \(also called an anonymous function or lambda expression\) rather than a `std::shared_ptr`\. Each of the SDK factory functions operates in this manner because at the time at which the factory memory allocation occurs, the memory manager has not yet been installed\. By passing a closure to the method, the memory manager will be called to perform the memory allocation when it is safe to do so\. A simple technique to accomplish this procedure is by using a Lambda expression\.

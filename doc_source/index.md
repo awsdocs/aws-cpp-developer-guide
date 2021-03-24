@@ -1,7 +1,7 @@
 # AWS SDK for C++ Developer Guide
 
 -----
-*****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy;  Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -16,22 +16,29 @@ Amazon's trademarks and trade dress may not be used in
 ## Contents
 + [AWS SDK for C++ Developer Guide](welcome.md)
 + [Getting Started Using the AWS SDK for C++](getting-started.md)
-   + [Setting Up the AWS SDK for C++](setup.md)
    + [Providing AWS Credentials](credentials.md)
-   + [Using the AWS SDK for C++](basic-use.md)
-   + [Building Your Application with CMake](build-cmake.md)
+   + [Getting the AWS SDK for C++ from Source Code](sdk-from-source.md)
+      + [Building the AWS SDK for C++ on Windows](setup-windows.md)
+      + [Building the AWS SDK for C++ on Linux/macOS](setup-linux.md)
+      + ["Hello S3" App](build-cmake.md)
+   + [Getting the AWS SDK for C++ from a Package Manager](sdk-from-pm.md)
+      + [AWS SDK for C++ Setup Using Vcpkg on Windows](setup-windows-vcpkg.md)
+      + [AWS SDK for C++ Setup Using Vcpkg on Linux/macOS](setup-linux-vcpkg.md)
+      + ["Hello S3" App](build-vcpkg.md)
+   + [Troubleshooting Build Issues](troubleshooting-cmake.md)
 + [Configuring the AWS SDK for C++](configuring.md)
    + [CMake Parameters](cmake-params.md)
-   + [AWS Client Configuration](client-config.md)
    + [Overriding Your HTTP Client](overriding-http-client.md)
    + [Controlling IOStreams Used by the HttpClient and the AWSClient](configuring-iostreams.md)
-   + [SDK Metrics](sdk-metrics.md)
 + [Using the AWS SDK for C++](programming-general.md)
+   + [Basic Use](basic-use.md)
+   + [AWS Client Configuration](client-config.md)
    + [Service Client Classes](using-service-client.md)
    + [Utility Modules](utility-modules.md)
    + [Memory Management](memory-management.md)
    + [Logging](logging.md)
    + [Error Handling](error-handling.md)
+   + [SDK Metrics](sdk-metrics.md)
 + [AWS SDK for C++ Code Examples](programming-services.md)
    + [Amazon CloudWatch Examples Using the AWS SDK for C++](examples-cloudwatch.md)
       + [Getting Metrics from CloudWatch](examples-cloudwatch-get-metrics.md)

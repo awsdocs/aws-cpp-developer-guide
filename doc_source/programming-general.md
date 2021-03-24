@@ -5,8 +5,11 @@ This section provides information about general use of the AWS SDK for C\+\+, be
 For service\-specific programming examples, see [AWS SDK for C\+\+ Code Examples](programming-services.md)\.
 
 **Topics**
++ [Basic Use](basic-use.md)
++ [AWS Client Configuration](client-config.md)
 + [Service Client Classes](using-service-client.md)
 + [Utility Modules](utility-modules.md)
 + [Memory Management](memory-management.md)
 + [Logging](logging.md)
 + [Error Handling](error-handling.md)
++ [SDK Metrics](sdk-metrics.md)

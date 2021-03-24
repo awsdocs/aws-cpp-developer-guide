@@ -38,7 +38,7 @@ To use the *ADD\_CUSTOM\_CLIENTS* or *REGENERATE\_CLIENTS* variables, you must h
 Builds any arbitrary clients based on the API definition\. Place your definition in the `code-generation/api-definitions` folder, and then pass this argument to ** `cmake` **\. The ** `cmake` ** configure step generates your client and includes it as a subdirectory in your build\. This is particularly useful to generate a C\+\+ client for using one of your [API Gateway](https://aws.amazon.com/api-gateway) services\. For example:
 
 ```
--DADD_CUSTOM_CLIENTS="serviceName=myCustomService;version=2015-12-21;serviceName=someOtherService;version=2015-08-15"
+-DADD_CUSTOM_CLIENTS="serviceName=myCustomService,version=2015-12-21;serviceName=someOtherService,version=2015-08-15"
 ```
 
 ### BUILD\_ONLY<a name="cmake-build-only"></a>

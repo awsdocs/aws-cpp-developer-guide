@@ -8,7 +8,7 @@ Aws::Utils::Logging::InitializeAWSLogging(
         "RunUnitTests", Aws::Utils::Logging::LogLevel::Trace, "aws_sdk_"));
 ```
 
-If you don’t call `InitializeAWSLogging` in your program, the SDK will not do any logging\. If you do use logging, don’t forget to shut it down at the end of your program by calling `ShutdownAWSLogging`:
+You may call `InitializeAWSLogging` in your program to change the default behavior\. If you do use logging, don’t forget to shut it down at the end of your program by calling `ShutdownAWSLogging`:
 
 ```
 Aws::Utils::Logging::ShutdownAWSLogging();
