@@ -1,4 +1,4 @@
-# "Hello S3" App<a name="build-cmake"></a>
+# "Hello S3" app<a name="build-cmake"></a>
 
  [CMake](https://cmake.org/) is a build tool that you use to manage your application’s dependencies and to create makefiles suitable for the platform you’re building on\. You can use CMake to create and build projects using the AWS SDK for C\+\+\.
 
@@ -15,12 +15,51 @@ Deep Dive: Setting CMAKE\_PREFIX\_PATH
 By default, the AWS SDK for C\+\+ on macOS, Linux, Android and other non\-Windows platforms is installed into `/usr/local` and on Windows is installed into `\Program Files (x86)\aws-cpp-sdk-all`\.  
 CMake needs to know where to find several resources that result from building the SDK \([Windows](setup-windows.md), [Linux/macOS](setup-linux.md)\):  
 the file `AWSSDKConfig.cmake` so that it can properly resolve the AWS SDK libraries that your application uses\.
-\(for version 1\.8 and earlier\) the location of dependencies: aws\-c\-event\-stream, aws\-c\-common, aws\-checksums
+\(for version 1\.8 and earlier\) the location of dependencies: `aws-c-event-stream`, `aws-c-common`, `aws-checksums`
 
 **Note**  
 Deep Dive: Runtime Libraries on Windows  
-To run your program, several DLLs are required in your program's executable location: aws\-c\-common\.dll, aws\-c\-event\-stream\.dll, aws\-checksums\.dll, aws\-cpp\-sdk\-core\.dll, as well as any specific DLLs based on the components of your program \(this example uses Amazon S3 and so also requires aws\-cpp\-sdk\-s3\)\. If these DLLs are not in the executable location then runtime exceptions of 'file not found' occur\. The second `if` statement in the CMakeLists\.txt file copies these libraries from the installation location to the executable location to satisfy this requirement\.   
-`AWSSDK_CPY_DYN_LIBS` is a macro defined by AWS SDK for C\+\+ that copies the SDK's DLLs from the installation location to the executable location of your program\. 
+To run your program, several DLLs are required in your program's executable location: `aws-c-common.dll`, `aws-c-event-stream.dll`, `aws-checksums.dll`, `aws-cpp-sdk-core.dll`, as well as any specific DLLs based on the components of your program \(this example uses Amazon S3 and so also requires `aws-cpp-sdk-s3`\)\. If these DLLs are not in the executable location then runtime exceptions of 'file not found' occur\. The second `if` statement in the CMakeLists\.txt file copies these libraries from the installation location to the executable location to satisfy this requirement\.   
+`AWSSDK_CPY_DYN_LIBS` is a macro defined by AWS SDK for C\+\+ that copies the SDK's DLLs from the installation location to the executable location of your program\. Review the two `AWSSDK_CPY_DYN_LIBS` lines and CHOOSE which pattern is accurate for your build environment\.
+
+```
+#include <aws/core/Aws.h>
+#include <aws/core/utils/logging/LogLevel.h>
+#include <aws/s3/S3Client.h>
+#include <iostream>
+
+using namespace Aws;
+
+int main()
+{
+    //The Aws::SDKOptions struct contains SDK configuration options.
+    //An instance of Aws::SDKOptions is passed to the Aws::InitAPI and 
+    //Aws::ShutdownAPI methods.  The same instance should be sent to both methods.
+    SDKOptions options;
+    options.loggingOptions.logLevel = Utils::Logging::LogLevel::Debug;
+    
+    //The AWS SDK for C++ must be initialized by calling Aws::InitAPI.
+    InitAPI(options); 
+    {
+        S3::S3Client client;
+
+        auto outcome = client.ListBuckets();
+        if (outcome.IsSuccess()) {
+            std::cout << "Found " << outcome.GetResult().GetBuckets().size() << " buckets\n";
+            for (auto&& b : outcome.GetResult().GetBuckets()) {
+                std::cout << b.GetName() << std::endl;
+            }
+        }
+        else {
+            std::cout << "Failed with error: " << outcome.GetError() << std::endl;
+        }
+    }
+
+    //Before the application terminates, the SDK must be shut down. 
+    ShutdownAPI(options);
+    return 0;
+}
+```
 
 **To create the folder and source files**
 
@@ -29,45 +68,6 @@ To run your program, several DLLs are required in your program's executable loca
 This example can also be completed in Visual Studio: choose **Create New Project** and then choose **CMake Project**\.
 
 1. Within that folder, add a `main.cpp` file that includes the following code, which reports the Amazon S3 buckets you own\.
-
-   ```
-   #include <aws/core/Aws.h>
-   #include <aws/core/utils/logging/LogLevel.h>
-   #include <aws/s3/S3Client.h>
-   #include <iostream>
-   
-   using namespace Aws;
-   
-   int main()
-   {
-       //The Aws::SDKOptions struct contains SDK configuration options.
-       //An instance of Aws::SDKOptions is passed to the Aws::InitAPI and 
-       //Aws::ShutdownAPI methods.  The same instance should be sent to both methods.
-       SDKOptions options;
-       options.loggingOptions.logLevel = Utils::Logging::LogLevel::Debug;
-       
-       //The AWS SDK for C++ must be initialized by calling Aws::InitAPI.
-       InitAPI(options); 
-       {
-           S3::S3Client client;
-   
-           auto outcome = client.ListBuckets();
-           if (outcome.IsSuccess()) {
-               std::cout << "Found " << outcome.GetResult().GetBuckets().size() << " buckets\n";
-               for (auto&& b : outcome.GetResult().GetBuckets()) {
-                   std::cout << b.GetName() << std::endl;
-               }
-           }
-           else {
-               std::cout << "Failed with error: " << outcome.GetError() << std::endl;
-           }
-       }
-   
-       //Before the application terminates, the SDK must be shut down. 
-       ShutdownAPI(options);
-       return 0;
-   }
-   ```
 
 1. Add a `CMakeLists.txt` file that specifies your project’s name, executables, source files, and linked libraries\. 
 
@@ -100,10 +100,11 @@ This example can also be completed in Visual Studio: choose **Create New Project
       
        #For IDE's like Xcode and Visual Studio this line will be ignored because Release/Debug 
        #  is switched internally, but this is necessary for non-IDE builds.
-       set(CMAKE_BUILD_TYPE Debug) #Set to your build type
-   
-       SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE}) # Necessary for IDE's to use consistent file structure
-       AWSSDK_CPY_DYN_LIBS(SERVICE_LIST "" ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE})
+       set(CMAKE_BUILD_TYPE Debug) #TODO: Set to your build type
+   	
+       #TODO:Choose appropriate one of the following two lines, you want to copy to the same folder where your executables are.
+       AWSSDK_CPY_DYN_LIBS(SERVICE_LIST "" ${CMAKE_CURRENT_BINARY_DIR}/${CMAKE_BUILD_TYPE})  #Choose this line if your executables are in /build/Debug
+       #AWSSDK_CPY_DYN_LIBS(SERVICE_LIST "" ${CMAKE_CURRENT_BINARY_DIR})  #Choose this line for Visual Studio and possibly other IDEs
        
        message(STATUS ">>CMAKE_CURRENT_BINARY_DIR: ${CMAKE_CURRENT_BINARY_DIR}")
        message(STATUS ">>CMAKE_BUILD_TYPE: ${CMAKE_BUILD_TYPE}")
@@ -153,3 +154,5 @@ When you run this application, it displays console output that lists the total n
    ```
    app
    ```
+
+For additional examples using the AWS SDK for C\+\+, see [ AWS SDK for C\+\+ code examples](programming-services.md)\.

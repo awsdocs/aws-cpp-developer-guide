@@ -1,4 +1,4 @@
-# AWS SDK for C\+\+ Setup Using Vcpkg on Windows<a name="setup-windows-vcpkg"></a>
+# AWS SDK for C\+\+ Setup using vcpkg on Windows<a name="setup-windows-vcpkg"></a>
 
 To set up the AWS SDK for C\+\+, you can either build the SDK yourself directly from the source or download the libraries using a package manager\.
 
@@ -36,7 +36,7 @@ You can use the vcpkg package manager to access AWS SDK for C\+\+ functionality 
      ```
 
      To install the entire SDK, enter `.\vcpkg\vcpkg install "aws-sdk-cpp[*]" --recurse` or indicate only specific services of the SDK to install by appending a package name in brackets, for example, `.\vcpkg\vcpkg install "aws-sdk-cpp[s3, ec2]" --recurse` 
-   + Also as part of those instructions, proceed to integrate with whatever build environment you are using, such as `.\vcpkg\vcpkg integrate install` if you are using Visual Studio, or following the provided alternatives to use cmake, etc\.
+   + Also as part of those instructions, proceed to integrate with whatever build environment you are using, such as `.\vcpkg\vcpkg integrate install` if you are using Visual Studio, or following the provided alternatives to use CMake, etc\.
 
    The output displays a messages similar to the following:
 

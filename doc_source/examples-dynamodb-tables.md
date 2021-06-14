@@ -3,7 +3,7 @@
 Tables are the containers for all items in a DynamoDB database\. Before you can add or remove data from DynamoDB, you must create a table\.
 
 For each table, you must define:
-+ A table *name* that is unique for your account and region\.
++ A table *name* that is unique for your AWS account and AWS Region\.
 + A *primary key* for which every value must be unique\. No two items in your table can have the same primary key value\.
 
   A primary key can be *simple*, consisting of a single partition \(HASH\) key, or *composite*, consisting of a partition and a sort \(RANGE\) key\.

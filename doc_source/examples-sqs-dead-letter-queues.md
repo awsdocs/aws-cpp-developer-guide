@@ -5,10 +5,15 @@ Amazon SQS provides support for *dead letter queues*\. A dead letter queue is a 
 To create a dead letter queue, you must first create a *redrive policy*, and then set the policy in the queue’s attributes\.
 
 **Important**  
-A dead letter queue must be the same type of queue \(FIFO or standard\) that the source queue is\. It must also be created using the same AWS account and region as the source queue\.
+A dead letter queue must be the same type of queue \(FIFO or standard\) that the source queue is\. It must also be created using the same AWS account and AWS Region as the source queue\.
 
-**Note**  
-These code snippets assume that you understand the material in [Getting Started Using the AWS SDK for C\+\+](getting-started.md) and have configured default AWS credentials using the information in [Providing AWS Credentials](credentials.md)\.
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
 
 ## Create a Redrive Policy<a name="sqs-dead-letter-queue-create-redrive-policy"></a>
 

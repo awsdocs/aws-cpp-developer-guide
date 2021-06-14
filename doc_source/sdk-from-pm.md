@@ -1,4 +1,4 @@
-# Getting the AWS SDK for C\+\+ from a Package Manager<a name="sdk-from-pm"></a>
+# Getting the AWS SDK for C\+\+ from a package manager<a name="sdk-from-pm"></a>
 
 You can use the AWS SDK for C\+\+ in from your code by using a package manager to install the SDK\. The correct binaries are automatically included for each runtime/architecture configuration you use — you don’t need to manage these dependencies yourself\. 
 
@@ -6,20 +6,20 @@ Each package manager is independent and controls its own availability of version
 
 [vcpkg](https://github.com/Microsoft/vcpkg) is the supported package manager\. Nuget is no longer being updated with new versions and only provides up to version 1\.6 of the AWS SDK for C\+\+\.
 
-## Getting the SDK using Vcpkg<a name="sdk-from-pm-vcpkg"></a>
+## Getting the SDK using vcpkg<a name="sdk-from-pm-vcpkg"></a>
 
 Vcpkg is the recommended package manager\. You can use the vcpkg package manager to access AWS SDK for C\+\+ functionality for your project\. See instructions for:
 + [Installing vcpkg on Windows](setup-windows-vcpkg.md)
 + [Installing vcpkg on Linux/macOS](setup-linux-vcpkg.md)
 
 Then you can create a simple application to use it:
-+ ["Hello, S3\!" Starter Application](build-vcpkg.md)
++ ["Hello, S3\!" starter application](build-vcpkg.md)
 
 ## Getting the SDK using NuGet \(deprecated\)<a name="setupwin-with-nuget"></a>
 
 **Important**  
 You can only use NuGet to install AWS SDK for C\+\+ versions 1\.6 and earlier with Microsoft Visual Studio 2015 and 2017\.   
-To install later versions, vcpkg is the recommended package manager\. For more information, see TBD\.
+To install later versions, vcpkg is the recommended package manager\.
 
 For AWS SDK for C\+\+ versions 1\.6 and earlier, and for Microsoft Visual Studio 2015 and 2017, you can use NuGet to manage dependencies for AWS SDK for C\+\+ projects that you develop with Microsoft Visual C\+\+\. To use this procedure, first install [NuGet](https://www.nuget.org/)
 

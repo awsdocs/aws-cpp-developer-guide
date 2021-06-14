@@ -1,6 +1,6 @@
-# Asynchronous Methods<a name="async-methods"></a>
+# Asynchronous methods<a name="async-methods"></a>
 
-## Asynchronous SDK Methods<a name="asynchronous-sdk-methods"></a>
+## Asynchronous SDK methods<a name="asynchronous-sdk-methods"></a>
 
 For many methods, the SDK for C\+\+ provides both synchronous and asynchronous versions\. A method is asynchronous if it includes the `Async` suffix in its name\. For example, the Amazon S3 method `PutObject` is synchronous, while `PutObjectAsync` is asynchronous\.
 
@@ -8,14 +8,14 @@ Like all asynchronous operations, an asynchronous SDK method returns before its 
 
 The following sections describe a code example that demonstrates calling an SDK asynchronous method\. Each section focuses on individual portions from the example’s [entire source file](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/put_object_async.cpp)\.
 
-## Calling SDK Asynchronous Methods<a name="calling-sdk-asynchronous-methods"></a>
+## Calling SDK asynchronous methods<a name="calling-sdk-asynchronous-methods"></a>
 
 In general, the asynchronous version of an SDK method accepts the following arguments\.
 + A reference to the same Request\-type object as its synchronous counterpart\.
 + A reference to a response handler callback function\. This callback function is invoked when the asynchronous operation finishes\. One of the arguments contains the operation’s outcome\.
 + An optional `shared_ptr` to an `AsyncCallerContext` object\. The object is passed to the response handler callback\. It includes a UUID property that can be used to pass text information to the callback\.
 
-The `put_s3_object_async` method shown below sets up and calls the SDK’s Amazon S3 `PutObjectAsync` method to asynchronously upload a file to an S3 bucket\.
+The `put_s3_object_async` method shown below sets up and calls the SDK’s Amazon S3 `PutObjectAsync` method to asynchronously upload a file to an Amazon S3 bucket\.
 
 The method initializes a `PutObjectRequest` object in the same manner as its synchronous counterpart\. In addition, a `shared_ptr` to an `AsyncCallerContext` object is allocated\. Its `UUID` property is set to the Amazon S3 object name\. For demonstration purposes, the response handler callback will access the property and output its value\.
 

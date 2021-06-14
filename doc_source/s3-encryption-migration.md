@@ -16,15 +16,23 @@ You must first update your existing clients to the latest SDK release\. After co
 
 ### Build and Install the Latest Version of the AWS SDK for C\+\+<a name="build-and-install-the-latest-version-of-the-sdk-cpp"></a>
 
+ **Applications Consuming the SDK from Source** 
+
+If you build and install the AWS SDK for C\+\+ from source, download or clone the SDK source from [aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub \. Then repeat your normal build and install steps\.
+
+If you are upgrading AWS SDK for C\+\+ from a version earlier than 1\.8\.x, see this [CHANGELOG](https://github.com/aws/aws-sdk-cpp/blob/master/CHANGELOG.md) for breaking changes introduced in each major version\. For more information about how to build and install the AWS SDK for C\+\+, see [ Getting the AWS SDK for C\+\+ from source code](sdk-from-source.md)\.
+
  **Applications Consuming the SDK from Vcpkg** 
 
-If your application uses [Vcpkg](https://github.com/microsoft/vcpkg) to track SDK updates, simply use your existing Vcpkg upgrade method to upgrade the SDK to the latest version\. For example, you could run the following command to upgrade package aws\-sdk\-cpp:
+If your application uses [Vcpkg](https://github.com/microsoft/vcpkg) to track SDK updates, simply use your existing Vcpkg upgrade method to upgrade the SDK to the latest version\. Keep in mind, there is a delay between when a version is released and when it is available through a package manager\. The most recent version is always available through [installing from source](sdk-from-source.md)\. 
+
+You can run the following command to upgrade package `aws-sdk-cpp`:
 
 ```
 vcpkg upgrade aws-sdk-cpp
 ```
 
-And verify the version of package aws\-sdk\-cpp:
+And verify the version of package `aws-sdk-cpp`:
 
 ```
 vcpkg list aws-sdk-cpp
@@ -32,11 +40,7 @@ vcpkg list aws-sdk-cpp
 
 The version should be at least 1\.8\.24\.
 
- **Applications Consuming the SDK from Source** 
-
-If you build and install AWS SDK for C\+\+ artifacts from source, pull the latest code from the following GitHub repository: [https://github\.com/aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp)\. Then repeat your normal build and install steps\.
-
-If you are upgrading AWS SDK for C\+\+ from a version earlier than 1\.8\.x, see this [CHANGELOG](https://github.com/aws/aws-sdk-cpp/blob/master/CHANGELOG.md) for breaking changes introduced in each major version\. For more information about how to build and install the AWS SDK for C\+\+, see the README in our GitHub repository \([https://github\.com/aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp)\) or the AWS documentation \([https://docs\.aws\.amazon\.com/sdk\-for\-cpp/v1/developer\-guide/setup\.html](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/setup.html)\)\.
+For more information on using Vcpkg with the AWS SDK for C\+\+, see [ Getting the AWS SDK for C\+\+ from a package manager](sdk-from-pm.md)\.
 
 ### Build, Install, and Deploy Your Applications<a name="build-install-and-deploy-your-applications"></a>
 
@@ -216,4 +220,4 @@ S3EncryptionClientV2 encryptionClient(cryptoConfig);
 encryptionClient.GetObject(getObjectRequest);
 ```
 
-For complete code examples for all of the migration scenarios mentioned in these docs, see [https://github\.com/awsdocs/aws\-doc\-sdk\-examples/tree/master/cpp/example\_code/s3encryption](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3encryption)\.
+For complete code for all of these migration scenarios, see the [Amazon S3 Encryption example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3encryption) on Github\.

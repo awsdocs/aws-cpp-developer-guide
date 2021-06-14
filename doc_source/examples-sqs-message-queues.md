@@ -4,8 +4,13 @@ A *message queue* is the logical container you use to send messages reliably in 
 
 These C\+\+ examples show you how to use the AWS SDK for C\+\+ to create, list, delete, and get the URL of an Amazon SQS queue\.
 
-**Note**  
-These code snippets assume that you understand the material in [Getting Started Using the AWS SDK for C\+\+](getting-started.md) and have configured default AWS credentials using the information in [Providing AWS Credentials](credentials.md)\.
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
 
 ## Create a Queue<a name="sqs-create-queue"></a>
 

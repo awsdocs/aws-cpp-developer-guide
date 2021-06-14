@@ -4,8 +4,13 @@ To enable HTTPS connections to your website or application on AWS, you need an S
 
 We recommend that you use ACM to provision, manage, and deploy your server certificates\. With ACM you can request a certificate, deploy it to your AWS resources, and let ACM handle certificate renewals for you\. Certificates provided by ACM are free\. For more information about ACM, see the [AWS Certificate Manager User Guide](https://docs.aws.amazon.com/acm/latest/userguide/)\.
 
-**Note**  
-These code snippets assume that you understand the material in [Getting Started Using the AWS SDK for C\+\+](getting-started.md) and have configured default AWS credentials using the information in [Providing AWS Credentials](credentials.md)\.
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
 
 ## Retrieve a Server Certificate<a name="retrieve-a-server-certificate"></a>
 

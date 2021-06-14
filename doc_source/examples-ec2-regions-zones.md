@@ -1,13 +1,18 @@
 # Using Regions and Availability Zones for Amazon EC2<a name="examples-ec2-regions-zones"></a>
 
-**Note**  
-These code snippets assume that you understand the material in [Getting Started Using the AWS SDK for C\+\+](getting-started.md) and have configured default AWS credentials using the information in [Providing AWS Credentials](credentials.md)\.
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
 
 ## Describe Regions<a name="describe-regions"></a>
 
-To list the regions available to your account, call the EC2Client’s `DescribeRegions` function with a [DescribeRegionsRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_describe_regions_request.html)\.
+To list the AWS Regions available to your AWS account, call the EC2Client’s `DescribeRegions` function with a [DescribeRegionsRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_describe_regions_request.html)\.
 
-You will receive a [DescribeRegionsResponse](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_describe_regions_response.html) in the outcome object\. Call its `GetRegions` function to get a list of [Region](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_region.html) objects that represent each region\.
+You will receive a [DescribeRegionsResponse](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_describe_regions_response.html) in the outcome object\. Call its `GetRegions` function to get a list of [Region](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_region.html) objects that represent each Region\.
 
  **Includes** 
 

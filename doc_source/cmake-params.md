@@ -1,4 +1,4 @@
-# CMake Parameters<a name="cmake-params"></a>
+# CMake parameters<a name="cmake-params"></a>
 
 Use the [CMake](https://cmake.org/) parameters listed in this section to customize how your SDK builds\.
 

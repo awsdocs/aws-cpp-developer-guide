@@ -1,4 +1,4 @@
-# Amazon EC2 Examples Using the AWS SDK for C\+\+<a name="examples-ec2"></a>
+# Amazon EC2 examples using the AWS SDK for C\+\+<a name="examples-ec2"></a>
 
 Amazon Elastic Compute Cloud \(Amazon EC2\) is a web service that provides resizable computing capacity—literally servers in Amazon’s data centers—that you use to build and host your software systems\. You can use the following examples to program [Amazon EC2](https://aws.amazon.com/ec2) using the AWS SDK for C\+\+\.
 

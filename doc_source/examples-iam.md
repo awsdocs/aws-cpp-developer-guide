@@ -1,4 +1,4 @@
-# IAM Code Examples Using the AWS SDK for C\+\+<a name="examples-iam"></a>
+# IAM code examples using the AWS SDK for C\+\+<a name="examples-iam"></a>
 
 AWS Identity and Access Management \(IAM\) is a web service for securely controlling access to AWS services\. You can use the following examples to program [IAM](https://aws.amazon.com/iam) using the AWS SDK for C\+\+\.
 

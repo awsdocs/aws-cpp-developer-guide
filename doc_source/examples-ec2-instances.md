@@ -1,7 +1,12 @@
 # Managing Amazon EC2 Instances<a name="examples-ec2-instances"></a>
 
-**Note**  
-These code snippets assume that you understand the material in [Getting Started Using the AWS SDK for C\+\+](getting-started.md) and have configured default AWS credentials using the information in [Providing AWS Credentials](credentials.md)\.
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
 
 ## Create an Instance<a name="create-an-instance"></a>
 
@@ -196,7 +201,7 @@ See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/
 
 ## Describe Instances<a name="describe-instances"></a>
 
-To list your instances, create a [DescribeInstancesRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_describe_instances_request.html) and call the EC2Client’s `DescribeInstances` function\. It will return a [DescribeInstancesResponse](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_describe_instances_response.html) object that you can use to list the Amazon EC2 instances for your account and region\.
+To list your instances, create a [DescribeInstancesRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_describe_instances_request.html) and call the EC2Client’s `DescribeInstances` function\. It will return a [DescribeInstancesResponse](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_describe_instances_response.html) object that you can use to list the Amazon EC2 instances for your AWS account and AWS Region\.
 
 Instances are grouped by *reservation*\. Each reservation corresponds to the call to `StartInstances` that launched the instance\. To list your instances, you must first call the `DescribeInstancesResponse` class’ `GetReservations` function, and then call `getInstances` on each returned Reservation object\.
 

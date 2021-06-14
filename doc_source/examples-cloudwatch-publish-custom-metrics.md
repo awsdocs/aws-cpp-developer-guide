@@ -1,16 +1,21 @@
 # Publishing Custom Metric Data<a name="examples-cloudwatch-publish-custom-metrics"></a>
 
-A number of AWS services publish [their own metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-namespaces.html) in namespaces beginning with “AWS/” You can also publish custom metric data using your own namespace \(as long as it doesn’t begin with “AWS/”\)\.
+A number of AWS services publish [their own metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-namespaces.html) in namespaces beginning with `AWS/` You can also publish custom metric data using your own namespace \(as long as it doesn’t begin with `AWS/`\)\.
 
-**Note**  
-These code snippets assume that you understand the material in [Getting Started Using the AWS SDK for C\+\+](getting-started.md) and have configured default AWS credentials using the information in [Providing AWS Credentials](credentials.md)\.
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
 
 ## Publish Custom Metric Data<a name="publish-custom-metric-data"></a>
 
 To publish your own metric data, call the CloudWatchClient’s `PutMetricData` function with a [PutMetricDataRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_cloud_watch_1_1_model_1_1_put_metric_data_request.html)\. The `PutMetricDataRequest` must include the custom namespace to use for the data, and information about the data point itself in a [MetricDatum](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_cloud_watch_1_1_model_1_1_metric_datum.html) object\.
 
 **Note**  
-You cannot specify a namespace that begins with “AWS/”\. Namespaces that begin with “AWS/” are reserved for use by Amazon Web Services products\.
+You cannot specify a namespace that begins with `AWS/`\. Namespaces that begin with `AWS/` are reserved for use by Amazon Web Services products\.
 
  **Includes** 
 

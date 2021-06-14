@@ -2,25 +2,17 @@
 
 Access permissions for an Amazon S3 bucket or object are defined in an access control list \(ACL\)\. The ACL specifies the owner of the bucket/object and a list of grants\. Each grant specifies a user \(or grantee\) and the user’s permissions to access the bucket/object, such as READ or WRITE access\.
 
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
+
 ## Manage an Object’s Access Control List<a name="manage-an-object-s-access-control-list"></a>
 
 The access control list for an object can be retrieved by calling the `S3Client` method `GetObjectAcl`\. The method accepts the names of the object and its bucket\. The return value includes the ACL’s `Owner` and list of `Grants`\.
-
-```
-#include <iostream>
-#include <aws/core/Aws.h>
-#include <aws/s3/model/Permission.h>
-#include <aws/s3/model/Type.h>
-#include <aws/s3/S3Client.h>
-#include <aws/s3/model/Owner.h>
-#include <aws/s3/model/Grantee.h>
-#include <aws/s3/model/Grant.h>
-#include <aws/s3/model/AccessControlPolicy.h>
-#include <aws/s3/model/AccessControlPolicy.h>
-#include <aws/s3/model/GetObjectAclRequest.h>
-#include <aws/s3/model/PutObjectAclRequest.h>
-#include <awsdoc/s3/s3_examples.h>
-```
 
 ```
 bool AwsDoc::S3::GetObjectAcl(const Aws::String& bucketName,
@@ -84,7 +76,7 @@ bool AwsDoc::S3::GetObjectAcl(const Aws::String& bucketName,
 
 The ACL can be modified by either creating a new ACL or changing the grants specified in the current ACL\. The updated ACL becomes the new current ACL by passing it to the `PutObjectAcl` method\.
 
-The following code uses the ACL retrieved by `GetObjectAcl` and adds a new grant to it\. The user or grantee is given READ permission for the object\. The modified ACL is passed to `PutObjectAcl`, making it the new current ACL\. For further details, see [the example source file](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_put_object_acl.cpp)\.
+The following code uses the ACL retrieved by `GetObjectAcl` and adds a new grant to it\. The user or grantee is given READ permission for the object\. The modified ACL is passed to `PutObjectAcl`, making it the new current ACL\. 
 
 ```
 bool AwsDoc::S3::PutObjectAcl(const Aws::String& bucketName,
@@ -163,28 +155,15 @@ bool AwsDoc::S3::PutObjectAcl(const Aws::String& bucketName,
 }
 ```
 
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_put_object_acl.cpp) on Github\.
+
 ## Manage a Bucket’s Access Control List<a name="manage-a-bucket-s-access-control-list"></a>
 
 In most cases, the preferred method for setting the access permissions of a bucket is to define a bucket policy\. However, buckets also support access control lists for users who wish to use them\.
 
 Management of an access control list for a bucket is identical to that used for an object\. The `GetBucketAcl` method retrieves a bucket’s current ACL and `PutBucketAcl` applies a new ACL to the bucket\.
 
-The following code demonstrates getting and setting a bucket ACL\. For details, see [the example source file](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_put_bucket_acl.cpp)\.
-
-```
-#include <iostream>
-#include <aws/core/Aws.h>
-#include <aws/s3/model/Permission.h>
-#include <aws/s3/model/Type.h>
-#include <aws/s3/S3Client.h>
-#include <aws/s3/model/Owner.h>
-#include <aws/s3/model/Grantee.h>
-#include <aws/s3/model/Grant.h>
-#include <aws/s3/model/AccessControlPolicy.h>
-#include <aws/s3/model/PutBucketAclRequest.h>
-#include <aws/s3/model/GetBucketAclRequest.h>
-#include <awsdoc/s3/s3_examples.h>
-```
+The following code demonstrates getting and setting a bucket ACL\.
 
 ```
 Aws::S3::Model::Permission SetGranteePermission(const Aws::String& access)
@@ -358,15 +337,23 @@ int main()
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {
-        const Aws::String bucket_name = "my-bucket";
+        //TODO: Change bucket_name to the name of a bucket in your account.
+        //If the bucket is not in your account, you will get one of two errors: 
+        //AccessDenied if the bucket exists in some other account, or NoSuchBucket 
+        //if the bucket does not exist in any account.
+        const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
+        //TODO: Set to the region in which the bucket was created.
+        const Aws::String region = "us-east-1";
 
-        // Set the ACL's owner information. 
+        //TODO: Set the ACL's owner information (if it is your bucket, then you want your canonical id). 
+        //See https://docs.aws.amazon.com/AmazonS3/latest/userguide/finding-canonical-user-id.html for more information.
         const Aws::String owner_id = 
             "b380d412791d395dbcdc1fb1728b32a7cd07edae6467220ac4b7c0769EXAMPLE";
 
         // Set the ACL's grantee information.
-        const Aws::String grantee_permission = "READ";
+        const Aws::String grantee_permission = "READ"; //Give the grantee Read permissions.
         
+        //TODO: Select which form of grantee you want to specify, and update the corresponding data.
         // If the grantee is by canonical user, then either the user's ID or 
         // display name must be specified:
         const Aws::String grantee_type = "Canonical user";
@@ -386,8 +373,9 @@ int main()
         //     "http://acs.amazonaws.com/groups/global/AuthenticatedUsers";
 
         // Set the bucket's ACL.
+        //TODO: If you elected to use a grantee type other than canonical user above, update this method to not use default parameters.
         if (!AwsDoc::S3::PutBucketAcl(bucket_name,
-            "us-east-1",
+           region,
             owner_id,
             grantee_permission,
             grantee_type,
@@ -400,7 +388,7 @@ int main()
         }
         
         // Get the bucket's ACL information that was just set.
-        if (!AwsDoc::S3::GetBucketAcl(bucket_name, "us-east-1"))
+        if (!AwsDoc::S3::GetBucketAcl(bucket_name, region))
         {
             return 1;
         }
@@ -410,3 +398,5 @@ int main()
     return 0;
 }
 ```
+
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_put_bucket_acl.cpp) on Github\.

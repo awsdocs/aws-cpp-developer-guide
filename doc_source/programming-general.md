@@ -6,7 +6,7 @@ For service\-specific programming examples, see [AWS SDK for C\+\+ Code Examples
 
 **Topics**
 + [Basic Use](basic-use.md)
-+ [AWS Client Configuration](client-config.md)
++ [AWS Client configuration](client-config.md)
 + [Service Client Classes](using-service-client.md)
 + [Utility Modules](utility-modules.md)
 + [Memory Management](memory-management.md)

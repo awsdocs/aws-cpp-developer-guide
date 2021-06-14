@@ -4,8 +4,13 @@ When a message is received in Amazon SQS, it remains on the queue until it’s d
 
 When using [standard queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html), visibility timeout isn’t a guarantee against receiving a message twice\. If you are using a standard queue, be sure that your code can handle the case where the same message has been delivered more than once\.
 
-**Note**  
-These code snippets assume that you understand the material in [Getting Started Using the AWS SDK for C\+\+](getting-started.md) and have configured default AWS credentials using the information in [Providing AWS Credentials](credentials.md)\.
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
 
 ## Set the Message Visibility Timeout upon Message Receipt<a name="sqs-visibility-timeout-receipt"></a>
 

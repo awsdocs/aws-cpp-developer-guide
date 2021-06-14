@@ -1,4 +1,4 @@
-# "Hello S3" App<a name="build-vcpkg"></a>
+# "Hello S3" app<a name="build-vcpkg"></a>
 
 This example reports the Amazon S3 buckets you own\. Having an Amazon S3 bucket in your AWS account is not required for this example, but it will be far more interesting if you have at least one\. See [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) in the *Amazon Simple Storage Service Console User Guide* if you don't already have one\.
 
@@ -56,6 +56,7 @@ This example consists of one source file \(`main.cpp`\) and one `CMakeLists.txt`
 1. Add a `CMakeLists.txt` file that specifies your project’s name, executables, source files, and linked libraries\. 
 
    ```
+   # Minimal CMakeLists.txt for the AWS SDK for C++.
    cmake_minimum_required(VERSION 3.3)
    set(CMAKE_CXX_STANDARD 11)
    project(app LANGUAGES CXX)
@@ -91,3 +92,5 @@ This example consists of one source file \(`main.cpp`\) and one `CMakeLists.txt`
     Visual Studio uses CMake to use the information in `CMakeLists.txt` and `CMakeSettings.json` to build an executable program\. 
 
 1. Confirm that the console output lists the total number of Amazon S3 buckets and the name of each bucket\.
+
+For additional examples using the AWS SDK for C\+\+, see [ AWS SDK for C\+\+ code examples](programming-services.md)\.

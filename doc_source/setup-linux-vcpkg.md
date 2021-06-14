@@ -1,4 +1,4 @@
-# AWS SDK for C\+\+ Setup Using Vcpkg on Linux/macOS<a name="setup-linux-vcpkg"></a>
+# AWS SDK for C\+\+ Setup using vcpkg on Linux/macOS<a name="setup-linux-vcpkg"></a>
 
 To set up the AWS SDK for C\+\+, you can either build the SDK yourself directly from the source or download the libraries using a package manager\.
 
@@ -35,7 +35,7 @@ You can use the vcpkg package manager to install AWS SDK for C\+\+\. To use this
      ```
 
      To install the entire SDK, enter `./vcpkg/vcpkg install "aws-sdk-cpp[*]" --recurse` or indicate only specific services of the SDK to install by appending a package name in brackets, for example `./vcpkg/vcpkg install "aws-sdk-cpp[s3, ec2]" --recurse` 
-   + Also as part of those instructions, proceed to integrate the build environment you are using, such as `./vcpkg/vcpkg integrate install` if you are using Visual Studio Code, or following the provided alternatives to use cmake, etc\.
+   + Also as part of those instructions, proceed to integrate the build environment you are using, such as `./vcpkg/vcpkg integrate install` if you are using Visual Studio Code, or following the provided alternatives to use CMake, etc\.
 
    The output displays a messages similar to the following:
 

@@ -25,7 +25,7 @@ By default, SDK Metrics uses *port 31000* and is *disabled*\.
 
 Enabling SDK Metrics is independent of configuring your credentials to use an AWS service\.
 
-You can enable SDK Metrics by setting environment variables or by using the AWS Shared config file\.
+You can enable SDK Metrics by setting environment variables or by using the AWS shared config file\.
 
 ### Option 1: Set Environment Variables<a name="option-1-set-environment-variables"></a>
 
@@ -41,11 +41,11 @@ export AWS_CSM_ENABLED=true
 
 Note: Enabling SDK Metrics does not configure your credentials to use an AWS service\.
 
-### Option 2: AWS Shared Config File<a name="option-2-aws-shared-config-file"></a>
+### Option 2: AWS shared config file<a name="option-2-aws-shared-config-file"></a>
 
 If no CSM configuration is found in the environment variables, the SDK looks for your default AWS profile field\. If `AWS_DEFAULT_PROFILE` is set to something other than default, update that profile\. 
 
-To enable SDK Metrics, add `csm_enabled` to the Shared config file located at `~/.aws/config`\.
+To enable SDK Metrics, add `csm_enabled` to the AWS shared config file located at `~/.aws/config`\.
 
 ```
 [default]
@@ -78,7 +78,7 @@ export AWS_CSM_PORT=1234
 
 Most services use the default port\. 
 
-If your service requires a unique port ID, add *csm\_port = \[port\_number\]* to the Shared config file located at *\~/\.aws/config*\.
+If your service requires a unique port ID, add *csm\_port = \[port\_number\]* to the AWS shared config file located at *\~/\.aws/config*\.
 
 ```
 [default]
@@ -101,7 +101,7 @@ amazon-cloudwatch-agent-ctl –a start;
 
 ## Disable SDK Metrics<a name="csm-disable-agent"></a>
 
-To turn off SDK Metrics, set *csm\_enabled* to *false* in your environment variables, or in your AWS Shared config file located at `~/.aws/config`\. Then restart your CloudWatch agent so that the changes can take effect\.
+To turn off SDK Metrics, set *csm\_enabled* to *false* in your environment variables, or in your AWS shared config file located at `~/.aws/config`\. Then restart your CloudWatch agent so that the changes can take effect\.
 
  **Environment Variables** 
 
@@ -109,12 +109,12 @@ To turn off SDK Metrics, set *csm\_enabled* to *false* in your environment varia
 export AWS_CSM_ENABLED=false
 ```
 
- **AWS Shared Config File** 
+ **AWS shared config file** 
 
-Remove *csm\_enabled* from the profiles in your AWS Shared config file located at `~/.aws/config`\.
+Remove *csm\_enabled* from the profiles in your AWS shared config file located at `~/.aws/config`\.
 
 **Note**  
-Environment variables override the AWS Shared config file\. If SDK Metrics is enabled in the environment variables, the SDK Metrics remains enabled\.
+Environment variables override the AWS shared config file\. If SDK Metrics is enabled in the environment variables, the SDK Metrics remains enabled\.
 
 ```
 [default]

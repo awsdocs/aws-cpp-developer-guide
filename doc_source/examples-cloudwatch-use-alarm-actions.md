@@ -4,8 +4,13 @@ Using CloudWatch alarm actions, you can create alarms that perform actions such 
 
 Alarm actions can be added to an alarm by using the [PutMetricAlarmRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_cloud_watch_1_1_model_1_1_put_metric_alarm_request.html)’s `SetAlarmActions` function when [creating an alarm](examples-cloudwatch-create-alarms.md)\.
 
-**Note**  
-These code snippets assume that you understand the material in [Getting Started Using the AWS SDK for C\+\+](getting-started.md) and have configured default AWS credentials using the information in [Providing AWS Credentials](credentials.md)\.
+## Prerequisites<a name="codeExamplePrereq"></a>
+
+Before you begin, we recommend you read [Getting started using the AWS SDK for C\+\+](getting-started.md)\. 
+
+Download the example code and build the solution as described in [Getting started on code examples](getting-started-code-examples.md)\. 
+
+To run the examples, the user profile your code uses to make the requests must have proper permissions in AWS \(for the service and the action\)\. For more information, see [Providing AWS credentials](credentials.md)\.
 
 ## Enable Alarm Actions<a name="enable-alarm-actions"></a>
 

@@ -1,4 +1,4 @@
-# AWS Client Configuration<a name="client-config"></a>
+# AWS Client configuration<a name="client-config"></a>
 
 The AWS SDK for C\+\+ enables you to change the default client configuration, which is helpful when you want to do things like:
 + Connect to the Internet through proxy
@@ -63,10 +63,10 @@ For internal use only\. Do not change the setting of this variable\.
 Specifies the URI addressing scheme, either HTTP or HTTPS\. The default scheme is HTTPS\.
 
 **region**  
-Specifies the AWS region to use, such as *us\-east\-1*\. By default, the region used is the default region configured in the applicable AWS credentials\.
+Specifies the AWS Region to use, such as *us\-east\-1*\. By default, the Region used is the default Region configured in the applicable AWS credentials\.
 
 **useDualStack**  
-Controls whether to use dual stack IPv4 and IPv6 endpoints\. Note that not all AWS services support IPv6 in all regions\.
+Controls whether to use dual stack IPv4 and IPv6 endpoints\. Note that not all AWS services support IPv6 in all Regions\.
 
 **maxConnections**  
 Specifies the maximum number of HTTP connections to a single server\. The default value is 25\. No maximum allowed value exists other than what your bandwidth can reasonably support\.
