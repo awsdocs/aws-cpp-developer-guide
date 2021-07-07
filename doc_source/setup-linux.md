@@ -83,7 +83,7 @@ You can build the SDK from source using command\-line tools as an alternative to
    Building the entire SDK can take a while\. To build only a particular service package, use the CMake *BUILD\_ONLY* parameter\. The example shown below builds only the Amazon S3 service package\. For more ways to modify the build output, see [CMake Parameters](cmake-params.md)\.
 
    ```
-   cmake -DCMAKE_BUILD_TYPE=[Debug | Release] -D BUILD_ONLY="s3"
+   cmake -DCMAKE_BUILD_TYPE=[Debug | Release] -DBUILD_ONLY="s3"
    ```
 **Note**  
 If you get an error Failed to build third\-party libraries\., check your version of CMake by running **cmake \-\-version**\. You must use CMake minimum version 3\.2, maximum version 3\.18\.
