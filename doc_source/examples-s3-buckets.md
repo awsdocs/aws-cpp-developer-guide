@@ -18,7 +18,7 @@ In `list_buckets.cpp`, there are two methods\.
 + `main()` calls `ListBuckets()`\. 
 + `ListBuckets()` uses the SDK to query your buckets\.
 
-The S3Client object calls the SDK's `ListBuckets()` method\. If successful, the method returns a `ListBucketOutcome` object, which contains a `ListBucketResult` object\. The `ListBucketResult` object calls the `GetBuckets()` method to get a list of `Bucket` objects that contain information about each Amazon S3 bucket in your account\.
+The `S3Client` object calls the SDK's `ListBuckets()` method\. If successful, the method returns a `ListBucketOutcome` object, which contains a `ListBucketResult` object\. The `ListBucketResult` object calls the `GetBuckets()` method to get a list of `Bucket` objects that contain information about each Amazon S3 bucket in your account\.
 
  **Code** 
 
@@ -81,7 +81,7 @@ In `create_bucket.cpp`, there are two methods\.
 
 
 
-The S3Client object calls the SDK's `CreateBucket()` method, passing in a `CreateBucketRequest` with the bucket’s name\. By default, buckets are created in the *us\-east\-1* \(N\. Virginia\) Region\. If your Region is not *us\-east\-1* then the code sets up a bucket constraint to ensure the bucket is created in your Region\.
+The `S3Client` object calls the SDK's `CreateBucket()` method, passing in a `CreateBucketRequest` with the bucket’s name\. By default, buckets are created in the *us\-east\-1* \(N\. Virginia\) Region\. If your Region is not *us\-east\-1* then the code sets up a bucket constraint to ensure the bucket is created in your Region\.
 
  **Code** 
 
@@ -96,7 +96,7 @@ bool AwsDoc::S3::CreateBucket(const Aws::String& bucketName,
     Aws::S3::Model::CreateBucketRequest request;
     request.SetBucket(bucketName);
 
-    //  If you don't specify a Region, the bucket is created in the US East (N. Virginia) Region (us-east-1)
+    //  If you don't specify a AWS Region, the bucket is created in the US East (N. Virginia) Region (us-east-1)
     if (region != Aws::S3::Model::BucketLocationConstraint::us_east_1)
     {
         Aws::S3::Model::CreateBucketConfiguration bucket_config;
@@ -125,9 +125,9 @@ int main()
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {
-        //TODO: Set to the region of your account.  If not, you will get a runtime
+        //TODO: Set to the AWS Region of your account.  If not, you will get a runtime
         //IllegalLocationConstraintException Message: "The unspecified location constraint is incompatible
-        //for the region specific endpoint this request was sent to."
+        //for the Region specific endpoint this request was sent to."
         Aws::S3::Model::BucketLocationConstraint region =
             Aws::S3::Model::BucketLocationConstraint::us_east_1;
 
@@ -169,7 +169,7 @@ In `delete_bucket.cpp` there are two methods\.
 
 
 
-The S3Client object uses the SDK's `DeleteBucket()` method, passing in a `DeleteBucketRequest` object with the name of the bucket to delete\. The bucket must be empty to be successful\.
+The `S3Client` object uses the SDK's `DeleteBucket()` method, passing in a `DeleteBucketRequest` object with the name of the bucket to delete\. The bucket must be empty to be successful\.
 
  **Code**
 
@@ -207,7 +207,7 @@ int main()
     //AccessDenied if the bucket exists in some other account, or NoSuchBucket
     //if the bucket does not exist in any account.
     Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
-    //TODO:  Set region to the region of the bucket bucket_name.
+    //TODO:  Set to the AWS Region of the bucket bucket_name.
     Aws::String region = "us-east-1";
     
     Aws::SDKOptions options;

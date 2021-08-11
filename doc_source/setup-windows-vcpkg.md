@@ -4,7 +4,7 @@ To set up the AWS SDK for C\+\+, you can either build the SDK yourself directly 
 
 
 
-The SDK source is separated into individual packages by service\. Installing the entire SDK can take up to an hour\. Installing only the specific subset of services that your program uses decreases installation time and also reduces size on disk\. To choose which services to install, you need to know the package name of each service your program uses\. You can see the list of package directories at [aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub\. The package name is the suffix of the directory name for the service\. 
+The SDK source is separated into individual packages by service\. Installing the entire SDK can take up to an hour\. Installing only the specific subset of services that your program uses decreases installation time and also reduces size on disk\. To choose which services to install, you need to know the package name of each service your program uses\. You can see the list of package directories at [https://github.com/aws/aws-sdk-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub\. The package name is the suffix of the directory name for the service\. 
 
 ```
 aws-sdk-cpp\aws-cpp-sdk-<packageName>   # Repo directory name and packageName
@@ -23,6 +23,8 @@ To use the AWS SDK for C\+\+, you need one of the following:
 ## Getting the SDK using vcpkg<a name="setupwin-with-vcpkg"></a>
 
 You can use the vcpkg package manager to access AWS SDK for C\+\+ functionality for your project\. To use this procedure, you must install [vcpkg](https://github.com/Microsoft/vcpkg) on your system\.
+
+There is a delay between when a version is released and when it is available through a package manager\. The most recent version is always available through [installing from source](sdk-from-source.md)\.
 
 **To install AWS SDK for C\+\+ with vcpkg**
 

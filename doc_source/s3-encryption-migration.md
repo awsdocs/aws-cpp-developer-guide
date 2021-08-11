@@ -18,7 +18,7 @@ You must first update your existing clients to the latest SDK release\. After co
 
  **Applications Consuming the SDK from Source** 
 
-If you build and install the AWS SDK for C\+\+ from source, download or clone the SDK source from [aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub \. Then repeat your normal build and install steps\.
+If you build and install the AWS SDK for C\+\+ from source, download or clone the SDK source from [https://github.com/aws/aws-sdk-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub \. Then repeat your normal build and install steps\.
 
 If you are upgrading AWS SDK for C\+\+ from a version earlier than 1\.8\.x, see this [CHANGELOG](https://github.com/aws/aws-sdk-cpp/blob/master/CHANGELOG.md) for breaking changes introduced in each major version\. For more information about how to build and install the AWS SDK for C\+\+, see [ Getting the AWS SDK for C\+\+ from source code](sdk-from-source.md)\.
 

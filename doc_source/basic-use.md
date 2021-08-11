@@ -6,7 +6,7 @@ Applications that use the AWS SDK for C\+\+ must initialize it\. Similarly, befo
 
 All applications that use the AWS SDK for C\+\+ must include the file `aws/core/Aws.h`\.
 
-The AWS SDK for C\+\+ must be initialized by calling `Aws::InitAPI`\. Before the application terminates, the SDK must be shut down by calling `Aws::ShutdownAPI`\. Each method accepts an argument of [Aws::SDKOptions](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html)\. All other calls to the SDK can be performed between these two method calls\.
+The AWS SDK for C\+\+ must be initialized by calling `Aws::InitAPI`\. Before the application terminates, the SDK must be shut down by calling `Aws::ShutdownAPI`\. Each method accepts an argument of [https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html)\. All other calls to the SDK can be performed between these two method calls\.
 
 Best practice requires all AWS SDK for C\+\+ calls performed between `Aws::InitAPI` and `Aws::ShutdownAPI` either to be contained within a pair of curly braces or be invoked by functions called between the two methods\.
 
@@ -28,9 +28,9 @@ int main(int argc, char** argv)
 
 ## Setting SDK Options<a name="sdk-setting-options"></a>
 
-The [Aws::SDKOptions](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html) struct contains SDK configuration options\.
+The [https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html) struct contains SDK configuration options\.
 
-An instance of [Aws::SDKOptions](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html) is passed to the `Aws::InitAPI` and `Aws::ShutdownAPI` methods\. The same instance should be sent to both methods\.
+An instance of [https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_s_d_k_options.html) is passed to the `Aws::InitAPI` and `Aws::ShutdownAPI` methods\. The same instance should be sent to both methods\.
 
 The following samples demonstrate some of the available options\.
 + Turn logging on using the default logger

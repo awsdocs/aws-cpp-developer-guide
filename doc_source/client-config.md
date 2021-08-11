@@ -15,7 +15,7 @@ clientConfig.proxyScheme = Aws::Http::Scheme::HTTPS;
 Aws::S3::S3Client(clientConfig);
 ```
 
- `ClientConfiguration` declaration \(See latest at [Aws::Client::ClientConfiguration](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_client_1_1_client_configuration.html) in the *AWS SDK for C\+\+ API Reference*\):
+ `ClientConfiguration` declaration \(See latest at [https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_client_1_1_client_configuration.html](https://sdk.amazonaws.com/cpp/api/LATEST/struct_aws_1_1_client_1_1_client_configuration.html) in the *AWS SDK for C\+\+ API Reference*\):
 
 ```
 struct AWS_CORE_API ClientConfiguration

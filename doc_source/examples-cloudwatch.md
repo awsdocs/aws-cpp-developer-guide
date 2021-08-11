@@ -7,7 +7,7 @@ Amazon CloudWatch monitors your AWS resources and the applications you run on AW
 For more information about CloudWatch, see the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/)\.
 
 **Note**  
-Only the code that is necessary to demonstrate each technique is supplied here, but [complete example code is available on GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp), where you can download a single source file or you can clone the repository locally to get all examples, build and run them\.
+Only the code that is necessary to demonstrate certain techniques is supplied in this Guide, but the [complete example code is available on GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp)\. On GitHub you can download a single source file or you can clone the repository locally to get, build, and run all examples\.
 
 **Topics**
 + [Getting Metrics from CloudWatch](examples-cloudwatch-get-metrics.md)
