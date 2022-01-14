@@ -4,7 +4,7 @@ To set up the AWS SDK for C\+\+, you can either build the SDK yourself directly 
 
 
 
-The SDK source is separated into individual packages by service\. Installing the entire SDK can take up to an hour\. Installing only the specific subset of services that your program uses decreases installation time and also reduces size on disk\. To choose which services to install, you need to know the package name of each service your program uses\. You can see the list of package directories at [aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub\. The package name is the suffix of the directory name for the service\. 
+The SDK source is separated into individual packages by service\. Installing the entire SDK can take up to an hour\. Installing only the specific subset of services that your program uses decreases installation time and also reduces size on disk\. To choose which services to install, you need to know the package name of each service your program uses\. You can see the list of package directories at [https://github.com/aws/aws-sdk-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub\. The package name is the suffix of the directory name for the service\. 
 
 ```
 aws-sdk-cpp\aws-cpp-sdk-<packageName>   # Repo directory name and packageName
@@ -26,7 +26,7 @@ You can build the SDK from source using command\-line tools\. Using this method,
 
 **To build the SDK from source**
 
-1. Install [CMake](https://cmake.org/) \(*minimum version 3\.2; maximum version 3\.18*\) and the relevant build tools for your platform\. It is recommended to add `cmake` to your `PATH`\. To check your version of CMake, open a command prompt and run command **cmake \-\-version**
+1. Install [CMake](https://cmake.org/) \(minimum version 3\.2; *maximum version 3\.21*\) and the relevant build tools for your platform\. It is recommended to add `cmake` to your `PATH`\. To check your version of CMake, open a command prompt and run command **cmake \-\-version**
 
 1. In a command prompt, navigate to a folder where you want to store the SDK\. This example uses a folder called `CodeRepos`\.
 
@@ -34,8 +34,7 @@ You can build the SDK from source using command\-line tools\. Using this method,
 
    Version 1\.9 simplifies dependencies by using git submodules to wrap external dependencies\.
 
-   Download or clone the SDK source from [aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub:
-   + Direct download \(`aws-sdk-cpp-main.zip`\): [aws/aws\-sdk\-cpp v1\.9](https://github.com/aws/aws-sdk-cpp/archive/refs/heads/main.zip) 
+   Download or clone the SDK source from [https://github.com/aws/aws-sdk-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub:
    + Clone with Git: HTTPS
 
      ```
@@ -90,7 +89,7 @@ If you get an error Failed to build third\-party libraries, check your version o
    msbuild INSTALL.vcxproj -p:Configuration=[Debug | Release]
    ```
 
-### Building for Android on Windows<a name="building-for-android"></a>
+## Building for Android on Windows<a name="building-for-android"></a>
 
 To build for Android, add `-DTARGET_ARCH=ANDROID` to your `cmake` command line\. The AWS SDK for C\+\+ includes a CMake toolchain file that includes what you need by referencing the appropriate environment variables \(`ANDROID_NDK`\)\.
 

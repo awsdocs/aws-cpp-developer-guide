@@ -1,18 +1,18 @@
 # Providing AWS credentials<a name="credentials"></a>
 
-To connect to any of the supported services with the AWS SDK for C\+\+, you must provide AWS credentials\. The AWS SDKs and CLIs use *provider chains* to look for AWS credentials in several different places, including system/user environment variables and local AWS configuration files\. For details, see [Credentials Providers](https://github.com/aws/aws-sdk-cpp/blob/master/Docs/Credentials_Providers.md) in the aws\-sdk\-cpp repository in GitHub\.
+To connect to any of the supported services with the AWS SDK for C\+\+, you must provide AWS credentials\. The AWS SDKs and CLIs use *provider chains* to look for AWS credentials in several different places, including system/user environment variables and local AWS configuration files\. For details, see [Credentials Providers](https://github.com/aws/aws-sdk-cpp/blob/master/Docs/Credentials_Providers.md) in the `aws-sdk-cpp` repository in GitHub\.
 
 ## Create an AWS account and administrator user<a name="s3-1-winvs-setup-account"></a>
 
 1. **Create an account\.**
 
-   To create an AWS account, see [How do I create and activate a new Amazon Web Services account?](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account)
+   To create an AWS account, see [How do I create and activate a new AWS account?](https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account)
 
 1. **Create an administrative user\.**
 
-   Avoid using your root user account \(the initial account you create\) to access the AWS Management Console and services\. Instead, create an administrative user account, as explained in [Creating your first IAM admin user and group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)\.
+   Avoid using your AWS account root user \(the initial account you create\) to access the AWS Management Console and services\. Instead, create an administrative user account, as explained in [Creating your first IAM admin user and group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)\.
 
-   After you create the administrative user account and record the login details, **sign out of your root user account** and sign back in using the administrative account\.
+   After you create the administrative user account and record the login details, **sign out of your AWS account root user** and sign back in using the administrative account\.
 
 ## Create AWS credentials and a profile<a name="s3-1-winvs-setup-creds"></a>
 
@@ -64,9 +64,9 @@ To explore other ways to provide credentials to SDKs, see the following:
 + To create long\-term AWS credentials, see [Programmatic access](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys) in the AWS General Reference\.
 + To create short\-term AWS credentials, see [Temporary Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) in the IAM User Guide\.
 + To learn more about supported provider chains, see the [AWS SDKs and Tools Reference Guide](https://docs.aws.amazon.com/sdkref/latest/guide/), specifically:
-  +  [The \.aws/credentials and \.aws/config files](https://docs.aws.amazon.com/sdkref/latest/guide/creds-config-files.html) 
+  +  [The `.aws/credentials` and `.aws/config` files](https://docs.aws.amazon.com/sdkref/latest/guide/creds-config-files.html) 
   +  [Using environment variables](https://docs.aws.amazon.com/sdkref/latest/guide/environment-variables.html) 
-  +  [role\_arn](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-role_arn.html) \(corresponds to the `AWS_ROLE_ARN` environment variable\)
-  +  [web\_identity\_token\_file](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-web_identity_token_file.html) \(corresponds to the `AWS_WEB_IDENTITY_TOKEN_FILE` environment variable\)
-  +  [role\_session\_name](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-role_session_name.html) \(corresponds to the `AWS_ROLE_SESSION_NAME` environment variable\)
+  +  [https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-role_arn.html](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-role_arn.html) \(corresponds to the `AWS_ROLE_ARN` environment variable\)
+  +  [https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-web_identity_token_file.html](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-web_identity_token_file.html) \(corresponds to the `AWS_WEB_IDENTITY_TOKEN_FILE` environment variable\)
+  +  [https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-role_session_name.html](https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-role_session_name.html) \(corresponds to the `AWS_ROLE_SESSION_NAME` environment variable\)
 + To learn more about the `AWS_CONTAINER_CREDENTIALS_RELATIVE_URI` environment variable, see [IAM Roles for Tasks](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html) in the Amazon Elastic Container Service Developer Guide\.

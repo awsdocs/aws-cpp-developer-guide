@@ -27,26 +27,26 @@ You can add a single message to an Amazon SQS queue by calling the SQSClient cla
  **Code** 
 
 ```
-Aws::SQS::SQSClient sqs;
+        Aws::SQS::SQSClient sqs;
 
-Aws::SQS::Model::SendMessageRequest sm_req;
-sm_req.SetQueueUrl(queue_url);
-sm_req.SetMessageBody(msg_body);
+        Aws::SQS::Model::SendMessageRequest sm_req;
+        sm_req.SetQueueUrl(queue_url);
+        sm_req.SetMessageBody(msg_body);
 
-auto sm_out = sqs.SendMessage(sm_req);
-if (sm_out.IsSuccess())
-{
-    std::cout << "Successfully sent message to " << queue_url <<
-        std::endl;
-}
-else
-{
-    std::cout << "Error sending message to " << queue_url << ": " <<
-        sm_out.GetError().GetMessage() << std::endl;
-}
+        auto sm_out = sqs.SendMessage(sm_req);
+        if (sm_out.IsSuccess())
+        {
+            std::cout << "Successfully sent message to " << queue_url <<
+                std::endl;
+        }
+        else
+        {
+            std::cout << "Error sending message to " << queue_url << ": " <<
+                sm_out.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/send_message.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/send_message.cpp)\.
 
 ## Receive Messages<a name="sqs-messages-receive"></a>
 
@@ -64,36 +64,36 @@ Retrieve any messages that are currently in the queue by calling the SQSClient c
  **Code** 
 
 ```
-Aws::SQS::SQSClient sqs(client_cfg);
+    Aws::SQS::SQSClient sqs(client_cfg);
 
-Aws::SQS::Model::ReceiveMessageRequest rm_req;
-rm_req.SetQueueUrl(queue_url);
-rm_req.SetMaxNumberOfMessages(1);
+    Aws::SQS::Model::ReceiveMessageRequest rm_req;
+    rm_req.SetQueueUrl(queue_url);
+    rm_req.SetMaxNumberOfMessages(1);
 
-auto rm_out = sqs.ReceiveMessage(rm_req);
-if (!rm_out.IsSuccess())
-{
-    std::cout << "Error receiving message from queue " << queue_url << ": "
-        << rm_out.GetError().GetMessage() << std::endl;
-    return;
-}
+    auto rm_out = sqs.ReceiveMessage(rm_req);
+    if (!rm_out.IsSuccess())
+    {
+        std::cout << "Error receiving message from queue " << queue_url << ": "
+            << rm_out.GetError().GetMessage() << std::endl;
+        return;
+    }
 
-const auto& messages = rm_out.GetResult().GetMessages();
-if (messages.size() == 0)
-{
-    std::cout << "No messages received from queue " << queue_url <<
-        std::endl;
-    return;
-}
+    const auto& messages = rm_out.GetResult().GetMessages();
+    if (messages.size() == 0)
+    {
+        std::cout << "No messages received from queue " << queue_url <<
+            std::endl;
+        return;
+    }
 
-const auto& message = messages[0];
-std::cout << "Received message:" << std::endl;
-std::cout << "  MessageId: " << message.GetMessageId() << std::endl;
-std::cout << "  ReceiptHandle: " << message.GetReceiptHandle() << std::endl;
-std::cout << "  Body: " << message.GetBody() << std::endl << std::endl;
+    const auto& message = messages[0];
+    std::cout << "Received message:" << std::endl;
+    std::cout << "  MessageId: " << message.GetMessageId() << std::endl;
+    std::cout << "  ReceiptHandle: " << message.GetReceiptHandle() << std::endl;
+    std::cout << "  Body: " << message.GetBody() << std::endl << std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/receive_message.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/receive_message.cpp)\.
 
 ### Delete Messages after Receipt<a name="sqs-messages-delete"></a>
 
@@ -108,25 +108,25 @@ After receiving a message and processing its contents, delete the message from t
  **Code** 
 
 ```
-Aws::SQS::Model::DeleteMessageRequest dm_req;
-dm_req.SetQueueUrl(queue_url);
-dm_req.SetReceiptHandle(message.GetReceiptHandle());
+    Aws::SQS::Model::DeleteMessageRequest dm_req;
+    dm_req.SetQueueUrl(queue_url);
+    dm_req.SetReceiptHandle(message.GetReceiptHandle());
 
-auto dm_out = sqs.DeleteMessage(dm_req);
-if (dm_out.IsSuccess())
-{
-    std::cout << "Successfully deleted message " << message.GetMessageId()
-        << " from queue " << queue_url << std::endl;
-}
-else
-{
-    std::cout << "Error deleting message " << message.GetMessageId() <<
-        " from queue " << queue_url << ": " <<
-        dm_out.GetError().GetMessage() << std::endl;
-}
+    auto dm_out = sqs.DeleteMessage(dm_req);
+    if (dm_out.IsSuccess())
+    {
+        std::cout << "Successfully deleted message " << message.GetMessageId()
+            << " from queue " << queue_url << std::endl;
+    }
+    else
+    {
+        std::cout << "Error deleting message " << message.GetMessageId() <<
+            " from queue " << queue_url << ": " <<
+            dm_out.GetError().GetMessage() << std::endl;
+    }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/receive_message.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/receive_message.cpp)\.
 
 ## More Info<a name="more-info"></a>
 +  [How Amazon SQS Queues Work](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html) in the Amazon Simple Queue Service Developer Guide

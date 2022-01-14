@@ -12,7 +12,7 @@ To run the examples, the user profile your code uses to make the requests must h
 
 ## Set a Bucket Policy<a name="set-s3-bucket-policy"></a>
 
-You can set the bucket policy for a particular S3 bucket by calling the S3Client’s `PutBucketPolicy` function and providing it with the bucket name and policy’s JSON representation in a [PutBucketPolicyRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_s3_1_1_model_1_1_put_bucket_policy_request.html)\.
+You can set the bucket policy for a particular S3 bucket by calling the `S3Client`’s `PutBucketPolicy` function and providing it with the bucket name and policy’s JSON representation in a [PutBucketPolicyRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_s3_1_1_model_1_1_put_bucket_policy_request.html)\.
 
  **Code** 
 
@@ -80,7 +80,7 @@ int main()
     {
         //TODO: Change bucket_name to the name of a bucket in your account.
         const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
-        //TODO: Set to the region in which the bucket was created.
+        //TODO: Set to the AWS Region in which the bucket was created.
         const Aws::String region = "us-east-1";
 
 
@@ -118,16 +118,16 @@ int main()
 **Note**  
 The [Aws::Utils::Json::JsonValue](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_json_1_1_json_value.html) utility class can be used to help you construct valid JSON objects to pass to `PutBucketPolicy`\.
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/put_bucket_policy.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/put_bucket_policy.cpp) on Github\.
 
 ## Get a Bucket Policy<a name="get-s3-bucket-policy"></a>
 
-To retrieve the policy for an Amazon S3 bucket, call the S3Client’s `GetBucketPolicy` function, passing it the name of the bucket in a [GetBucketPolicyRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_s3_1_1_model_1_1_get_bucket_policy_request.html)\.
+To retrieve the policy for an Amazon S3 bucket, call the `S3Client`’s `GetBucketPolicy` function, passing it the name of the bucket in a [GetBucketPolicyRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_s3_1_1_model_1_1_get_bucket_policy_request.html)\.
 
  **Code** 
 
 ```
-bool AwsDoc::S3::GetBucketPolicy(const Aws::String& bucketName, 
+bool GetBucketPolicy(const Aws::String& bucketName, 
     const Aws::String& region)
 {
     Aws::Client::ClientConfiguration config;
@@ -167,15 +167,14 @@ bool AwsDoc::S3::GetBucketPolicy(const Aws::String& bucketName,
 int main()
 {
     //TODO: Change bucket_name to the name of a bucket in your account.
-    const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
-    //TODO: Set to the region in which the bucket was created.
+    const Aws::String bucket_name = "<Enter bucket name>";
+    //TODO: Set to the AWS Region in which the bucket was created.
     const Aws::String region = "us-east-1";
-
 
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {
-        if (!AwsDoc::S3::GetBucketPolicy(bucket_name, region))
+        if (!GetBucketPolicy(bucket_name, region))
         {
             return 1;
         }
@@ -186,78 +185,63 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_bucket_policy.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/get_bucket_policy.cpp) on Github\.
 
 ## Delete a Bucket Policy<a name="delete-s3-bucket-policy"></a>
 
-To delete a bucket policy, call the S3Client’s `DeleteBucketPolicy` function, providing it with the bucket name in a [DeleteBucketPolicyRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_s3_1_1_model_1_1_delete_bucket_policy_request.html)\.
+To delete a bucket policy, call the `S3Client`’s `DeleteBucketPolicy` function, providing it with the bucket name in a [DeleteBucketPolicyRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_s3_1_1_model_1_1_delete_bucket_policy_request.html)\.
 
  **Code** 
 
 ```
-bool AwsDoc::S3::DeleteBucketPolicy(const Aws::String& bucketName,const Aws::String& region)
-{
-    Aws::Client::ClientConfiguration config;
-
-    if (!region.empty())
-    {
-        config.region = region;
-    }
-
-    Aws::S3::S3Client s3_client(config);
-
-    Aws::S3::Model::DeleteBucketPolicyRequest request;
-    request.SetBucket(bucketName);
-
-    Aws::S3::Model::DeleteBucketPolicyOutcome outcome =
-        s3_client.DeleteBucketPolicy(request);
-
-    if (!outcome.IsSuccess())
-    {
-        auto err = outcome.GetError();
-        std::cout << "Error: DeleteBucketPolicy: " <<
-            err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
-
-        return false;
-    }
-
-    return true;
-}
+using namespace Aws;
 
 int main()
 {
     //TODO: Change bucket_name to the name of a bucket in your account.
-    const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
-    //TODO: Set to the region in which the bucket was created.
+    const Aws::String bucketName = "<Enter bucket name>";
+    //TODO: Set to the AWS Region in which the bucket was created.
     const Aws::String region = "us-east-1";
 
 
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {
-        if (AwsDoc::S3::DeleteBucketPolicy(bucket_name, region))
+        Aws::Client::ClientConfiguration clientConfig;
+        if (!region.empty())
+            clientConfig.region = region;
+
+        S3::S3Client client(clientConfig);
+        
+        Aws::S3::Model::DeleteBucketPolicyRequest request;
+        request.SetBucket(bucketName);
+
+        Aws::S3::Model::DeleteBucketPolicyOutcome outcome =  client.DeleteBucketPolicy(request);
+
+        if (!outcome.IsSuccess())
         {
-            std::cout << "Deleted bucket policy from '" << bucket_name <<
-                "'." << std::endl;
+            auto err = outcome.GetError();
+            std::cout << "Error: DeleteBucketPolicy: " <<
+                err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
+
+            return false;
         }
         else
         {
-            return 1;
+            std::cout << "Policy was deleted from the bucket." << std::endl;
         }
     }
     ShutdownAPI(options);
-
-    return 0;
 }
 ```
 
 This function succeeds even if the bucket doesn’t already have a policy\. If you specify a bucket name that doesn’t exist or if you don’t have access to the bucket, an `AmazonServiceException` is thrown\.
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/delete_bucket_policy.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/delete_bucket_policy.cpp) on Github\.
 
 ## More Info<a name="more-info"></a>
 +  [PutBucketPolicy](https://docs.aws.amazon.com/AmazonS3/latest/API/PutBucketPolicy.html) in the Amazon Simple Storage Service API Reference
 +  [GetBucketPolicy](https://docs.aws.amazon.com/AmazonS3/latest/API/GetBucketPolicy.html) in the Amazon Simple Storage Service API Reference
 +  [DeleteBucketPolicy](https://docs.aws.amazon.com/AmazonS3/latest/API/DeleteBucketPolicy.html) in the Amazon Simple Storage Service API Reference
-+  [Access Policy Language Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html) in the Amazon Simple Storage Service Developer Guide
-+  [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the Amazon Simple Storage Service Developer Guide
++  [Access Policy Language Overview](https://docs.aws.amazon.com/AmazonS3/latest/dev/access-policy-language-overview.html) in the Amazon Simple Storage Service User Guide
++  [Bucket Policy Examples](https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html) in the Amazon Simple Storage Service User Guide

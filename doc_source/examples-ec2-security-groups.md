@@ -24,27 +24,27 @@ To create a security group, call the EC2Client’s `CreateSecurityGroup` functio
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
-Aws::EC2::Model::CreateSecurityGroupRequest request;
+    Aws::EC2::EC2Client ec2;
+    Aws::EC2::Model::CreateSecurityGroupRequest request;
 
-request.SetGroupName(group_name);
-request.SetDescription(description);
-request.SetVpcId(vpc_id);
+    request.SetGroupName(group_name);
+    request.SetDescription(description);
+    request.SetVpcId(vpc_id);
 
-auto outcome = ec2.CreateSecurityGroup(request);
+    auto outcome = ec2.CreateSecurityGroup(request);
 
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to create security group:" <<
-        outcome.GetError().GetMessage() << std::endl;
-    return;
-}
+    if (!outcome.IsSuccess())
+    {
+        std::cout << "Failed to create security group:" <<
+            outcome.GetError().GetMessage() << std::endl;
+        return;
+    }
 
-std::cout << "Successfully created security group named " << group_name <<
-    std::endl;
+    std::cout << "Successfully created security group named " << group_name <<
+        std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/create_security_group.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/create_security_group.cpp)\.
 
 ## Configure a Security Group<a name="configure-a-security-group"></a>
 
@@ -61,50 +61,50 @@ To add ingress rules to your security group, use the EC2Client’s `AuthorizeSec
  **Code** 
 
 ```
-Aws::EC2::Model::AuthorizeSecurityGroupIngressRequest authorize_request;
+    Aws::EC2::Model::AuthorizeSecurityGroupIngressRequest authorize_request;
 
-authorize_request.SetGroupName(group_name);
+    authorize_request.SetGroupName(group_name);
 ```
 
 ```
-Aws::EC2::Model::IpRange ip_range;
-ip_range.SetCidrIp("0.0.0.0/0");
+    Aws::EC2::Model::IpRange ip_range;
+    ip_range.SetCidrIp("0.0.0.0/0");
 
-Aws::EC2::Model::IpPermission permission1;
-permission1.SetIpProtocol("tcp");
-permission1.SetToPort(80);
-permission1.SetFromPort(80);
-permission1.AddIpRanges(ip_range);
+    Aws::EC2::Model::IpPermission permission1;
+    permission1.SetIpProtocol("tcp");
+    permission1.SetToPort(80);
+    permission1.SetFromPort(80);
+    permission1.AddIpRanges(ip_range);
 
-authorize_request.AddIpPermissions(permission1);
+    authorize_request.AddIpPermissions(permission1);
 
-Aws::EC2::Model::IpPermission permission2;
-permission2.SetIpProtocol("tcp");
-permission2.SetToPort(22);
-permission2.SetFromPort(22);
-permission2.AddIpRanges(ip_range);
+    Aws::EC2::Model::IpPermission permission2;
+    permission2.SetIpProtocol("tcp");
+    permission2.SetToPort(22);
+    permission2.SetFromPort(22);
+    permission2.AddIpRanges(ip_range);
 
-authorize_request.AddIpPermissions(permission2);
+    authorize_request.AddIpPermissions(permission2);
 ```
 
 ```
-auto ingress_req = ec2.AuthorizeSecurityGroupIngress(authorize_request);
+    auto ingress_req = ec2.AuthorizeSecurityGroupIngress(authorize_request);
 
-if (!ingress_req.IsSuccess())
-{
-    std::cout << "Failed to set ingress policy for security group " <<
-        group_name << ":" << ingress_req.GetError().GetMessage() <<
-        std::endl;
-    return;
-}
+    if (!ingress_req.IsSuccess())
+    {
+        std::cout << "Failed to set ingress policy for security group " <<
+            group_name << ":" << ingress_req.GetError().GetMessage() <<
+            std::endl;
+        return;
+    }
 
-std::cout << "Successfully added ingress policy to security group " <<
-    group_name << std::endl;
+    std::cout << "Successfully added ingress policy to security group " <<
+        group_name << std::endl;
 ```
 
 To add an egress rule to the security group, provide similar data in an [AuthorizeSecurityGroupEgressRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_authorize_security_group_egress_request.html) to the EC2Client’s `AuthorizeSecurityGroupEgress` function\.
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/create_security_group.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/create_security_group.cpp)\.
 
 ## Describe Security Groups<a name="describe-security-groups"></a>
 
@@ -126,45 +126,45 @@ You will receive a [DescribeSecurityGroupsResponse](https://sdk.amazonaws.com/cp
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
-Aws::EC2::Model::DescribeSecurityGroupsRequest request;
+        Aws::EC2::EC2Client ec2;
+        Aws::EC2::Model::DescribeSecurityGroupsRequest request;
 
-if (argc == 2)
-{
-    request.AddGroupIds(argv[1]);
-}
+        if (argc == 2)
+        {
+            request.AddGroupIds(argv[1]);
+        }
 
-auto outcome = ec2.DescribeSecurityGroups(request);
+        auto outcome = ec2.DescribeSecurityGroups(request);
 
-if (outcome.IsSuccess())
-{
-    std::cout << std::left <<
-        std::setw(32) << "Name" <<
-        std::setw(20) << "GroupId" <<
-        std::setw(20) << "VpcId" <<
-        std::setw(64) << "Description" << std::endl;
+        if (outcome.IsSuccess())
+        {
+            std::cout << std::left <<
+                std::setw(32) << "Name" <<
+                std::setw(20) << "GroupId" <<
+                std::setw(20) << "VpcId" <<
+                std::setw(64) << "Description" << std::endl;
 
-    const auto &securityGroups =
-        outcome.GetResult().GetSecurityGroups();
+            const auto &securityGroups =
+                outcome.GetResult().GetSecurityGroups();
 
-    for (const auto &securityGroup : securityGroups)
-    {
-        std::cout << std::left <<
-            std::setw(32) << securityGroup.GetGroupName() <<
-            std::setw(20) << securityGroup.GetGroupId() <<
-            std::setw(20) << securityGroup.GetVpcId() <<
-            std::setw(64) << securityGroup.GetDescription() <<
-            std::endl;
-    }
-}
-else
-{
-    std::cout << "Failed to describe security groups:" <<
-        outcome.GetError().GetMessage() << std::endl;
-}
+            for (const auto &securityGroup : securityGroups)
+            {
+                std::cout << std::left <<
+                    std::setw(32) << securityGroup.GetGroupName() <<
+                    std::setw(20) << securityGroup.GetGroupId() <<
+                    std::setw(20) << securityGroup.GetVpcId() <<
+                    std::setw(64) << securityGroup.GetDescription() <<
+                    std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "Failed to describe security groups:" <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/describe_security_groups.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/describe_security_groups.cpp)\.
 
 ## Delete a Security Group<a name="delete-a-security-group"></a>
 
@@ -183,25 +183,25 @@ To delete a security group, call the EC2Client’s `DeleteSecurityGroup` functio
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
-Aws::EC2::Model::DeleteSecurityGroupRequest request;
+        Aws::EC2::EC2Client ec2;
+        Aws::EC2::Model::DeleteSecurityGroupRequest request;
 
-request.SetGroupId(groupId);
-auto outcome = ec2.DeleteSecurityGroup(request);
+        request.SetGroupId(groupId);
+        auto outcome = ec2.DeleteSecurityGroup(request);
 
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to delete security group " << groupId <<
-        ":" << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully deleted security group " << groupId <<
-        std::endl;
-}
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Failed to delete security group " << groupId <<
+                ":" << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully deleted security group " << groupId <<
+                std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/delete_security_group.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/delete_security_group.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Amazon EC2 Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in the Amazon EC2 User Guide for Linux Instances

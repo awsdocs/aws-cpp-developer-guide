@@ -27,29 +27,29 @@ You must set the user name using the `CreateAccessKeyRequest`’s `WithUserName`
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+        Aws::IAM::IAMClient iam;
 
-Aws::IAM::Model::CreateAccessKeyRequest request;
-request.SetUserName(user_name);
+        Aws::IAM::Model::CreateAccessKeyRequest request;
+        request.SetUserName(user_name);
 
-auto outcome = iam.CreateAccessKey(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error creating access key for IAM user " << user_name
-        << ":" << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    const auto &accessKey = outcome.GetResult().GetAccessKey();
-    std::cout << "Successfully created access key for IAM user " <<
-        user_name << std::endl << "  aws_access_key_id = " <<
-        accessKey.GetAccessKeyId() << std::endl <<
-        " aws_secret_access_key = " << accessKey.GetSecretAccessKey() <<
-        std::endl;
-}
+        auto outcome = iam.CreateAccessKey(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error creating access key for IAM user " << user_name
+                << ":" << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            const auto &accessKey = outcome.GetResult().GetAccessKey();
+            std::cout << "Successfully created access key for IAM user " <<
+                user_name << std::endl << "  aws_access_key_id = " <<
+                accessKey.GetAccessKeyId() << std::endl <<
+                " aws_secret_access_key = " << accessKey.GetSecretAccessKey() <<
+                std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/create_access_key.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/create_access_key.cpp)\.
 
 ## List Access Keys<a name="list-access-keys"></a>
 
@@ -72,56 +72,56 @@ If you do not supply a user name to `ListAccessKeys`, it will attempt to list ac
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::ListAccessKeysRequest request;
-request.SetUserName(userName);
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::ListAccessKeysRequest request;
+        request.SetUserName(userName);
 
-bool done = false;
-bool header = false;
-while (!done)
-{
-    auto outcome = iam.ListAccessKeys(request);
-    if (!outcome.IsSuccess())
-    {
-        std::cout << "Failed to list access keys for user " << userName
-            << ": " << outcome.GetError().GetMessage() << std::endl;
-        break;
-    }
+        bool done = false;
+        bool header = false;
+        while (!done)
+        {
+            auto outcome = iam.ListAccessKeys(request);
+            if (!outcome.IsSuccess())
+            {
+                std::cout << "Failed to list access keys for user " << userName
+                    << ": " << outcome.GetError().GetMessage() << std::endl;
+                break;
+            }
 
-    if (!header)
-    {
-        std::cout << std::left << std::setw(32) << "UserName" <<
-            std::setw(30) << "KeyID" << std::setw(20) << "Status" <<
-            std::setw(20) << "CreateDate" << std::endl;
-        header = true;
-    }
+            if (!header)
+            {
+                std::cout << std::left << std::setw(32) << "UserName" <<
+                    std::setw(30) << "KeyID" << std::setw(20) << "Status" <<
+                    std::setw(20) << "CreateDate" << std::endl;
+                header = true;
+            }
 
-    const auto &keys = outcome.GetResult().GetAccessKeyMetadata();
-    for (const auto &key : keys)
-    {
-        Aws::String statusString =
-            Aws::IAM::Model::StatusTypeMapper::GetNameForStatusType(
-                key.GetStatus());
-        std::cout << std::left << std::setw(32) << key.GetUserName() <<
-            std::setw(30) << key.GetAccessKeyId() << std::setw(20) <<
-            statusString << std::setw(20) <<
-            key.GetCreateDate().ToGmtString(DATE_FORMAT) << std::endl;
-    }
+            const auto &keys = outcome.GetResult().GetAccessKeyMetadata();
+            for (const auto &key : keys)
+            {
+                Aws::String statusString =
+                    Aws::IAM::Model::StatusTypeMapper::GetNameForStatusType(
+                        key.GetStatus());
+                std::cout << std::left << std::setw(32) << key.GetUserName() <<
+                    std::setw(30) << key.GetAccessKeyId() << std::setw(20) <<
+                    statusString << std::setw(20) <<
+                    key.GetCreateDate().ToGmtString(DATE_FORMAT) << std::endl;
+            }
 
-    if (outcome.GetResult().GetIsTruncated())
-    {
-        request.SetMarker(outcome.GetResult().GetMarker());
-    }
-    else
-    {
-        done = true;
-    }
-}
+            if (outcome.GetResult().GetIsTruncated())
+            {
+                request.SetMarker(outcome.GetResult().GetMarker());
+            }
+            else
+            {
+                done = true;
+            }
+        }
 ```
 
 The results of `ListAccessKeys` are paged \(with a default maximum of 100 records per call\)\. You can call `GetIsTruncated` on the returned [ListAccessKeysResult](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_i_a_m_1_1_model_1_1_list_access_keys_result.html) object to see if the query returned fewer results then are available\. If so, then call `SetMarker` on the `ListAccessKeysRequest` and pass it back to the next invocation of `ListAccessKeys`\.
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/list_access_keys.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/list_access_keys.cpp)\.
 
 ## Retrieve an Access Key’s Last Used Time<a name="retrieve-an-access-key-s-last-used-time"></a>
 
@@ -142,31 +142,31 @@ You can then use the returned [GetAccessKeyLastUsedResult](https://sdk.amazonaws
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::GetAccessKeyLastUsedRequest request;
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::GetAccessKeyLastUsedRequest request;
 
-request.SetAccessKeyId(key_id);
+        request.SetAccessKeyId(key_id);
 
-auto outcome = iam.GetAccessKeyLastUsed(request);
+        auto outcome = iam.GetAccessKeyLastUsed(request);
 
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error querying last used time for access key " <<
-        key_id << ":" << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    auto lastUsedTimeString =
-        outcome.GetResult()
-        .GetAccessKeyLastUsed()
-        .GetLastUsedDate()
-        .ToGmtString(Aws::Utils::DateFormat::ISO_8601);
-    std::cout << "Access key " << key_id << " last used at time " <<
-        lastUsedTimeString << std::endl;
-}
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error querying last used time for access key " <<
+                key_id << ":" << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            auto lastUsedTimeString =
+                outcome.GetResult()
+                .GetAccessKeyLastUsed()
+                .GetLastUsedDate()
+                .ToGmtString(Aws::Utils::DateFormat::ISO_8601);
+            std::cout << "Access key " << key_id << " last used at time " <<
+                lastUsedTimeString << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/access_key_last_used.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/access_key_last_used.cpp)\.
 
 ## Activate or Deactivate Access Keys<a name="iam-access-keys-update"></a>
 
@@ -184,27 +184,27 @@ You can activate or deactivate an access key by creating an [UpdateAccessKeyRequ
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::UpdateAccessKeyRequest request;
-request.SetUserName(user_name);
-request.SetAccessKeyId(accessKeyId);
-request.SetStatus(status);
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::UpdateAccessKeyRequest request;
+        request.SetUserName(user_name);
+        request.SetAccessKeyId(accessKeyId);
+        request.SetStatus(status);
 
-auto outcome = iam.UpdateAccessKey(request);
-if (outcome.IsSuccess())
-{
-    std::cout << "Successfully updated status of access key " <<
-        accessKeyId << " for user " << user_name << std::endl;
-}
-else
-{
-    std::cout << "Error updated status of access key " << accessKeyId <<
-        " for user " << user_name << ": " <<
-        outcome.GetError().GetMessage() << std::endl;
-}
+        auto outcome = iam.UpdateAccessKey(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << "Successfully updated status of access key " <<
+                accessKeyId << " for user " << user_name << std::endl;
+        }
+        else
+        {
+            std::cout << "Error updated status of access key " << accessKeyId <<
+                " for user " << user_name << ": " <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/update_access_key.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/update_access_key.cpp)\.
 
 ## Delete an Access Key<a name="delete-an-access-key"></a>
 
@@ -225,28 +225,28 @@ Once deleted, a key can no longer be retrieved or used\. To temporarily deactiva
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+        Aws::IAM::IAMClient iam;
 
-Aws::IAM::Model::DeleteAccessKeyRequest request;
-request.SetUserName(user_name);
-request.SetAccessKeyId(key_id);
+        Aws::IAM::Model::DeleteAccessKeyRequest request;
+        request.SetUserName(user_name);
+        request.SetAccessKeyId(key_id);
 
-auto outcome = iam.DeleteAccessKey(request);
+        auto outcome = iam.DeleteAccessKey(request);
 
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error deleting access key " << key_id << " from user "
-        << user_name << ": " << outcome.GetError().GetMessage() <<
-        std::endl;
-}
-else
-{
-    std::cout << "Successfully deleted access key " << key_id
-        << " for IAM user " << user_name << std::endl;
-}
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error deleting access key " << key_id << " from user "
+                << user_name << ": " << outcome.GetError().GetMessage() <<
+                std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully deleted access key " << key_id
+                << " for IAM user " << user_name << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/delete_access_key.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/delete_access_key.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [CreateAccessKey](https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateAccessKey.html) in the IAM API Reference

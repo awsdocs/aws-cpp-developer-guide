@@ -29,24 +29,24 @@ To create an account alias, call the IAMClient’s `CreateAccountAlias` function
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::CreateAccountAliasRequest request;
-request.SetAccountAlias(alias_name);
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::CreateAccountAliasRequest request;
+        request.SetAccountAlias(alias_name);
 
-auto outcome = iam.CreateAccountAlias(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error creating account alias " << alias_name << ": "
-        << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully created account alias " << alias_name <<
-        std::endl;
-}
+        auto outcome = iam.CreateAccountAlias(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error creating account alias " << alias_name << ": "
+                << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully created account alias " << alias_name <<
+                std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/create_account_alias.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/create_account_alias.cpp)\.
 
 ## List Account Aliases<a name="list-account-aliases"></a>
 
@@ -69,50 +69,50 @@ The returned [ListAccountAliasesResult](https://sdk.amazonaws.com/cpp/api/LATEST
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::ListAccountAliasesRequest request;
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::ListAccountAliasesRequest request;
 
-bool done = false;
-bool header = false;
-while (!done)
-{
-    auto outcome = iam.ListAccountAliases(request);
-    if (!outcome.IsSuccess())
-    {
-        std::cout << "Failed to list account aliases: " <<
-            outcome.GetError().GetMessage() << std::endl;
-        break;
-    }
-
-    const auto &aliases = outcome.GetResult().GetAccountAliases();
-    if (!header)
-    {
-        if (aliases.size() == 0)
+        bool done = false;
+        bool header = false;
+        while (!done)
         {
-            std::cout << "Account has no aliases" << std::endl;
-            break;
+            auto outcome = iam.ListAccountAliases(request);
+            if (!outcome.IsSuccess())
+            {
+                std::cout << "Failed to list account aliases: " <<
+                    outcome.GetError().GetMessage() << std::endl;
+                break;
+            }
+
+            const auto &aliases = outcome.GetResult().GetAccountAliases();
+            if (!header)
+            {
+                if (aliases.size() == 0)
+                {
+                    std::cout << "Account has no aliases" << std::endl;
+                    break;
+                }
+                std::cout << std::left << std::setw(32) << "Alias" << std::endl;
+                header = true;
+            }
+
+            for (const auto &alias : aliases)
+            {
+                std::cout << std::left << std::setw(32) << alias << std::endl;
+            }
+
+            if (outcome.GetResult().GetIsTruncated())
+            {
+                request.SetMarker(outcome.GetResult().GetMarker());
+            }
+            else
+            {
+                done = true;
+            }
         }
-        std::cout << std::left << std::setw(32) << "Alias" << std::endl;
-        header = true;
-    }
-
-    for (const auto &alias : aliases)
-    {
-        std::cout << std::left << std::setw(32) << alias << std::endl;
-    }
-
-    if (outcome.GetResult().GetIsTruncated())
-    {
-        request.SetMarker(outcome.GetResult().GetMarker());
-    }
-    else
-    {
-        done = true;
-    }
-}
 ```
 
-see the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/list_account_aliases.cpp)\.
+see the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/list_account_aliases.cpp)\.
 
 ## Delete an Account Alias<a name="delete-an-account-alias"></a>
 
@@ -130,25 +130,25 @@ To delete your account’s alias, call the IAMClient’s `DeleteAccountAlias` fu
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+        Aws::IAM::IAMClient iam;
 
-Aws::IAM::Model::DeleteAccountAliasRequest request;
-request.SetAccountAlias(alias_name);
+        Aws::IAM::Model::DeleteAccountAliasRequest request;
+        request.SetAccountAlias(alias_name);
 
-const auto outcome = iam.DeleteAccountAlias(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error deleting account alias " << alias_name << ": "
-        << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully deleted account alias " << alias_name <<
-        std::endl;
-}
+        const auto outcome = iam.DeleteAccountAlias(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error deleting account alias " << alias_name << ": "
+                << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully deleted account alias " << alias_name <<
+                std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/delete_account_alias.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/delete_account_alias.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Your AWS Account ID and Its Alias](https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html) in the IAM User Guide

@@ -6,7 +6,7 @@ For many methods, the SDK for C\+\+ provides both synchronous and asynchronous v
 
 Like all asynchronous operations, an asynchronous SDK method returns before its main task is finished\. For example, the `PutObjectAsync` method returns before it finishes uploading the file to the Amazon S3 bucket\. While the upload operation continues, the application can perform other operations, including calling other asynchronous methods\. The application is notified that an asynchronous operation has finished when an associated callback function is invoked\.
 
-The following sections describe a code example that demonstrates calling an SDK asynchronous method\. Each section focuses on individual portions from the example’s [entire source file](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/put_object_async.cpp)\.
+The following sections describe a code example that demonstrates calling an SDK asynchronous method\. Each section focuses on individual portions from the example’s [entire source file](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/put_object_async.cpp)\.
 
 ## Calling SDK asynchronous methods<a name="calling-sdk-asynchronous-methods"></a>
 
@@ -118,8 +118,11 @@ int main()
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {
-        const Aws::String bucket_name = "my-bucket";
+        // TODO: Change bucket_name to the name of a bucket in your account.
+        const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
+        //TODO: Create a file called "my-file.txt" in the local folder where your executables are built to.
         const Aws::String object_name = "my-file.txt";
+        //TODO: Set to the AWS Region in which the bucket was created.
         const Aws::String region = "us-east-1";
 
         // A unique_lock is a general-purpose mutex ownership wrapper allowing 
@@ -164,3 +167,5 @@ int main()
     return 0;
 }
 ```
+
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/put_object_async.cpp) on Github\.

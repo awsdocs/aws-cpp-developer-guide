@@ -29,35 +29,35 @@ You cannot specify a namespace that begins with `AWS/`\. Namespaces that begin w
  **Code** 
 
 ```
-Aws::CloudWatch::CloudWatchClient cw;
+        Aws::CloudWatch::CloudWatchClient cw;
 
-Aws::CloudWatch::Model::Dimension dimension;
-dimension.SetName("UNIQUE_PAGES");
-dimension.SetValue("URLS");
+        Aws::CloudWatch::Model::Dimension dimension;
+        dimension.SetName("UNIQUE_PAGES");
+        dimension.SetValue("URLS");
 
-Aws::CloudWatch::Model::MetricDatum datum;
-datum.SetMetricName("PAGES_VISITED");
-datum.SetUnit(Aws::CloudWatch::Model::StandardUnit::None);
-datum.SetValue(data_point);
-datum.AddDimensions(dimension);
+        Aws::CloudWatch::Model::MetricDatum datum;
+        datum.SetMetricName("PAGES_VISITED");
+        datum.SetUnit(Aws::CloudWatch::Model::StandardUnit::None);
+        datum.SetValue(data_point);
+        datum.AddDimensions(dimension);
 
-Aws::CloudWatch::Model::PutMetricDataRequest request;
-request.SetNamespace("SITE/TRAFFIC");
-request.AddMetricData(datum);
+        Aws::CloudWatch::Model::PutMetricDataRequest request;
+        request.SetNamespace("SITE/TRAFFIC");
+        request.AddMetricData(datum);
 
-auto outcome = cw.PutMetricData(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to put sample metric data:" <<
-        outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully put sample metric data" << std::endl;
-}
+        auto outcome = cw.PutMetricData(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Failed to put sample metric data:" <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully put sample metric data" << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/cloudwatch/put_metric_data.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch/put_metric_data.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Using Amazon CloudWatch Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/working_with_metrics.html) in the Amazon CloudWatch User Guide\.

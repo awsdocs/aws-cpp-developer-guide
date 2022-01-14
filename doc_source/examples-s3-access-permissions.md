@@ -155,7 +155,7 @@ bool AwsDoc::S3::PutObjectAcl(const Aws::String& bucketName,
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_put_object_acl.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/get_put_object_acl.cpp) on Github\.
 
 ## Manage a Bucket’s Access Control List<a name="manage-a-bucket-s-access-control-list"></a>
 
@@ -342,7 +342,7 @@ int main()
         //AccessDenied if the bucket exists in some other account, or NoSuchBucket 
         //if the bucket does not exist in any account.
         const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
-        //TODO: Set to the region in which the bucket was created.
+        //TODO: Set to the AWS Region in which the bucket was created.
         const Aws::String region = "us-east-1";
 
         //TODO: Set the ACL's owner information (if it is your bucket, then you want your canonical id). 
@@ -373,7 +373,9 @@ int main()
         //     "http://acs.amazonaws.com/groups/global/AuthenticatedUsers";
 
         // Set the bucket's ACL.
-        //TODO: If you elected to use a grantee type other than canonical user above, update this method to not use default parameters.
+        //TODO: If you elected to use a grantee type other than canonical user above, update this method to 
+        //uncomment the additional parameters so that you are supplying the information necessary for the 
+        //grantee type you selected (e.g. the name, email address, etc).
         if (!AwsDoc::S3::PutBucketAcl(bucket_name,
            region,
             owner_id,
@@ -399,4 +401,4 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_put_bucket_acl.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/get_put_bucket_acl.cpp) on Github\.

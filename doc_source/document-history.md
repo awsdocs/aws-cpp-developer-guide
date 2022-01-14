@@ -1,7 +1,10 @@
 # Document history for the AWS SDK for C\+\+ Developer Guide<a name="document-history"></a>
 
 This topic lists important changes to the AWS SDK for C\+\+ Developer Guide\.
-+  **Latest documentation update: **June 09, 2021
++  **Latest documentation update: **January 3, 2022
+
+**January 3, 2022**  
+Improvements to Code examples section\. SDK Metrics deprecated\. Added chapter of code examples linked to GitHub Code Examples repository\.
 
 **June 09, 2021**  
 Improvements to Getting started section, Code examples section, and general standardization\.
@@ -37,7 +40,7 @@ Updated the instructions for building the SDK\. Updated the available AWS Client
 Updated the instructions for setting up the *vcpkg* C\+\+ package manager\.
 
 **January 11, 2019**  
-Added new section [SDK Metrics](sdk-metrics.md)\.
+Added new section SDK Metrics \(since deprecated\)\.
 
 **January 07, 2019**  
 Fixed the inclusion of code samples\.

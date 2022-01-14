@@ -11,8 +11,8 @@ An HTTP stack that provides connection pooling, is thread\-safe, and can be reus
 
 |  |  | 
 | --- |--- |
-|  Headers  |   [/aws/core/http/](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/http)   | 
-|  API Documentation  |   [Aws::Http](https://sdk.amazonaws.com/cpp/api/LATEST/namespace_aws_1_1_http.html)   | 
+|  Headers  |   [https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/http](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/http)   | 
+|  API Documentation  |   [https://sdk.amazonaws.com/cpp/api/LATEST/namespace_aws_1_1_http.html](https://sdk.amazonaws.com/cpp/api/LATEST/namespace_aws_1_1_http.html)   | 
 
 ## String Utils<a name="string-utils"></a>
 
@@ -23,8 +23,8 @@ Core string functions, such as `trim`, `lowercase`, and numeric conversions\.
 
 |  |  | 
 | --- |--- |
-|  Header  |   [aws/core/utils/StringUtils\.h](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/StringUtils.h)   | 
-|  API Documentation  |   [Aws::Utils::StringUtils](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_string_utils.html)   | 
+|  Header  |   [https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/StringUtils.h](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/StringUtils.h)   | 
+|  API Documentation  |   [https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_string_utils.html](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_string_utils.html)   | 
 
 ## Hashing Utils<a name="hashing-utils"></a>
 
@@ -35,29 +35,29 @@ Hashing functions such as `SHA256`, `MD5`, `Base64`, and `SHA256_HMAC`\.
 
 |  |  | 
 | --- |--- |
-|  Header  |   [/aws/core/utils/HashingUtils\.h](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/HashingUtils.h)   | 
-|  API Documentation  |   [Aws::Utils::HashingUtils](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_hashing_utils.html)   | 
+|  Header  |   [https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/HashingUtils.h](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/HashingUtils.h)   | 
+|  API Documentation  |   [https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_hashing_utils.html](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_hashing_utils.html)   | 
 
 ## JSON Parser<a name="json-parser"></a>
 
-A fully functioning yet lightweight JSON parser \(a thin wrapper around *JsonCpp*\)\.
+A fully functioning yet lightweight JSON parser \(a thin wrapper around *`JsonCpp`*\)\.
 
 
 ****  
 
 |  |  | 
 | --- |--- |
-|  Header  |   [/aws/core/utils/json/JsonSerializer\.h](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/json/JsonSerializer.h)   | 
-|  API Documentation  |   [Aws::Utils::Json::JsonValue](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_json_1_1_json_value.html)   | 
+|  Header  |   [https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/json/JsonSerializer.h](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/json/JsonSerializer.h)   | 
+|  API Documentation  |   [https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_json_1_1_json_value.html](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_utils_1_1_json_1_1_json_value.html)   | 
 
 ## XML Parser<a name="xml-parser"></a>
 
-A lightweight XML parser \(a thin wrapper around *tinyxml2*\)\. The [RAII pattern](http://en.cppreference.com/w/cpp/language/raii) has been added to the interface\.
+A lightweight XML parser \(a thin wrapper around *`tinyxml2`*\)\. The [RAII pattern](http://en.cppreference.com/w/cpp/language/raii) has been added to the interface\.
 
 
 ****  
 
 |  |  | 
 | --- |--- |
-|  Header  |   [/aws/core/utils/xml/XmlSerializer\.h](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/xml/XmlSerializer.h)   | 
-|  API Documentation  |   [Aws::Utils::Xml](https://sdk.amazonaws.com/cpp/api/LATEST/namespace_aws_1_1_utils_1_1_xml.html)   | 
+|  Header  |   [https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/xml/XmlSerializer.h](https://github.com/aws/aws-sdk-cpp/tree/master/aws-cpp-sdk-core/include/aws/core/utils/xml/XmlSerializer.h)   | 
+|  API Documentation  |   [https://sdk.amazonaws.com/cpp/api/LATEST/namespace_aws_1_1_utils_1_1_xml.html](https://sdk.amazonaws.com/cpp/api/LATEST/namespace_aws_1_1_utils_1_1_xml.html)   | 

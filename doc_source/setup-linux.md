@@ -4,7 +4,7 @@ To set up the AWS SDK for C\+\+, you can either build the SDK yourself directly 
 
 
 
-The SDK source is separated into individual packages by service\. Installing the entire SDK can take up to an hour\. Installing only the specific subset of services that your program uses decreases installation time and also reduces size on disk\. To choose which services to install, you need to know the package name of each service your program uses\. You can see the list of package directories at [aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub\. The package name is the suffix of the directory name for the service\. 
+The SDK source is separated into individual packages by service\. Installing the entire SDK can take up to an hour\. Installing only the specific subset of services that your program uses decreases installation time and also reduces size on disk\. To choose which services to install, you need to know the package name of each service your program uses\. You can see the list of package directories at [https://github.com/aws/aws-sdk-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub\. The package name is the suffix of the directory name for the service\. 
 
 ```
 aws-sdk-cpp\aws-cpp-sdk-<packageName>   # Repo directory name and packageName
@@ -43,7 +43,7 @@ You can build the SDK from source using command\-line tools as an alternative to
 
 **To build the SDK from source**
 
-1. Install [CMake](https://cmake.org/) \(*minimum version 3\.2; maximum version 3\.18*\) and the relevant build tools for your platform\. It is recommended to add `cmake` to your `PATH`\. To check your version of CMake, open a command prompt and run command **cmake \-\-version**
+1. Install [CMake](https://cmake.org/) \(minimum version 3\.2; *maximum version 3\.21*\) and the relevant build tools for your platform\. It is recommended to add `cmake` to your `PATH`\. To check your version of CMake, open a command prompt and run command **cmake \-\-version**
 
 1. In a command prompt, navigate to a folder where you want to store the SDK\. This example uses a folder called `CodeRepos`\.
 
@@ -51,8 +51,7 @@ You can build the SDK from source using command\-line tools as an alternative to
 
    Version 1\.9 simplifies dependencies by using git submodules to wrap external dependencies\.
 
-   Download or clone the SDK source from [aws/aws\-sdk\-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub:
-   + Direct download \(`aws-sdk-cpp-main.zip`\): [aws/aws\-sdk\-cpp v1\.9](https://github.com/aws/aws-sdk-cpp/archive/refs/heads/main.zip) 
+   Download or clone the SDK source from [https://github.com/aws/aws-sdk-cpp](https://github.com/aws/aws-sdk-cpp) on GitHub:
    + Clone with Git: HTTPS
 
      ```
@@ -70,27 +69,24 @@ You can build the SDK from source using command\-line tools as an alternative to
    mkdir sdk_build
    ```
 
-1. Navigate to the newly created build folder\. Generate the build files by running `cmake`\. Specify on the `cmake` command line whether to build a *Debug* or *Release* version\.
-
-   You may need to include the prefix `sudo ` to the command depending on the permissions of where your files are\.
+1. Navigate to the newly created build folder\. Generate the build files by running `cmake`\. Specify on the `cmake` command line whether to build a *Debug* or *Release* version\. Also specify the path to the folder where to install the SDK\.
 
    ```
    mkdir sdk_build
    cd sdk_build
-   cmake <path/to/sdk/source> -DCMAKE_BUILD_TYPE=[Debug | Release]
+   cmake <path/to/sdk/source> -DCMAKE_BUILD_TYPE=[Debug | Release] -DCMAKE_PREFIX_PATH=<path/to/install/sdk>
    ```
 
    Building the entire SDK can take a while\. To build only a particular service package, use the CMake *BUILD\_ONLY* parameter\. The example shown below builds only the Amazon S3 service package\. For more ways to modify the build output, see [CMake Parameters](cmake-params.md)\.
 
    ```
-   cmake -DCMAKE_BUILD_TYPE=[Debug | Release] -DBUILD_ONLY="s3"
+   cmake -DCMAKE_BUILD_TYPE=[Debug | Release] 
+                  -DCMAKE_PREFIX_PATH=<path/to/install/sdk> -DBUILD_ONLY="s3"
    ```
 **Note**  
 If you get an error Failed to build third\-party libraries\., check your version of CMake by running **cmake \-\-version**\. You must use CMake minimum version 3\.2, maximum version 3\.18\.
 
 1. Build the SDK binaries\. If you’re building the entire SDK, the operation can take one hour or longer\. 
-
-   You may need to include the prefix `sudo ` to the command depending on the permissions of where your files are\.
 
    ```
    make
@@ -99,9 +95,9 @@ If you get an error Failed to build third\-party libraries\., check your version
 1. Install the SDK\.
 
    ```
-   sudo make install
+   make install
    ```
 
-### Building for Android on Linux<a name="building-for-android"></a>
+## Building for Android on Linux<a name="building-for-android"></a>
 
 To build for Android, add `-DTARGET_ARCH=ANDROID` to your `cmake` command line\. The AWS SDK for C\+\+ includes a CMake toolchain file that includes what you need by referencing the appropriate environment variables \(`ANDROID_NDK`\)\. For an example application, see [Setting up an Android application with AWS SDK for C\+\+](https://aws.amazon.com/blogs/developer/setting-up-an-android-application-with-aws-sdk-for-c/)

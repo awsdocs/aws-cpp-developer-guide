@@ -32,6 +32,7 @@ To use the *ADD\_CUSTOM\_CLIENTS* or *REGENERATE\_CLIENTS* variables, you must h
 + [REGENERATE\_CLIENTS](#cmake-regenerate-clients)
 + [SIMPLE\_INSTALL](#cmake-simple-install)
 + [TARGET\_ARCH](#cmake-target-arch)
++ [USE\_OPENSSL](#cmake-use-openssl)
 
 ### ADD\_CUSTOM\_CLIENTS<a name="cmake-add-custom-clients"></a>
 
@@ -195,6 +196,16 @@ When *TARGET\_ARCH* is *ANDROID*, additional options are available\. See [Androi
 
 Values  
  *WINDOWS* \| *LINUX* \| *APPLE* \| *ANDROID* 
+
+### USE\_OPENSSL<a name="cmake-use-openssl"></a>
+
+If enabled, the SDK builds using OpenSSL; otherwise, it uses [https://github.com/awslabs/aws-lc](https://github.com/awslabs/aws-lc)\. `AWS-LC` is a general\-purpose cryptographic library maintained by the AWS Cryptography team for AWS and their customers\. For more information, see [CMake Parameters](https://github.com/aws/aws-sdk-cpp/blob/main/Docs/CMake_Parameters.md#use_openssl) on GitHub\.
+
+Values  
+ *ON* \| *OFF* 
+
+Default  
+ *ON* 
 
 ## Android CMake Variables and Options<a name="cmake-android-variables"></a>
 

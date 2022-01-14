@@ -16,7 +16,7 @@ You can specify a maximum of 10 events per call to `putEvents`\.
 
 ```
 #include <aws/core/Aws.h>
-#include <aws/events/CloudWatchEventsClient.h>
+#include <aws/events/EventBridgeClient.h>
 #include <aws/events/model/PutEventsRequest.h>
 #include <aws/events/model/PutEventsResult.h>
 #include <aws/core/utils/Outcome.h>
@@ -26,27 +26,27 @@ You can specify a maximum of 10 events per call to `putEvents`\.
  **Code** 
 
 ```
-Aws::CloudWatchEvents::CloudWatchEventsClient cwe;
+        Aws::CloudWatchEvents::EventBridgeClient cwe;
 
-Aws::CloudWatchEvents::Model::PutEventsRequestEntry event_entry;
-event_entry.SetDetail(MakeDetails(event_key, event_value));
-event_entry.SetDetailType("sampleSubmitted");
-event_entry.AddResources(resource_arn);
-event_entry.SetSource("aws-sdk-cpp-cloudwatch-example");
+        Aws::CloudWatchEvents::Model::PutEventsRequestEntry event_entry;
+        event_entry.SetDetail(MakeDetails(event_key, event_value));
+        event_entry.SetDetailType("sampleSubmitted");
+        event_entry.AddResources(resource_arn);
+        event_entry.SetSource("aws-sdk-cpp-cloudwatch-example");
 
-Aws::CloudWatchEvents::Model::PutEventsRequest request;
-request.AddEntries(event_entry);
+        Aws::CloudWatchEvents::Model::PutEventsRequest request;
+        request.AddEntries(event_entry);
 
-auto outcome = cwe.PutEvents(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to post CloudWatch event: " <<
-        outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully posted CloudWatch event" << std::endl;
-}
+        auto outcome = cwe.PutEvents(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Failed to post CloudWatch event: " <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully posted CloudWatch event" << std::endl;
+        }
 ```
 
 ## Add Rules<a name="add-rules"></a>
@@ -57,7 +57,7 @@ To create or update a rule, call the CloudWatchEventsClient’s `PutRule` functi
 
 ```
 #include <aws/core/Aws.h>
-#include <aws/events/CloudWatchEventsClient.h>
+#include <aws/events/EventBridgeClient.h>
 #include <aws/events/model/PutRuleRequest.h>
 #include <aws/events/model/PutRuleResult.h>
 #include <aws/core/utils/Outcome.h>
@@ -67,26 +67,26 @@ To create or update a rule, call the CloudWatchEventsClient’s `PutRule` functi
  **Code** 
 
 ```
-Aws::CloudWatchEvents::CloudWatchEventsClient cwe;
-Aws::CloudWatchEvents::Model::PutRuleRequest request;
-request.SetName(rule_name);
-request.SetRoleArn(role_arn);
-request.SetScheduleExpression("rate(5 minutes)");
-request.SetState(Aws::CloudWatchEvents::Model::RuleState::ENABLED);
+        Aws::CloudWatchEvents::EventBridgeClient cwe;
+        Aws::CloudWatchEvents::Model::PutRuleRequest request;
+        request.SetName(rule_name);
+        request.SetRoleArn(role_arn);
+        request.SetScheduleExpression("rate(5 minutes)");
+        request.SetState(Aws::CloudWatchEvents::Model::RuleState::ENABLED);
 
-auto outcome = cwe.PutRule(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to create CloudWatch events rule " <<
-        rule_name << ": " << outcome.GetError().GetMessage() <<
-        std::endl;
-}
-else
-{
-    std::cout << "Successfully created CloudWatch events rule " <<
-        rule_name << " with resulting Arn " <<
-        outcome.GetResult().GetRuleArn() << std::endl;
-}
+        auto outcome = cwe.PutRule(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Failed to create CloudWatch events rule " <<
+                rule_name << ": " << outcome.GetError().GetMessage() <<
+                std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully created CloudWatch events rule " <<
+                rule_name << " with resulting Arn " <<
+                outcome.GetResult().GetRuleArn() << std::endl;
+        }
 ```
 
 ## Add Targets<a name="add-targets"></a>
@@ -99,7 +99,7 @@ To add a target to a rule, call the CloudWatchEventsClient’s `PutTargets` func
 
 ```
 #include <aws/core/Aws.h>
-#include <aws/events/CloudWatchEventsClient.h>
+#include <aws/events/EventBridgeClient.h>
 #include <aws/events/model/PutTargetsRequest.h>
 #include <aws/events/model/PutTargetsResult.h>
 #include <aws/core/utils/Outcome.h>
@@ -109,32 +109,32 @@ To add a target to a rule, call the CloudWatchEventsClient’s `PutTargets` func
  **Code** 
 
 ```
-Aws::CloudWatchEvents::CloudWatchEventsClient cwe;
+        Aws::CloudWatchEvents::EventBridgeClient cwe;
 
-Aws::CloudWatchEvents::Model::Target target;
-target.SetArn(lambda_arn);
-target.SetId(target_id);
+        Aws::CloudWatchEvents::Model::Target target;
+        target.SetArn(lambda_arn);
+        target.SetId(target_id);
 
-Aws::CloudWatchEvents::Model::PutTargetsRequest request;
-request.SetRule(rule_name);
-request.AddTargets(target);
+        Aws::CloudWatchEvents::Model::PutTargetsRequest request;
+        request.SetRule(rule_name);
+        request.AddTargets(target);
 
-auto putTargetsOutcome = cwe.PutTargets(request);
-if (!putTargetsOutcome.IsSuccess())
-{
-    std::cout << "Failed to create CloudWatch events target for rule "
-        << rule_name << ": " <<
-        putTargetsOutcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout <<
-        "Successfully created CloudWatch events target for rule "
-        << rule_name << std::endl;
-}
+        auto putTargetsOutcome = cwe.PutTargets(request);
+        if (!putTargetsOutcome.IsSuccess())
+        {
+            std::cout << "Failed to create CloudWatch events target for rule "
+                << rule_name << ": " <<
+                putTargetsOutcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout <<
+                "Successfully created CloudWatch events target for rule "
+                << rule_name << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/cloudwatch/put_targets.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/eventbridge/put_targets.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Adding Events with PutEvents](https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/AddEventsPutEvents.html) in the Amazon CloudWatch Events User Guide

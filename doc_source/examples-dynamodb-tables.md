@@ -39,44 +39,43 @@ This code creates a table with a simple primary key \(“Name”\)\.
  **Code** 
 
 ```
-Aws::Client::ClientConfiguration clientConfig;
-if (!region.empty())
-    clientConfig.region = region;
-Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
+        Aws::Client::ClientConfiguration clientConfig;
+        if (!region.empty())
+            clientConfig.region = region;
+        Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
 
-std::cout << "Creating table " << table <<
-    " with a simple primary key: \"Name\"" << std::endl;
+        std::cout << "Creating table " << table <<
+            " with a simple primary key: \"Name\"" << std::endl;
 
-Aws::DynamoDB::Model::CreateTableRequest req;
+        Aws::DynamoDB::Model::CreateTableRequest req;
 
-Aws::DynamoDB::Model::AttributeDefinition haskKey;
-haskKey.SetAttributeName("Name");
-haskKey.SetAttributeType(Aws::DynamoDB::Model::ScalarAttributeType::S);
-req.AddAttributeDefinitions(haskKey);
+        Aws::DynamoDB::Model::AttributeDefinition haskKey;
+        haskKey.SetAttributeName("Name");
+        haskKey.SetAttributeType(Aws::DynamoDB::Model::ScalarAttributeType::S);
+        req.AddAttributeDefinitions(haskKey);
 
-Aws::DynamoDB::Model::KeySchemaElement keyscelt;
-keyscelt.WithAttributeName("Name").WithKeyType(Aws::DynamoDB::Model::KeyType::HASH);
-req.AddKeySchema(keyscelt);
+        Aws::DynamoDB::Model::KeySchemaElement keyscelt;
+        keyscelt.WithAttributeName("Name").WithKeyType(Aws::DynamoDB::Model::KeyType::HASH);
+        req.AddKeySchema(keyscelt);
 
-Aws::DynamoDB::Model::ProvisionedThroughput thruput;
-thruput.WithReadCapacityUnits(5).WithWriteCapacityUnits(5);
-req.SetProvisionedThroughput(thruput);
+        Aws::DynamoDB::Model::ProvisionedThroughput thruput;
+        thruput.WithReadCapacityUnits(5).WithWriteCapacityUnits(5);
+        req.SetProvisionedThroughput(thruput);
+        req.SetTableName(table);
 
-req.SetTableName(table);
-
-const Aws::DynamoDB::Model::CreateTableOutcome& result = dynamoClient.CreateTable(req);
-if (result.IsSuccess())
-{
-    std::cout << "Table \"" << result.GetResult().GetTableDescription().GetTableName() <<
-        " created!" << std::endl;
-}
-else
-{
-    std::cout << "Failed to create table: " << result.GetError().GetMessage();
-}
+        const Aws::DynamoDB::Model::CreateTableOutcome& result = dynamoClient.CreateTable(req);
+        if (result.IsSuccess())
+        {
+            std::cout << "Table \"" << result.GetResult().GetTableDescription().GetTableName() <<
+                " created!" << std::endl;
+        }
+        else
+        {
+            std::cout << "Failed to create table: " << result.GetError().GetMessage();
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/dynamodb/create_table.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb/create_table.cpp)\.
 
 ### Create a Table with a Composite Primary Key<a name="dynamodb-create-table-composite"></a>
 
@@ -99,49 +98,49 @@ Add another [AttributeDefinition](https://sdk.amazonaws.com/cpp/api/LATEST/class
  **Code** 
 
 ```
-Aws::Client::ClientConfiguration clientConfig;
-if (!region.empty())
-    clientConfig.region = region;
-Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
+        Aws::Client::ClientConfiguration clientConfig;
+        if (!region.empty())
+            clientConfig.region = region;
+        Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
 
-std::cout << "Creating table " << table <<
-    " with a composite primary key:\n" \
-    "* Language - partition key\n" \
-    "* Greeting - sort key\n";
+        std::cout << "Creating table " << table <<
+            " with a composite primary key:\n" \
+            "* Language - partition key\n" \
+            "* Greeting - sort key\n";
 
-Aws::DynamoDB::Model::CreateTableRequest req;
+        Aws::DynamoDB::Model::CreateTableRequest req;
 
-Aws::DynamoDB::Model::AttributeDefinition hashKey1, hashKey2;
-hashKey1.WithAttributeName("Language").WithAttributeType(Aws::DynamoDB::Model::ScalarAttributeType::S);
-req.AddAttributeDefinitions(hashKey1);
-hashKey2.WithAttributeName("Greeting").WithAttributeType(Aws::DynamoDB::Model::ScalarAttributeType::S);
-req.AddAttributeDefinitions(hashKey2);
+        Aws::DynamoDB::Model::AttributeDefinition hashKey1, hashKey2;
+        hashKey1.WithAttributeName("Language").WithAttributeType(Aws::DynamoDB::Model::ScalarAttributeType::S);
+        req.AddAttributeDefinitions(hashKey1);
+        hashKey2.WithAttributeName("Greeting").WithAttributeType(Aws::DynamoDB::Model::ScalarAttributeType::S);
+        req.AddAttributeDefinitions(hashKey2);
 
-Aws::DynamoDB::Model::KeySchemaElement kse1, kse2;
-kse1.WithAttributeName("Language").WithKeyType(Aws::DynamoDB::Model::KeyType::HASH);
-req.AddKeySchema(kse1);
-kse2.WithAttributeName("Greeting").WithKeyType(Aws::DynamoDB::Model::KeyType::RANGE);
-req.AddKeySchema(kse2);
+        Aws::DynamoDB::Model::KeySchemaElement kse1, kse2;
+        kse1.WithAttributeName("Language").WithKeyType(Aws::DynamoDB::Model::KeyType::HASH);
+        req.AddKeySchema(kse1);
+        kse2.WithAttributeName("Greeting").WithKeyType(Aws::DynamoDB::Model::KeyType::RANGE);
+        req.AddKeySchema(kse2);
 
-Aws::DynamoDB::Model::ProvisionedThroughput thruput;
-thruput.WithReadCapacityUnits(5).WithWriteCapacityUnits(5);
-req.SetProvisionedThroughput(thruput);
+        Aws::DynamoDB::Model::ProvisionedThroughput thruput;
+        thruput.WithReadCapacityUnits(5).WithWriteCapacityUnits(5);
+        req.SetProvisionedThroughput(thruput);
 
-req.SetTableName(table);
+        req.SetTableName(table);
 
-const Aws::DynamoDB::Model::CreateTableOutcome& result = dynamoClient.CreateTable(req);
-if (result.IsSuccess())
-{
-    std::cout << "Table \"" << result.GetResult().GetTableDescription().GetTableName() <<
-        "\" was created!\n";
-}
-else
-{
-    std::cout << "Failed to create table:" << result.GetError().GetMessage();
-}
+        const Aws::DynamoDB::Model::CreateTableOutcome& result = dynamoClient.CreateTable(req);
+        if (result.IsSuccess())
+        {
+            std::cout << "Table \"" << result.GetResult().GetTableDescription().GetTableName() <<
+                "\" was created!\n";
+        }
+        else
+        {
+            std::cout << "Failed to create table:" << result.GetError().GetMessage();
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/dynamodb/create_table_composite_key.cpp) on GitHub\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb/create_table_composite_key.cpp) on GitHub\.
 
 ## List Tables<a name="dynamodb-list-tables"></a>
 
@@ -161,28 +160,30 @@ You can list the tables in a particular region by calling the [DynamoDB client](
  **Code** 
 
 ```
-Aws::Client::ClientConfiguration clientConfig;
-Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
+        Aws::Client::ClientConfiguration clientConfig;
+        Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
 
-Aws::DynamoDB::Model::ListTablesRequest ltr;
-ltr.SetLimit(50);
-do
-{
-    const Aws::DynamoDB::Model::ListTablesOutcome& lto = dynamoClient.ListTables(ltr);
-    if (!lto.IsSuccess())
-    {
-        std::cout << "Error: " << lto.GetError().GetMessage() << std::endl;
-        return 1;
-    }
-    for (const auto& s : lto.GetResult().GetTableNames())
-        std::cout << s << std::endl;
-    ltr.SetExclusiveStartTableName(lto.GetResult().GetLastEvaluatedTableName());
-} while (!ltr.GetExclusiveStartTableName().empty());
+        Aws::DynamoDB::Model::ListTablesRequest listTablesRequest;
+        listTablesRequest.SetLimit(50);
+        do
+        {
+            const Aws::DynamoDB::Model::ListTablesOutcome& lto = dynamoClient.ListTables(listTablesRequest);
+            if (!lto.IsSuccess())
+            {
+                std::cout << "Error: " << lto.GetError().GetMessage() << std::endl;
+                return 1;
+            }
+            
+            for (const auto& s : lto.GetResult().GetTableNames())
+                std::cout << s << std::endl;
+            listTablesRequest.SetExclusiveStartTableName(lto.GetResult().GetLastEvaluatedTableName());
+        
+        } while (!listTablesRequest.GetExclusiveStartTableName().empty());
 ```
 
 By default, up to 100 tables are returned per call\. Use `GetExclusiveStartTableName` on the returned [ListTablesOutcome](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_dynamo_d_b_1_1_dynamo_d_b_client.html) object to get the last table that was evaluated\. You can use this value to start the listing after the last returned value of the previous listing\.
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/dynamodb/list_tables.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb/list_tables.cpp)\.
 
 ## Retrieve Information about a Table<a name="dynamodb-describe-table"></a>
 
@@ -201,44 +202,44 @@ You can find out more about a table by calling the [DynamoDB client](https://sdk
  **Code** 
 
 ```
-Aws::Client::ClientConfiguration clientConfig;
-if (!region.empty())
-    clientConfig.region = region;
-Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
+        Aws::Client::ClientConfiguration clientConfig;
+        if (!region.empty())
+            clientConfig.region = region;
+        Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
 
-Aws::DynamoDB::Model::DescribeTableRequest dtr;
-dtr.SetTableName(table);
+        Aws::DynamoDB::Model::DescribeTableRequest dtr;
+        dtr.SetTableName(table);
 
-const Aws::DynamoDB::Model::DescribeTableOutcome& result = dynamoClient.DescribeTable(dtr);
+        const Aws::DynamoDB::Model::DescribeTableOutcome& result = dynamoClient.DescribeTable(dtr);
 
-if (result.IsSuccess())
-{
-    const Aws::DynamoDB::Model::TableDescription& td = result.GetResult().GetTable();
-    std::cout << "Table name  : " << td.GetTableName() << std::endl;
-    std::cout << "Table ARN   : " << td.GetTableArn() << std::endl;
-    std::cout << "Status      : " << Aws::DynamoDB::Model::TableStatusMapper::GetNameForTableStatus(td.GetTableStatus()) << std::endl;
-    std::cout << "Item count  : " << td.GetItemCount() << std::endl;
-    std::cout << "Size (bytes): " << td.GetTableSizeBytes() << std::endl;
+        if (result.IsSuccess())
+        {
+            const Aws::DynamoDB::Model::TableDescription& td = result.GetResult().GetTable();
+            std::cout << "Table name  : " << td.GetTableName() << std::endl;
+            std::cout << "Table ARN   : " << td.GetTableArn() << std::endl;
+            std::cout << "Status      : " << Aws::DynamoDB::Model::TableStatusMapper::GetNameForTableStatus(td.GetTableStatus()) << std::endl;
+            std::cout << "Item count  : " << td.GetItemCount() << std::endl;
+            std::cout << "Size (bytes): " << td.GetTableSizeBytes() << std::endl;
 
-    const Aws::DynamoDB::Model::ProvisionedThroughputDescription& ptd = td.GetProvisionedThroughput();
-    std::cout << "Throughput" << std::endl;
-    std::cout << "  Read Capacity : " << ptd.GetReadCapacityUnits() << std::endl;
-    std::cout << "  Write Capacity: " << ptd.GetWriteCapacityUnits() << std::endl;
+            const Aws::DynamoDB::Model::ProvisionedThroughputDescription& ptd = td.GetProvisionedThroughput();
+            std::cout << "Throughput" << std::endl;
+            std::cout << "  Read Capacity : " << ptd.GetReadCapacityUnits() << std::endl;
+            std::cout << "  Write Capacity: " << ptd.GetWriteCapacityUnits() << std::endl;
 
-    const Aws::Vector<Aws::DynamoDB::Model::AttributeDefinition>& ad = td.GetAttributeDefinitions();
-    std::cout << "Attributes" << std::endl;
-    for (const auto& a : ad)
-        std::cout << "  " << a.GetAttributeName() << " (" <<
-        Aws::DynamoDB::Model::ScalarAttributeTypeMapper::GetNameForScalarAttributeType(a.GetAttributeType()) <<
-        ")" << std::endl;
-}
-else
-{
-    std::cout << "Failed to describe table: " << result.GetError().GetMessage();
-}
+            const Aws::Vector<Aws::DynamoDB::Model::AttributeDefinition>& ad = td.GetAttributeDefinitions();
+            std::cout << "Attributes" << std::endl;
+            for (const auto& a : ad)
+                std::cout << "  " << a.GetAttributeName() << " (" <<
+                Aws::DynamoDB::Model::ScalarAttributeTypeMapper::GetNameForScalarAttributeType(a.GetAttributeType()) <<
+                ")" << std::endl;
+        }
+        else
+        {
+            std::cout << "Failed to describe table: " << result.GetError().GetMessage();
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/dynamodb/describe_table.cpp) on GitHub\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb/describe_table.cpp) on GitHub\.
 
 ## Modify a Table<a name="dynamodb-update-table"></a>
 
@@ -258,28 +259,28 @@ You can modify your table’s provisioned throughput values at any time by calli
  **Code** 
 
 ```
-Aws::Client::ClientConfiguration clientConfig;
-Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
+        Aws::Client::ClientConfiguration clientConfig;
+        Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
 
-std::cout << "Updating " << table << " with new provisioned throughput values" << std::endl;
-std::cout << "Read capacity : " << rc << std::endl;
-std::cout << "Write capacity: " << wc << std::endl;
+        std::cout << "Updating " << table << " with new provisioned throughput values" << std::endl;
+        std::cout << "Read capacity : " << rc << std::endl;
+        std::cout << "Write capacity: " << wc << std::endl;
 
-Aws::DynamoDB::Model::UpdateTableRequest utr;
-Aws::DynamoDB::Model::ProvisionedThroughput pt;
-pt.WithReadCapacityUnits(rc).WithWriteCapacityUnits(wc);
-utr.WithProvisionedThroughput(pt).WithTableName(table);
+        Aws::DynamoDB::Model::UpdateTableRequest utr;
+        Aws::DynamoDB::Model::ProvisionedThroughput pt;
+        pt.WithReadCapacityUnits(rc).WithWriteCapacityUnits(wc);
+        utr.WithProvisionedThroughput(pt).WithTableName(table);
 
-const Aws::DynamoDB::Model::UpdateTableOutcome& result = dynamoClient.UpdateTable(utr);
-if (!result.IsSuccess())
-{
-    std::cout << result.GetError().GetMessage() << std::endl;
-    return 1;
-}
-std::cout << "Done!" << std::endl;
+        const Aws::DynamoDB::Model::UpdateTableOutcome& result = dynamoClient.UpdateTable(utr);
+        if (!result.IsSuccess())
+        {
+            std::cout << result.GetError().GetMessage() << std::endl;
+            return 1;
+        }
+        std::cout << "Done!" << std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/dynamodb/update_table.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb/update_table.cpp)\.
 
 ## Delete a Table<a name="dynamodb-delete-table"></a>
 
@@ -298,27 +299,26 @@ Call the [DynamoDB client](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_
  **Code** 
 
 ```
-Aws::Client::ClientConfiguration clientConfig;
-if (!region.empty())
-    clientConfig.region = region;
-Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
+        Aws::Client::ClientConfiguration clientConfig;
+        if (!region.empty())
+            clientConfig.region = region;
+        Aws::DynamoDB::DynamoDBClient dynamoClient(clientConfig);
 
-Aws::DynamoDB::Model::DeleteTableRequest dtr;
-dtr.SetTableName(table);
+        Aws::DynamoDB::Model::DeleteTableRequest dtr;
+        dtr.SetTableName(table);
 
-const Aws::DynamoDB::Model::DeleteTableOutcome& result = dynamoClient.DeleteTable(dtr);
-if (result.IsSuccess())
-{
-    std::cout << "Table \"" << result.GetResult().GetTableDescription().GetTableName() <<
-        " deleted!\n";
-}
-else
-{
-    std::cout << "Failed to delete table: " << result.GetError().GetMessage();
-}
+        const Aws::DynamoDB::Model::DeleteTableOutcome& result = dynamoClient.DeleteTable(dtr);
+        if (result.IsSuccess())
+        {
+            std::cout << "Your Table \"" << result.GetResult().GetTableDescription().GetTableName() << " was deleted!\n";
+        }
+        else
+        {
+            std::cout << "Failed to delete table: " << result.GetError().GetMessage();
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/dynamodb/delete_table.cpp) on GitHub\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb/delete_table.cpp) on GitHub\.
 
 ## More Info<a name="more-info"></a>
 +  [Guidelines for Working with Tables](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GuidelinesForTables.html) in the Amazon DynamoDB Developer Guide

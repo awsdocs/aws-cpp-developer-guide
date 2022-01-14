@@ -1,6 +1,6 @@
 # "Hello S3" app<a name="build-vcpkg"></a>
 
-This example reports the Amazon S3 buckets you own\. Having an Amazon S3 bucket in your AWS account is not required for this example, but it will be far more interesting if you have at least one\. See [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) in the *Amazon Simple Storage Service Console User Guide* if you don't already have one\.
+This example reports the Amazon S3 buckets you own\. Having an Amazon S3 bucket in your AWS account is not required for this example, but it will be far more interesting if you have at least one\. See [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) in the *Amazon Simple Storage Service User Guide* if you don't already have one\.
 
 You can use any IDE or C\+\+ tools to build your program\. This tutorial shows how to use Visual Studio, but it is not required for vcpkg\.
 
@@ -93,4 +93,4 @@ This example consists of one source file \(`main.cpp`\) and one `CMakeLists.txt`
 
 1. Confirm that the console output lists the total number of Amazon S3 buckets and the name of each bucket\.
 
-For additional examples using the AWS SDK for C\+\+, see [ AWS SDK for C\+\+ code examples](programming-services.md)\.
+For additional examples using the AWS SDK for C\+\+, see [ SDK for C\+\+ code examples subset with guidance](programming-services.md)\.

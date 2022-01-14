@@ -12,4 +12,3 @@ For service\-specific programming examples, see [AWS SDK for C\+\+ Code Examples
 + [Memory Management](memory-management.md)
 + [Logging](logging.md)
 + [Error Handling](error-handling.md)
-+ [SDK Metrics](sdk-metrics.md)

@@ -2,7 +2,7 @@
 
  [CMake](https://cmake.org/) is a build tool that you use to manage your application’s dependencies and to create makefiles suitable for the platform you’re building on\. You can use CMake to create and build projects using the AWS SDK for C\+\+\.
 
-This example reports the Amazon S3 buckets you own\. Having an Amazon S3 bucket in your AWS account is not required for this example, but it will be far more interesting if you have at least one\. See [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) in the *Amazon Simple Storage Service Console User Guide* if you don't already have one\.
+This example reports the Amazon S3 buckets you own\. Having an Amazon S3 bucket in your AWS account is not required for this example, but it will be far more interesting if you have at least one\. See [Create a Bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-bucket.html) in the *Amazon Simple Storage Service User Guide* if you don't already have one\.
 
 ## Step 1: Write the code<a name="setting-up-a-cmake-project"></a>
 
@@ -69,7 +69,7 @@ This example can also be completed in Visual Studio: choose **Create New Project
 
 1. Within that folder, add a `main.cpp` file that includes the following code, which reports the Amazon S3 buckets you own\.
 
-1. Add a `CMakeLists.txt` file that specifies your project’s name, executables, source files, and linked libraries\. 
+1. Add a `CMakeLists.txt` file that specifies your project’s name, executables, source files, and linked libraries\. **Note**: There is a "TODO" comment in this file prompting you to choose the appropriate line for your build environment\.
 
    ```
    cmake_minimum_required(VERSION 3.3)
@@ -155,4 +155,4 @@ When you run this application, it displays console output that lists the total n
    app
    ```
 
-For additional examples using the AWS SDK for C\+\+, see [ AWS SDK for C\+\+ code examples](programming-services.md)\.
+For additional examples using the AWS SDK for C\+\+, see [ SDK for C\+\+ code examples subset with guidance](programming-services.md)\.

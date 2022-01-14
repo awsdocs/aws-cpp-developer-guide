@@ -29,28 +29,28 @@ To enable long polling when creating an Amazon SQS queue, set the `ReceiveMessag
  **Code** 
 
 ```
-Aws::SQS::SQSClient sqs;
+        Aws::SQS::SQSClient sqs;
 
-Aws::SQS::Model::CreateQueueRequest request;
-request.SetQueueName(queue_name);
-request.AddAttributes(
-    Aws::SQS::Model::QueueAttributeName::ReceiveMessageWaitTimeSeconds,
-    poll_time);
+        Aws::SQS::Model::CreateQueueRequest request;
+        request.SetQueueName(queue_name);
+        request.AddAttributes(
+            Aws::SQS::Model::QueueAttributeName::ReceiveMessageWaitTimeSeconds,
+            poll_time);
 
-auto outcome = sqs.CreateQueue(request);
-if (outcome.IsSuccess())
-{
-    std::cout << "Successfully created queue " << queue_name <<
-        std::endl;
-}
-else
-{
-    std::cout << "Error creating queue " << queue_name << ": " <<
-        outcome.GetError().GetMessage() << std::endl;
-}
+        auto outcome = sqs.CreateQueue(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << "Successfully created queue " << queue_name <<
+                std::endl;
+        }
+        else
+        {
+            std::cout << "Error creating queue " << queue_name << ": " <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/long_polling_on_create_queue.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/long_polling_on_create_queue.cpp)\.
 
 ## Enable Long Polling on an Existing Queue<a name="sqs-long-polling-existing-queue"></a>
 
@@ -68,29 +68,29 @@ In addition to enabling long polling when creating a queue, you can also enable 
  **Code** 
 
 ```
-Aws::SQS::SQSClient sqs;
+        Aws::SQS::SQSClient sqs;
 
-Aws::SQS::Model::SetQueueAttributesRequest request;
-request.SetQueueUrl(queue_url);
-request.AddAttributes(
-    Aws::SQS::Model::QueueAttributeName::ReceiveMessageWaitTimeSeconds,
-    poll_time);
+        Aws::SQS::Model::SetQueueAttributesRequest request;
+        request.SetQueueUrl(queue_url);
+        request.AddAttributes(
+            Aws::SQS::Model::QueueAttributeName::ReceiveMessageWaitTimeSeconds,
+            poll_time);
 
-auto outcome = sqs.SetQueueAttributes(request);
-if (outcome.IsSuccess())
-{
-    std::cout << "Successfully updated long polling time for queue " <<
-        queue_url << " to " << poll_time << std::endl;
-}
-else
-{
-    std::cout << "Error updating long polling time for queue " <<
-        queue_url << ": " << outcome.GetError().GetMessage() <<
-        std::endl;
-}
+        auto outcome = sqs.SetQueueAttributes(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << "Successfully updated long polling time for queue " <<
+                queue_url << " to " << poll_time << std::endl;
+        }
+        else
+        {
+            std::cout << "Error updating long polling time for queue " <<
+                queue_url << ": " << outcome.GetError().GetMessage() <<
+                std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/long_polling_on_existing_queue.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/long_polling_on_existing_queue.cpp)\.
 
 ## Enable Long Polling on Message Receipt<a name="sqs-long-polling-receive-message"></a>
 
@@ -111,37 +111,37 @@ You should make sure that the AWS client’s request timeout is larger than the 
  **Code** 
 
 ```
-Aws::SQS::SQSClient sqs(client_cfg);
+    Aws::SQS::SQSClient sqs(client_cfg);
 
-Aws::SQS::Model::ReceiveMessageRequest request;
-request.SetQueueUrl(queue_url);
-request.SetMaxNumberOfMessages(1);
-request.SetWaitTimeSeconds(wait_time);
+    Aws::SQS::Model::ReceiveMessageRequest request;
+    request.SetQueueUrl(queue_url);
+    request.SetMaxNumberOfMessages(1);
+    request.SetWaitTimeSeconds(wait_time);
 
-auto outcome = sqs.ReceiveMessage(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error receiving message from queue " << queue_url << ": "
-        << outcome.GetError().GetMessage() << std::endl;
-    return;
-}
+    auto outcome = sqs.ReceiveMessage(request);
+    if (!outcome.IsSuccess())
+    {
+        std::cout << "Error receiving message from queue " << queue_url << ": "
+            << outcome.GetError().GetMessage() << std::endl;
+        return;
+    }
 
-const auto& messages = outcome.GetResult().GetMessages();
-if (messages.size() == 0)
-{
-    std::cout << "No messages received from queue " << queue_url <<
-        std::endl;
-    return;
-}
+    const auto& messages = outcome.GetResult().GetMessages();
+    if (messages.size() == 0)
+    {
+        std::cout << "No messages received from queue " << queue_url <<
+            std::endl;
+        return;
+    }
 
-const auto& message = messages[0];
-std::cout << "Received message:" << std::endl;
-std::cout << "  MessageId: " << message.GetMessageId() << std::endl;
-std::cout << "  ReceiptHandle: " << message.GetReceiptHandle() << std::endl;
-std::cout << "  Body: " << message.GetBody() << std::endl << std::endl;
+    const auto& message = messages[0];
+    std::cout << "Received message:" << std::endl;
+    std::cout << "  MessageId: " << message.GetMessageId() << std::endl;
+    std::cout << "  ReceiptHandle: " << message.GetReceiptHandle() << std::endl;
+    std::cout << "  Body: " << message.GetBody() << std::endl << std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/long_polling_on_message_receipt.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/long_polling_on_message_receipt.cpp)\.
 
 ## More Info<a name="more-info"></a>
 +  [Amazon SQS Long Polling](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html) in the Amazon Simple Queue Service Developer Guide
