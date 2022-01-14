@@ -26,31 +26,31 @@ You will receive a [DescribeRegionsResponse](https://sdk.amazonaws.com/cpp/api/L
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
-Aws::EC2::Model::DescribeRegionsRequest request;
-auto outcome = ec2.DescribeRegions(request);
-if (outcome.IsSuccess())
-{
-    std::cout << std::left <<
-        std::setw(32) << "RegionName" <<
-        std::setw(64) << "Endpoint" << std::endl;
+        Aws::EC2::EC2Client ec2;
+        Aws::EC2::Model::DescribeRegionsRequest request;
+        auto outcome = ec2.DescribeRegions(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << std::left <<
+                std::setw(32) << "RegionName" <<
+                std::setw(64) << "Endpoint" << std::endl;
 
-    const auto &regions = outcome.GetResult().GetRegions();
-    for (const auto &region : regions)
-    {
-        std::cout << std::left <<
-            std::setw(32) << region.GetRegionName() <<
-            std::setw(64) << region.GetEndpoint() << std::endl;
-    }
-}
-else
-{
-    std::cout << "Failed to describe regions:" <<
-        outcome.GetError().GetMessage() << std::endl;
-}
+            const auto &regions = outcome.GetResult().GetRegions();
+            for (const auto &region : regions)
+            {
+                std::cout << std::left <<
+                    std::setw(32) << region.GetRegionName() <<
+                    std::setw(64) << region.GetEndpoint() << std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "Failed to describe regions:" <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/describe_regions_and_zones.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/describe_regions_and_zones.cpp)\.
 
 ## Describe Availability Zones<a name="describe-availability-zones"></a>
 
@@ -68,38 +68,38 @@ You will receive a [DescribeAvailabilityZonesResponse](https://sdk.amazonaws.com
  **Code** 
 
 ```
-Aws::EC2::Model::DescribeAvailabilityZonesRequest describe_request;
-auto describe_outcome = ec2.DescribeAvailabilityZones(describe_request);
+        Aws::EC2::Model::DescribeAvailabilityZonesRequest describe_request;
+        auto describe_outcome = ec2.DescribeAvailabilityZones(describe_request);
 
-if (describe_outcome.IsSuccess())
-{
-    std::cout << std::left <<
-        std::setw(32) << "ZoneName" <<
-        std::setw(20) << "State" <<
-        std::setw(32) << "Region" << std::endl;
+        if (describe_outcome.IsSuccess())
+        {
+            std::cout << std::left <<
+                std::setw(32) << "ZoneName" <<
+                std::setw(20) << "State" <<
+                std::setw(32) << "Region" << std::endl;
 
-    const auto &zones =
-        describe_outcome.GetResult().GetAvailabilityZones();
+            const auto &zones =
+                describe_outcome.GetResult().GetAvailabilityZones();
 
-    for (const auto &zone : zones)
-    {
-        Aws::String stateString =
-            Aws::EC2::Model::AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(
-                zone.GetState());
-        std::cout << std::left <<
-            std::setw(32) << zone.GetZoneName() <<
-            std::setw(20) << stateString <<
-            std::setw(32) << zone.GetRegionName() << std::endl;
-    }
-}
-else
-{
-    std::cout << "Failed to describe availability zones:" <<
-        describe_outcome.GetError().GetMessage() << std::endl;
-}
+            for (const auto &zone : zones)
+            {
+                Aws::String stateString =
+                    Aws::EC2::Model::AvailabilityZoneStateMapper::GetNameForAvailabilityZoneState(
+                        zone.GetState());
+                std::cout << std::left <<
+                    std::setw(32) << zone.GetZoneName() <<
+                    std::setw(20) << stateString <<
+                    std::setw(32) << zone.GetRegionName() << std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "Failed to describe availability zones:" <<
+                describe_outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/describe_regions_and_zones.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/describe_regions_and_zones.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Regions and Availability Zones](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html) in the Amazon EC2 User Guide for Linux Instances

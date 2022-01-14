@@ -24,21 +24,21 @@ Use the IAMClient `CreateUser` function, passing it a [CreateUserRequest](https:
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+    Aws::IAM::IAMClient iam;
 ```
 
 ```
-Aws::IAM::Model::CreateUserRequest create_request;
-create_request.SetUserName(user_name);
+    Aws::IAM::Model::CreateUserRequest create_request;
+    create_request.SetUserName(user_name);
 
-auto create_outcome = iam.CreateUser(create_request);
-if (!create_outcome.IsSuccess())
-{
-    std::cout << "Error creating IAM user " << user_name << ":" <<
-        create_outcome.GetError().GetMessage() << std::endl;
-    return;
-}
-std::cout << "Successfully created IAM user " << user_name << std::endl;
+    auto create_outcome = iam.CreateUser(create_request);
+    if (!create_outcome.IsSuccess())
+    {
+        std::cout << "Error creating IAM user " << user_name << ":" <<
+            create_outcome.GetError().GetMessage() << std::endl;
+        return;
+    }
+    std::cout << "Successfully created IAM user " << user_name << std::endl;
 ```
 
 ## Get Information About a User<a name="get-information-about-a-user"></a>
@@ -57,29 +57,29 @@ If the user doesn’t already exist, `GetUser` will fail with `Aws::IAM::IAMErro
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+    Aws::IAM::IAMClient iam;
 ```
 
 ```
-Aws::IAM::Model::GetUserRequest get_request;
-get_request.SetUserName(user_name);
+    Aws::IAM::Model::GetUserRequest get_request;
+    get_request.SetUserName(user_name);
 
-auto get_outcome = iam.GetUser(get_request);
-if (get_outcome.IsSuccess())
-{
-    std::cout << "IAM user " << user_name << " already exists" << std::endl;
-    return;
-}
-else if (get_outcome.GetError().GetErrorType() !=
-    Aws::IAM::IAMErrors::NO_SUCH_ENTITY)
-{
-    std::cout << "Error checking existence of IAM user " << user_name << ":"
-        << get_outcome.GetError().GetMessage() << std::endl;
-    return;
-}
+    auto get_outcome = iam.GetUser(get_request);
+    if (get_outcome.IsSuccess())
+    {
+        std::cout << "IAM user " << user_name << " already exists" << std::endl;
+        return;
+    }
+    else if (get_outcome.GetError().GetErrorType() !=
+        Aws::IAM::IAMErrors::NO_SUCH_ENTITY)
+    {
+        std::cout << "Error checking existence of IAM user " << user_name << ":"
+            << get_outcome.GetError().GetMessage() << std::endl;
+        return;
+    }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/create_user.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/create_user.cpp)\.
 
 ## List Users<a name="list-users"></a>
 
@@ -101,50 +101,50 @@ The result may be paginated; to check to see if there are more results available
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::ListUsersRequest request;
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::ListUsersRequest request;
 
-bool done = false;
-bool header = false;
-while (!done)
-{
-    auto outcome = iam.ListUsers(request);
-    if (!outcome.IsSuccess())
-    {
-        std::cout << "Failed to list iam users:" <<
-            outcome.GetError().GetMessage() << std::endl;
-        break;
-    }
+        bool done = false;
+        bool header = false;
+        while (!done)
+        {
+            auto outcome = iam.ListUsers(request);
+            if (!outcome.IsSuccess())
+            {
+                std::cout << "Failed to list iam users:" <<
+                    outcome.GetError().GetMessage() << std::endl;
+                break;
+            }
 
-    if (!header)
-    {
-        std::cout << std::left << std::setw(32) << "Name" <<
-            std::setw(30) << "ID" << std::setw(64) << "Arn" <<
-            std::setw(20) << "CreateDate" << std::endl;
-        header = true;
-    }
+            if (!header)
+            {
+                std::cout << std::left << std::setw(32) << "Name" <<
+                    std::setw(30) << "ID" << std::setw(64) << "Arn" <<
+                    std::setw(20) << "CreateDate" << std::endl;
+                header = true;
+            }
 
-    const auto &users = outcome.GetResult().GetUsers();
-    for (const auto &user : users)
-    {
-        std::cout << std::left << std::setw(32) << user.GetUserName() <<
-            std::setw(30) << user.GetUserId() << std::setw(64) <<
-            user.GetArn() << std::setw(20) <<
-            user.GetCreateDate().ToGmtString(DATE_FORMAT) << std::endl;
-    }
+            const auto &users = outcome.GetResult().GetUsers();
+            for (const auto &user : users)
+            {
+                std::cout << std::left << std::setw(32) << user.GetUserName() <<
+                    std::setw(30) << user.GetUserId() << std::setw(64) <<
+                    user.GetArn() << std::setw(20) <<
+                    user.GetCreateDate().ToGmtString(DATE_FORMAT) << std::endl;
+            }
 
-    if (outcome.GetResult().GetIsTruncated())
-    {
-        request.SetMarker(outcome.GetResult().GetMarker());
-    }
-    else
-    {
-        done = true;
-    }
-}
+            if (outcome.GetResult().GetIsTruncated())
+            {
+                request.SetMarker(outcome.GetResult().GetMarker());
+            }
+            else
+            {
+                done = true;
+            }
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/list_users.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/list_users.cpp)\.
 
 ## Update a User<a name="update-a-user"></a>
 
@@ -162,27 +162,27 @@ To update an existing user, create an [UpdateUserRequest](https://sdk.amazonaws.
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+        Aws::IAM::IAMClient iam;
 
-Aws::IAM::Model::UpdateUserRequest request;
-request.SetUserName(old_name);
-request.SetNewUserName(new_name);
+        Aws::IAM::Model::UpdateUserRequest request;
+        request.SetUserName(old_name);
+        request.SetNewUserName(new_name);
 
-auto outcome = iam.UpdateUser(request);
-if (outcome.IsSuccess())
-{
-    std::cout << "IAM user " << old_name <<
-        " successfully updated with new user name " << new_name <<
-        std::endl;
-}
-else
-{
-    std::cout << "Error updating user name for IAM user " << old_name <<
-        ":" << outcome.GetError().GetMessage() << std::endl;
-}
+        auto outcome = iam.UpdateUser(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << "IAM user " << old_name <<
+                " successfully updated with new user name " << new_name <<
+                std::endl;
+        }
+        else
+        {
+            std::cout << "Error updating user name for IAM user " << old_name <<
+                ":" << outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/update_user.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/update_user.cpp)\.
 
 ## Delete a User<a name="delete-a-user"></a>
 
@@ -199,20 +199,20 @@ To delete an existing user, call the IAMClient `DeleteUser` function, passing it
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+    Aws::IAM::IAMClient iam;
 ```
 
 ```
-Aws::IAM::Model::DeleteUserRequest request;
-request.SetUserName(user_name);
-auto outcome = iam.DeleteUser(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error deleting IAM user " << user_name << ": " <<
-        outcome.GetError().GetMessage() << std::endl;
-    return;
-}
-std::cout << "Successfully deleted IAM user " << user_name << std::endl;
+    Aws::IAM::Model::DeleteUserRequest request;
+    request.SetUserName(user_name);
+    auto outcome = iam.DeleteUser(request);
+    if (!outcome.IsSuccess())
+    {
+        std::cout << "Error deleting IAM user " << user_name << ": " <<
+            outcome.GetError().GetMessage() << std::endl;
+        return;
+    }
+    std::cout << "Successfully deleted IAM user " << user_name << std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/delete_user.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/delete_user.cpp)\.

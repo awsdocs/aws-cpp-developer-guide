@@ -19,7 +19,7 @@ For an example on uploading objects asynchronously, see [ Asynchronous methods](
  **Code** 
 
 ```
-bool AwsDoc::S3::PutObject(const Aws::String& bucketName, 
+bool PutObject(const Aws::String& bucketName, 
     const Aws::String& objectName,
     const Aws::String& region)
 {
@@ -80,13 +80,13 @@ int main()
     Aws::InitAPI(options);
     {
         //TODO: Change bucket_name to the name of a bucket in your account.
-        const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
+        const Aws::String bucket_name = "<Enter bucket name>";
         //TODO: Create a file called "my-file.txt" in the local folder where your executables are built to.
-        const Aws::String object_name = "my-file.txt";
+        const Aws::String object_name = "<Enter file>";
         //TODO: Set to the AWS Region in which the bucket was created.
         const Aws::String region = "us-east-1";
 
-        if (!AwsDoc::S3::PutObject(bucket_name, object_name, region)) {
+        if (!PutObject(bucket_name, object_name, region)) {
             
             return 1;
         }
@@ -97,7 +97,7 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/put_object.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/put_object.cpp) on Github\.
 
 ## Upload a string to a bucket<a name="upload-object-string"></a>
 
@@ -179,7 +179,7 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/put_object_buffer.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/put_object_buffer.cpp) on Github\.
 
 ## List objects<a name="list-objects"></a>
 
@@ -256,7 +256,7 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/list_objects.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/list_objects.cpp) on Github\.
 
 ## Download an object<a name="download-object"></a>
 
@@ -267,7 +267,7 @@ The following example downloads an object from Amazon S3\. The object contents a
  **Code** 
 
 ```
-bool AwsDoc::S3::GetObject(const Aws::String& objectKey,
+bool GetObject(const Aws::String& objectKey,
     const Aws::String& fromBucket, const Aws::String& region)
 {
     Aws::Client::ClientConfiguration config;
@@ -315,14 +315,16 @@ int main()
     Aws::InitAPI(options);
     {
         //TODO: Change bucket_name to the name of a bucket in your account.
-        const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
+        const Aws::String bucket_name = "<Enter bucket name>";
+        
         //TODO: The bucket "DOC-EXAMPLE-BUCKET" must have been created and previously loaded with "my-file.txt". 
         //See create_bucket.cpp and put_object.cpp to create a bucket and load an object into that bucket.
-        const Aws::String object_name = "my-file.txt";
+        const Aws::String object_name = "<Enter object name>";
+       
         //TODO: Set to the AWS Region in which the bucket was created.
         const Aws::String region = "us-east-1";
 
-        if (!AwsDoc::S3::GetObject(object_name, bucket_name, region))
+        if (!GetObject(object_name, bucket_name, region))
         {
             return 1;
         }
@@ -333,7 +335,7 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_object.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/get_object.cpp) on Github\.
 
 ## Delete an object<a name="delete-object"></a>
 
@@ -342,57 +344,43 @@ Use the `S3Client` object’s `DeleteObject` function, passing it a `DeleteObjec
  **Code** 
 
 ```
-bool AwsDoc::S3::DeleteObject(const Aws::String& objectKey, 
-    const Aws::String& fromBucket,const Aws::String& region)
-{
-    Aws::Client::ClientConfiguration config;
-
-    if (!region.empty())
-    {
-        config.region = region;
-    }
-
-    Aws::S3::S3Client s3_client(config);
-
-    Aws::S3::Model::DeleteObjectRequest request;
-
-    request.WithKey(objectKey)
-        .WithBucket(fromBucket);
-
-    Aws::S3::Model::DeleteObjectOutcome outcome = 
-        s3_client.DeleteObject(request);
-
-    if (!outcome.IsSuccess())
-    {
-        auto err = outcome.GetError();
-        std::cout << "Error: DeleteObject: " <<
-            err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
-
-        return false;
-    }
-    else
-    {
-        return true;
-    }
-}
+using namespace Aws;
 
 int main()
 {
     //TODO: The object_key is the unique identifier for the object in the bucket. In this example set,
     //it is the filename you added in put_object.cpp.
-    Aws::String object_key = "my-file.txt";
+    Aws::String objectKey = "<Enter object key>";
     //TODO: Change from_bucket to the name of a bucket in your account.
-    Aws::String from_bucket = "DOC-EXAMPLE-BUCKET";
+    Aws::String fromBucket = "<Enter bucket name>";
     //TODO: Set to the AWS Region in which the bucket was created.
     Aws::String region = "us-east-1";
 
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {
-        if (AwsDoc::S3::DeleteObject(object_key, from_bucket, region))
+        Aws::Client::ClientConfiguration clientConfig;
+        if (!region.empty())
+            clientConfig.region = region;
+
+        S3::S3Client client(clientConfig);
+        Aws::S3::Model::DeleteObjectRequest request;
+
+        request.WithKey(objectKey)
+            .WithBucket(fromBucket);
+
+        Aws::S3::Model::DeleteObjectOutcome outcome =
+            client.DeleteObject(request);
+
+        if (!outcome.IsSuccess())
         {
-            std::cout << "Deleted object " << object_key <<
-                " from " << from_bucket << "." << std::endl;
+            auto err = outcome.GetError();
+            std::cout << "Error: DeleteObject: " <<
+                err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully deleted the object." << std::endl;
         }
     }
     ShutdownAPI(options);
@@ -401,4 +389,4 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/delete_object.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/delete_object.cpp) on Github\.

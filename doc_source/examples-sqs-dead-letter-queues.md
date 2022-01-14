@@ -47,7 +47,7 @@ Aws::String MakeRedrivePolicy(const Aws::String& queue_arn, int max_msg)
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/dead_letter_queue.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/dead_letter_queue.cpp)\.
 
 ## Set the Redrive Policy on your Source Queue<a name="sqs-dead-letter-queue-set-redrive-policy"></a>
 
@@ -64,27 +64,27 @@ To finish setting up your dead letter queue, call the SQSClient class’ `SetQue
  **Code** 
 
 ```
-Aws::SQS::Model::SetQueueAttributesRequest request;
-request.SetQueueUrl(src_queue_url);
-request.AddAttributes(
-    Aws::SQS::Model::QueueAttributeName::RedrivePolicy,
-    redrivePolicy);
+        Aws::SQS::Model::SetQueueAttributesRequest request;
+        request.SetQueueUrl(src_queue_url);
+        request.AddAttributes(
+            Aws::SQS::Model::QueueAttributeName::RedrivePolicy,
+            redrivePolicy);
 
-auto outcome = sqs.SetQueueAttributes(request);
-if (outcome.IsSuccess())
-{
-    std::cout << "Successfully set dead letter queue for queue  " <<
-        src_queue_url << " to " << queue_arn << std::endl;
-}
-else
-{
-    std::cout << "Error setting dead letter queue for queue " <<
-        src_queue_url << ": " << outcome.GetError().GetMessage() <<
-        std::endl;
-}
+        auto outcome = sqs.SetQueueAttributes(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << "Successfully set dead letter queue for queue  " <<
+                src_queue_url << " to " << queue_arn << std::endl;
+        }
+        else
+        {
+            std::cout << "Error setting dead letter queue for queue " <<
+                src_queue_url << ": " << outcome.GetError().GetMessage() <<
+                std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/dead_letter_queue.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/dead_letter_queue.cpp)\.
 
 ## More Info<a name="more-info"></a>
 +  [Using Amazon SQS Dead Letter Queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html) in the Amazon Simple Queue Service Developer Guide

@@ -220,4 +220,4 @@ S3EncryptionClientV2 encryptionClient(cryptoConfig);
 encryptionClient.GetObject(getObjectRequest);
 ```
 
-For complete code for all of these migration scenarios, see the [Amazon S3 Encryption example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3encryption) on Github\.
+For complete code for all of these migration scenarios, see the [Amazon S3 Encryption example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3encryption) on Github\.

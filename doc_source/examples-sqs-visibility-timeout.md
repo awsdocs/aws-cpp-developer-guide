@@ -30,25 +30,25 @@ When you have received a message, you can modify its visibility timeout by passi
  **Code** 
 
 ```
-Aws::SQS::Model::ChangeMessageVisibilityRequest request;
-request.SetQueueUrl(queue_url);
-request.SetReceiptHandle(message.GetReceiptHandle());
-request.SetVisibilityTimeout(visibility_timeout);
-auto outcome = sqs.ChangeMessageVisibility(request);
-if (outcome.IsSuccess())
-{
-    std::cout << "Successfully changed visibility of message " <<
-        message.GetMessageId() << " from queue " << queue_url << std::endl;
-}
-else
-{
-    std::cout << "Error changing visibility of message " <<
-        message.GetMessageId() << " from queue " << queue_url << ": " <<
-        outcome.GetError().GetMessage() << std::endl;
-}
+    Aws::SQS::Model::ChangeMessageVisibilityRequest request;
+    request.SetQueueUrl(queue_url);
+    request.SetReceiptHandle(message.GetReceiptHandle());
+    request.SetVisibilityTimeout(visibility_timeout);
+    auto outcome = sqs.ChangeMessageVisibility(request);
+    if (outcome.IsSuccess())
+    {
+        std::cout << "Successfully changed visibility of message " <<
+            message.GetMessageId() << " from queue " << queue_url << std::endl;
+    }
+    else
+    {
+        std::cout << "Error changing visibility of message " <<
+            message.GetMessageId() << " from queue " << queue_url << ": " <<
+            outcome.GetError().GetMessage() << std::endl;
+    }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/change_message_visibility.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/change_message_visibility.cpp)\.
 
 ## More Info<a name="more-info"></a>
 +  [Visibility Timeout](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html) in the Amazon Simple Queue Service Developer Guide

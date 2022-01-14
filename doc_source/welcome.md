@@ -13,14 +13,15 @@ For more information about AWS IoT, see [What is AWS IoT](https://docs.aws.amazo
 ## Additional documentation and resources<a name="additional-documentation-and-resources"></a>
 
 In addition to this guide, the following are valuable online resources for AWS SDK for C\+\+ developers:
-+  [AWS SDK for C\+\+ API Reference](https://sdk.amazonaws.com/cpp/api/LATEST/) 
-+  *Video:* [Introducing the AWS SDK for C\+\+ from AWS re:invent 2015](https://www.youtube.com/watch?v=fm4Aa3Whwos&amp;list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU&amp;index=9) 
-+  [AWS C\+\+ Developer Blog](http://aws.amazon.com/blogs/developer/category/cpp/) 
++  [AWS SDKs and Tools Reference Guide](https://docs.aws.amazon.com/sdkref/latest/guide/): Contains settings, features, and other foundational concepts common amongst AWS SDKs\. 
 + GitHub:
   +  [SDK source](https://github.com/aws/aws-sdk-cpp) 
   +  [SDK issues](https://github.com/aws/aws-sdk-cpp/issues) 
++  [AWS SDK for C\+\+ API Reference](https://sdk.amazonaws.com/cpp/api/LATEST/) 
++  [AWS C\+\+ Developer Blog](http://aws.amazon.com/blogs/developer/category/cpp/) 
 + The [AWS Code Sample Catalog](https://docs.aws.amazon.com/code-samples/latest/catalog) 
 +  [SDK License](https://aws.amazon.com/apache2.0/) 
++  *Video:* [Introducing the AWS SDK for C\+\+ from AWS re:invent 2015](https://www.youtube.com/watch?v=fm4Aa3Whwos&amp;list=PLhr1KZpdzuke5pqzTvI2ZxwP8-NwLACuU&amp;index=9) 
 
 ## Maintenance and support for SDK major versions<a name="sdks-major-versions-maintenance-support"></a>
 

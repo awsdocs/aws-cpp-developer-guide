@@ -25,24 +25,24 @@ To create a key pair, call the EC2Client’s `CreateKeyPair` function with a [Cr
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
-Aws::EC2::Model::CreateKeyPairRequest request;
-request.SetKeyName(pair_name);
+        Aws::EC2::EC2Client ec2;
+        Aws::EC2::Model::CreateKeyPairRequest request;
+        request.SetKeyName(pair_name);
 
-auto outcome = ec2.CreateKeyPair(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to create key pair:" <<
-        outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully created key pair named " <<
-        pair_name << std::endl;
-}
+        auto outcome = ec2.CreateKeyPair(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Failed to create key pair:" <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully created key pair named " <<
+                pair_name << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/create_key_pair.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/create_key_pair.cpp)\.
 
 ## Describe Key Pairs<a name="describe-key-pairs"></a>
 
@@ -64,32 +64,32 @@ You will receive a [DescribeKeyPairsResponse](https://sdk.amazonaws.com/cpp/api/
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
-Aws::EC2::Model::DescribeKeyPairsRequest request;
+        Aws::EC2::EC2Client ec2;
+        Aws::EC2::Model::DescribeKeyPairsRequest request;
 
-auto outcome = ec2.DescribeKeyPairs(request);
-if (outcome.IsSuccess())
-{
-    std::cout << std::left <<
-        std::setw(32) << "Name" <<
-        std::setw(64) << "Fingerprint" << std::endl;
+        auto outcome = ec2.DescribeKeyPairs(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << std::left <<
+                std::setw(32) << "Name" <<
+                std::setw(64) << "Fingerprint" << std::endl;
 
-    const auto &key_pairs = outcome.GetResult().GetKeyPairs();
-    for (const auto &key_pair : key_pairs)
-    {
-        std::cout << std::left <<
-            std::setw(32) << key_pair.GetKeyName() <<
-            std::setw(64) << key_pair.GetKeyFingerprint() << std::endl;
-    }
-}
-else
-{
-    std::cout << "Failed to describe key pairs:" <<
-        outcome.GetError().GetMessage() << std::endl;
-}
+            const auto &key_pairs = outcome.GetResult().GetKeyPairs();
+            for (const auto &key_pair : key_pairs)
+            {
+                std::cout << std::left <<
+                    std::setw(32) << key_pair.GetKeyName() <<
+                    std::setw(64) << key_pair.GetKeyFingerprint() << std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "Failed to describe key pairs:" <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/describe_key_pairs.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/describe_key_pairs.cpp)\.
 
 ## Delete a Key Pair<a name="delete-a-key-pair"></a>
 
@@ -107,25 +107,25 @@ To delete a key pair, call the EC2Client’s `DeleteKeyPair` function, passing i
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
-Aws::EC2::Model::DeleteKeyPairRequest request;
+        Aws::EC2::EC2Client ec2;
+        Aws::EC2::Model::DeleteKeyPairRequest request;
 
-request.SetKeyName(pair_name);
-auto outcome = ec2.DeleteKeyPair(request);
+        request.SetKeyName(pair_name);
+        auto outcome = ec2.DeleteKeyPair(request);
 
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to delete key pair " << pair_name <<
-        ":" << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully deleted key pair named " << pair_name <<
-        std::endl;
-}
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Failed to delete key pair " << pair_name <<
+                ":" << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully deleted key pair named " << pair_name <<
+                std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/delete_key_pair.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/delete_key_pair.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Amazon EC2 Key Pairs](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) in the Amazon EC2 User Guide for Linux Instances

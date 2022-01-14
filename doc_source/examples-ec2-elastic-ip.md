@@ -31,39 +31,39 @@ The [AllocateAddressResponse](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
+    Aws::EC2::EC2Client ec2;
 
-Aws::EC2::Model::AllocateAddressRequest request;
-request.SetDomain(Aws::EC2::Model::DomainType::vpc);
+    Aws::EC2::Model::AllocateAddressRequest request;
+    request.SetDomain(Aws::EC2::Model::DomainType::vpc);
 
-auto outcome = ec2.AllocateAddress(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to allocate elastic ip address:" <<
-        outcome.GetError().GetMessage() << std::endl;
-    return;
-}
+    auto outcome = ec2.AllocateAddress(request);
+    if (!outcome.IsSuccess())
+    {
+        std::cout << "Failed to allocate elastic ip address:" <<
+            outcome.GetError().GetMessage() << std::endl;
+        return;
+    }
 
-Aws::String allocation_id = outcome.GetResult().GetAllocationId();
+    Aws::String allocation_id = outcome.GetResult().GetAllocationId();
 
-Aws::EC2::Model::AssociateAddressRequest associate_request;
-associate_request.SetInstanceId(instance_id);
-associate_request.SetAllocationId(allocation_id);
+    Aws::EC2::Model::AssociateAddressRequest associate_request;
+    associate_request.SetInstanceId(instance_id);
+    associate_request.SetAllocationId(allocation_id);
 
-auto associate_outcome = ec2.AssociateAddress(associate_request);
-if (!associate_outcome.IsSuccess())
-{
-    std::cout << "Failed to associate elastic ip address" << allocation_id
-        << " with instance " << instance_id << ":" <<
-        associate_outcome.GetError().GetMessage() << std::endl;
-    return;
-}
+    auto associate_outcome = ec2.AssociateAddress(associate_request);
+    if (!associate_outcome.IsSuccess())
+    {
+        std::cout << "Failed to associate elastic ip address" << allocation_id
+            << " with instance " << instance_id << ":" <<
+            associate_outcome.GetError().GetMessage() << std::endl;
+        return;
+    }
 
-std::cout << "Successfully associated elastic ip address " << allocation_id
-    << " with instance " << instance_id << std::endl;
+    std::cout << "Successfully associated elastic ip address " << allocation_id
+        << " with instance " << instance_id << std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/allocate_address.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/allocate_address.cpp)\.
 
 ## Describe Elastic IP Addresses<a name="describe-elastic-ip-addresses"></a>
 
@@ -83,38 +83,38 @@ To list the Elastic IP addresses assigned to your account, call the EC2Client’
  **Code** 
 
 ```
-Aws::EC2::EC2Client ec2;
-Aws::EC2::Model::DescribeAddressesRequest request;
-auto outcome = ec2.DescribeAddresses(request);
-if (outcome.IsSuccess())
-{
-    std::cout << std::left << std::setw(20) << "InstanceId" <<
-        std::setw(15) << "Public IP" << std::setw(10) << "Domain" <<
-        std::setw(20) << "Allocation ID" << std::setw(25) <<
-        "NIC ID" << std::endl;
+        Aws::EC2::EC2Client ec2;
+        Aws::EC2::Model::DescribeAddressesRequest request;
+        auto outcome = ec2.DescribeAddresses(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << std::left << std::setw(20) << "InstanceId" <<
+                std::setw(15) << "Public IP" << std::setw(10) << "Domain" <<
+                std::setw(20) << "Allocation ID" << std::setw(25) <<
+                "NIC ID" << std::endl;
 
-    const auto &addresses = outcome.GetResult().GetAddresses();
-    for (const auto &address : addresses)
-    {
-        Aws::String domainString =
-            Aws::EC2::Model::DomainTypeMapper::GetNameForDomainType(
-                address.GetDomain());
+            const auto &addresses = outcome.GetResult().GetAddresses();
+            for (const auto &address : addresses)
+            {
+                Aws::String domainString =
+                    Aws::EC2::Model::DomainTypeMapper::GetNameForDomainType(
+                        address.GetDomain());
 
-        std::cout << std::left << std::setw(20) <<
-            address.GetInstanceId() << std::setw(15) <<
-            address.GetPublicIp() << std::setw(10) << domainString <<
-            std::setw(20) << address.GetAllocationId() << std::setw(25)
-            << address.GetNetworkInterfaceId() << std::endl;
-    }
-}
-else
-{
-    std::cout << "Failed to describe elastic ip addresses:" <<
-        outcome.GetError().GetMessage() << std::endl;
-}
+                std::cout << std::left << std::setw(20) <<
+                    address.GetInstanceId() << std::setw(15) <<
+                    address.GetPublicIp() << std::setw(10) << domainString <<
+                    std::setw(20) << address.GetAllocationId() << std::setw(25)
+                    << address.GetNetworkInterfaceId() << std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "Failed to describe elastic ip addresses:" <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/describe_addresses.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/describe_addresses.cpp)\.
 
 ## Release an Elastic IP Address<a name="release-an-elastic-ip-address"></a>
 
@@ -132,26 +132,26 @@ To release an Elastic IP address, call the EC2Client’s `ReleaseAddress` functi
  **Code** 
 
 ```
-Aws::Client::ClientConfiguration config;
-config.region = Aws::Region::US_WEST_2;
+        Aws::Client::ClientConfiguration config;
+        config.region = Aws::Region::US_WEST_2;
 
-Aws::EC2::EC2Client ec2(config);
+        Aws::EC2::EC2Client ec2(config);
 
-Aws::EC2::Model::ReleaseAddressRequest request;
-request.SetAllocationId(allocation_id);
+        Aws::EC2::Model::ReleaseAddressRequest request;
+        request.SetAllocationId(allocation_id);
 
-auto outcome = ec2.ReleaseAddress(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to release elastic ip address " <<
-        allocation_id << ":" << outcome.GetError().GetMessage() <<
-        std::endl;
-}
-else
-{
-    std::cout << "Successfully released elastic ip address " <<
-        allocation_id << std::endl;
-}
+        auto outcome = ec2.ReleaseAddress(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Failed to release elastic ip address " <<
+                allocation_id << ":" << outcome.GetError().GetMessage() <<
+                std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully released elastic ip address " <<
+                allocation_id << std::endl;
+        }
 ```
 
 After you release an Elastic IP address, it is released to the AWS IP address pool and might be unavailable to you afterward\. Be sure to update your DNS records and any servers or devices that communicate with the address\. If you attempt to release an Elastic IP address that you already released, you’ll get an *AuthFailure* error if the address is already allocated to another AWS account\.
@@ -160,7 +160,7 @@ If you are using *EC2\-Classic* or a *default VPC*, then releasing an Elastic IP
 
 If you are using a non\-default VPC, you *must* use `DisassociateAddress` to disassociate the Elastic IP address before you try to release it\. Otherwise, Amazon EC2 returns an error \(*InvalidIPAddress\.InUse*\)\.
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/ec2/release_address.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/ec2/release_address.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Elastic IP Addresses](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html) in the Amazon EC2 User Guide for Linux Instances

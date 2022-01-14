@@ -61,4 +61,4 @@ This example demonstrates how [https://sdk.amazonaws.com/cpp/api/LATEST/class_aw
             std::cout << "File download to memory finished."  << std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/transfer-manager/transferOnStream.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/transfer-manager/transferOnStream.cpp) on Github\.

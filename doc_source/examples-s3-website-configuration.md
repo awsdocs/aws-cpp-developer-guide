@@ -97,7 +97,7 @@ int main()
 **Note**  
 Setting a website configuration does not modify the access permissions for your bucket\. To make your files visible on the web, you will also need to set a *bucket policy* that allows public read access to the files in the bucket\. For more information, see [Managing Access to Amazon S3 Buckets Using Bucket Policies](examples-s3-bucket-policies.md)\.
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/put_website_config.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/put_website_config.cpp) on Github\.
 
 ## Get a Bucket’s Website Configuration<a name="get-a-bucket-s-website-configuration"></a>
 
@@ -175,7 +175,7 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_website_config.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/get_website_config.cpp) on Github\.
 
 ## Delete a Bucket’s Website Configuration<a name="delete-a-bucket-s-website-configuration"></a>
 
@@ -184,56 +184,45 @@ To delete an Amazon S3 bucket’s website configuration, call the `S3Client`’s
  **Code** 
 
 ```
-bool AwsDoc::S3::DeleteBucketWebsite(const Aws::String& bucketName, 
-    const Aws::String& region)
-{
-    Aws::Client::ClientConfiguration config;
-    config.region = region;
-
-    Aws::S3::S3Client s3_client(config);
-
-    Aws::S3::Model::DeleteBucketWebsiteRequest request;
-    request.SetBucket(bucketName);
-
-    Aws::S3::Model::DeleteBucketWebsiteOutcome outcome =
-        s3_client.DeleteBucketWebsite(request);
-
-    if (!outcome.IsSuccess())
-    {
-        auto err = outcome.GetError();
-        std::cout << "Error: DeleteBucketWebsite: " <<
-            err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
-
-        return false;
-    }
-
-    return true;
-}
-
+using namespace Aws;
 int main()
 {
     //TODO: Change bucket_name to the name of a bucket in your account.
-    const Aws::String bucket_name = "DOC-EXAMPLE-BUCKET";
+    const Aws::String bucketName = "<Enter bucket name>";
     //TODO: Set to the AWS Region in which the bucket was created.
     const Aws::String region = "us-east-1";
-
 
     Aws::SDKOptions options;
     Aws::InitAPI(options);
     {
-        if (AwsDoc::S3::DeleteBucketWebsite(bucket_name, region))
+        // Create the bucket.
+        Aws::Client::ClientConfiguration clientConfig;
+        if (!region.empty())
+            clientConfig.region = region;
+
+        S3::S3Client client(clientConfig);
+        Aws::S3::Model::DeleteBucketWebsiteRequest request;
+        request.SetBucket(bucketName);
+
+        Aws::S3::Model::DeleteBucketWebsiteOutcome outcome =
+            client.DeleteBucketWebsite(request);
+
+        if (!outcome.IsSuccess())
         {
-            std::cout << "Removed website configuration from '" << 
-                bucket_name << "'." << std::endl;
+            auto err = outcome.GetError();
+            std::cout << "Error: DeleteBucketWebsite: " <<
+                err.GetExceptionName() << ": " << err.GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Website configuration was removed." << std::endl;
         }
     }
     ShutdownAPI(options);
-
-    return 0;
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/delete_website_config.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/delete_website_config.cpp) on Github\.
 
 ## More Information<a name="more-information"></a>
 +  [PUT Bucket website](https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTwebsite.html) in the Amazon Simple Storage Service API Reference

@@ -25,23 +25,23 @@ To create a new policy, provide the policy’s name and a JSON\-formatted policy
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+        Aws::IAM::IAMClient iam;
 
-Aws::IAM::Model::CreatePolicyRequest request;
-request.SetPolicyName(policy_name);
-request.SetPolicyDocument(BuildSamplePolicyDocument(rsrc_arn));
+        Aws::IAM::Model::CreatePolicyRequest request;
+        request.SetPolicyName(policy_name);
+        request.SetPolicyDocument(BuildSamplePolicyDocument(rsrc_arn));
 
-auto outcome = iam.CreatePolicy(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error creating policy " << policy_name << ": " <<
-        outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully created policy " << policy_name <<
-        std::endl;
-}
+        auto outcome = iam.CreatePolicy(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error creating policy " << policy_name << ": " <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully created policy " << policy_name <<
+                std::endl;
+        }
 ```
 
 IAM policy documents are JSON strings with a [well\-documented syntax](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_grammar.html)\. Here is an example that provides access to make particular requests to DynamoDB\. It takes the policy ARN as a passed\-in variable\.
@@ -82,7 +82,7 @@ Aws::String BuildSamplePolicyDocument(const Aws::String& rsrc_arn)
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/create_policy.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/create_policy.cpp)\.
 
 ## Retrieve a Policy<a name="retrieve-a-policy"></a>
 
@@ -101,29 +101,29 @@ To retrieve an existing policy, call the IAMClient’s `GetPolicy` function, pro
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::GetPolicyRequest request;
-request.SetPolicyArn(policy_arn);
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::GetPolicyRequest request;
+        request.SetPolicyArn(policy_arn);
 
-auto outcome = iam.GetPolicy(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error getting policy " << policy_arn << ": " <<
-        outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    const auto &policy = outcome.GetResult().GetPolicy();
-    std::cout << "Name: " << policy.GetPolicyName() << std::endl <<
-        "ID: " << policy.GetPolicyId() << std::endl << "Arn: " <<
-        policy.GetArn() << std::endl << "Description: " <<
-        policy.GetDescription() << std::endl << "CreateDate: " <<
-        policy.GetCreateDate().ToGmtString(Aws::Utils::DateFormat::ISO_8601)
-        << std::endl;
-}
+        auto outcome = iam.GetPolicy(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error getting policy " << policy_arn << ": " <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            const auto &policy = outcome.GetResult().GetPolicy();
+            std::cout << "Name: " << policy.GetPolicyName() << std::endl <<
+                "ID: " << policy.GetPolicyId() << std::endl << "Arn: " <<
+                policy.GetArn() << std::endl << "Description: " <<
+                policy.GetDescription() << std::endl << "CreateDate: " <<
+                policy.GetCreateDate().ToGmtString(Aws::Utils::DateFormat::ISO_8601)
+                << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/get_policy.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/get_policy.cpp)\.
 
 ## Delete a Policy<a name="delete-a-policy"></a>
 
@@ -141,24 +141,24 @@ To delete a policy, provide the policy’s ARN in a [DeletePolicyRequest](https:
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::DeletePolicyRequest request;
-request.SetPolicyArn(policy_arn);
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::DeletePolicyRequest request;
+        request.SetPolicyArn(policy_arn);
 
-auto outcome = iam.DeletePolicy(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error deleting policy with arn " << policy_arn << ": "
-        << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully deleted policy with arn " << policy_arn
-        << std::endl;
-}
+        auto outcome = iam.DeletePolicy(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error deleting policy with arn " << policy_arn << ": "
+                << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully deleted policy with arn " << policy_arn
+                << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/delete_policy.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/delete_policy.cpp)\.
 
 ## Attach a Policy<a name="attach-a-policy"></a>
 
@@ -179,56 +179,56 @@ You can attach a policy to an IAM[role](https://docs.aws.amazon.com/IAM/latest/U
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+    Aws::IAM::IAMClient iam;
 
-Aws::IAM::Model::ListAttachedRolePoliciesRequest list_request;
-list_request.SetRoleName(role_name);
+    Aws::IAM::Model::ListAttachedRolePoliciesRequest list_request;
+    list_request.SetRoleName(role_name);
 
-bool done = false;
-while (!done)
-{
-    auto list_outcome = iam.ListAttachedRolePolicies(list_request);
-    if (!list_outcome.IsSuccess())
+    bool done = false;
+    while (!done)
     {
-        std::cout << "Failed to list attached policies of role " <<
-            role_name << ": " << list_outcome.GetError().GetMessage() <<
-            std::endl;
+        auto list_outcome = iam.ListAttachedRolePolicies(list_request);
+        if (!list_outcome.IsSuccess())
+        {
+            std::cout << "Failed to list attached policies of role " <<
+                role_name << ": " << list_outcome.GetError().GetMessage() <<
+                std::endl;
+            return;
+        }
+
+        const auto& policies = list_outcome.GetResult().GetAttachedPolicies();
+        if (std::any_of(policies.cbegin(), policies.cend(),
+            [=](const Aws::IAM::Model::AttachedPolicy& policy)
+        {
+            return policy.GetPolicyArn() == policy_arn;
+        }))
+        {
+            std::cout << "Policy " << policy_arn <<
+                " is already attached to role " << role_name << std::endl;
+            return;
+        }
+
+        done = !list_outcome.GetResult().GetIsTruncated();
+        list_request.SetMarker(list_outcome.GetResult().GetMarker());
+    }
+
+    Aws::IAM::Model::AttachRolePolicyRequest request;
+    request.SetRoleName(role_name);
+    request.SetPolicyArn(policy_arn);
+
+    auto outcome = iam.AttachRolePolicy(request);
+    if (!outcome.IsSuccess())
+    {
+        std::cout << "Failed to attach policy " << policy_arn << " to role " <<
+            role_name << ": " << outcome.GetError().GetMessage() << std::endl;
         return;
     }
 
-    const auto& policies = list_outcome.GetResult().GetAttachedPolicies();
-    if (std::any_of(policies.cbegin(), policies.cend(),
-        [=](const Aws::IAM::Model::AttachedPolicy& policy)
-    {
-        return policy.GetPolicyArn() == policy_arn;
-    }))
-    {
-        std::cout << "Policy " << policy_arn <<
-            " is already attached to role " << role_name << std::endl;
-        return;
-    }
-
-    done = !list_outcome.GetResult().GetIsTruncated();
-    list_request.SetMarker(list_outcome.GetResult().GetMarker());
-}
-
-Aws::IAM::Model::AttachRolePolicyRequest request;
-request.SetRoleName(role_name);
-request.SetPolicyArn(policy_arn);
-
-auto outcome = iam.AttachRolePolicy(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Failed to attach policy " << policy_arn << " to role " <<
-        role_name << ": " << outcome.GetError().GetMessage() << std::endl;
-    return;
-}
-
-std::cout << "Successfully attached policy " << policy_arn << " to role " <<
-    role_name << std::endl;
+    std::cout << "Successfully attached policy " << policy_arn << " to role " <<
+        role_name << std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/attach_role_policy.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/attach_role_policy.cpp)\.
 
 ## List Attached Policies<a name="list-attached-policies"></a>
 
@@ -250,53 +250,53 @@ Call `GetAttachedPolicies` on the returned [ListAttachedRolePoliciesResult](http
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::ListPoliciesRequest request;
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::ListPoliciesRequest request;
 
-bool done = false;
-bool header = false;
-while (!done)
-{
-    auto outcome = iam.ListPolicies(request);
-    if (!outcome.IsSuccess())
-    {
-        std::cout << "Failed to list iam policies: " <<
-            outcome.GetError().GetMessage() << std::endl;
-        break;
-    }
+        bool done = false;
+        bool header = false;
+        while (!done)
+        {
+            auto outcome = iam.ListPolicies(request);
+            if (!outcome.IsSuccess())
+            {
+                std::cout << "Failed to list iam policies: " <<
+                    outcome.GetError().GetMessage() << std::endl;
+                break;
+            }
 
-    if (!header)
-    {
-        std::cout << std::left << std::setw(55) << "Name" <<
-            std::setw(30) << "ID" << std::setw(80) << "Arn" <<
-            std::setw(64) << "Description" << std::setw(12) <<
-            "CreateDate" << std::endl;
-        header = true;
-    }
+            if (!header)
+            {
+                std::cout << std::left << std::setw(55) << "Name" <<
+                    std::setw(30) << "ID" << std::setw(80) << "Arn" <<
+                    std::setw(64) << "Description" << std::setw(12) <<
+                    "CreateDate" << std::endl;
+                header = true;
+            }
 
-    const auto &policies = outcome.GetResult().GetPolicies();
-    for (const auto &policy : policies)
-    {
-        std::cout << std::left << std::setw(55) <<
-            policy.GetPolicyName() << std::setw(30) <<
-            policy.GetPolicyId() << std::setw(80) << policy.GetArn() <<
-            std::setw(64) << policy.GetDescription() << std::setw(12) <<
-            policy.GetCreateDate().ToGmtString(DATE_FORMAT) <<
-            std::endl;
-    }
+            const auto &policies = outcome.GetResult().GetPolicies();
+            for (const auto &policy : policies)
+            {
+                std::cout << std::left << std::setw(55) <<
+                    policy.GetPolicyName() << std::setw(30) <<
+                    policy.GetPolicyId() << std::setw(80) << policy.GetArn() <<
+                    std::setw(64) << policy.GetDescription() << std::setw(12) <<
+                    policy.GetCreateDate().ToGmtString(DATE_FORMAT) <<
+                    std::endl;
+            }
 
-    if (outcome.GetResult().GetIsTruncated())
-    {
-        request.SetMarker(outcome.GetResult().GetMarker());
-    }
-    else
-    {
-        done = true;
-    }
-}
+            if (outcome.GetResult().GetIsTruncated())
+            {
+                request.SetMarker(outcome.GetResult().GetMarker());
+            }
+            else
+            {
+                done = true;
+            }
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/list_policies.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/list_policies.cpp)\.
 
 ## Detach a Policy<a name="detach-a-policy"></a>
 
@@ -316,28 +316,28 @@ To detach a policy from a role, call the IAMClient’s `DetachRolePolicy` functi
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
+    Aws::IAM::IAMClient iam;
 ```
 
 ```
-Aws::IAM::Model::DetachRolePolicyRequest detach_request;
-detach_request.SetRoleName(role_name);
-detach_request.SetPolicyArn(policy_arn);
+    Aws::IAM::Model::DetachRolePolicyRequest detach_request;
+    detach_request.SetRoleName(role_name);
+    detach_request.SetPolicyArn(policy_arn);
 
-auto detach_outcome = iam.DetachRolePolicy(detach_request);
-if (!detach_outcome.IsSuccess())
-{
-    std::cout << "Failed to detach policy " << policy_arn << " from role "
-        << role_name << ": " << detach_outcome.GetError().GetMessage() <<
-        std::endl;
-    return;
-}
+    auto detach_outcome = iam.DetachRolePolicy(detach_request);
+    if (!detach_outcome.IsSuccess())
+    {
+        std::cout << "Failed to detach policy " << policy_arn << " from role "
+            << role_name << ": " << detach_outcome.GetError().GetMessage() <<
+            std::endl;
+        return;
+    }
 
-std::cout << "Successfully detached policy " << policy_arn << " from role "
-    << role_name << std::endl;
+    std::cout << "Successfully detached policy " << policy_arn << " from role "
+        << role_name << std::endl;
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/detach_role_policy.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/detach_role_policy.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Overview of IAM Policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) in the IAM User Guide\.

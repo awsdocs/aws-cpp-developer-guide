@@ -29,24 +29,24 @@ Use the SQSClient class `CreateQueue` member function, and provide it with a [Cr
  **Code** 
 
 ```
-Aws::SQS::SQSClient sqs;
+        Aws::SQS::SQSClient sqs;
 
-Aws::SQS::Model::CreateQueueRequest cq_req;
-cq_req.SetQueueName(queue_name);
+        Aws::SQS::Model::CreateQueueRequest cq_req;
+        cq_req.SetQueueName(queue_name);
 
-auto cq_out = sqs.CreateQueue(cq_req);
-if (cq_out.IsSuccess())
-{
-    std::cout << "Successfully created queue " << queue_name << std::endl;
-}
-else
-{
-    std::cout << "Error creating queue " << queue_name << ": " <<
-        cq_out.GetError().GetMessage() << std::endl;
-}
+        auto cq_out = sqs.CreateQueue(cq_req);
+        if (cq_out.IsSuccess())
+        {
+            std::cout << "Successfully created queue " << queue_name << std::endl;
+        }
+        else
+        {
+            std::cout << "Error creating queue " << queue_name << ": " <<
+                cq_out.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/create_queue.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/create_queue.cpp)\.
 
 ## List Queues<a name="sqs-list-queues"></a>
 
@@ -65,28 +65,28 @@ To list Amazon SQS queues for your account, call the SQSClient class `ListQueues
  **Code** 
 
 ```
-Aws::SQS::SQSClient sqs;
+        Aws::SQS::SQSClient sqs;
 
-Aws::SQS::Model::ListQueuesRequest lq_req;
+        Aws::SQS::Model::ListQueuesRequest lq_req;
 
-auto lq_out = sqs.ListQueues(lq_req);
-if (lq_out.IsSuccess())
-{
-    std::cout << "Queue Urls:" << std::endl << std::endl;
-    const auto &queue_urls = lq_out.GetResult().GetQueueUrls();
-    for (const auto &iter : queue_urls)
-    {
-        std::cout << " " << iter << std::endl;
-    }
-}
-else
-{
-    std::cout << "Error listing queues: " <<
-        lq_out.GetError().GetMessage() << std::endl;
-}
+        auto lq_out = sqs.ListQueues(lq_req);
+        if (lq_out.IsSuccess())
+        {
+            std::cout << "Queue Urls:" << std::endl << std::endl;
+            const auto &queue_urls = lq_out.GetResult().GetQueueUrls();
+            for (const auto &iter : queue_urls)
+            {
+                std::cout << " " << iter << std::endl;
+            }
+        }
+        else
+        {
+            std::cout << "Error listing queues: " <<
+                lq_out.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/list_queues.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/list_queues.cpp)\.
 
 ## Get the Queue’s URL<a name="sqs-get-queue-url"></a>
 
@@ -105,22 +105,22 @@ To get the URL for an existing Amazon SQS queue, call the SQSClient class `GetQu
  **Code** 
 
 ```
-Aws::SQS::SQSClient sqs;
+        Aws::SQS::SQSClient sqs;
 
-Aws::SQS::Model::GetQueueUrlRequest gqu_req;
-gqu_req.SetQueueName(queue_name);
+        Aws::SQS::Model::GetQueueUrlRequest gqu_req;
+        gqu_req.SetQueueName(queue_name);
 
-auto gqu_out = sqs.GetQueueUrl(gqu_req);
-if (gqu_out.IsSuccess()) {
-    std::cout << "Queue " << queue_name << " has url " <<
-    gqu_out.GetResult().GetQueueUrl() << std::endl;
-} else {
-    std::cout << "Error getting url for queue " << queue_name << ": " <<
-        gqu_out.GetError().GetMessage() << std::endl;
-}
+        auto gqu_out = sqs.GetQueueUrl(gqu_req);
+        if (gqu_out.IsSuccess()) {
+            std::cout << "Queue " << queue_name << " has url " <<
+            gqu_out.GetResult().GetQueueUrl() << std::endl;
+        } else {
+            std::cout << "Error getting url for queue " << queue_name << ": " <<
+                gqu_out.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/get_queue_url.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/get_queue_url.cpp)\.
 
 ## Delete a Queue<a name="sqs-delete-queue"></a>
 
@@ -139,23 +139,23 @@ Provide the [URL](#sqs-get-queue-url) to the SQSClient class `DeleteQueue` membe
  **Code** 
 
 ```
-Aws::SQS::Model::DeleteQueueRequest dq_req;
-dq_req.SetQueueUrl(queue_url);
+        Aws::SQS::Model::DeleteQueueRequest dq_req;
+        dq_req.SetQueueUrl(queue_url);
 
-auto dq_out = sqs.DeleteQueue(dq_req);
-if (dq_out.IsSuccess())
-{
-    std::cout << "Successfully deleted queue with url " << queue_url <<
-        std::endl;
-}
-else
-{
-    std::cout << "Error deleting queue " << queue_url << ": " <<
-        dq_out.GetError().GetMessage() << std::endl;
-}
+        auto dq_out = sqs.DeleteQueue(dq_req);
+        if (dq_out.IsSuccess())
+        {
+            std::cout << "Successfully deleted queue with url " << queue_url <<
+                std::endl;
+        }
+        else
+        {
+            std::cout << "Error deleting queue " << queue_url << ": " <<
+                dq_out.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/sqs/delete_queue.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sqs/delete_queue.cpp)\.
 
 ## More Info<a name="more-info"></a>
 +  [How Amazon SQS Queues Work](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html) in the Amazon Simple Queue Service Developer Guide

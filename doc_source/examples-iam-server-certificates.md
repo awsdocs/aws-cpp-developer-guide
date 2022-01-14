@@ -29,28 +29,28 @@ You can retrieve a server certificate by calling the IAMClient’s `GetServerCer
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::GetServerCertificateRequest request;
-request.SetServerCertificateName(cert_name);
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::GetServerCertificateRequest request;
+        request.SetServerCertificateName(cert_name);
 
-auto outcome = iam.GetServerCertificate(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error getting server certificate " << cert_name <<
-        ": " << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    const auto &certificate = outcome.GetResult().GetServerCertificate();
-    std::cout << "Name: " <<
-        certificate.GetServerCertificateMetadata().GetServerCertificateName()
-        << std::endl << "Body: " << certificate.GetCertificateBody() <<
-        std::endl << "Chain: " << certificate.GetCertificateChain() <<
-        std::endl;
-}
+        auto outcome = iam.GetServerCertificate(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error getting server certificate " << cert_name <<
+                ": " << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            const auto &certificate = outcome.GetResult().GetServerCertificate();
+            std::cout << "Name: " <<
+                certificate.GetServerCertificateMetadata().GetServerCertificateName()
+                << std::endl << "Body: " << certificate.GetCertificateBody() <<
+                std::endl << "Chain: " << certificate.GetCertificateChain() <<
+                std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/get_server_cert.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/get_server_cert.cpp)\.
 
 ## List Server Certificates<a name="list-server-certificates"></a>
 
@@ -74,57 +74,57 @@ Results may be truncated; if the `ListServerCertificateResult` object’s `GetIs
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::ListServerCertificatesRequest request;
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::ListServerCertificatesRequest request;
 
-bool done = false;
-bool header = false;
-while (!done)
-{
-    auto outcome = iam.ListServerCertificates(request);
-    if (!outcome.IsSuccess())
-    {
-        std::cout << "Failed to list server certificates: " <<
-            outcome.GetError().GetMessage() << std::endl;
-        break;
-    }
+        bool done = false;
+        bool header = false;
+        while (!done)
+        {
+            auto outcome = iam.ListServerCertificates(request);
+            if (!outcome.IsSuccess())
+            {
+                std::cout << "Failed to list server certificates: " <<
+                    outcome.GetError().GetMessage() << std::endl;
+                break;
+            }
 
-    if (!header)
-    {
-        std::cout << std::left << std::setw(55) << "Name" <<
-            std::setw(30) << "ID" << std::setw(80) << "Arn" <<
-            std::setw(14) << "UploadDate" << std::setw(14) <<
-            "ExpirationDate" << std::endl;
-        header = true;
-    }
+            if (!header)
+            {
+                std::cout << std::left << std::setw(55) << "Name" <<
+                    std::setw(30) << "ID" << std::setw(80) << "Arn" <<
+                    std::setw(14) << "UploadDate" << std::setw(14) <<
+                    "ExpirationDate" << std::endl;
+                header = true;
+            }
 
-    const auto &certificates =
-        outcome.GetResult().GetServerCertificateMetadataList();
+            const auto &certificates =
+                outcome.GetResult().GetServerCertificateMetadataList();
 
-    for (const auto &certificate : certificates)
-    {
-        std::cout << std::left << std::setw(55) <<
-            certificate.GetServerCertificateName() << std::setw(30) <<
-            certificate.GetServerCertificateId() << std::setw(80) <<
-            certificate.GetArn() << std::setw(14) <<
-            certificate.GetUploadDate().ToGmtString(DATE_FORMAT) <<
-            std::setw(14) <<
-            certificate.GetExpiration().ToGmtString(DATE_FORMAT) <<
-            std::endl;
-    }
+            for (const auto &certificate : certificates)
+            {
+                std::cout << std::left << std::setw(55) <<
+                    certificate.GetServerCertificateName() << std::setw(30) <<
+                    certificate.GetServerCertificateId() << std::setw(80) <<
+                    certificate.GetArn() << std::setw(14) <<
+                    certificate.GetUploadDate().ToGmtString(DATE_FORMAT) <<
+                    std::setw(14) <<
+                    certificate.GetExpiration().ToGmtString(DATE_FORMAT) <<
+                    std::endl;
+            }
 
-    if (outcome.GetResult().GetIsTruncated())
-    {
-        request.SetMarker(outcome.GetResult().GetMarker());
-    }
-    else
-    {
-        done = true;
-    }
-}
+            if (outcome.GetResult().GetIsTruncated())
+            {
+                request.SetMarker(outcome.GetResult().GetMarker());
+            }
+            else
+            {
+                done = true;
+            }
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/list_server_certs.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/list_server_certs.cpp)\.
 
 ## Update a Server Certificate<a name="update-a-server-certificate"></a>
 
@@ -142,27 +142,27 @@ You can update a server certificate’s name or path by calling the IAMClient’
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::UpdateServerCertificateRequest request;
-request.SetServerCertificateName(old_name);
-request.SetNewServerCertificateName(new_name);
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::UpdateServerCertificateRequest request;
+        request.SetServerCertificateName(old_name);
+        request.SetNewServerCertificateName(new_name);
 
-auto outcome = iam.UpdateServerCertificate(request);
-if (outcome.IsSuccess())
-{
-    std::cout << "Server certificate " << old_name
-        << " successfully renamed as " << new_name
-        << std::endl;
-}
-else
-{
-    std::cout << "Error changing name of server certificate " <<
-        old_name << " to " << new_name << ":" <<
-        outcome.GetError().GetMessage() << std::endl;
-}
+        auto outcome = iam.UpdateServerCertificate(request);
+        if (outcome.IsSuccess())
+        {
+            std::cout << "Server certificate " << old_name
+                << " successfully renamed as " << new_name
+                << std::endl;
+        }
+        else
+        {
+            std::cout << "Error changing name of server certificate " <<
+                old_name << " to " << new_name << ":" <<
+                outcome.GetError().GetMessage() << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/update_server_cert.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/update_server_cert.cpp)\.
 
 ## Delete a Server Certificate<a name="delete-a-server-certificate"></a>
 
@@ -180,24 +180,24 @@ To delete a server certificate, call the IAMClient’s `DeleteServerCertificate`
  **Code:** 
 
 ```
-Aws::IAM::IAMClient iam;
-Aws::IAM::Model::DeleteServerCertificateRequest request;
-request.SetServerCertificateName(cert_name);
+        Aws::IAM::IAMClient iam;
+        Aws::IAM::Model::DeleteServerCertificateRequest request;
+        request.SetServerCertificateName(cert_name);
 
-const auto outcome = iam.DeleteServerCertificate(request);
-if (!outcome.IsSuccess())
-{
-    std::cout << "Error deleting server certificate " << cert_name <<
-        ": " << outcome.GetError().GetMessage() << std::endl;
-}
-else
-{
-    std::cout << "Successfully deleted server certificate " << cert_name
-        << std::endl;
-}
+        const auto outcome = iam.DeleteServerCertificate(request);
+        if (!outcome.IsSuccess())
+        {
+            std::cout << "Error deleting server certificate " << cert_name <<
+                ": " << outcome.GetError().GetMessage() << std::endl;
+        }
+        else
+        {
+            std::cout << "Successfully deleted server certificate " << cert_name
+                << std::endl;
+        }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/iam/delete_server_cert.cpp)\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/iam/delete_server_cert.cpp)\.
 
 ## More Information<a name="more-information"></a>
 +  [Working with Server Certificates](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html) in the IAM User Guide

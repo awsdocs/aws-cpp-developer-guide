@@ -26,7 +26,7 @@ You can build the SDK from source using command\-line tools\. Using this method,
 
 **To build the SDK from source**
 
-1. Install [CMake](https://cmake.org/) \(*minimum version 3\.2; maximum version 3\.18*\) and the relevant build tools for your platform\. It is recommended to add `cmake` to your `PATH`\. To check your version of CMake, open a command prompt and run command **cmake \-\-version**
+1. Install [CMake](https://cmake.org/) \(minimum version 3\.2; *maximum version 3\.21*\) and the relevant build tools for your platform\. It is recommended to add `cmake` to your `PATH`\. To check your version of CMake, open a command prompt and run command **cmake \-\-version**
 
 1. In a command prompt, navigate to a folder where you want to store the SDK\. This example uses a folder called `CodeRepos`\.
 
@@ -89,7 +89,7 @@ If you get an error Failed to build third\-party libraries, check your version o
    msbuild INSTALL.vcxproj -p:Configuration=[Debug | Release]
    ```
 
-### Building for Android on Windows<a name="building-for-android"></a>
+## Building for Android on Windows<a name="building-for-android"></a>
 
 To build for Android, add `-DTARGET_ARCH=ANDROID` to your `cmake` command line\. The AWS SDK for C\+\+ includes a CMake toolchain file that includes what you need by referencing the appropriate environment variables \(`ANDROID_NDK`\)\.
 

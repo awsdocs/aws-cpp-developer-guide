@@ -10,9 +10,9 @@ To connect to any of the supported services with the AWS SDK for C\+\+, you must
 
 1. **Create an administrative user\.**
 
-   Avoid using your root user account \(the initial account you create\) to access the AWS Management Console and services\. Instead, create an administrative user account, as explained in [Creating your first IAM admin user and group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)\.
+   Avoid using your AWS account root user \(the initial account you create\) to access the AWS Management Console and services\. Instead, create an administrative user account, as explained in [Creating your first IAM admin user and group](https://docs.aws.amazon.com/IAM/latest/UserGuide/getting-started_create-admin-group.html)\.
 
-   After you create the administrative user account and record the login details, **sign out of your root user account** and sign back in using the administrative account\.
+   After you create the administrative user account and record the login details, **sign out of your AWS account root user** and sign back in using the administrative account\.
 
 ## Create AWS credentials and a profile<a name="s3-1-winvs-setup-creds"></a>
 

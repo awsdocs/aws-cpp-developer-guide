@@ -155,7 +155,7 @@ bool AwsDoc::S3::PutObjectAcl(const Aws::String& bucketName,
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_put_object_acl.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/get_put_object_acl.cpp) on Github\.
 
 ## Manage a Bucket’s Access Control List<a name="manage-a-bucket-s-access-control-list"></a>
 
@@ -401,4 +401,4 @@ int main()
 }
 ```
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3/get_put_bucket_acl.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/get_put_bucket_acl.cpp) on Github\.

@@ -49,4 +49,4 @@ If the upload fails, an `AbortMultipartUpload` is issued in the underlying CRT l
 
     `PUT /my-object partNumber=2&uploadId=gsk8vDbmnlA5EseDo._LDEgq22Qmt0SeuszYxMsZ9ABt503VqDIFOP8xzZI1P0zp.ToS.qo5kK16HNWogZF3KpRo.Dc7QnLZIK0BTmzCWwWoPax4T21hvP6nPdz9591F content-length:8388608 host:my-bucketasdfasdf.s3.us-east-2.amazonaws.com x-amz-content-sha256:UNSIGNED-PAYLOAD `
 
-See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/master/cpp/example_code/s3-crt/s3-crt-demo.cpp) on Github\.
+See the [complete example](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3-crt/s3-crt-demo.cpp) on Github\.
