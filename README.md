@@ -10,7 +10,9 @@ You can find out when this guide has had major updates and what those updates we
 
 ## Reporting issues
 
-You can use the Issues section of this repository to report problems in the documentation. When submitting an issue, please indicate:
+You can report issues in the documentation using the 'Provide feedback' link at the bottom of the published documentation at [AWS SDK for C++ Developer Guide](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/welcome.html).
+
+You also can use the Issues section of this repository to report problems in the documentation. When submitting an issue, please indicate:
 
   * what page the issue occurs on; a URL or filename is best.
   * what the issue is, using as much detail as you can provide.
