@@ -1,6 +1,8 @@
-## User Guide for the AWS SDK for C++ Developer Guide
+## [Developer guide](doc_source/index.md) for the AWS SDK for C++ Developer Guide
 
-The open source version of the AWS SDK for C++ Developer Guide. For easy navigation, start in the [index](doc_source/index.md).
+The open source version of the AWS SDK for C++ Developer Guide.
+
+To view this documentation, start with the [index](doc_source/index.md).
 
 This repository contains source content for the official [AWS SDK for C++ Developer Guide](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/welcome.html).
 
