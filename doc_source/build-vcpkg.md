@@ -93,4 +93,4 @@ This example consists of one source file \(`main.cpp`\) and one `CMakeLists.txt`
 
 1. Confirm that the console output lists the total number of Amazon S3 buckets and the name of each bucket\.
 
-For additional examples using the AWS SDK for C\+\+, see [ SDK for C\+\+ code examples subset with guidance](programming-services.md)\.
+For additional examples using the AWS SDK for C\+\+, see [ Code examples with guidance for the AWS SDK for C\+\+](programming-services.md)\.

@@ -13,7 +13,7 @@ Only the code that is necessary to demonstrate certain techniques is supplied in
   The example code utilizing the `S3Client` is in the [`s3` folder](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3) on Github\. See the [Readme](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/s3/README.md) on Github for a full list of functions demonstrated by this example set\.
 
   Portions of the `s3` example set are covered in additional detail in this guide:
-  + [ Creating, listing, and deleting buckets](examples-s3-buckets.md)
+  + [Creating, listing, and deleting buckets](examples-s3-buckets.md)
   + [ Operations on objects](examples-s3-objects.md) – Uploading and downloading data objects
   + [ Managing Amazon S3 Access Permissions](examples-s3-access-permissions.md)
   + [ Managing Access to Amazon S3 Buckets Using Bucket Policies](examples-s3-bucket-policies.md)

@@ -1,10 +1,10 @@
-# SDK for C\+\+ code examples subset with guidance<a name="programming-services"></a>
+# Code examples with guidance for the AWS SDK for C\+\+<a name="programming-services"></a>
 
-If you are new to AWS or the AWS code examples, we recommend you start with [Getting started on code examples](getting-started-code-examples.md)\. 
+If you are new to AWS or the AWS code examples, we recommend you start with [Getting started on code examples](getting-started-code-examples.md)\.
 
-This section selects several AWS services and guides you through the examples using them\. For other service examples \(but without additional guidance beyond the code\) see the next chapter [Code examples](cpp_code_examples.md)
+This section selects several AWS services and guides you through the examples using them\. For other service examples \(but without additional guidance beyond the code\) see [Code examples](cpp_code_examples.md)
 
-Source code of how to work with AWS services using the AWS SDK for C\+\+ is available on the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code) on GitHub\. The following examples are a subset of what is available on Github\.
+Source code that shows how to work with AWS services using the AWS SDK for C\+\+ is available on the [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code) on GitHub\. The following examples are a subset of what is available on Github\.
 
 
 **Service examples with additional explanation \(see [AWS Code Examples Repository](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code) for full list\)**  

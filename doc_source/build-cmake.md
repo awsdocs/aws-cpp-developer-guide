@@ -155,4 +155,4 @@ When you run this application, it displays console output that lists the total n
    app
    ```
 
-For additional examples using the AWS SDK for C\+\+, see [ SDK for C\+\+ code examples subset with guidance](programming-services.md)\.
+For additional examples using the AWS SDK for C\+\+, see [ Code examples with guidance for the AWS SDK for C\+\+](programming-services.md)\.
