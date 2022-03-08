@@ -1,4 +1,4 @@
-# SDK for C\+\+ code examples<a name="cpp_code_examples"></a>
+# Additional code examples for the AWS SDK for C\+\+<a name="cpp_code_examples"></a>
 
 The code examples in this topic show you how to use the AWS SDK for C\+\+ with AWS\.
 

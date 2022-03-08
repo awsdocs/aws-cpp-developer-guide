@@ -77,7 +77,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Enabling Long Polling for Amazon SQS Message Queues](examples-sqs-long-polling.md)
          + [Setting Visibility Timeout in Amazon SQS](examples-sqs-visibility-timeout.md)
          + [Using Dead Letter Queues in Amazon SQS](examples-sqs-dead-letter-queues.md)
-   + [SDK for C++ code examples](cpp_code_examples.md)
+   + [Additional code examples for the AWS SDK for C++](cpp_code_examples.md)
       + [Single-service actions and scenarios using SDK for C++](cpp_code_examples_categorized.md)
          + [CloudWatch examples using SDK for C++](cpp_cloudwatch_code_examples.md)
          + [CloudWatch Logs examples using SDK for C++](cpp_cloudwatch-logs_code_examples.md)

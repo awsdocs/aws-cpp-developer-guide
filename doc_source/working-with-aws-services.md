@@ -10,4 +10,4 @@ You can find more code examples in the [C\+\+ example folder](https://github.com
 + [Getting started on code examples](getting-started-code-examples.md)
 + [Asynchronous methods](async-methods.md)
 + [Code examples with guidance](programming-services.md)
-+ [Code examples](cpp_code_examples.md)
++ [Additional code examples](cpp_code_examples.md)
