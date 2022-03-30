@@ -100,8 +100,17 @@ There is no API to specify the secure protocol for the WinINet and IXMLHTTPReque
 
 1. Under each of the subkeys, create a `Client` subkey and a `Server` subkey\.
 
-1. Create the following keys and values\.  
-****    
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/enforcing-tls.html)
+1. Create the following keys and values\.
+
+   ```
+    Key name                          Key type   Value
+    --------                          ---------  -----
+    TLS 1.0\Client\DisabledByDefault  DWORD      0
+    TLS 1.1\Client\DisabledByDefault  DWORD      0
+    TLS 1.2\Client\DisabledByDefault  DWORD      0
+    TLS 1.0\Client\Enabled            DWORD      0
+    TLS 1.1\Client\Enabled            DWORD      0
+    TLS 1.2\Client\Enabled            DWORD      1
+   ```
 
    Notice that `TLS 1.2\Client\Enabled` is the only key that’s set to 1\. Setting this key to 1 enforces TLS 1\.2 as the only acceptable secure protocol\.
