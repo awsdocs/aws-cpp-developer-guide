@@ -1,4 +1,4 @@
-# Enforcing TLS 1\.2 in AWS SDK for C\+\+<a name="enforcing-tls"></a>
+# Enforcing a minimum TLS version in the AWS SDK for C\+\+<a name="enforcing-tls"></a>
 
 To increase security when communicating with AWS services, you should configure SDK for C\+\+ to use TLS 1\.2 or later\.
 

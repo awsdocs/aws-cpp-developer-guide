@@ -9,9 +9,9 @@ The following code examples show you how to perform actions and implement common
 Each example includes a link to GitHub, where you can find instructions on how to set up and run the code in context\.
 
 **Topics**
-+ [Actions](#w60aac13c21b9c17c13)
++ [Actions](#w62aac13c21b9c17c13)
 
-## Actions<a name="w60aac13c21b9c17c13"></a>
+## Actions<a name="w62aac13c21b9c17c13"></a>
 
 ### Add a Lambda function target<a name="eventbridge_PutTargets_cpp_topic"></a>
 

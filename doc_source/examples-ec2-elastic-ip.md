@@ -12,7 +12,10 @@ To run the examples, the user profile your code uses to make the requests must h
 
 To use an Elastic IP address, you first allocate one to your account, and then associate it with your instance or a network interface\.
 
-To allocate an Elastic IP address, call the EC2Client’s `AllocateAddress` function with an [AllocateAddressRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_allocate_address_request.html) object containing the network type \(classic EC2 or VPC\)\.
+To allocate an Elastic IP address, call the EC2Client’s `AllocateAddress` function with an [AllocateAddressRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_allocate_address_request.html) object containing the network type \(classic EC2 or VPC\)\. 
+
+**Warning**  
+We are retiring EC2\-Classic on August 15, 2022\. We recommend that you migrate from EC2\-Classic to a VPC\. For more information, see **Migrate from EC2\-Classic to a VPC** in the the [Amazon EC2 User Guide for Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html) or the [Amazon EC2 User Guide for Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/vpc-migrate.html)\. Also see the blog post [EC2\-Classic Networking is Retiring – Here's How to Prepare](http://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/)\.
 
 The [AllocateAddressResponse](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_allocate_address_response.html) class in the response object contains an allocation ID that you can use to associate the address with an instance, by passing the allocation ID and instance ID in a [AssociateAddressRequest](https://sdk.amazonaws.com/cpp/api/LATEST/class_aws_1_1_e_c2_1_1_model_1_1_associate_address_request.html) to the EC2Client’s `AssociateAddress` function\.
 
@@ -156,7 +159,7 @@ To release an Elastic IP address, call the EC2Client’s `ReleaseAddress` functi
 
 After you release an Elastic IP address, it is released to the AWS IP address pool and might be unavailable to you afterward\. Be sure to update your DNS records and any servers or devices that communicate with the address\. If you attempt to release an Elastic IP address that you already released, you’ll get an *AuthFailure* error if the address is already allocated to another AWS account\.
 
-If you are using *EC2\-Classic* or a *default VPC*, then releasing an Elastic IP address automatically disassociates it from any instance that it’s associated with\. To disassociate an Elastic IP address without releasing it, use the EC2Client’s `DisassociateAddress` function\.
+If you are using a *default VPC*, then releasing an Elastic IP address automatically disassociates it from any instance that it’s associated with\. To disassociate an Elastic IP address without releasing it, use the EC2Client’s `DisassociateAddress` function\.
 
 If you are using a non\-default VPC, you *must* use `DisassociateAddress` to disassociate the Elastic IP address before you try to release it\. Otherwise, Amazon EC2 returns an error \(*InvalidIPAddress\.InUse*\)\.
 
