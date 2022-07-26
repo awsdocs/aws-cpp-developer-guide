@@ -45,7 +45,7 @@ You can build the SDK from source using command\-line tools as an alternative to
 
 1. Install [CMake](https://cmake.org/) \(minimum version 3\.2; *maximum version 3\.21*\) and the relevant build tools for your platform\. It is recommended to add `cmake` to your `PATH`\. To check your version of CMake, open a command prompt and run command **cmake \-\-version**
 
-1. In a command prompt, navigate to a folder where you want to store the SDK\. This example uses a folder called `CodeRepos`\.
+1. In a command prompt, navigate to a folder where you want to store the SDK\.
 
 1. Get the latest source code\.
 
@@ -63,28 +63,34 @@ You can build the SDK from source using command\-line tools as an alternative to
      git clone --recurse-submodules git@github.com:aws/aws-sdk-cpp.git
      ```
 
-1. We recommend you store the generated build files outside of the SDK source directory\. Create a new directory to store the build files in\.
-
-   ```
-   mkdir sdk_build
-   ```
-
-1. Navigate to the newly created build folder\. Generate the build files by running `cmake`\. Specify on the `cmake` command line whether to build a *Debug* or *Release* version\. Also specify the path to the folder where to install the SDK\.
+1. We recommend you store the generated build files outside of the SDK source directory\. Create a new directory to store the build files in and navigate to that folder\.
 
    ```
    mkdir sdk_build
    cd sdk_build
-   cmake <path/to/sdk/source> -DCMAKE_BUILD_TYPE=[Debug | Release] -DCMAKE_PREFIX_PATH=<path/to/install/sdk>
    ```
 
-   Building the entire SDK can take a while\. To build only a particular service package, use the CMake *BUILD\_ONLY* parameter\. The example shown below builds only the Amazon S3 service package\. For more ways to modify the build output, see [CMake Parameters](cmake-params.md)\.
+1. Generate the build files by running `cmake`\. Specify on the `cmake` command line whether to build a *Debug* or *Release* version\. Choose `Debug` throughout this procedure to run a debug configuration of your application code\. Choose `Release` throughout this procedure to run a release configuration of your application code\. Command syntax: 
 
-   ```
-   cmake -DCMAKE_BUILD_TYPE=[Debug | Release] 
-                  -DCMAKE_PREFIX_PATH=<path/to/install/sdk> -DBUILD_ONLY="s3"
-   ```
+   `{path to cmake if not in PATH} {path to source location of aws-sdk-cpp} -DCMAKE_BUILD_TYPE=[Debug | Release] -DCMAKE_PREFIX_PATH={path to install} -DCMAKE_INSTALL_PREFIX={path to install}`
+
+   For more ways to modify the build output, see [CMake Parameters](cmake-params.md)\.
+
+   To generate the build files, do one of the following:
+   + **Generate build files \(all AWS services\)**: To build the entire SDK, run cmake, specifying whether to build a *Debug* or *Release* version\. For example:
+
+     ```
+     cmake ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=/usr/local/ -DCMAKE_INSTALL_PREFIX=/usr/local/
+     ```
+
+     
+   + **Generate build files \(subset AWS services\)**: To build only a particular service or services package\(s\) for the SDK, add the CMake [BUILD\_ONLY](cmake-params.md#cmake-build-only) parameter\. The following example builds only the Amazon S3 service package:
+
+     ```
+     cmake ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_PREFIX_PATH=/usr/local/ -DCMAKE_INSTALL_PREFIX=/usr/local/ -DBUILD_ONLY="s3"
+     ```
 **Note**  
-If you get an error Failed to build third\-party libraries\., check your version of CMake by running **cmake \-\-version**\. You must use CMake minimum version 3\.2, maximum version 3\.18\.
+If you get an error Failed to build third\-party libraries, check your version of CMake by running **cmake \-\-version**\. You must use CMake minimum version 3\.2, maximum version 3\.21\. 
 
 1. Build the SDK binaries\. If you’re building the entire SDK, the operation can take one hour or longer\. 
 
@@ -92,7 +98,7 @@ If you get an error Failed to build third\-party libraries\., check your version
    make
    ```
 
-1. Install the SDK\.
+1. Install the SDK\. You may need to escalate privileges depending on the location you chose to install to\.
 
    ```
    make install

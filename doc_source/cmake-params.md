@@ -20,10 +20,14 @@ To use the *ADD\_CUSTOM\_CLIENTS* or *REGENERATE\_CLIENTS* variables, you must h
 + [BUILD\_ONLY](#cmake-build-only)
 + [BUILD\_SHARED\_LIBS](#cmake-build-shared-libs)
 + [CPP\_STANDARD](#cmake-cpp-standard)
++ [CURL\_INCLUDE\_DIR](#cmake-curl-include-dir)
++ [CURL\_LIBRARY](#cmake-curl-library)
 + [CUSTOM\_MEMORY\_MANAGEMENT](#cmake-custom-memory-management)
++ [ENABLE\_CURL\_LOGGING](#cmake-enable-curl-logging)
 + [ENABLE\_RTTI](#cmake-enable-rtti)
 + [ENABLE\_TESTING](#cmake-enable-testing)
 + [ENABLE\_UNITY\_BUILD](#cmake-enable-unity-build)
++ [FORCE\_CURL](#cmake-force-curl)
 + [FORCE\_SHARED\_CRT](#cmake-force-shared-crt)
 + [G](#cmake-g)
 + [MINIMIZE\_SIZE](#cmake-minimize-size)
@@ -76,6 +80,26 @@ Values
 Default  
  *11* 
 
+### CURL\_INCLUDE\_DIR<a name="cmake-curl-include-dir"></a>
+
+Path to curl include directory containing `libcurl` headers\.
+
+Values  
+ *String path to selected `include` directory\. For example, `D:/path/to/dir/with/curl/include`\.* 
+
+Default  
+ *N/A* 
+
+### CURL\_LIBRARY<a name="cmake-curl-library"></a>
+
+Path to curl library file to link against\. This library can be a static library or an import library, depending on the needs of your application\.
+
+Values  
+ *String path to the curl library file\. For example, `D:/path/to/static/libcur/file/ie/libcurl.lib.a`\.* 
+
+Default  
+ *N/A* 
+
 ### CUSTOM\_MEMORY\_MANAGEMENT<a name="cmake-custom-memory-management"></a>
 
 To use a custom memory manager, set the value to `1`\. You can install a custom allocator so that all STL types use the custom allocation interface\. If you set the value `0`, you still might want to use the STL template types to help with DLL safety on Windows\.
@@ -86,6 +110,16 @@ If static linking is enabled, custom memory management defaults to *off* \(`0`\)
 To prevent linker mismatch errors, you must use the same value \(`0` or `1`\) throughout your build system\.
 
 To install your own memory manager to handle allocations made by the SDK, you must set `-DCUSTOM_MEMORY_MANAGEMENT` and define `AWS_CUSTOM_MEMORY_MANAGEMENT` for all build targets that depend on the SDK\.
+
+### ENABLE\_CURL\_LOGGING<a name="cmake-enable-curl-logging"></a>
+
+If enabled, the internal log for curl is piped to the SDK logger\.
+
+Values  
+ *ON* \| *OFF* 
+
+Default  
+ *OFF* 
 
 ### ENABLE\_RTTI<a name="cmake-enable-rtti"></a>
 
@@ -110,6 +144,16 @@ Default
 ### ENABLE\_UNITY\_BUILD<a name="cmake-enable-unity-build"></a>
 
 If enabled, most SDK libraries are built as a single, generated `.cpp` file\. This can significantly reduce static library size and speed up compilation time\.
+
+Values  
+ *ON* \| *OFF* 
+
+Default  
+ *OFF* 
+
+### FORCE\_CURL<a name="cmake-force-curl"></a>
+
+Windows only\. If enabled, forces usage of the curl client instead of the default [WinHTTP](https://msdn.microsoft.com/en-us/library/windows/desktop/aa382925%28v=vs.85%29.aspx) data transfer provider\.
 
 Values  
  *ON* \| *OFF* 
@@ -161,7 +205,7 @@ Default
 
 ### NO\_HTTP\_CLIENT<a name="cmake-no-http-client"></a>
 
-If enabled, prevents the default platform\-specific HTTP client from being built into the library\. Turn this *ON* to inject your own HTTP client implementation\.
+If enabled, prevents the default platform\-specific HTTP client from being built into the library\. If *ON*, you will need to provide your own platform\-specific HTTP client implementation\.
 
 Values  
  *ON* \| *OFF* 

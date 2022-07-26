@@ -18,6 +18,7 @@ Each example includes a link to GitHub, where you can find instructions on how t
 The following code example shows how to add an AWS Lambda function target to an Amazon EventBridge event\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/eventbridge#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -55,7 +56,6 @@ Add the target\.
                 << rule_name << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/eventbridge#code-examples)\. 
 +  For API details, see [PutTargets](https://docs.aws.amazon.com/goto/SdkForCpp/eventbridge-2015-10-07/PutTargets) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Create a scheduled rule<a name="eventbridge_PutRule_cpp_topic"></a>
@@ -63,6 +63,7 @@ Add the target\.
 The following code example shows how to create an Amazon EventBridge scheduled rule\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/eventbridge#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -97,7 +98,6 @@ Create the rule\.
                 outcome.GetResult().GetRuleArn() << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/eventbridge#code-examples)\. 
 +  For API details, see [PutRule](https://docs.aws.amazon.com/goto/SdkForCpp/eventbridge-2015-10-07/PutRule) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Send events<a name="eventbridge_PutEvents_cpp_topic"></a>
@@ -105,6 +105,7 @@ Create the rule\.
 The following code example shows how to send Amazon EventBridge events\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/eventbridge#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -140,5 +141,4 @@ Send the event\.
             std::cout << "Successfully posted CloudWatch event" << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/eventbridge#code-examples)\. 
 +  For API details, see [PutEvents](https://docs.aws.amazon.com/goto/SdkForCpp/eventbridge-2015-10-07/PutEvents) in *AWS SDK for C\+\+ API Reference*\. 

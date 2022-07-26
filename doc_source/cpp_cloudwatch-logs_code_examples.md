@@ -18,6 +18,7 @@ Each example includes a link to GitHub, where you can find instructions on how t
 The following code example shows how to create an Amazon CloudWatch Logs subscription filter\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch-logs#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -49,7 +50,6 @@ Create the subscription filter\.
                 "filter " << filter_name << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch-logs#code-examples)\. 
 +  For API details, see [PutSubscriptionFilter](https://docs.aws.amazon.com/goto/SdkForCpp/logs-2014-03-28/PutSubscriptionFilter) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Delete a subscription filter<a name="cloudwatch-logs_DeleteSubscriptionFilter_cpp_topic"></a>
@@ -57,6 +57,7 @@ Create the subscription filter\.
 The following code example shows how to delete an Amazon CloudWatch Logs subscription filter\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch-logs#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -84,7 +85,6 @@ Delete the subscription filter\.
                 "filter " << filter_name << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch-logs#code-examples)\. 
 +  For API details, see [DeleteSubscriptionFilter](https://docs.aws.amazon.com/goto/SdkForCpp/logs-2014-03-28/DeleteSubscriptionFilter) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Describe existing subscription filters<a name="cloudwatch-logs_DescribeSubscriptionFilters_cpp_topic"></a>
@@ -92,6 +92,7 @@ Delete the subscription filter\.
 The following code example shows how to describe Amazon CloudWatch Logs existing subscription filters\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch-logs#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -143,5 +144,4 @@ List the subscription filters\.
             done = next_token.empty();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch-logs#code-examples)\. 
 +  For API details, see [DescribeSubscriptionFilters](https://docs.aws.amazon.com/goto/SdkForCpp/logs-2014-03-28/DescribeSubscriptionFilters) in *AWS SDK for C\+\+ API Reference*\. 

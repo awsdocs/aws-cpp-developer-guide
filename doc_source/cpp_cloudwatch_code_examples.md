@@ -18,6 +18,7 @@ Each example includes a link to GitHub, where you can find instructions on how t
 The following code example shows how to create an Amazon CloudWatch alarm that watches a metric\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -62,7 +63,6 @@ Create the alarm to watch the metric\.
                 << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 +  For API details, see [PutMetricAlarm](https://docs.aws.amazon.com/goto/SdkForCpp/monitoring-2010-08-01/PutMetricAlarm) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Delete alarms<a name="cloudwatch_DeleteAlarms_cpp_topic"></a>
@@ -70,6 +70,7 @@ Create the alarm to watch the metric\.
 The following code example shows how to delete Amazon CloudWatch alarms\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -97,7 +98,6 @@ Delete the alarm\.
                 << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 +  For API details, see [DeleteAlarms](https://docs.aws.amazon.com/goto/SdkForCpp/monitoring-2010-08-01/DeleteAlarms) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Describe alarms for a metric<a name="cloudwatch_DescribeAlarmsForMetric_cpp_topic"></a>
@@ -105,6 +105,7 @@ Delete the alarm\.
 The following code example shows how to describe Amazon CloudWatch alarms for a metric\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -163,7 +164,6 @@ Describe the alarms\.
             done = next_token.empty();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 +  For API details, see [DescribeAlarmsForMetric](https://docs.aws.amazon.com/goto/SdkForCpp/monitoring-2010-08-01/DescribeAlarmsForMetric) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Disable alarm actions<a name="cloudwatch_DisableAlarmActions_cpp_topic"></a>
@@ -171,6 +171,7 @@ Describe the alarms\.
 The following code example shows how to disable Amazon CloudWatch alarm actions\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -200,7 +201,6 @@ Disable the alarm actions\.
                 alarm_name << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 +  For API details, see [DisableAlarmActions](https://docs.aws.amazon.com/goto/SdkForCpp/monitoring-2010-08-01/DisableAlarmActions) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Enable alarm actions<a name="cloudwatch_EnableAlarmActions_cpp_topic"></a>
@@ -208,6 +208,7 @@ Disable the alarm actions\.
 The following code example shows how to enable Amazon CloudWatch alarm actions\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -263,7 +264,6 @@ Enable the alarm actions\.
     std::cout << "Successfully created alarm " << alarm_name <<
         " and enabled actions on it." << std::endl;
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 +  For API details, see [EnableAlarmActions](https://docs.aws.amazon.com/goto/SdkForCpp/monitoring-2010-08-01/EnableAlarmActions) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### List metrics<a name="cloudwatch_ListMetrics_cpp_topic"></a>
@@ -271,6 +271,7 @@ Enable the alarm actions\.
 The following code example shows how to list Amazon CloudWatch metrics\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -342,7 +343,6 @@ List the metrics\.
             done = next_token.empty();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 +  For API details, see [ListMetrics](https://docs.aws.amazon.com/goto/SdkForCpp/monitoring-2010-08-01/ListMetrics) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Put data into a metric<a name="cloudwatch_PutMetricData_cpp_topic"></a>
@@ -350,6 +350,7 @@ List the metrics\.
 The following code example shows how to put data into a Amazon CloudWatch metric\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 Include the required files\.  
 
 ```
@@ -388,5 +389,4 @@ Put data into the metric\.
             std::cout << "Successfully put sample metric data" << std::endl;
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/cloudwatch#code-examples)\. 
 +  For API details, see [PutMetricData](https://docs.aws.amazon.com/goto/SdkForCpp/monitoring-2010-08-01/PutMetricData) in *AWS SDK for C\+\+ API Reference*\. 

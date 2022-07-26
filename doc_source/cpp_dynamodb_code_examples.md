@@ -18,6 +18,7 @@ Each example includes a link to GitHub, where you can find instructions on how t
 The following code example shows how to create a DynamoDB table\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -56,7 +57,6 @@ The following code example shows how to create a DynamoDB table\.
             std::cout << "Failed to create table: " << result.GetError().GetMessage();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [CreateTable](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/CreateTable) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Delete a table<a name="dynamodb_DeleteTable_cpp_topic"></a>
@@ -64,6 +64,7 @@ The following code example shows how to create a DynamoDB table\.
 The following code example shows how to delete a DynamoDB table\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -85,7 +86,6 @@ The following code example shows how to delete a DynamoDB table\.
             std::cout << "Failed to delete table: " << result.GetError().GetMessage();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [DeleteTable](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/DeleteTable) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Get an item from a table<a name="dynamodb_GetItem_cpp_topic"></a>
@@ -93,6 +93,7 @@ The following code example shows how to delete a DynamoDB table\.
 The following code example shows how to get an item from a DynamoDB table\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -128,7 +129,6 @@ The following code example shows how to get an item from a DynamoDB table\.
             std::cout << "Failed to get item: " << result.GetError().GetMessage();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [GetItem](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/GetItem) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Get information about a table<a name="dynamodb_DescribeTable_cpp_topic"></a>
@@ -136,6 +136,7 @@ The following code example shows how to get an item from a DynamoDB table\.
 The following code example shows how to get information about a DynamoDB table\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -175,7 +176,6 @@ The following code example shows how to get information about a DynamoDB table\.
             std::cout << "Failed to describe table: " << result.GetError().GetMessage();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [DescribeTable](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/DescribeTable) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### List tables<a name="dynamodb_ListTables_cpp_topic"></a>
@@ -183,6 +183,7 @@ The following code example shows how to get information about a DynamoDB table\.
 The following code example shows how to list DynamoDB tables\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -206,7 +207,6 @@ The following code example shows how to list DynamoDB tables\.
         
         } while (!listTablesRequest.GetExclusiveStartTableName().empty());
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [ListTables](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/ListTables) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Put an item in a table<a name="dynamodb_PutItem_cpp_topic"></a>
@@ -214,6 +214,7 @@ The following code example shows how to list DynamoDB tables\.
 The following code example shows how to put an item in a DynamoDB table\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -249,7 +250,6 @@ The following code example shows how to put an item in a DynamoDB table\.
         }
         std::cout << "Successfully added Item!" << std::endl;
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [PutItem](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Query a table<a name="dynamodb_Query_cpp_topic"></a>
@@ -257,6 +257,7 @@ The following code example shows how to put an item in a DynamoDB table\.
 The following code example shows how to query a DynamoDB table\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -305,7 +306,6 @@ The following code example shows how to query a DynamoDB table\.
             std::cout << "Failed to Query items: " << result.GetError().GetMessage();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [Query](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/Query) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Scan a table<a name="dynamodb_Scan_cpp_topic"></a>
@@ -313,6 +313,7 @@ The following code example shows how to query a DynamoDB table\.
 The following code example shows how to scan a DynamoDB table\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -354,7 +355,6 @@ The following code example shows how to scan a DynamoDB table\.
             std::cout << "Failed to Scan items: " << result.GetError().GetMessage();
         }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [Scan](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/Scan) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Update an item in a table<a name="dynamodb_UpdateItem_cpp_topic"></a>
@@ -362,6 +362,7 @@ The following code example shows how to scan a DynamoDB table\.
 The following code example shows how to update an item in a DynamoDB table\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
   
 
 ```
@@ -416,5 +417,4 @@ The following code example shows how to update an item in a DynamoDB table\.
         }
         std::cout << "Item was updated" << std::endl;
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/dynamodb#code-examples)\. 
 +  For API details, see [UpdateItem](https://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/UpdateItem) in *AWS SDK for C\+\+ API Reference*\. 

@@ -18,6 +18,7 @@ Each example includes a link to GitHub, where you can find instructions on how t
 The following code example shows how to create an Amazon SNS topic\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -45,7 +46,6 @@ The following code example shows how to create an Amazon SNS topic\.
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [CreateTopic](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/CreateTopic) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Delete a subscription<a name="sns_Unsubscribe_cpp_topic"></a>
@@ -53,6 +53,7 @@ The following code example shows how to create an Amazon SNS topic\.
 The following code example shows how to delete an Amazon SNS subscription\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -80,7 +81,6 @@ The following code example shows how to delete an Amazon SNS subscription\.
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [Unsubscribe](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/Unsubscribe) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Delete a topic<a name="sns_DeleteTopic_cpp_topic"></a>
@@ -88,6 +88,7 @@ The following code example shows how to delete an Amazon SNS subscription\.
 The following code example shows how to delete an Amazon SNS topic and all subscriptions to that topic\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -115,7 +116,6 @@ The following code example shows how to delete an Amazon SNS topic and all subsc
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [DeleteTopic](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/DeleteTopic) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Get the properties of a topic<a name="sns_GetTopicAttributes_cpp_topic"></a>
@@ -123,6 +123,7 @@ The following code example shows how to delete an Amazon SNS topic and all subsc
 The following code example shows how to get the properties of an Amazon SNS topic\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -154,7 +155,6 @@ The following code example shows how to get the properties of an Amazon SNS topi
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [GetTopicAttributes](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/GetTopicAttributes) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Get the settings for sending SMS messages<a name="sns_GetSMSAttributes_cpp_topic"></a>
@@ -162,6 +162,7 @@ The following code example shows how to get the properties of an Amazon SNS topi
 The following code example shows how to get the settings for sending Amazon SNS SMS messages\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -193,7 +194,6 @@ The following code example shows how to get the settings for sending Amazon SNS 
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [GetSMSAttributes](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/GetSMSAttributes) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### List the subscribers of a topic<a name="sns_ListSubscriptions_cpp_topic"></a>
@@ -201,6 +201,7 @@ The following code example shows how to get the settings for sending Amazon SNS 
 The following code example shows how to retrieve the list of subscribers of an Amazon SNS topic\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -230,7 +231,6 @@ The following code example shows how to retrieve the list of subscribers of an A
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [ListSubscriptions](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/ListSubscriptions) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### List topics<a name="sns_ListTopics_cpp_topic"></a>
@@ -238,6 +238,7 @@ The following code example shows how to retrieve the list of subscribers of an A
 The following code example shows how to list Amazon SNS topics\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -267,7 +268,6 @@ The following code example shows how to list Amazon SNS topics\.
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [ListTopics](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/ListTopics) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Publish an SMS text message<a name="sns_PublishTextSMS_cpp_topic"></a>
@@ -275,6 +275,7 @@ The following code example shows how to list Amazon SNS topics\.
 The following code example shows how to publish SMS messages using Amazon SNS\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -329,7 +330,6 @@ int main(int argc, char ** argv)
   return 0;
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [Publish](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/Publish) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Publish to a topic<a name="sns_Publish_cpp_topic"></a>
@@ -337,6 +337,7 @@ int main(int argc, char ** argv)
 The following code example shows how to publish messages to an Amazon SNS topic\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -366,7 +367,6 @@ The following code example shows how to publish messages to an Amazon SNS topic\
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [Publish](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/Publish) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Set the default settings for sending SMS messages<a name="sns_SetSmsAttributes_cpp_topic"></a>
@@ -374,6 +374,7 @@ The following code example shows how to publish messages to an Amazon SNS topic\
 The following code example shows how to set the default settings for sending SMS messages using Amazon SNS\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 How to use Amazon SNS to set the DefaultSMSType attribute\.  
 
 ```
@@ -401,7 +402,6 @@ How to use Amazon SNS to set the DefaultSMSType attribute\.
 
   Aws::ShutdownAPI(options);
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [SetSmsAttributes](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/SetSmsAttributes) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Subscribe a Lambda function to a topic<a name="sns_Subscribe_Lambda_cpp_topic"></a>
@@ -409,6 +409,7 @@ How to use Amazon SNS to set the DefaultSMSType attribute\.
 The following code example shows how to subscribe a Lambda function so it receives notifications from an Amazon SNS topic\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -464,7 +465,6 @@ int main(int argc, char ** argv)
   return 0;
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [Subscribe](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/Subscribe) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Subscribe a mobile application to a topic<a name="sns_Subscribe_App_cpp_topic"></a>
@@ -472,6 +472,7 @@ int main(int argc, char ** argv)
 The following code example shows how to subscribe a mobile application endpoint so it receives notifications from an Amazon SNS topic\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -526,7 +527,6 @@ int main(int argc, char ** argv)
   return 0;
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [Subscribe](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/Subscribe) in *AWS SDK for C\+\+ API Reference*\. 
 
 ### Subscribe an email address to a topic<a name="sns_Subscribe_cpp_topic"></a>
@@ -534,6 +534,7 @@ int main(int argc, char ** argv)
 The following code example shows how to subscribe an email address to an Amazon SNS topic\.
 
 **SDK for C\+\+**  
+ To learn how to set up and run this example, see [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
   
 
 ```
@@ -587,5 +588,4 @@ int main(int argc, char ** argv)
   return 0;
 }
 ```
-+  Find instructions and more code on [GitHub](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/cpp/example_code/sns#code-examples)\. 
 +  For API details, see [Subscribe](https://docs.aws.amazon.com/goto/SdkForCpp/sns-2010-03-31/Subscribe) in *AWS SDK for C\+\+ API Reference*\. 

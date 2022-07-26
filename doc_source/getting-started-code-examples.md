@@ -139,7 +139,7 @@ NuGet SDK packages are deprecated\. Even if you use Visual Studio, it is recomme
 
 1. In the **Configuration Selector** dropdown in the top menu of Visual Studio, ensure that the selected configuration matches the build type that you selected when building the SDK from source\.  E\.g\. a **Debug** configuration should be selected if you built from source using debug \(`-DCMAKE_BUILD_TYPE=Debug` in the CMake command line from the SDK installation instructions\)\. 
 
-1. If you are on Windows, delete the file `list_buckets_disabling_dns_cache.cpp` before building the project because it relies on the curl `HttpClient` of Linux\.   This source file is not for Windows users\. 
+1. If you are on Windows, delete the file `list_buckets_disabling_dns_cache.cpp` before building the project because it relies on the curl `HttpClient` of Linux\.   This source file is not for Windows users \(unless you have taken additional steps to explicitly add cURL support\)\. 
 
 1. Open file `CMakeLists.txt`\. 
 

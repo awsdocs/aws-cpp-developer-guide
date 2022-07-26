@@ -28,7 +28,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Troubleshooting build issues](troubleshooting-cmake.md)
 + [Configuring the AWS SDK for C++](configuring.md)
    + [CMake parameters](cmake-params.md)
-   + [Overriding Your HTTP Client](overriding-http-client.md)
+   + [Overriding your HTTP client](overriding-http-client.md)
    + [Controlling iostreams used by the HttpClient and the AWSClient](configuring-iostreams.md)
 + [Using the AWS SDK for C++](programming-general.md)
    + [Basic Use](basic-use.md)

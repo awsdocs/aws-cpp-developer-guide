@@ -4,6 +4,9 @@ This topic lists important changes to the AWS SDK for C\+\+ Developer Guide\. Fo
 
 | Change | Description | Date | 
 | --- |--- |--- |
+| [Improvements to Getting Started](#document-history) | Improved clarity of getting started instructions for building the SDK on Windows and Linux\. | June 24, 2022 | 
+| [Windows curl Support](#document-history) |  Added notes about building the SDK for Windows with curl\. | June 15, 2022 | 
+| [Retiring EC2\-Classic](#document-history) |  Added notes about retiring EC2\-Classic\. | April 13, 2022 | 
 | [Enabling SDK Metrics](#document-history) | Removed information about enabling SDK metrics, which has been deprecated\. | January 20, 2022 | 
 | [Working with AWS services](working-with-aws-services.md) | Included lists of the code examples that are available on GitHub in the Code Examples repository\. | January 11, 2022 | 
 | [Improvements](#document-history) | Improvements to Getting started section, Code examples section, and general standardization\. | June 9, 2021 | 
