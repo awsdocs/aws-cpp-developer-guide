@@ -46,7 +46,7 @@ struct AWS_CORE_API ClientConfiguration
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> writeRateLimiter;
     std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> readRateLimiter;
     Aws::Http::TransferLibType httpLibOverride;
-    bool followRedirects;
+    Aws::Client::FollowRedirectsPolicy followRedirects;
     bool disableExpectHeader;
     bool enableClockSkewAdjustment;
     bool enableHostPrefixInjection;
@@ -108,7 +108,7 @@ References to the implementations of read and write rate limiters which are used
 Specifies the HTTP implementation returned by the default HTTP factory\. The default HTTP client for Windows is WinHTTP\. The default HTTP client for all other platforms is CURL\.
 
 **followRedirects**  
-Controls whether the HTTP stack follows 300 redirect codes\.
+Controls the behavior when handling HTTP 300 redirect codes\.
 
 **disableExpectHeader**  
 Applicable only for CURL HTTP clients\. By default, CURL adds an “Expect: 100\-Continue” header in an HTTP request to avoid sending the HTTP payload in situations where the server responds with an error immediately after receiving the header\. This behavior can save a round\-trip and is useful in situations where the payload is small and network latency is relevant\. The variable’s default setting is false\. If set to true, CURL is instructed to send both the HTTP request header and body payload together\.
