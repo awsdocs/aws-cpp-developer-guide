@@ -63,7 +63,7 @@ For internal use only\. Do not change the setting of this variable\.
 Specifies the URI addressing scheme, either HTTP or HTTPS\. The default scheme is HTTPS\.
 
 **region**  
-Specifies the AWS Region to use, such as *us\-east\-1*\. By default, the Region used is the default Region configured in the applicable AWS credentials\.
+Specifies the AWS Region to use, such as *us\-east\-1*\. By default, the Region used is the default Region configured in the applicable ClientConfiguration, environment variables, and EC2 metadata\.
 
 **useDualStack**  
 Controls whether to use dual stack IPv4 and IPv6 endpoints\. Note that not all AWS services support IPv6 in all Regions\.
